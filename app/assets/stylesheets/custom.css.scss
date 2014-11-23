@@ -123,6 +123,7 @@ img.logo {
   width: 90%;
   border-radius: 40px 0 20px 0;
   display: block;
+  z-index: 0;
 }
 
 div.intro {
@@ -167,6 +168,12 @@ section.carpediem {
 footer {
   height: 50px;
   width: 100%;
-  background-image: image-url('bg-nav.png');
+  background-image: image-url('bg-nav-dark.png');
+  p {
+    color: white;
+    text-align: center;
+    padding-top: 14px;
+    font: 1em 'Times New Roman', Georgia, Serif
+  }
 }
 

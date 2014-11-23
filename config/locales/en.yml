@@ -20,4 +20,36 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site: 
+    camping_grounds: "Camping grounds"
+    name_and_place: "Carpe Diem - Hekpoort"
+    site_name: "Carpe Diem"
+    owners: Jacques and Henriëtte Kotzé
+  menu:
+    about_us: About us  
+    accommodation: Accommodation
+    activities: Activities
+    bookings: Bookings
+    contact_us: Contact us
+    facilities: Facilities
+    home: Home
+    make_reservation: Make reservation
+    menu: Menu
+    things_to_see: What will you see?
+    tariffs: Tariffs
+    visit_us: Visit us
+    where_to_find_us: Where are we?
+  references:
+    ps_118v24: Ps 118:24
+  articles:  
+    carpediem: |-    
+      Carpe Diem Camping grounds is in Hekpoort, between the Magalies mountains
+      and  the Water mountains. The Hekpoort creek flows in the valley through
+      the beautiful 14 hectar bushfarm. This was a popular 4x4 track previously.
+      The  stream is full of fish, frogs and crab and you may also encounter
+      Hekpoort's  baboon family. In addition, you may also see meerkats,
+      porcupines and a great variety of bird species. An old English blockhouse,
+      Bartons' Folly, boasts against the mountain. Expect to see breathtaking
+      sunrises and sunsets.
+    ps_118v24: |-
+      This is the day that the Lord has made; let us rejoice and be glad in it.
