@@ -1,0 +1,15 @@
+-# Rails flash messages styled for Twitter Bootstrap 3.0
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    - category = case name
+    - when 'success'
+      - 'success'
+    - when 'warning'
+      - 'warning'
+    - when 'alert'
+      - 'danger'
+    - when 'notice'
+      - 'info'
+    %div{:class => "alert alert-#{category}"}
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+      = content_tag :div, msg.html_safe, :id => "flash_#{name}"
