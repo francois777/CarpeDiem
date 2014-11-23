@@ -11,11 +11,11 @@
     = csrf_meta_tags
 
   %body
-    -# render 'layouts/header'
+    = render 'layouts/header'
     .main-container
       .mainpage.clearfix
         = render partial: "shared/flash_messages", flash: flash
         = yield
-    -# render 'layouts/footer'
-    = debug(params)
+    = render 'layouts/footer'
+    -# debug(params)
 
