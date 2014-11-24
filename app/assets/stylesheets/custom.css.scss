@@ -259,7 +259,6 @@ section.facilities {
       margin: 0.5em;
       font-family: 'Arial';
       background-color: #F5E6B5;
-
     }
   }
 
@@ -283,6 +282,33 @@ section.facilities {
   .terms {
     margin-left: 1em;
     margin-right: 1em;
+  }
+}
+
+section.directions {
+  h1 {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+  margin-bottom: 1em;
+}
+
+section.address {
+  margin-left: 2em;
+  h2 {
+    margin-bottom: 0.4em;
+  }
+  div {
+    display: block;
+    p.distances {
+      color: #A66E00;
+    }
+    p.formal-address {
+      display: block;
+      border: 2px solid white;
+      padding: 5px;
+    }
   }
 }
 

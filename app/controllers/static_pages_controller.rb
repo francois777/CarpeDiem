@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
 
   def facilities
   end
+
+  def directions
+  end
 end
