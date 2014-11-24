@@ -1,3 +1,4 @@
+= provide(:title, t('site_name', scope: [:site]))
 %header.top-banner
   .row
     .heading-pic
@@ -24,7 +25,7 @@
               %li 
                 = link_to t('activities', scope: ['menu']), root_path
               %li 
-                = link_to t('facilities', scope: ['menu']), root_path
+                = link_to t('facilities', scope: ['menu']), facilities_url
               %li
                 = link_to t('menu', scope: ['menu']), root_path
           %li.dropdown

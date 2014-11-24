@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home
 
+  def home
+  end
+
+  def facilities
   end
 end
