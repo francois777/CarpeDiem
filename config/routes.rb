@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
+  namespace :admin do
+    get 'users/index'
+  end
+
   root 'static_pages#home'
 
   get '/facilities', to: 'static_pages#facilities'
