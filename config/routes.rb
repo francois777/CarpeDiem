@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/facilities', to: 'static_pages#facilities'
   get '/directions', to: 'static_pages#directions'
+  get '/test', to: 'static_pages#test'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

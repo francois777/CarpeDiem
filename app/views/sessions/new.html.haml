@@ -1,18 +1,18 @@
-- provide(:title, t(".sign_in"))
-.row
-  .sign-in
-    %h1 
-      = t(".signin")
+- provide(:title, t(:signin, scope: [:menu]))
+.sign-in
+  %h1 
+    = t(:signin, scope: [:menu])
+  .row
     = form_for(:session, url: sessions_path, html: {class: "form-horizontal", role: "form"}) do |f|
       .form-group
         = f.label :email, t(:email, scope: [:activerecord, :attributes, :session]),
-          class: "col-sm-3 col-sm-offset-1 control-label"
-        .col-sm-4
+          class: "col-sm-2 col-sm-offset-2 control-label"
+        .col-sm-6
           = f.text_field :email, class: "form-control"
       .form-group
         = f.label :password, t(:password, scope: [:activerecord, :attributes, :session]),
-          class: "col-sm-3 col-sm-offset-1 control-label"
-        .col-sm-4
+          class: "col-sm-2 col-sm-offset-2 control-label"
+        .col-sm-6
           = f.password_field :password, class: "form-control"
       .centered    
         .button

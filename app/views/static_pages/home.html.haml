@@ -1,8 +1,8 @@
 %main
   .row
-    .col-sm-6
-      %section.carpediem.clearfix
-        %figure
+    .col-sm-6.clearfix
+      %section.carpediem
+        %figure.logo
           %div
             = image_tag('logo.png', class: 'logo')
           %figcaption
@@ -13,7 +13,10 @@
                 = t('ps_118v24', scope: [:articles]).upcase
               %p
                 = t('ps_118v24', scope: [:references]).upcase
-    .col-sm-6.intro
+        %figure.entrance
+          = image_tag('entrance.jpg')
+        
+    .col-sm-6.clearfix
       %section.intro
         %h2 
           = t('name_and_place', scope: ['site'])

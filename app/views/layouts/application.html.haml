@@ -15,6 +15,7 @@
     .main-container
       .mainpage.clearfix
         = render partial: "shared/flash_messages", flash: flash
+        -# render 'layouts/media_aid'
         = yield
     = render 'layouts/footer'
     -# debug(@title)

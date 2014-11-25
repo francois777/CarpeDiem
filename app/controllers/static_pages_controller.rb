@@ -8,4 +8,7 @@ class StaticPagesController < ApplicationController
 
   def directions
   end
+
+  def test
+  end
 end
