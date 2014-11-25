@@ -27,20 +27,20 @@ table             {border-collapse: collapse; border-spacing: 0;}
 
 @font-face{ 
   font-family: 'MuseoSlab';
-  src: url('Museo_Slab_500_2-webfont.eot');
-  src: url('Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
-       url('Museo_Slab_500_2-webfont.woff') format('woff'),
-       url('Museo_Slab_500_2-webfont.ttf') format('truetype'),
-       url('Museo_Slab_500_2-webfont.svg#webfont') format('svg');
+  src: asset_url('Museo_Slab_500_2-webfont.eot');
+  src: asset_url('Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+       asset_url('Museo_Slab_500_2-webfont.woff') format('woff'),
+       asset_url('Museo_Slab_500_2-webfont.ttf') format('truetype'),
+       asset_url('Museo_Slab_500_2-webfont.svg#webfont') format('svg');
 }
 
 @font-face{ 
   font-family: 'Fertigo_PRO';
-  src: url('Fertigo_PRO-webfont.eot');
-  src: url('Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
-       url('Fertigo_PRO-webfont.woff') format('woff'),
-       url('Fertigo_PRO-webfont.ttf') format('truetype'),
-       url('Fertigo_PRO-webfont.svg#webfont') format('svg');
+  src: asset_url('Fertigo_PRO-webfont.eot');
+  src: asset_url('Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
+       asset_url('Fertigo_PRO-webfont.woff') format('woff'),
+       asset_url('Fertigo_PRO-webfont.ttf') format('truetype'),
+       asset_url('Fertigo_PRO-webfont.svg#webfont') format('svg');
 }
 
 h1, h2, h3, h4 {
@@ -87,6 +87,7 @@ p {
 .main-container {
   background-image: image-url('bg-texture.png');
   z-index: -1;
+  min-height: 500px;
 }
 
 ul.visible li {
