@@ -69,6 +69,11 @@ nav.navbar.navbar-default.navbar-inverse.main-nav {
   margin: 0;
 }
 
+.navbar-collapse {
+  position: relative;
+  z-index: 2;
+}
+
 body {
   width: 100%;
   height: 100%;
