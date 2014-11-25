@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/show'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:show]
 
   namespace :admin do
-    get 'users/index'
+    resources :users, only: [:index]
   end
 
   root 'static_pages#home'
@@ -25,43 +27,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get "/signin",  to: "sessions#new"
+  match "/signout", to: "sessions#destroy", via: 'get'
+  post "/signin", to: "sessions#create"
+  delete "/signout", to: "sessions#destroy"
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

@@ -1,0 +1,19 @@
+- provide(:title, t(".sign_in"))
+.row
+  .sign-in
+    %h1 
+      = t(".signin")
+    = form_for(:session, url: sessions_path, html: {class: "form-horizontal", role: "form"}) do |f|
+      .form-group
+        = f.label :email, t(:email, scope: [:activerecord, :attributes, :session]),
+          class: "col-sm-3 col-sm-offset-1 control-label"
+        .col-sm-4
+          = f.text_field :email, class: "form-control"
+      .form-group
+        = f.label :password, t(:password, scope: [:activerecord, :attributes, :session]),
+          class: "col-sm-3 col-sm-offset-1 control-label"
+        .col-sm-4
+          = f.password_field :password, class: "form-control"
+      .centered    
+        .button
+          = f.submit t(:signin, scope: [:menu]), class: "btn btn-large btn-primary"

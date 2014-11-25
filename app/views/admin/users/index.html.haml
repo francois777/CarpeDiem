@@ -1,2 +1,20 @@
-%h1 Admin::Users#index
-%p Find me in app/views/admin/users/index.html.haml
+- provide(:title, t(".all_users"))
+%h1
+  = t(".all_users")
+
+.row
+  .col-md-8.col-xs-10.col-md-offset-2.col-xs-offset-1
+    .table-responsive
+      %table.table.users
+        %thead
+          %tr
+            %td
+            %td
+              %b
+                = t(".full_name")
+            %td
+              %b
+                = t(".email")
+            %td
+        %tbody    
+          = render @users

@@ -18,6 +18,8 @@ af:
     tariffs: Tariewe
     visit_us: Besoek ons
     where_to_find_us: Waar is ons?
+    sign_in: Teken in
+    sign_out: Teken af
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -32,4 +34,7 @@ af:
       sonsopkoms en ondergang.
     ps_118v24: |-
       Dit is die dag wat die Here gemaak het. Laat ons daaroor juig en bly wees.
+  success:
+  failure:
+    invalid_email_password: Ongeldige email/wagwoord kombinasie.
       

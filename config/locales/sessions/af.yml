@@ -1,0 +1,7 @@
+af:
+  activerecord:
+    attributes:
+      session:
+        email: Email
+        password: Wagwoord
+        confirmation: Bevestiging

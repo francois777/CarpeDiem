@@ -39,6 +39,8 @@ en:
     tariffs: Tariffs
     visit_us: Visit us
     where_to_find_us: Where are we?
+    signin: Sign in
+    signout: Sign out
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -53,3 +55,7 @@ en:
       sunrises and sunsets.
     ps_118v24: |-
       This is the day that the Lord has made; let us rejoice and be glad in it.
+  success:
+  failure:
+    invalid_email_password: Invalid email/password combination.
+      

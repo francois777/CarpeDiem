@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      session:
+        email: Email
+        password: Password
+        confirmation: Confirmation
