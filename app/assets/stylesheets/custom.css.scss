@@ -85,6 +85,10 @@ nav.navbar.navbar-default.navbar-inverse.main-nav {
   z-index: 2;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -147,7 +151,17 @@ section.font-test {
     background-image: image-url('bg-texture.png');
     // background-image: none;
     z-index: 1;
-    min-height: 500px;
+    // min-height: 500px;
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0px 0px -50px 0px;
+  }
+
+  .mainpage {
+    width: 100%;
+    padding: 0 0 50px 0;
   }
 
   .heading-pic img {
@@ -414,6 +428,11 @@ section.font-test {
         padding: 10px 30px;;
       }
     }
+  }
+
+  section.footer-container {
+    width: 100%;
+    height: 50px;
   }
 
   footer {
