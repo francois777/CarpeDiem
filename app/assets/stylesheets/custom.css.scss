@@ -2,6 +2,8 @@
 
 $medium-brown: rgb(206,185,136);
 $dark-brown: #543F20;
+$dark-green: rgb(108, 140, 77);
+$darker-green: rgb(75, 97, 64);
 $golden-brown: #7F734D;
 
 /*-- RESET ------*/
@@ -42,6 +44,15 @@ table             {border-collapse: collapse; border-spacing: 0;}
        asset_url('Fertigo_PRO-webfont.woff') format('woff'),
        asset_url('Fertigo_PRO-webfont.ttf') format('truetype'),
        asset_url('Fertigo_PRO-webfont.svg#webfont') format('svg');
+}
+
+@font-face{ 
+  font-family: 'SofiaProLight';
+  src: asset_url('SofiaProLight-webfont.eot');
+  src: asset_url('SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+       asset_url('SofiaProLight-webfont.woff') format('woff'),
+       asset_url('SofiaProLight-webfont.ttf') format('truetype'),
+       asset_url('SofiaProLight-webfont.svg#webfont') format('svg');
 }
 
 h1, h2, h3, h4 {
@@ -85,7 +96,7 @@ body {
 }
 
 p {
-  font-family: Fertigo_PRO, 'Times New Roman', serif;
+  font-family: 'SofiaProLight', 'Times New Roman', serif;
   line-height: 180%;
   margin-bottom: 1em;
 }
@@ -94,6 +105,34 @@ section.test {
   padding: 0.5em;
   width: 100%;
   height: 60px;
+}
+
+section.font-test {
+  
+  p.one {
+    font-size: 1.2em;
+    font-family: 'MuseoSlab';
+  }
+  p.two {
+    font-size: 1.2em;
+    font-family: 'Fertigo_PRO';
+  }
+  p.three {
+    font-size: 1.2em;
+    font-family: 'SofiaProLight';
+  }
+  p.four {
+    font-size: 1em;
+    font-family: 'MuseoSlab';
+  }
+  p.five {
+    font-size: 1em;
+    font-family: 'Fertigo_PRO';
+  }
+  p.six {
+    font-size: 1em;
+    font-family: 'SofiaProLight';
+  }
 }
 
 /* Custom, iPhone Retina */
@@ -126,9 +165,10 @@ section.test {
   }
 
   ul.nav.navbar-nav li {
-    background-color: $medium-brown;  
-    // background-image: image-url('bg-nav.png');
+    // background-color: $medium-brown;  
+    background-image: image-url('bg-nav.png');
     z-index: 5;
+    opacity: 0.9;
   }
 
   .navbar-inverse .navbar-nav,
@@ -141,7 +181,8 @@ section.test {
     > .open {
       a, a:hover, a:focus {
         color: white;
-        background-color: $medium-brown;
+        // background-color: $medium-brown;
+        background-image: image-url('bg-nav.png');
       }
 
     }
@@ -210,6 +251,12 @@ section.test {
     form {
       width: 80%;
       margin: 1em auto;
+      label {
+        font-family: Fertigo_PRO;
+      }
+      input {
+        font-family: SofiaProLight;
+      }
     }
   }
 
@@ -250,6 +297,7 @@ section.test {
           p {
             text-align: right;
             font-size: 0.8em;
+            font-family: 'Fertigo_PRO';
           }
         }
       }
@@ -272,6 +320,7 @@ section.test {
     }
     p {
       font-size: 0.8em;
+      font-family: 'SofiaProLight';
     }
   }
 
@@ -290,7 +339,7 @@ section.test {
       margin-bottom: 0;
       p {
         margin: 0.5em 1em 0 1em;
-        font-family: 'Arial';
+        font-family: 'Fertigo_PRO';
         // background-color: #F5E6B5;
       }
     }
@@ -299,6 +348,8 @@ section.test {
       p {
         margin: 0 1em;
         background-color: #F5EED7;
+        font-family: SofiaProLight;
+        padding-left: 0.5em;
       }
     }
 
@@ -539,7 +590,7 @@ section.test {
       // margin-bottom: 0;
       p {
         margin: 0.5em 1em 0 1em;
-        font-family: 'Arial';
+        // font-family: 'SofiaProLight';
         // background-color: #F5E6B5;
       }
     }
