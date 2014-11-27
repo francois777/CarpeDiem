@@ -350,20 +350,23 @@ section.font-test {
     }
 
     .topic {
-      margin-bottom: 0;
+      margin-top: 0.1em;
+      margin-bottom: 0.1em;
+      padding: 0.2em;
       p {
-        margin: 0.5em 1em 0 1em;
+        margin: 0.5em 1em;
         font-family: 'Fertigo_PRO';
         // background-color: #F5E6B5;
       }
     }
 
-    .annoucement {
-      p {
-        margin: 0 1em;
-        background-color: #F5EED7;
-        font-family: SofiaProLight;
-        padding-left: 0.5em;
+    .announcement {
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+      padding: 0.2em;
+      span {
+        font-family: Arial;
+        padding: 1em;
       }
     }
 
@@ -383,9 +386,6 @@ section.font-test {
     .terms {
       margin: 2em;
       margin-top: 0.5em;
-      // p:first-child {
-      //   color: $dark-brown;
-      // }
       p {
         font-family: 'Times New Roman';
       }
@@ -487,14 +487,14 @@ section.font-test {
     }
   }
 
-  section.facilities {
-    margin: 0 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    .terms {
-      margin: 0.5em 3em;
-    }
-  }
+  // section.facilities {
+  //   margin: 0 2em;
+  //   padding-top: 1em;
+  //   padding-bottom: 1em;
+  //   .terms {
+  //     margin: 0.5em 3em;
+  //   }
+  // }
 }
 
 /* Small devices, Tablets */
@@ -596,42 +596,23 @@ section.font-test {
   }
 
   section.facilities {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-image: image-url('bg-texture-light.png');
-
-    h1 {
-      margin-bottom: 0.6em;
-      font-size: 2em;
-    }
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
 
     .topic {
-      // margin-bottom: 0;
       p {
-        margin: 0.5em 1em 0 1em;
-        // font-family: 'SofiaProLight';
-        // background-color: #F5E6B5;
+        // margin: 0.5em 1em;
+        font-size: 1em;
       }
     }
 
-    .attention {
-      margin-top: 1em;
-      margin-bottom: 1em;
-      font-family: 'Times New Roman';
-      text-align: center;
-      p {
-        font-weight: 1.2em;
-        margin: 0;
-      }
-      p:first-child {
-        color: $dark-brown;
-      }
-    }
-    .terms {
-      margin-left: 1em;
-      margin-right: 1em;
-      p:first-child {
-        color: $dark-brown;
+    .announcement {
+      margin-top: 0.6em;
+      margin-bottom: 1.6em;
+      // padding: 0.2em;
+      span {
+        // padding: 1em;
+        font-size: 0.8em;
       }
     }
   }
@@ -643,6 +624,25 @@ section.font-test {
 
   section.test {
     background-color: lightsteelblue;
+  }
+
+  section.facilities {
+    h1 {
+      margin-bottom: 0.6em;
+      font-size: 2em;
+    }
+    .topic {
+      p {
+        // margin: 0.5em 1em;
+        font-size: 1.2em;
+      }
+    }
+
+    .announcement {
+      span {
+        font-size: 0.9em;
+      }
+    }
   }
 
 }
