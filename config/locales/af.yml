@@ -34,7 +34,66 @@ af:
       sonsopkoms en ondergang.
     ps_118v24: |-
       Dit is die dag wat die Here gemaak het. Laat ons daaroor juig en bly wees.
+  months:
+    january: Januarie
+    february: Februarie
+    march: Maart
+    april: April
+    may: Mei
+    june: Junie
+    july: Julie
+    august: Augustus
+    september: September
+    october: Oktober
+    november: November
+    december: Desember    
+  accommodation:
+    accommodation: akkommodasie
+    no_alcohol: geen alkohol
+    with_meals_see_menu: (met etes - sien spyskaart)
+    selfsorg: (selfsorg)
+    book_in_times: 'karavane en tente: inboek tye: 11H00,  uitboek tye: 17H30' 
+    with_power_points: met kragpunte
+    without_power_points: sonder kragpunte
+    per_site: per site
+    per_person: per persoon
+    per_person_per_night: per persoon per nag
+    per_night_for_chalet: per nag vir rondawel
+    tents_and_caravans: tente en karavane
+    reference_1: sien (1)
+    col_1:
+      day_visitors: dag besoekers
+      tent_sites: tent staanplekke
+      caravan_sites: karavaan staanplekke
+      warrior_camps: koning en kryger kampe
+      chalet_a: chalet a 
+      chalet_b: chalet b
+      group_reservations_budget: groep besprekings (eie kos)
+      group_reservations_meals: groep besprekings (met etes)
+    col_2:
+      can_arrange_picnic_basket: kan reël vir piekniek mandjie
+      fully_equipped: ten volle toegerus
+      tents_and_caravans: tente en karavane
+    col_3:
+      child_amount_a: R70 (kinders 6-12jr = R40)
+      child_amount_b: R90 (kinders 6-12jr = R60)
+      child_amount_c: R100 (kinders 6-12jr = R70)
+      person_weekend_tariff: R200 per persoon vir naweek
+      chalet_a_tariff: R700 (MAKSIMUM 8 PERSONE)
+      group_reservations_budget: R200 PER NAWEEK
+      group_reservations_meals: R400 PER NAWEEK
+    col_4:
+      site_limit: Maksimum 6 persone per staanplek
+      friday_to_sunday: 'In: Vrydae: 11H00,  Uit: Sondae: 17H30'
+      day_visitor_times: 'In: 08H00,  Uit: 17H30'
+      chalet_times: 'In: 11H00,  Out: 10H00  (mag op terrein bly tot 17H30)'
+  accommodation_period_indicators:
+    from: van
+    until: tot
+    christmas: Kersfees
+    new_year:  Nuwejaar
+    easter: Paasnaweek
   success:
   failure:
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
-      
+    

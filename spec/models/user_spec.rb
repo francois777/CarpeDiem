@@ -64,4 +64,8 @@ describe User do
     user2 = @user.dup
     expect(user2).not_to be_valid
   end
+
+  it "must recognise locales" do
+    puts I18n.t(:season_group_types, scope: [:activerecord, :attributes, :season_detail_line])  # .each_with_index.map { |ltyp| ltyp[0] }
+  end  
 end

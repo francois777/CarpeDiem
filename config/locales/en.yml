@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  site: 
+  site:
     camping_grounds: "Camping grounds"
     name_and_place: "Carpe Diem - Hekpoort"
     site_name: "Carpe Diem"
@@ -55,7 +55,66 @@ en:
       sunrises and sunsets.
     ps_118v24: |-
       This is the day that the Lord has made; let us rejoice and be glad in it.
+  months:
+    january: January
+    february: February
+    march: March
+    april: April
+    may: May
+    june: June
+    july: July
+    august: Augustus
+    september: September
+    october: October
+    november: November
+    december: December    
+  accommodation:
+    accommodation: accommodation
+    no_alcohol: no alcohol
+    with_meals_see_menu: (incl. meals - see menu)
+    selfsorg: (own food)
+    book_in_times: 'caravans and tents: check in from: 11H00, check out before: 17H30'
+    with_power_points: with powerpoints
+    without_power_points: without powerpoints
+    per_site: per site
+    per_person: per person
+    per_person_per_night: per person per night
+    per_night_for_chalet: per night for chalet
+    tents_and_caravans: tents and caravans
+    reference_1: see (1)
+    col_1:
+      day_visitors: day visitors
+      tent_sites: tent sites
+      caravan_sites: caravan sites
+      warrior_camps: king and warrior camps
+      chalet_a: chalet a 
+      chalet_b: chalet b
+      group_reservations_budget: group reservations (own food)
+      group_reservations_meals: group reservations (with meals)
+    col_2:  
+      can_arrange_picnic_basket: can arrange for picnic basket
+      fully_equipped: fully equipped
+      tents_and_caravans: tents and caravans
+    col_3:
+      child_amount_a: R70 (children 6-12yr = R40)
+      child_amount_b: R90 (children 6-12yr = R60)
+      child_amount_c: R100 (children 6-12yr = R70)
+      person_weekend_tariff: R200 per person for weekend
+      chalet_a_tariff: R700 (MAXIMUM 8 PERSONS)
+      group_reservations_budget: R200 FOR WEEKEND
+      group_reservations_meals: R400 FOR WEEKEND
+    col_4:  
+      site_limit: Maximum 6 persons per stand
+      friday_to_sunday: 'In: Fridays: 11H00,  Out: Sundays: 17H30'
+      day_visitor_times: 'In: 08H00,  Out: 17H30'
+      chalet_times: 'In: 11H00,  Out: 10H00  (may remain on premises until 17H30)'
+  accommodation_period_indicators:
+    from: from
+    until: until
+    christmas: Christmas
+    new_year:  New Year
+    easter: Easter Weekend
   success:
   failure:
     invalid_email_password: Invalid email/password combination.
-      
+    

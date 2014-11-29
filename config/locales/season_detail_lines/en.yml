@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    attributes:
+      season_detail_line:
+        season_group_types:
+          normal_tariff: Unpowered sites
+          powered_tariff: Powered sites
+          day_visitor: Day visitors
+          chalet_tariff: Chalets
+          group_tariff: Groups      

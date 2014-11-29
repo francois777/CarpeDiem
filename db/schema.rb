@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124234121) do
+ActiveRecord::Schema.define(version: 20141128060240) do
+
+  create_table "season_detail_lines", force: true do |t|
+    t.integer "season_group_type", default: 0
+    t.integer "sequence",          default: 0
+    t.string  "line_col_1",        default: ""
+    t.string  "line_col_2",        default: ""
+    t.string  "line_col_3",        default: ""
+    t.string  "line_col_4",        default: ""
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

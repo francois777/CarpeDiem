@@ -11,4 +11,13 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :season_detail_line do
+    season_group_type 0
+    sequence 1
+    line_col_1 'TENT SITES'
+    line_col_2 'R110'
+    line_col_3 'R70 (children 6-12yr=R40)'
+    line_col_4 'Maximum 6 persons per site'
+  end
 end

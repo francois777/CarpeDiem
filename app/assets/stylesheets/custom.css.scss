@@ -2,6 +2,8 @@
 
 $medium-brown: rgb(206,185,136);
 $dark-brown: #543F20;
+$darker-brown: #9e8859;
+$lighter-brown: #c2ae84;
 $dark-green: rgb(108, 140, 77);
 $darker-green: rgb(75, 97, 64);
 $golden-brown: #7F734D;
@@ -338,8 +340,60 @@ section.font-test {
     }
   }
 
+  section.accommodation {
+    margin: 0.5em;
+    .row { margin: 0; }
+    h1 {
+      margin-bottom: 0.2em;
+      span {
+        font-size: 0.6em;
+        font-family: arial;
+      }
+    }
+    p.sub-heading {
+      text-align: center;
+      font-size: 1em;
+    }
+    p.day-visitor-comment {
+      font-size: 0.8em;
+    }
+    .privilege_type {
+      margin-bottom: 1em;
+    }
+    .privilege_type.day_visitor {
+        margin-bottom: 0.2em;
+    }
+
+    table {
+      width: 100%;
+
+      th, td {
+        font-family: arial;
+        font-size: 0.6em;
+      }
+      td { font-family: SofiaProLight; }
+      tr {
+        width: 100%;
+        line-height: 1.2em;
+      }
+      th:nth-child(1), td:nth-child(1) { width: 25%; } 
+      th:nth-child(2), td:nth-child(2) { width: 10%; } 
+      th:nth-child(3), td:nth-child(3) { width: 30%; } 
+      th:nth-child(4), td:nth-child(4) { width: 35%; } 
+      tbody {
+        color: white;
+        tr:nth-child(odd) { background: $darker-brown; }
+        tr:nth-child(even)  { background: $lighter-brown; }
+      }
+      tr:first-child { 
+        background: transparent; 
+      }
+    }
+
+  }
+
   section.facilities {
-    margin: 0 1em;
+    margin-right: 0.5em;
     padding-top: 1em;
     padding-bottom: 1em;
     background-image: image-url('bg-texture-light.png');
@@ -487,14 +541,9 @@ section.font-test {
     }
   }
 
-  // section.facilities {
-  //   margin: 0 2em;
-  //   padding-top: 1em;
-  //   padding-bottom: 1em;
-  //   .terms {
-  //     margin: 0.5em 3em;
-  //   }
-  // }
+  section.facilities {
+    margin: 0 1em;
+  }
 }
 
 /* Small devices, Tablets */
@@ -617,6 +666,24 @@ section.font-test {
     }
   }
 
+  section.accommodation {
+    margin: 1em;
+    margin-bottom: 3em;
+
+    p.sub-heading {
+      margin-bottom: 2em;
+    }
+
+    table {
+      td {
+        font-size: 0.7em;
+        font-family: SofiaProLight;
+      }
+      tr {
+        line-height: 1.6em;
+      }
+    }
+  }  
 }
 
 /* Media Devices, Desktops */
@@ -643,8 +710,22 @@ section.font-test {
         font-size: 0.9em;
       }
     }
-  }
+  }  
 
+  section.accommodation {
+    margin: 1em 2em;
+
+    table {
+      width: 100%;
+
+      th, td {
+        font-size: 0.8em;
+      }
+      tr {
+        line-height: 2em;
+      }
+    }
+  }  
 }
 
 /* Large Devices, Large Screens */
