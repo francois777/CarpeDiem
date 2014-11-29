@@ -92,7 +92,7 @@ namespace :admin do
     line1.season_group_type = @group_types[:day_visitor]
     line1.sequence = 1
     line1.line_col_1 = I18n.t(:day_visitors, scope: [:accommodation, :col_1]).upcase
-    line1.line_col_2 = I18n.t(:reference_1, scope: [:accommodation, :col_1])
+    line1.line_col_2 = I18n.t(:reference_1, scope: [:accommodation, :col_2])
     line1.line_col_3 = I18n.t(:child_amount_b, scope: [:accommodation, :col_3]).upcase
     line1.line_col_4 = I18n.t(:day_visitor_times, scope: [:accommodation, :col_4]).upcase
     line1.save!
