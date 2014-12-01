@@ -1,10 +1,8 @@
 class SeasonDetailLinesController < ApplicationController
-  def index
-  end
 
   def show
-    @no_power_header = header_line(SeasonDetailLine.season_group_types[:normal_tariff])
-    @no_power_dtl_lines = tariff_details(SeasonDetailLine.normal_tariff)
+    @no_power_header = header_line(SeasonDetailLine.season_group_types[:without_power_points])
+    @no_power_dtl_lines = tariff_details(SeasonDetailLine.without_power_points)
     @power_header = header_line(SeasonDetailLine.season_group_types[:powered_tariff])
     @power_dtl_lines = tariff_details(SeasonDetailLine.powered_tariff)
     @day_visitor_header = header_line(SeasonDetailLine.season_group_types[:day_visitor])
@@ -17,7 +15,7 @@ class SeasonDetailLinesController < ApplicationController
 
   def header_line(accommodation_type)
     case accommodation_type
-    when SeasonDetailLine.season_group_types[:normal_tariff]
+    when SeasonDetailLine.season_group_types[:without_power_points]
       [ t(:without_power_points, scope: [:accommodation]).upcase,
         t(:per_site, scope: [:accommodation]).upcase,
         t(:per_person_per_night, scope: [:accommodation]).upcase,

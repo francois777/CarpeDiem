@@ -34,6 +34,8 @@ af:
       sonsopkoms en ondergang.
     ps_118v24: |-
       Dit is die dag wat die Here gemaak het. Laat ons daaroor juig en bly wees.
+  actions:
+    save_changes: Stoor veranderings    
   months:
     january: Januarie
     february: Februarie
@@ -61,7 +63,11 @@ af:
     per_night_for_chalet: per nag vir rondawel
     tents_and_caravans: tente en karavane
     reference_1: sien (1)
-    col_1:
+    column_1: Column 1
+    column_2: Column 2
+    column_3: Column 3
+    column_4: Column 4
+    column_1:
       day_visitors: dag besoekers
       tent_sites: tent staanplekke
       caravan_sites: karavaan staanplekke

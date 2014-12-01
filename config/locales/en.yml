@@ -55,6 +55,8 @@ en:
       sunrises and sunsets.
     ps_118v24: |-
       This is the day that the Lord has made; let us rejoice and be glad in it.
+  actions:
+    save_changes: Save changes    
   months:
     january: January
     february: February
@@ -82,6 +84,10 @@ en:
     per_night_for_chalet: per night for chalet
     tents_and_caravans: tents and caravans
     reference_1: see (1)
+    column_1: Column 1
+    column_2: Column 2
+    column_3: Column 3
+    column_4: Column 4
     col_1:
       day_visitors: day visitors
       tent_sites: tent sites

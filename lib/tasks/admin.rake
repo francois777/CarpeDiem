@@ -29,7 +29,7 @@ namespace :admin do
     else
       puts "Loading Season Detail Lines.."
       @group_types = SeasonDetailLine.season_group_types
-      create_normal_tariff_lines
+      create_without_power_points_lines
       create_powered_tariff_lines
       create_day_visitor_line
       create_chalet_lines
@@ -38,9 +38,9 @@ namespace :admin do
     end
   end
 
-  def create_normal_tariff_lines
+  def create_without_power_points_lines
     line1 = SeasonDetailLine.new
-    line1.season_group_type = @group_types[:normal_tariff]
+    line1.season_group_type = @group_types[:without_power_points]
     line1.sequence = 1
     line1.line_col_1 = I18n.t(:tent_sites, scope: [:accommodation, :col_1]).upcase
     line1.line_col_2 = "R110"
@@ -49,7 +49,7 @@ namespace :admin do
     line1.save!
 
     line2 = SeasonDetailLine.new
-    line2.season_group_type = @group_types[:normal_tariff]
+    line2.season_group_type = @group_types[:without_power_points]
     line2.sequence = 2
     line2.line_col_1 = I18n.t(:caravan_sites, scope: [:accommodation, :col_1]).upcase
     line2.line_col_2 = "R110"
@@ -58,7 +58,7 @@ namespace :admin do
     line2.save!
 
     line3 = SeasonDetailLine.new
-    line3.season_group_type = @group_types[:normal_tariff]
+    line3.season_group_type = @group_types[:without_power_points]
     line3.sequence = 3
     line3.line_col_1 = I18n.t(:warrior_camps, scope: [:accommodation, :col_1]).upcase
     line3.line_col_2 = ""

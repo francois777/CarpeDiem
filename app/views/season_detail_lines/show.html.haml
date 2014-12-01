@@ -20,6 +20,10 @@
               - row.each do |col| 
                 %td
                   =col    
+    - if current_user && current_user.admin?        
+      .row
+        %btn.btn-primary.btn-lg 
+          = link_to 'Edit', accommodation_path         
   %section.privilege_type
     .row
       %table
@@ -33,6 +37,10 @@
               - row.each do |col| 
                 %td
                   =col    
+    - if current_user && current_user.admin?        
+      .row
+        %btn.btn-primary.btn-lg 
+          = link_to 'Edit', accommodation_path         
   %section.privilege_type.day_visitor
     .row
       %table
@@ -46,6 +54,10 @@
               - row.each do |col| 
                 %td
                   =col    
+    - if current_user && current_user.admin?        
+      .row
+        %btn.btn-primary.btn-lg 
+          = link_to 'Edit', accommodation_path         
   %p.day-visitor-comment
     = " (1) #{I18n.t(:can_arrange_picnic_basket, scope: [:accommodation, :col_2]).capitalize}"             
   %section.privilege_type
@@ -61,6 +73,10 @@
               - row.each do |col| 
                 %td
                   =col    
+    - if current_user && current_user.admin?        
+      .row
+        %btn.btn-primary.btn-lg 
+          = link_to 'Edit', accommodation_path         
   %section.privilege_type
     .row
       %table
@@ -74,6 +90,10 @@
               - row.each do |col| 
                 %td
                   =col    
+    - if current_user && current_user.admin?        
+      .row
+        %btn.btn-primary.btn-lg 
+          = link_to 'Edit', accommodation_path         
 
 -# debug(@no_power.inspect)
 -# debug(@no_power_header)

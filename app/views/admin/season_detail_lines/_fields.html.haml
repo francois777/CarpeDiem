@@ -1,0 +1,40 @@
+-# render 'shared/error_messages', object: f.object
+
+- #.form-group
+- #  = f.label :season_group_type, t(:season_group_types, scope: [:activerecord, :attributes, :season_detail_line]), class: "col-sm-3 control-label"
+- #  = puts "First form-group, form data id = #{f.options[:html][:data][:id].inspect}"
+- #  .col-sm-3
+-#     = f.text_field :season_group_type, :readonly => "", value: @season_detail_line.season_group_type.upcase.gsub!(/_/,' '), class: "form-control"
+.form-group
+  = f.label :sequence, t(:sequence, scope: [:activerecord, :attributes, :season_detail_line]), class: "col-sm-3 control-label"
+  .col-sm-1
+    = f.text_field :sequence, class: "form-control", required: true
+.form-group
+  = f.label :line_col_1, t(:column_1, scope: [:accommodation]), class: "col-sm-3 control-label"
+  .col-sm-8
+    .col-sm-7.result
+      = f.text_field :line_col_1, class: "form-control"
+    .col-sm-5  
+      = render 'shared/options_for_column', object: @col1_options, colId: '1'
+.form-group
+  = f.label :line_col_2, t(:column_2, scope: [:accommodation]), class: "col-sm-3 control-label"
+  .col-sm-8
+    .col-sm-7.result
+      = f.text_field :line_col_2, class: "form-control"
+    .col-sm-5  
+      = render 'shared/options_for_column', object: @col2_options, colId: '2'
+.form-group
+  = f.label :line_col_3, t(:column_3, scope: [:accommodation]), class: "col-sm-3 control-label"
+  .col-sm-8
+    .col-sm-7.result
+      = f.text_field :line_col_3, class: "form-control"
+    .col-sm-5  
+      = render 'shared/options_for_column', object: @col3_options, colId: '3'
+.form-group
+  = f.label :line_col_4, t(:column_4, scope: [:accommodation]), class: "col-sm-3 control-label"
+  .col-sm-8
+    .col-sm-7.result
+      = f.text_field :line_col_4, class: "form-control"
+    .col-sm-5  
+      = render 'shared/options_for_column', object: @col4_options, colId: '4'
+

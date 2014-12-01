@@ -2,11 +2,16 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:show]
-  resources :season_detail_lines, only: [:show, :index]
+  resources :season_detail_lines, only: [:show]
 
   namespace :admin do
     resources :users, only: [:index]
-    resources :season_detail_lines, only: [:create, :update]
+    resources :season_detail_lines do
+      member do
+        get :no_powerpoints
+        get :with_powerpoints
+      end
+    end
   end
 
   root 'static_pages#home'
@@ -15,6 +20,8 @@ Rails.application.routes.draw do
   get '/accommodation', to: 'season_detail_lines#show'
   get '/directions', to: 'static_pages#directions'
   get '/test', to: 'static_pages#test'
+
+  # match "/admin/season_detail_lines/no_powerpoints", to: "admin/season_detail_lines#no_powerpoints", via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

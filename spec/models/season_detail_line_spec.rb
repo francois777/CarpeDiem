@@ -10,7 +10,7 @@ describe SeasonDetailLine do
 
   subject { @season_detail_line }
 
-  it { should respond_to(:season_group_type) }
+  it { should respond_to(:sequence) }
   it { should respond_to(:line_col_1) }
   it { should respond_to(:line_col_2) }
   it { should respond_to(:line_col_3) }

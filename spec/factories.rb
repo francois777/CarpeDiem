@@ -13,8 +13,8 @@ FactoryGirl.define do
   end
 
   factory :season_detail_line do
+    add_attribute :sequence, 1
     season_group_type 0
-    sequence 1
     line_col_1 'TENT SITES'
     line_col_2 'R110'
     line_col_3 'R70 (children 6-12yr=R40)'
