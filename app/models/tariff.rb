@@ -1,7 +1,7 @@
 class Tariff < ActiveRecord::Base
 
   VALID_TARIFF_CATEGORY = /\A[A-J][1-3]\z/
-  TARIFF_CATEGORIES = I18n.t(:tariff_categories, scope: [:activerecord, :attributes, :tariff]).map {|nme| nme[1]}
+  TARIFF_CATEGORIES = I18n.t(:tariff_categories, scope: [:activerecord, :attributes, :tariff])
 
   validates :tariff_category, presence: true,
                               format: { with: VALID_TARIFF_CATEGORY },

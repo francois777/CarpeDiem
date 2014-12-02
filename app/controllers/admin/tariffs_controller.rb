@@ -1,19 +1,45 @@
 class Admin::TariffsController < ApplicationController
 
+  include ApplicationHelper
+
   before_action :set_tariff, only: [:show, :edit, :update]
   before_action :redirect_unless_signed_in
 
   def index
+    @tariffs = Tariff.all
   end
 
   def show
+    puts "Admin::TariffsController#show"
+    puts @tariff.inspect
+    if @tariff.nil?
+      flash[:alert] =  t(:tariff_not_found, scope: [:failure]) 
+      redirect_to admin_tariffs_path  
+    end
+    # puts "Tariff Category:"
+    # @tariff_category = Tariff::TARIFF_CATEGORIES[@tariff.tariff_category.downcase.to_sym]
+    # puts @tariff_category
   end
 
   def new
-    @tariff = Tariff.new
+    if params[:tariff]
+      @tariff = params[:tariff]
+    else
+      @tariff = Tariff.new
+    end
   end
  
   def create
+    puts "Create params: #{params.inspect}"
+    @tariff = Tariff.new(tariff_params)
+    @tariff.tariff = to_base_amount(params[:tariff][:tariff])
+    if @tariff.save
+      flash[:notice] = t(:tariff_created, scope: [:success])
+      redirect_to [:admin, @tariff]
+    else
+      flash[:alert] = t(:tariff_create_failed, scope: [:failure])
+      render :new
+    end  
   end
 
   def edit

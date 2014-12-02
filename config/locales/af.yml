@@ -100,6 +100,9 @@ af:
     new_year:  Nuwejaar
     easter: Paasnaweek
   success:
+    tariff_created: Tarief is suksesvol bygevoeg
   failure:
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
+    tariff_create_failed: Tarief kon nie bygevoeg word nie.
+    tariff_not_found: Tarief nie gevind nie
     

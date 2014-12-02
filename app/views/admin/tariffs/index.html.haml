@@ -1,7 +1,24 @@
 .row
-  %section.tariffs.clearfix
-    %h1
-      'Tariffs'
-    %h2
-      'Index page'
-      
+  .col-md-10.col-xs-10.col-md-offset-1.col-xs-offset-1
+    %section.tariffs.clearfix
+      %h1
+        = t(".all_tariffs")
+      .table-responsive
+        %table.table.tariffs
+          %thead
+            %tr
+              %td
+                %b
+                  = t(".tariff_category")
+              %td
+                %b
+                  = t(".tariff")
+              %td
+                %b
+                  = t(".effective_date")
+              %td
+                %b
+                  = t(".end_date")
+          %tbody
+            = render @tariffs || t(".no_tariffs_found")
+        

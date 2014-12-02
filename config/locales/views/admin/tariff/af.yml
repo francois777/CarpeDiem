@@ -4,6 +4,15 @@ af:
       new: 
         new_tariff: Nuwe Tarief
         create_tariff: Skep Tarief
+      index:
+        all_tariffs: Alle Tariewe
+        no_tariffs_found: Geen tariewe gevind nie  
+        tariff_category: Tarief Kategorie 
+        tariff: Tarief
+        effective_date: Aanvangsdatum
+        end_date: Einddatum
+      show:
+        tariff_details: Tarief Details  
       fields:
         tariff_category: Tarief Kategorie
         tariff: Tarief

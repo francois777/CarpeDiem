@@ -1,0 +1,27 @@
+- provide(:title, t(".tariff_details"))
+
+.row
+  %section.tariffs.clearfix
+    %h1
+      = t(".tariff_details")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for([:admin, @tariff], html: {class: "form-horizontal", role: "form"}) do |f|
+          .form-group
+            = f.label :tariff_category, t(".tariff_category"), class: "col-sm-3 control-label"
+            .col-sm-9
+              = f.text_field :tariff_category, readonly: "", value: Tariff::TARIFF_CATEGORIES[@tariff.tariff_category.downcase.to_sym], class: 'form-control'
+          .form-group
+            = f.label :tariff, t(".tariff"), class: "col-sm-3 control-label"
+            .col-sm-9
+              = f.text_field :tariff, readonly: "", value: to_local_currency(@tariff.tariff), class: "form-control"
+          .form-group
+            = f.label :effective_date, t(".effective_date"), class: "col-sm-3 control-label"
+            .col-sm-9
+              = f.text_field :effective_date, readonly: "", value: display_date(@tariff.effective_date), class: "form-control"
+          .form-group
+            = f.label :end_date, t(".end_date"), class: "col-sm-3 control-label"
+            .col-sm-9
+              = f.text_field :end_date, readonly: "", value: display_date(@tariff.end_date), class: "form-control"
+
+             

@@ -121,6 +121,8 @@ en:
     new_year:  New Year
     easter: Easter Weekend
   success:
+    tariff_created: Tariff created successfully
   failure:
     invalid_email_password: Invalid email/password combination.
-    
+    tariff_create_failed: Tariff create was not successful
+    tariff_not_found: Tariff not found

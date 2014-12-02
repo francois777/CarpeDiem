@@ -1,0 +1,9 @@
+%tr
+  %td
+    = link_to Tariff::TARIFF_CATEGORIES[tariff.tariff_category.downcase.to_sym], [:admin, tariff]
+  %td
+    = to_local_currency(tariff.tariff)  
+  %td
+    = display_date(tariff.effective_date, {format: :short})  
+  %td
+    = display_date(tariff.end_date, {format: :short})      

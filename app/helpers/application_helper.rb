@@ -29,6 +29,7 @@ module ApplicationHelper
   end
 
   def to_base_amount(amount)
+    puts "ApplicationHelper#to_base_amount, amount: #{amount.inspect}"
     return 0 if amount.nil?
     result = (100 * amount.to_f).to_i
   end
@@ -50,6 +51,18 @@ module ApplicationHelper
 
   def to_local_currency(amount)
     return "R #{to_local_amount(amount)}"
+  end
+
+  def display_date(date, options = {})
+    if date == nil
+      ""
+    else  
+      if options[:format] && options[:format] == :short
+        date.strftime("%d/%m/%y")
+      else  
+        date.strftime("%d %B %Y")
+      end  
+    end
   end
 
 end

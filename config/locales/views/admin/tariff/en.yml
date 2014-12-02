@@ -4,6 +4,15 @@ en:
       new: 
         new_tariff: New Tariff
         create_tariff: Create Tariff
+      index:
+        all_tariffs: All Tariffs
+        no_tariffs_found: No tariffs found  
+        tariff_category: Tariff Category 
+        tariff: Tariff
+        effective_date: Effective Date
+        end_date: End Date
+      show:
+        tariff_details: Tariff Details  
       fields:
         tariff_category: Tariff Category 
         tariff: Tariff
