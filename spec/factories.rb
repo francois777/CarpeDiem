@@ -20,4 +20,11 @@ FactoryGirl.define do
     line_col_3 'R70 (children 6-12yr=R40)'
     line_col_4 'Maximum 6 persons per site'
   end
+
+  factory :tariff do
+    tariff_category "B2"
+    tariff 9000
+    effective_date Date.today - 300
+  end
+
 end

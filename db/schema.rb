@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128060240) do
+ActiveRecord::Schema.define(version: 20141201223040) do
 
   create_table "season_detail_lines", force: true do |t|
     t.integer "season_group_type", default: 0
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20141128060240) do
     t.string  "line_col_2",        default: ""
     t.string  "line_col_3",        default: ""
     t.string  "line_col_4",        default: ""
+  end
+
+  create_table "tariffs", force: true do |t|
+    t.string   "tariff_category"
+    t.integer  "tariff"
+    t.datetime "effective_date"
+    t.datetime "end_date"
   end
 
   create_table "users", force: true do |t|
