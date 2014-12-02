@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    attributes:
+      tariff:
+        tariff_categories:
+          a1: Tent Site per Person, Without Power Points, Out of Season
+          a2: Tent Site per Person, Without Power Points, In Season
+          a3: Tent Site per Person, Without Power Points, Promotion
+          b1: Tent Site per Person, With Power Points, Out of Season
+          b2: Tent Site per Person, With Power Points, In Season
+          b3: Tent Site per Person, With Power Points, Promotion
+          c1: Caravan Site per Person, Without Power Points, Out of Season
+          c2: Caravan Site per Person, Without Power Points, In Season
+          c3: Caravan Site per Person, Without Power Points, Promotion
+          d1: Caravan Site per Person, With Power Points, Out of Season
+          d2: Caravan Site per Person, With Power Points, In Season
+          d3: Caravan Site per Person, With Power Points, Promotion
+          e1: Day Visitor per person, Out of Season
+          e2: Day Visitor per person, In Season
+          e3: Day Visitor per person, Promotion
+          f1: Chalet Standard, Out of Season
+          f2: Chalet Standard, In Season
+          f3: Chalet Standard, Promotion
+          g1: Chalet Luxury, Out of Season
+          g2: Chalet Luxury, In Season
+          g3: Chalet Luxury, Promotion
+          h1: King and Warrior Camps, per person, per weekend
+          h2: Group Tariff Budget, per person, per weekend
+          h3: Group Tariff Meals Included, per person, per weekend

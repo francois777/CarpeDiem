@@ -340,6 +340,30 @@ section.font-test {
     }
   }
 
+  section.tariffs {
+    margin: 0.2em;
+    .row { margin: 0; }
+    h1 {
+      margin: 0.5em 0.2em;
+      font-size: 2em;
+    }
+    form {
+      font-size: 0.9em;
+      select {
+        font-size: 0.6em;
+      }
+    }
+  }
+
+  // #tariff_tariff_category {
+  //   padding: 6px 0;
+  //   height: 30px;
+  //   option {
+  //     font-size: 1em;
+  //     padding: 10px;
+  //   }
+  // }
+
   section.accommodation {
     margin: 0.2em;
     .row { margin: 0; }
@@ -553,6 +577,22 @@ section.font-test {
   section.facilities {
     margin: 0 1em;
   }
+
+  section.tariffs {
+    margin: 0.2em;
+    .row { margin: 0; }
+    h1 {
+      margin: 0.5em 0.2em;
+      font-size: 2em;
+    }
+    form {
+      font-size: 1em;
+      select {
+        font-size: 0.8em;
+      }
+    }
+  }
+
 }
 
 /* Small devices, Tablets */
@@ -671,6 +711,21 @@ section.font-test {
       span {
         // padding: 1em;
         font-size: 0.8em;
+      }
+    }
+  }
+
+  section.tariffs {
+    margin: 0.4em;
+    .row { margin: 0; }
+    h1 {
+      margin: 0.5em 0.2em;
+      font-size: 2.2em;
+    }
+    form {
+      font-size: 1em;
+      select {
+        font-size: 1em;
       }
     }
   }

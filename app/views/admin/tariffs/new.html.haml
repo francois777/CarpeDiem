@@ -1,0 +1,12 @@
+- provide(:title, t(".new_tariff"))
+.row
+  %section.tariffs.clearfix
+    %h1
+      = t(".create_tariff")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for(@tariff, url: new_admin_tariff_path, html: {class: "form-horizontal", role: "form"}) do |f|
+          = render 'fields', f: f
+          .centered
+            .button.btn
+              = f.submit t(".create_tariff"), class: "btn btn-large btn-primary"        

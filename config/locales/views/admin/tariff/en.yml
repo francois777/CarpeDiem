@@ -1,0 +1,12 @@
+en:
+  admin:
+    tariffs:
+      new: 
+        new_tariff: New Tariff
+        create_tariff: Create Tariff
+      fields:
+        tariff_category: Tariff Category 
+        tariff: Tariff
+        effective_date: Effective Date
+        end_date: End Date
+

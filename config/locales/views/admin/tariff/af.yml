@@ -1,0 +1,11 @@
+af:
+  admin:
+    tariffs:
+      new: 
+        new_tariff: Nuwe Tarief
+        create_tariff: Skep Tarief
+      fields:
+        tariff_category: Tarief Kategorie
+        tariff: Tarief
+        effective_date: Aanvangsdatum
+        end_date: Einddatum        
