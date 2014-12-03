@@ -37,7 +37,7 @@ feature "Tariff pages" do
       expect( find(:css, "input#tariff_tariff_category").value ).to eq('Chalet Luxury, Promotion')
       expect( find(:css, "input#tariff_tariff").value ).to eq('R 55.90')
       expect( find(:css, "input#tariff_effective_date").value ).to eq('31 July 2015')
-      expect( find(:css, "input#tariff_end_date").value ).to eq('01 March 2015')
+      expect( find(:css, "input#tariff_end_date").value ).to eq('01 March 2016')
     end
 
     scenario "Ensure currency conversions are correct" do
