@@ -1,5 +1,7 @@
 en:
   admin:
+    menu:
+      tariffs: Tariffs
     tariffs:
       new: 
         new_tariff: New Tariff
@@ -13,6 +15,10 @@ en:
         end_date: End Date
       show:
         tariff_details: Tariff Details  
+        tariff_category: Tariff Category 
+        tariff: Tariff
+        effective_date: Effective Date
+        end_date: End Date
       fields:
         tariff_category: Tariff Category 
         tariff: Tariff

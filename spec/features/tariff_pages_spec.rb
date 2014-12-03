@@ -19,14 +19,6 @@ feature "Tariff pages" do
       options['Caravan Site per Person, Without Power Points, Out of Season'] = 'C1'
       options['Day Visitor per person, Out of Season'] = 'E1'
       options['Group Tariff Meals Included, per person, per weekend'] = 'H3'
-      # options.each do |option|
-      #   puts "option = #{option[1]}"
-      #   val = "option value=\"#{option[1]}\""
-      #   puts "val:"
-      #   puts val
-      #   expect(find(val).text).to eq(option[0])
-      # end
-
       expect(page).to have_text('Tariff Category')
       expect(page).to have_text('Effective Date')
       expect(page).to have_text('End Date')

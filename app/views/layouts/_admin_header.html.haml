@@ -1,0 +1,9 @@
+%section.admin-header
+  %nav.navbar.navbar-default{:role => "navigation"}
+    .container-fluid
+      .navbar-header.navbar-left.admin
+        = link_to t('tariffs', scope: [:admin,'menu']), admin_tariffs_url
+      %p.navbar-text.navbar-right
+        Signed in as 
+        = current_user.full_name
+

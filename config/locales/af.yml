@@ -5,7 +5,7 @@ af:
     site_name: "Carpe Diem"
     owners: Jacques en Henriëtte Kotzé
   menu:
-    about_us: Omtrent ons  
+    about_us: Wie is ons?
     accommodation: Akkomodasie
     activities: Aktiwiteite
     bookings: Besprekings
@@ -14,12 +14,12 @@ af:
     home: Tuisblad
     make_reservation: Plaas bespreking
     menu: Spyskaart
-    things_to_see: Wat gaan jy sien?
+    things_to_see: Iets om te sien
     tariffs: Tariewe
     visit_us: Besoek ons
     where_to_find_us: Waar is ons?
-    sign_in: Teken in
-    sign_out: Teken af
+    signin: Teken in
+    signout: Teken af
   references:
     ps_118v24: Ps 118:24
   articles:

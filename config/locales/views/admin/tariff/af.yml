@@ -1,5 +1,7 @@
 af:
   admin:
+    menu:
+      tariffs: Tariffs
     tariffs:
       new: 
         new_tariff: Nuwe Tarief
@@ -13,6 +15,10 @@ af:
         end_date: Einddatum
       show:
         tariff_details: Tarief Details  
+        tariff_category: Tarief Kategorie
+        tariff: Tarief
+        effective_date: Aanvangsdatum
+        end_date: Einddatum        
       fields:
         tariff_category: Tarief Kategorie
         tariff: Tarief

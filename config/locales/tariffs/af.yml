@@ -3,27 +3,27 @@ af:
     attributes:
       tariff:
         tariff_categories:
-          a1: Tent Site per Person, Without Power Points, Out of Season
-          a2: Tent Site per Person, Without Power Points, In Season
-          a3: Tent Site per Person, Without Power Points, Promotion
-          b1: Tent Site per Person, With Power Points, Out of Season
-          b2: Tent Site per Person, With Power Points, In Season
-          b3: Tent Site per Person, With Power Points, Promotion
-          c1: Caravan Site per Person, Without Power Points, Out of Season
-          c2: Caravan Site per Person, Without Power Points, In Season
-          c3: Caravan Site per Person, Without Power Points, Promotion
-          d1: Caravan Site per Person, With Power Points, Out of Season
-          d2: Caravan Site per Person, With Power Points, In Season
-          d3: Caravan Site per Person, With Power Points, Promotion
-          e1: Day Visitor per person, Out of Season
-          e2: Day Visitor per person, In Season
-          e3: Day Visitor per person, Promotion
-          f1: Chalet Standard, Out of Season
-          f2: Chalet Standard, In Season
-          f3: Chalet Standard, Promotion
-          g1: Chalet Luxury, Out of Season
-          g2: Chalet Luxury, In Season
-          g3: Chalet Luxury, Promotion
-          h1: King and Warrior Camps, per person, per weekend
-          h2: Group Tariff Budget, per person, per weekend
-          h3: Group Tariff Meals Included, per person, per weekend
+          a1: Tent Staanplek per persoon, Sonder Kragpunte, Buite Seisoen
+          a2: Tent Staanplek per persoon, Sonder Kragpunte, In Seisoen
+          a3: Tent Staanplek per persoon, Sonder Kragpunte, Promosie
+          b1: Tent Staanplek per persoon, With Power Points, Buite Seisoen
+          b2: Tent Staanplek per persoon, With Power Points, In Seisoen
+          b3: Tent Staanplek per persoon, With Power Points, Promosie
+          c1: Caravan Staanplek per persoon, Sonder Kragpunte, Buite Seisoen
+          c2: Caravan Staanplek per persoon, Sonder Kragpunte, In Seisoen
+          c3: Caravan Staanplek per persoon, Sonder Kragpunte, Promosie
+          d1: Caravan Staanplek per persoon, With Power Points, Buite Seisoen
+          d2: Caravan Staanplek per persoon, With Power Points, In Seisoen
+          d3: Caravan Staanplek per persoon, With Power Points, Promosie
+          e1: Dag besoeker per persoon, Buite Seisoen
+          e2: Dag besoeker per persoon, In Seisoen
+          e3: Dag besoeker per persoon, Promosie
+          f1: Chalet Standard, Buite Seisoen
+          f2: Chalet Standard, In Seisoen
+          f3: Chalet Standard, Promosie
+          g1: Chalet Luxury, Buite Seisoen
+          g2: Chalet Luxury, In Seisoen
+          g3: Chalet Luxury, Promosie
+          h1: Koning en Kryger Kampe, per persoon, per naweek
+          h2: Groep Tarief Besparing, per persoon, per naweek
+          h3: Groep Tarief etes ingesluit, per persoon, per naweek
