@@ -23,5 +23,12 @@
             = f.label :end_date, t(".end_date"), class: "col-sm-3 control-label"
             .col-sm-9
               = f.text_field :end_date, readonly: "", value: display_date(@tariff.end_date), class: "form-control"
+    .row
+      .actions
+        -if current_user && current_user.admin?
+          %button.btn.btn-info
+            = link_to t(".return_to_tariff_list"), admin_tariffs_url
+          %button.btn.btn-info
+            = link_to t(".edit"), edit_admin_tariff_path(@tariff)
 
              

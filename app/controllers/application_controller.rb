@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   
-  before_action :set_locale
+  before_action :set_locale, :define_settings
    
   def set_locale
     if request.env['HTTP_ACCEPT_LANGUAGE']
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
       I18n.locale = extract_locale_from_accept_language_header # unless Rails.env = "test"
       logger.debug "* Locale set to '#{I18n.locale}'"
     end
+  end
+
+  def define_settings
+    @settings ||= AppConfig.instance
   end
 
   private

@@ -7,7 +7,8 @@ en:
         new_tariff: New Tariff
         create_tariff: Create Tariff
       index:
-        all_tariffs: All Tariffs
+        all_tariffs: Tariff List
+        add_tariff: Add Tariff
         no_tariffs_found: No tariffs found  
         tariff_category: Tariff Category 
         tariff: Tariff
@@ -19,6 +20,8 @@ en:
         tariff: Tariff
         effective_date: Effective Date
         end_date: End Date
+        return_to_tariff_list: Return to Tariff List
+        edit: Edit
       fields:
         tariff_category: Tariff Category 
         tariff: Tariff

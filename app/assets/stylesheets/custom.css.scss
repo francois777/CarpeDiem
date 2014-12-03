@@ -573,6 +573,15 @@ section.font-test {
     .admin { background-color: black; }
   }
 
+  .actions {
+    padding-top: 10px;
+    text-align: center;
+    a {
+      color: white;
+      font-size: 1.1em;
+    }
+  }
+
 }
 
 /* Extra small devices, Phones */

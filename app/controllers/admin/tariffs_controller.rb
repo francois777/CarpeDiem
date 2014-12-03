@@ -10,15 +10,10 @@ class Admin::TariffsController < ApplicationController
   end
 
   def show
-    puts "Admin::TariffsController#show"
-    puts @tariff.inspect
     if @tariff.nil?
       flash[:alert] =  t(:tariff_not_found, scope: [:failure]) 
       redirect_to admin_tariffs_path  
     end
-    # puts "Tariff Category:"
-    # @tariff_category = Tariff::TARIFF_CATEGORIES[@tariff.tariff_category.downcase.to_sym]
-    # puts @tariff_category
   end
 
   def new
@@ -43,6 +38,10 @@ class Admin::TariffsController < ApplicationController
   end
 
   def edit
+    unless (current_user && current_user.admin?)
+      flash[:alert] = t(:update_not_allowed, scope: [:failure])
+      redirect_to root_path
+    end
   end
 
   def destroy

@@ -2,6 +2,8 @@ require 'spec_helper.rb'
 
 feature "Application pages" do
 
+  include FactoryGirl::Syntax::Methods
+
   context "The application is language-sensitive" do
 
     scenario "detect that browser language has changed and switch to that language" do
@@ -19,19 +21,34 @@ feature "Application pages" do
 
     scenario "Visiting user looks at menu and footer" do
       visit '/'
-      expect(page).to have_css('a', 'Home')
-      expect(page).to have_css('a', 'Accomodation')
-      expect(page).to have_css('a', 'Activities')
-      expect(page).to have_css('a', 'Facilities')
-      expect(page).to have_css('a', 'Menu')
-      expect(page).to have_css('a', 'Visit us')
-      expect(page).to have_css('a', 'Bookings')
-      expect(page).to have_css('a', 'Tariffs')
-      expect(page).to have_css('a', 'Make reservation')
-      expect(page).to have_css('a', 'What will you see?')
-      expect(page).to have_css('a', 'About us')
-      expect(page).to have_css('a', 'Contact us')
-      expect(page).to have_css('a', 'Where are we?')
+      expect(page).to have_link('Home')
+      expect(page).to have_link('Accommodation')
+      expect(page).to have_link('Activities')
+      expect(page).to have_link('Facilities')
+      expect(page).to have_link('Menu')
+      expect(page).to have_link('Visit us')
+      expect(page).to have_link('Reservations')
+      expect(page).to have_link('Tariffs')
+      expect(page).to have_link('Make reservation')
+      expect(page).to have_link('Something to see')
+      expect(page).to have_link('About us')
+      expect(page).to have_link('Contact us')
+      expect(page).to have_link('Where are we?')
+      expect(page).to have_link('Sign in')
+      expect(page).to have_text('Copyright 2014 Francois van der Hoven')
+    end
+
+    scenario "Signed in user looks at menu and footer" do
+      admin = create(:user)
+      visit root_path
+      click_link "Sign in"
+      fill_in "Email", with: admin.email
+      fill_in "Password", with: "foobar"
+      click_button "Sign in"
+      expect(page).to have_link('Tariffs')
+      expect(page).to have_text(admin.full_name)
+      expect(page).to have_link('Something to see')
+      expect(page).to have_link('About us')
     end
   end
 

@@ -21,4 +21,9 @@
                   = t(".end_date")
           %tbody
             = render @tariffs || t(".no_tariffs_found")
+      .row
+        .actions
+          -if current_user && current_user.admin?
+            %button.btn.btn-info
+              = link_to t(".add_tariff"), new_admin_tariff_url
       
