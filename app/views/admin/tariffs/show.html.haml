@@ -27,7 +27,7 @@
       .actions
         -if current_user && current_user.admin?
           %button.btn.btn-info
-            = link_to t(".return_to_tariff_list"), admin_tariffs_url
+            = link_to t(".return_to_tariff_list"), admin_tariffs_path
           %button.btn.btn-info
             = link_to t(".edit"), edit_admin_tariff_path(@tariff)
 

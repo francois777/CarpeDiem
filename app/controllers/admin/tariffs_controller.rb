@@ -25,7 +25,6 @@ class Admin::TariffsController < ApplicationController
   end
  
   def create
-    puts "Create params: #{params.inspect}"
     @tariff = Tariff.new(tariff_params)
     @tariff.tariff = to_base_amount(params[:tariff][:tariff])
     if @tariff.save
@@ -59,7 +58,6 @@ class Admin::TariffsController < ApplicationController
 
     def redirect_unless_signed_in
       unless signed_in? 
-        puts "Visiting ADmin Tariffs - not signed in"
         redirect_to root_path, :status => 302 
       end  
     end

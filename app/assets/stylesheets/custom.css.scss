@@ -367,7 +367,7 @@ section.font-test {
       }
       tbody {
         color: $dark-brown;
-        tr:nth-child(even) { background-image: image-url('bg-texture-light.png'); }
+        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
       }
       tr:first-child { 
         background: transparent; 
@@ -552,13 +552,15 @@ section.font-test {
       background-color: black; 
       color: white;
       font-size: 1em;
+      font-family: SofiaProLight;
       margin: 0;
       padding: 0;
-      border: 0;    
+      border-width: 0;
+      border-radius: 0;    
       a {
         display: inline-block;
         padding: 0.4em 0.8em;
-        background-color: #444;
+        background-color: #393939;
         margin-left: 2em;
         margin-top: 0.4em;
         border-radius: 6px;

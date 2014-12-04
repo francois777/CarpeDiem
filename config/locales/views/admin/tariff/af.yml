@@ -7,7 +7,7 @@ af:
         new_tariff: Nuwe Tarief
         create_tariff: Skep Tarief
       index:
-        all_tariffs: Tarief Lys
+        tariff_list: Tarief Lys
         add_tariff: Voef Tarief By
         no_tariffs_found: Geen tariewe gevind nie  
         tariff_category: Tarief Kategorie 
@@ -22,6 +22,8 @@ af:
         end_date: Einddatum        
         return_to_tariff_list: Return to Tariff List
         edit: Edit
+      edit:
+        update_tariff: Update Tariff  
       fields:
         tariff_category: Tarief Kategorie
         tariff: Tarief

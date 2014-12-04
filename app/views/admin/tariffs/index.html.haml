@@ -1,8 +1,9 @@
+- provide(:title, t(".tariff_list"))
 .row
   .col-xs-12.col-md-12
     %section.tariffs.clearfix
       %h1
-        = t(".all_tariffs")
+        = t(".tariff_list")
       .table-responsive
         %table.table.tariffs
           %thead
@@ -25,5 +26,5 @@
         .actions
           -if current_user && current_user.admin?
             %button.btn.btn-info
-              = link_to t(".add_tariff"), new_admin_tariff_url
+              = link_to t(".add_tariff"), new_admin_tariff_path
       

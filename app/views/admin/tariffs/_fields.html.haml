@@ -7,7 +7,7 @@
 .form-group
   = f.label :tariff, t(".tariff"), class: "col-sm-3 control-label"
   .col-sm-9
-    = f.text_field :tariff, class: "form-control", required: true
+    = f.text_field :tariff, value: to_local_amount(@tariff.tariff), class: "form-control", required: true
 .form-group
   = f.label :effective_date, t(".effective_date"), class: "col-sm-3 control-label"
   .col-sm-9

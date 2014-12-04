@@ -1,20 +1,23 @@
 require 'spec_helper'
+# require 'sessions_helper'
 
 feature "Tariff pages" do
 
   include FactoryGirl::Syntax::Methods
   include ApplicationHelper
+  include SessionsHelper
 
   context "Admin user create new tariff" do
 
     before do
-      @admin = create(:user)
+      @admin = create(:admin)
+      login @admin
     end
 
     scenario "Create new tariff" do
-      sign_in(@admin)
       visit new_admin_tariff_path
       expect(page).to have_title('New Tariff')
+
       expect(page).to have_selector('h1', text: "Create Tariff")
       options = {}
       options['Caravan Site per Person, Without Power Points, Out of Season'] = 'C1'
@@ -23,7 +26,7 @@ feature "Tariff pages" do
       expect(page).to have_text('Tariff Category')
       expect(page).to have_text('Effective Date')
       expect(page).to have_text('End Date')
-      expect(page).to have_selector('input[type=submit][value="Create Tariff"]')
+      expect(page).to have_selector(:button, 'Create Tariff')
 
       select "Chalet Luxury, Promotion", from: "Tariff Category"
       fill_in "Tariff", with: "55.9"
@@ -38,6 +41,55 @@ feature "Tariff pages" do
       expect( find(:css, "input#tariff_tariff").value ).to eq('R 55.90')
       expect( find(:css, "input#tariff_effective_date").value ).to eq('31 July 2015')
       expect( find(:css, "input#tariff_end_date").value ).to eq('01 March 2016')
+
+      expect(page).to have_selector(:link_or_button, 'Edit')
+      expect(page).to have_selector(:link_or_button, 'Return to Tariff List')
+    end
+
+    scenario "Detect items on Tariff List" do
+      catc1 = create(:tariff, tariff_category: 'C1', tariff: 9999, 
+                              effective_date: Date.new(2015,02,28),
+                              end_date: Date.new(2015,12,31))
+      catc2 = create(:tariff, tariff_category: 'C2', tariff: 8800, 
+                              effective_date: Date.new(2015,03,01),
+                              end_date: Date.new(2015,11,30))
+      visit admin_tariffs_path
+      expect(page).to have_title('Tariff List')
+      expect(page).to have_selector('h1', text: "Tariff List")
+      expect(page).to have_text('Tariff Category')
+      expect(page).to have_text('Tariff')
+      expect(page).to have_text('Effective Date')
+      expect(page).to have_text('End Date')
+      expect(page).to have_text('Caravan Site per Person, Without Power Points, Out of Season')
+      expect(page).to have_text('Caravan Site per Person, Without Power Points, In Season')
+      expect(page).to have_text('R 99.99')
+      expect(page).to have_text(String.new('28/02/2015'))
+      expect(page).to have_text(String.new('31/12/2015'))
+      expect(page).to have_text('R 88.00')
+      expect(page).to have_text(String.new('01/03/2015'))
+      expect(page).to have_text(String.new('30/11/2015'))
+      expect(page).to have_selector(:link_or_button, 'Add Tariff')
+    end
+
+    scenario "Update existing tariff" do
+      cat_e1 = create(:tariff, tariff_category: 'E1', 
+                               tariff: 9999, 
+                               effective_date: Date.new(2015,02,28),
+                               end_date: Date.new(2015,12,31))
+      visit edit_admin_tariff_path(cat_e1)
+      expect(page).to have_title('Update Tariff')
+      expect(page).to have_selector('h1', text: "Update Tariff")
+      expect(page).to have_text('Tariff Category')
+      expect(page).to have_text('Tariff')
+      expect(page).to have_text('Effective Date')
+      expect(page).to have_text('End Date')
+      expect( find(:css, "input#tariff_tariff").value ).to eq('99.99')
+      expect( find(:css, "input#tariff_effective_date").value ).to eq(String.new('2015-02-28'))
+      expect( find(:css, "input#tariff_end_date").value ).to eq(String.new('2015-12-31'))
+      expect(page).to have_selector('select#tariff_tariff_category') do |content|
+        expect(content).to have_selector(:option, value = 'C1')
+      end
+      expect(page).to have_selector(:link_or_button, 'Update Tariff')
     end
 
     scenario "Ensure currency conversions are correct" do
@@ -47,4 +99,12 @@ feature "Tariff pages" do
     end
 
   end
+
+  def login(user)
+    visit signin_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign in"
+  end
+
 end

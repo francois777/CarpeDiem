@@ -25,6 +25,7 @@ FactoryGirl.define do
     tariff_category "B2"
     tariff 9000
     effective_date Date.today - 300
+    end_date Date.today + 300
   end
 
 end

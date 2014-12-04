@@ -25,7 +25,7 @@
               %li 
                 = link_to t('activities', scope: ['menu']), root_path
               %li 
-                = link_to t('facilities', scope: ['menu']), facilities_url
+                = link_to t('facilities', scope: ['menu']), facilities_path
               %li
                 = link_to t('menu', scope: ['menu']), root_path
           %li.dropdown
@@ -48,7 +48,7 @@
               %li 
                 = link_to t('contact_us', scope: ['menu']), root_path
               %li 
-                = link_to t('where_to_find_us', scope: ['menu']), directions_url
+                = link_to t('where_to_find_us', scope: ['menu']), directions_path
           - if signed_in?
             %li
               = link_to t(:signout, scope: [:menu]), signout_path, method: "delete"
