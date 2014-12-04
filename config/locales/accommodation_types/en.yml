@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    attributes:
+      accommodation_type:
+        types:
+          a: Tent Site Without Power Points
+          b: Tent Site With Power Points
+          c: Caravan Site Without Power Points
+          d: Caravan Site With Power Points
+          e: Day Visitors
+          f: Basic Chalet
+          g: Standard Chalet
+          h: Luxury Chalet

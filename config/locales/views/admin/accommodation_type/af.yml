@@ -1,0 +1,37 @@
+af:
+  admin:
+    menu:
+      accommodation_types: Accommodation Types
+    accommodation_types:
+      new: 
+        new_accommodation_type: New Accommodation Type
+        create_accommodation_type: Create Accommodation Type
+      index:
+        accommodation_type_list: Accommodation Type List
+        add_accommodation_type: Add Accommodation Type
+        no_accommodation_types_found: No Accommodation Types found  
+        accom_type: Accommodation Type 
+        description: Description
+        show: Show this accommodation type
+        show_normal_price: Show normal prices 
+        show_in_season_price: Show in-season prices
+        show_promotion: Show promotional prices
+      show:
+        accommodation_type_details: Accommodation Type Details  
+        accom_type: Accommodation Type 
+        description: Description
+        show: Show this accommodation type
+        show_normal_price: Show normal prices 
+        show_in_season_price: Show in-season prices
+        show_promotion: Show promotional prices
+        return_to_accommodation_type_list: Return to Accommodation Type List
+        edit: Edit
+      edit:
+        update_accommodation_type: Update Accommodation Type
+      fields:
+        accom_type: Accommodation Type 
+        description: Description
+        show: Show this accommodation type
+        show_normal_price: Show normal prices 
+        show_in_season_price: Show in-season prices
+        show_promotion: Show promotional prices

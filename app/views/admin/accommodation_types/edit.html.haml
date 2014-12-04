@@ -1,0 +1,13 @@
+- provide(:title, t(".update_accommodation_type"))
+.row
+  %section.accommodation_types
+    %h1 
+      = t(".update_accommodation_type")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for([:admin, @accommodation_type], html: {class: "form-horizontal", role: "form"}) do |f|
+          = render 'fields', f: f
+          .centered
+            .button.btn
+              = f.submit t(".update_accommodation_type"), class: "btn btn-large btn-primary"        
+        

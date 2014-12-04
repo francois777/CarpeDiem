@@ -375,6 +375,59 @@ section.font-test {
     }
   }
 
+ section.accommodation_types {
+    margin: 0.2em;
+    .row { margin: 0; }
+    h1 {
+      margin: 0.5em 0.2em;
+      font-size: 2em;
+    }
+    form {
+      font-size: 0.9em;
+      select {
+        font-size: 0.6em;
+      }
+    }
+    table {
+      width: 100%;
+
+      th, td {
+        font-family: arial;
+        font-size: 0.6em;
+        width: 16%;
+      }
+      td { font-family: arial; }
+      tr {
+        width: 100%;
+        line-height: 1.2em;
+      }
+      tbody {
+        color: $dark-brown;
+        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+      }
+      tr:first-child { 
+        background: transparent; 
+      }
+    }
+  }
+
+  section.accommodation_types {
+    input#accommodation_type_show {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 50px;
+
+      label {
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+      }
+    }
+
+  }
+
   section.accommodation {
     margin: 0.2em;
     .row { margin: 0; }
@@ -547,21 +600,18 @@ section.font-test {
   section.admin-header {
     height: 50px;
     width: 100%;
+    background-color: black; 
+    font-family: Arial;
     // background-image: image-url('bg-nav-dark.png');
-    nav.navbar.navbar-default {
-      background-color: black; 
+    ul.nav.nav-pills {
       color: white;
+      padding-left: 2em;
       font-size: 1em;
-      font-family: SofiaProLight;
-      margin: 0;
-      padding: 0;
-      border-width: 0;
-      border-radius: 0;    
+      font-family: Arial;
+      float: left;
       a {
-        display: inline-block;
         padding: 0.4em 0.8em;
-        background-color: #393939;
-        margin-left: 2em;
+        margin-left: 1em;
         margin-top: 0.4em;
         border-radius: 6px;
       }
@@ -569,7 +619,10 @@ section.font-test {
 
     p.navbar-text {
       padding: 0.4em;
+      padding-right: 2em;
       margin: 0.2em;
+      font-family: Arial, sans-serif;
+      font-size: 1em;
     }
     p, a { color: white; }
     .admin { background-color: black; }

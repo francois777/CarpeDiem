@@ -1,0 +1,13 @@
+af:
+  activerecord:
+    attributes:
+      accommodation_type:
+        types:
+          a: Tent Staanplek Sonder Kragpunte
+          b: Tent Staanplek Met Kragpunte
+          c: Karavaan Staanplek Sonder Kragpunte
+          d: Karavaan Staanplek Met Kragpunte
+          e: Dag Besoekers
+          f: Basiese Chalet
+          g: Standaard Chalet
+          h: Luukse Chalet

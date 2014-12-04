@@ -1,0 +1,26 @@
+= render 'shared/error_messages', object: f.object
+
+.form-group
+  = f.label :accom_type, t(".accom_type"), class: "col-sm-5 control-label"
+  .col-sm-7
+    = f.text_field :accom_type, class: "form-control", required: true
+.form-group
+  = f.label :description, t(".description"), class: "col-sm-5 control-label"
+  .col-sm-7
+    = f.text_field :description, class: "form-control", required: true
+.form-group
+  = f.label :show, t(".show"), class: "col-sm-5 control-label"
+  .col-sm-5
+    = f.check_box :show
+.form-group
+  = f.label :show_normal_price, t(".show_normal_price"), class: "col-sm-5 control-label"
+  .col-sm-7
+    = f.check_box :show_normal_price
+.form-group
+  = f.label :show_in_season_price, t(".show_in_season_price"), class: "col-sm-5 control-label"
+  .col-sm-7
+    = f.check_box :show_in_season_price
+.form-group
+  = f.label :show_promotion, t(".show_promotion"), class: "col-sm-5 control-label"
+  .col-sm-7
+    = f.check_box :show_promotion

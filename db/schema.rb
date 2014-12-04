@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201223040) do
+ActiveRecord::Schema.define(version: 20141204021706) do
+
+  create_table "accommodation_types", force: true do |t|
+    t.string  "accom_type"
+    t.string  "description",          default: ""
+    t.boolean "show",                 default: false
+    t.boolean "show_normal_price",    default: false
+    t.boolean "show_in_season_price", default: false
+    t.boolean "show_promotion",       default: false
+  end
 
   create_table "season_detail_lines", force: true do |t|
     t.integer "season_group_type", default: 0

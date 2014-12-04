@@ -1,0 +1,13 @@
+%tr
+  %td
+    = accommodation_type.accom_type
+  %td
+    = link_to accommodation_type.description, [:admin, accommodation_type]
+  %td
+    = accommodation_type.show ? 'Yes' : 'No'  
+  %td
+    = accommodation_type.show_normal_price ? 'Yes' : 'No'  
+  %td
+    = accommodation_type.show_in_season_price ? 'Yes' : 'No'  
+  %td
+    = accommodation_type.show_promotion ? 'Yes' : 'No'  

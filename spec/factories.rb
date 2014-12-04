@@ -21,6 +21,15 @@ FactoryGirl.define do
     line_col_4 'Maximum 6 persons per site'
   end
 
+  factory :accommodation_type do
+    accom_type 'A'
+    description 'Tent Site Without Power'
+    show true
+    show_normal_price true
+    show_in_season_price true
+    show_promotion true
+  end
+
   factory :tariff do
     tariff_category "B2"
     tariff 9000
@@ -29,3 +38,5 @@ FactoryGirl.define do
   end
 
 end
+
+
