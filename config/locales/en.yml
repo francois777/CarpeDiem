@@ -91,7 +91,7 @@ en:
     col_4:  
       site_limit: Maximum 6 persons per stand
       friday_to_sunday: 'In: Fridays: 11H00,  Out: Sundays: 17H30'
-      day_visitor_times: 'In: 08H00,  Out: 17H30'
+      day_visitor_times: "In: %{in_time},  Out: %{out_time}"
       chalet_times: 'In: 11H00,  Out: 10H00  (may remain on premises until 17H30)'
   accommodation_period_indicators:
     from: from

@@ -10,5 +10,7 @@ class AppConfig
     @designer_email = 'francoisvanderhoven@gmail.com'
     @child_discount = 0.3
     @child_age_range = (6..12)
+    @day_visitor_in_time = '08H00'
+    @day_visitor_out_time = '17H30'
   end
 end
