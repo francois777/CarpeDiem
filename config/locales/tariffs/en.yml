@@ -18,12 +18,15 @@ en:
           e1: Day Visitor per person, Out of Season
           e2: Day Visitor per person, In Season
           e3: Day Visitor per person, Promotion
-          f1: Chalet Standard, Out of Season
-          f2: Chalet Standard, In Season
-          f3: Chalet Standard, Promotion
-          g1: Chalet Luxury, Out of Season
-          g2: Chalet Luxury, In Season
-          g3: Chalet Luxury, Promotion
-          h1: King and Warrior Camps, per person, per weekend
-          h2: Group Tariff Budget, per person, per weekend
-          h3: Group Tariff Meals Included, per person, per weekend
+          f1: Chalet Basic, Out of Season
+          f2: Chalet Basic, In Season
+          f3: Chalet Basic, Promotion
+          g1: Chalet Standard, Out of Season
+          g2: Chalet Standard, In Season
+          g3: Chalet Standard, Promotion
+          h1: Chalet Luxury, Out of Season
+          h2: Chalet Luxury, In Season
+          h3: Chalet Luxury, Promotion
+          i1: King and Warrior Camps, per person, per weekend
+          i2: Group Tariff Budget, per person, per weekend
+          i3: Group Tariff Meals Included, per person, per weekend
