@@ -1,6 +1,6 @@
 class AccommodationType < ActiveRecord::Base
 
-  VALID_ACCOMMODATION_TYPE = /\A[A-H]\z/
+  VALID_ACCOMMODATION_TYPE = /\A[A-K]\z/
   ACCOMMODATION_TYPES = I18n.t(:types, scope: [:activerecord, :attributes, :accommodation_types])
 
   has_many :tariffs
