@@ -343,9 +343,15 @@ section.font-test {
   section.tariffs {
     margin: 0.2em;
     .row { margin: 0; }
-    h1 {
-      margin: 0.5em 0.2em;
-      font-size: 2em;
+    header {
+      margin-bottom: 1em;
+      h1 {
+        margin: 0.5em 0.2em;
+        font-size: 2em;
+      }
+      h3 {
+
+      }
     }
     form {
       font-size: 0.9em;
@@ -409,12 +415,20 @@ section.font-test {
       th, td {
         font-family: arial;
         font-size: 0.6em;
-        width: 16%;
       }
+
       td { font-family: arial; }
-      th:first-child, th:last-child, td:first-child, td:last-child {
-        width: 10%;
+
+      th:nth-child(1) td:nth-child(1), th:nth-child(7) td:nth-child(7) {
+        with: 10%;
       }
+      th:nth-child(2) td:nth-child(2) {
+        with: 26%;
+      }
+      th:nth-child(3) td:nth-child(3), th:nth-child(4) td:nth-child(4), th:nth-child(5) td:nth-child(5), th:nth-child(6) td:nth-child(6)  {
+        with: 12%;
+      }
+
       tr {
         width: 100%;
         line-height: 1.2em;

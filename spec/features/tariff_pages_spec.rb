@@ -19,7 +19,7 @@ feature "Tariff pages" do
       visit new_admin_accommodation_type_tariff_path(@accommodation_type)
       expect(page).to have_title('New Tariff')
 
-      expect(page).to have_selector('h1', text: "Create Tariff")
+      expect(page).to have_selector('h1', text: "New Tariff")
       options = {}
       options['Caravan Site per Person, Without Power Points, Out of Season'] = 'C1'
       options['Day Visitor per person, Out of Season'] = 'E1'

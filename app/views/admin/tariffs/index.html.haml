@@ -2,8 +2,11 @@
 .row
   .col-xs-12.col-md-12
     %section.tariffs.clearfix
-      %h1
-        = t(".tariff_list")
+      %header
+        %h1
+          = t(".tariff_list")
+        %h3
+          = @accommodation_type.description
       .table-responsive
         %table.table.tariffs
           %thead
