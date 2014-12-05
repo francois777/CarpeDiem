@@ -2,11 +2,10 @@ namespace :admin do
   desc "Create an admin user"
 
   task define_admin_user: :environment do
-    if User.all.count == 0
+    if User.all.count > 0
+      # User.delete_all
       puts "User found. New user not loaded"
     else
-      User.delete_all
-
       puts "Loading users.."
       admin_user = User.create( first_name: "Francois",
                                 last_name: "van der Hoven",

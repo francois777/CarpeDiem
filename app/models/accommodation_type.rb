@@ -11,4 +11,8 @@ class AccommodationType < ActiveRecord::Base
 
   validates :description, presence: true
 
+  scope :promotions, -> { where('show_promotion = ?', true) }
+  scope :in_season_prices, -> { where('in_season_price = ?', true) }
+  scope :normal_prices, -> { where('normal_price = ?', true) }
+
 end

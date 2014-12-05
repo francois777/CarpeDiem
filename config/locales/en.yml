@@ -14,7 +14,7 @@ en:
     home: Home
     make_reservation: Make reservation
     menu: Menu
-    things_to_see: Something to see
+    things_to_see: Things to see
     tariffs: Tariffs
     visit_us: Visit us
     where_to_find_us: Where are we?
@@ -90,9 +90,9 @@ en:
       group_reservations_meals: "R%{amount} FOR WEEKEND"
     restriction_columns:  
       site_limit: Maximum 6 persons per stand
-      friday_to_sunday: 'In: Fridays: 11H00,  Out: Sundays: 17H30'
+      friday_to_sunday: "In: Fridays: %{in_time},  Out: Sundays: %{out_time}"
       day_visitor_times: "In: %{in_time},  Out: %{out_time}"
-      chalet_times: 'In: 11H00,  Out: 10H00  (may remain on premises until 17H30)'
+      chalet_times: "In: %{in_time},  Out: %{out_time}  (may remain on premises until 17H30)"
   accommodation_period_indicators:
     from: from
     until: until

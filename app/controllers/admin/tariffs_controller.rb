@@ -17,6 +17,24 @@ class Admin::TariffsController < ApplicationController
     end
   end
 
+  def summary
+    promotions = AccommodationType.promotions
+    if promotions.any?
+      @promotion_header = header_line(:promotion)
+      @promotion_dtl_lines = tariff_details(:promotion)
+    end  
+    @no_power_header = header_line(:without_power_points)
+    @no_power_dtl_lines = []
+    @power_header = header_line(:powered_tariff)
+    @power_dtl_lines = []
+    @day_visitor_header = header_line(:day_visitor)
+    @day_visitor_dtl_lines = []
+    @chalet_header = header_line(:chalet_tariff)
+    @chalet_dtl_lines = []
+    @groups_header = header_line(:group_tariff)
+    @groups_dtl_lines = []
+  end
+
   def new
     if params[:tariff]
       @tariff = params[:tariff]
@@ -58,6 +76,52 @@ class Admin::TariffsController < ApplicationController
   end
 
   private
+
+    def header_line(accommodation_type)
+      case accommodation_type
+      when :promotion
+        [ "", "", "", ""] 
+      when :without_power_points
+        [ t(:without_power_points, scope: [:accommodation]).upcase,
+          t(:per_site, scope: [:accommodation]).upcase,
+          t(:per_person_per_night, scope: [:accommodation]).upcase,
+          ""
+        ]
+      when :powered_tariff
+        [ t(:with_power_points, scope: [:accommodation]).upcase,
+          t(:per_site, scope: [:accommodation]).upcase,
+          t(:per_person_per_night, scope: [:accommodation]).upcase,
+          ""
+        ]
+      when :day_visitor
+        [ "", "", t(:per_person, scope: [:accommodation]).upcase, ""]
+      when :chalet_tariff
+        [ t(:with_power_points, scope: [:accommodation]).upcase,
+          "",
+          t(:per_night_for_chalet, scope: [:accommodation]).upcase,
+          ""
+        ]
+      when :group_tariff
+        [ t(:without_power_points, scope: [:accommodation]).upcase,
+          "",
+          t(:per_person, scope: [:accommodation]).upcase,
+          t(:tents_and_caravans, scope: [:accommodation]).upcase
+        ]
+      else
+       [ "", "", "", ""]  
+      end
+    end
+
+    def tariff_details(accommodation_type)
+      case accommodation_type
+      when :promotion
+        if AccommodationType.where(show: true)
+          [ "", "", "", ""]  
+        else
+          [ "", "", "", ""]
+        end    
+      end  
+    end
 
     def get_accom_type
       if params[:accommodation_type_id].nil? || params[:accommodation_type_id].empty?

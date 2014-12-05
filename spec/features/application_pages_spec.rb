@@ -30,7 +30,7 @@ feature "Application pages" do
       expect(page).to have_link('Reservations')
       expect(page).to have_link('Tariffs')
       expect(page).to have_link('Make reservation')
-      expect(page).to have_link('Something to see')
+      expect(page).to have_link('Things to see')
       expect(page).to have_link('About us')
       expect(page).to have_link('Contact us')
       expect(page).to have_link('Where are we?')
@@ -47,7 +47,7 @@ feature "Application pages" do
       click_button "Sign in"
       expect(page).to have_link('Tariffs')
       expect(page).to have_text(admin.full_name)
-      expect(page).to have_link('Something to see')
+      expect(page).to have_link('Things to see')
       expect(page).to have_link('About us')
     end
   end

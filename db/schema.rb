@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141204235713) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "accommodation_types", force: true do |t|
     t.string  "accom_type"
     t.string  "description",          default: ""
