@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index]
-    resources :tariffs
-    resources :accommodation_types
+    resources :accommodation_types do
+      resources :tariffs
+    end    
     resources :season_detail_lines do
       member do
         get :no_powerpoints

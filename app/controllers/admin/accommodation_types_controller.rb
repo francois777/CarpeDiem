@@ -35,6 +35,16 @@ class Admin::AccommodationTypesController < ApplicationController
     end  
   end
 
+  def update
+    if @accommodation_type.update_attributes(accommodation_type_params)
+      flash[:success] = t(:accommodation_type_updated, scope: [:success])
+      redirect_to [:admin, @accommodation_type, @tariff]
+    else
+      flash[:alert] = t(:accommodation_type_update_failed, scope: [:failure])
+      render :edit
+    end  
+  end
+
   def edit
     unless (current_user && current_user.admin?)
       flash[:alert] = t(:update_not_allowed, scope: [:failure])

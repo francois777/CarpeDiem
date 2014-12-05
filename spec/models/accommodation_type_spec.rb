@@ -44,4 +44,11 @@ describe AccommodationType do
     expect(other_accommodation_type).not_to be_valid
   end  
 
+  it 'must know about its child tariffs' do
+    t1 = create(:tariff, tariff_category: 'B1', accommodation_type: @accommodation_type)
+    t2 = create(:tariff, tariff_category: 'B2', accommodation_type: @accommodation_type)
+    expect(@accommodation_type.tariffs.count).to eq(2)
+    expect(@accommodation_type.tariffs).to eq [t1, t2]
+  end
+
 end  

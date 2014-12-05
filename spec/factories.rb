@@ -35,6 +35,7 @@ FactoryGirl.define do
     tariff 9000
     effective_date Date.today - 300
     end_date Date.today + 300
+    association :accommodation_type
   end
 
 end

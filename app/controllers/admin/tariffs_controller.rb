@@ -2,11 +2,12 @@ class Admin::TariffsController < ApplicationController
 
   include ApplicationHelper
 
+  before_action :get_accom_type
   before_action :set_tariff, only: [:show, :edit, :update]
   before_action :redirect_unless_signed_in
 
   def index
-    @tariffs = Tariff.all
+    @tariffs = @accommodation_type.tariffs
   end
 
   def show
@@ -25,14 +26,24 @@ class Admin::TariffsController < ApplicationController
   end
  
   def create
-    @tariff = Tariff.new(tariff_params)
+    @tariff = @accommodation_type.tariffs.new(tariff_params)
     @tariff.tariff = to_base_amount(params[:tariff][:tariff])
     if @tariff.save
       flash[:notice] = t(:tariff_created, scope: [:success])
-      redirect_to [:admin, @tariff]
+      redirect_to [:admin, @accommodation_type, @tariff]
     else
       flash[:alert] = t(:tariff_create_failed, scope: [:failure])
       render :new
+    end  
+  end
+
+  def update
+    if @tariff.update_attributes(tariff_params)
+      flash[:success] = t(:tariff_updated, scope: [:success])
+      redirect_to [:admin, @accommodation_type, @tariff]
+    else
+      flash[:alert] = t(:tariff_update_failed, scope: [:failure])
+      render :edit
     end  
   end
 
@@ -47,6 +58,14 @@ class Admin::TariffsController < ApplicationController
   end
 
   private
+
+    def get_accom_type
+      if params[:accommodation_type_id].nil? || params[:accommodation_type_id].empty?
+        flash[:alert] = "Accommodation type missing"
+        redirect_to admin_accommodation_types_path
+      end
+      @accommodation_type = AccommodationType.find(params[:accommodation_type_id])
+    end
 
     def set_tariff
       @tariff = Tariff.find(params[:id].to_i)

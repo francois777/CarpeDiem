@@ -1,6 +1,6 @@
 %tr
   %td
-    = link_to Tariff::TARIFF_CATEGORIES[tariff.tariff_category.downcase.to_sym], [:admin, tariff]
+    = link_to Tariff::TARIFF_CATEGORIES[tariff.tariff_category.downcase.to_sym], admin_accommodation_type_tariff_path(@accommodation_type, tariff) 
   %td
     = to_local_currency(tariff.tariff)  
   %td

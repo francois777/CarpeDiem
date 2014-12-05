@@ -10,6 +10,7 @@ RSpec.describe Admin::TariffsController, :type => :controller do
 
     before do
       @admin = create(:user)
+      @accommodation_type = create(:accommodation_type)
     end
 
     it "fails when admin user is not signed in" do
@@ -19,7 +20,7 @@ RSpec.describe Admin::TariffsController, :type => :controller do
 
     it "returns http success when admin user is signed in" do
       sign_in(@admin)
-      visit admin_tariffs_path
+      visit admin_accommodation_type_tariffs_path(@accommodation_type)
       expect(response).to have_http_status(:success)
     end
 

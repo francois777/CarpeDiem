@@ -11,3 +11,5 @@
     = accommodation_type.show_in_season_price ? 'Yes' : 'No'  
   %td
     = accommodation_type.show_promotion ? 'Yes' : 'No'  
+  %td
+    = link_to t(".tariffs"), admin_accommodation_type_tariffs_path(accommodation_type)  

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204021706) do
+ActiveRecord::Schema.define(version: 20141204235713) do
 
   create_table "accommodation_types", force: true do |t|
     t.string  "accom_type"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141204021706) do
     t.integer  "tariff"
     t.datetime "effective_date"
     t.datetime "end_date"
+    t.integer  "accommodation_type_id"
   end
 
   create_table "users", force: true do |t|

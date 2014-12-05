@@ -10,12 +10,13 @@ feature "Tariff pages" do
   context "Admin user create new tariff" do
 
     before do
+      @accommodation_type = create(:accommodation_type)
       @admin = create(:admin)
       login @admin
     end
 
     scenario "Create new tariff" do
-      visit new_admin_tariff_path
+      visit new_admin_accommodation_type_tariff_path(@accommodation_type)
       expect(page).to have_title('New Tariff')
 
       expect(page).to have_selector('h1', text: "Create Tariff")
@@ -47,13 +48,16 @@ feature "Tariff pages" do
     end
 
     scenario "Detect items on Tariff List" do
+
       catc1 = create(:tariff, tariff_category: 'C1', tariff: 9999, 
                               effective_date: Date.new(2015,02,28),
-                              end_date: Date.new(2015,12,31))
+                              end_date: Date.new(2015,12,31),
+                              accommodation_type: @accommodation_type)
       catc2 = create(:tariff, tariff_category: 'C2', tariff: 8800, 
                               effective_date: Date.new(2015,03,01),
-                              end_date: Date.new(2015,11,30))
-      visit admin_tariffs_path
+                              end_date: Date.new(2015,11,30),
+                              accommodation_type: @accommodation_type)
+      visit admin_accommodation_type_tariffs_path(@accommodation_type)
       expect(page).to have_title('Tariff List')
       expect(page).to have_selector('h1', text: "Tariff List")
       expect(page).to have_text('Tariff Category')
@@ -75,8 +79,9 @@ feature "Tariff pages" do
       cat_e1 = create(:tariff, tariff_category: 'E1', 
                                tariff: 9999, 
                                effective_date: Date.new(2015,02,28),
-                               end_date: Date.new(2015,12,31))
-      visit edit_admin_tariff_path(cat_e1)
+                               end_date: Date.new(2015,12,31),
+                               accommodation_type: @accommodation_type)
+      visit edit_admin_accommodation_type_tariff_path(@accommodation_type, cat_e1)
       expect(page).to have_title('Update Tariff')
       expect(page).to have_selector('h1', text: "Update Tariff")
       expect(page).to have_text('Tariff Category')
@@ -90,6 +95,8 @@ feature "Tariff pages" do
         expect(content).to have_selector(:option, value = 'C1')
       end
       expect(page).to have_selector(:link_or_button, 'Update Tariff')
+
+      click_button 'Update Tariff'
     end
 
     scenario "Ensure currency conversions are correct" do

@@ -6,7 +6,7 @@
       = t(".tariff_details")
     .row
       .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
-        = form_for([:admin, @tariff], html: {class: "form-horizontal", role: "form"}) do |f|
+        = form_for([:admin, @accommodation_type, @tariff], html: {class: "form-horizontal", role: "form"}) do |f|
           .form-group
             = f.label :tariff_category, t(".tariff_category"), class: "col-sm-3 control-label"
             .col-sm-9
@@ -27,8 +27,8 @@
       .actions
         -if current_user && current_user.admin?
           %button.btn.btn-info
-            = link_to t(".return_to_tariff_list"), admin_tariffs_path
+            = link_to t(".return_to_tariff_list"), admin_accommodation_type_tariffs_path(@accommodation_type)
           %button.btn.btn-info
-            = link_to t(".edit"), edit_admin_tariff_path(@tariff)
+            = link_to t(".edit"), edit_admin_accommodation_type_tariff_path(@accommodation_type, @tariff)
 
              

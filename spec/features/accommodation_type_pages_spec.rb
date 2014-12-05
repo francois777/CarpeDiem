@@ -93,7 +93,6 @@ feature "AccommodationType pages" do
           show_normal_price: false,
           show_in_season_price: true,
           show_promotion: false)
-      puts acc_type_a.inspect
       visit edit_admin_accommodation_type_path(acc_type_a)
       expect(page).to have_title('Update Accommodation Type')
       expect(page).to have_selector('h1', text: "Update Accommodation Type")
@@ -110,6 +109,26 @@ feature "AccommodationType pages" do
       expect( find(:css, "input[name='accommodation_type[show_in_season_price]']:nth-child(2)").checked?).to eq("checked") 
       expect( find(:css, "input[name='accommodation_type[show_promotion]']:nth-child(2)").checked?).to eq(nil) 
       expect(page).to have_selector(:link_or_button, 'Update Accommodation Type')
+
+      fill_in "Accommodation Type", with: "A"
+      fill_in "Description", with: "Tent Site With Power Points"
+      find(:css, "#accommodation_type_show").set(false)
+      find(:css, "#accommodation_type_show_normal_price").set(false)
+      find(:css, "#accommodation_type_show_in_season_price").set(false)
+      find(:css, "#accommodation_type_show_promotion").set(true)
+      click_button 'Update Accommodation Type'
+
+      expect(page).to have_text('Accommodation Type updated successfully')
+      expect(page).to have_title('Accommodation Type Details')
+      expect(page).to have_selector('h1', text: "Accommodation Type Details")
+      expect( find(:css, "input#accommodation_type_accom_type").value ).to eq('A')
+      expect( find(:css, "input#accommodation_type_description").value ).to eq('Tent Site With Power Points')
+
+      expect( find(:css, "input[name='accommodation_type[show]']:nth-child(2)").checked?).to eq(nil) 
+      expect( find(:css, "input[name='accommodation_type[show_normal_price]']:nth-child(2)").checked?).to eq(nil) 
+      expect( find(:css, "input[name='accommodation_type[show_in_season_price]']:nth-child(2)").checked?).to eq(nil) 
+      expect( find(:css, "input[name='accommodation_type[show_promotion]']:nth-child(2)").checked?).to eq("checked") 
+
     end
   end
 

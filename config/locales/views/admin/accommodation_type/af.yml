@@ -16,6 +16,7 @@ af:
         show_normal_price: Show normal prices 
         show_in_season_price: Show in-season prices
         show_promotion: Show promotional prices
+        tariffs: Tariffs
       show:
         accommodation_type_details: Accommodation Type Details  
         accom_type: Accommodation Type 

@@ -5,10 +5,12 @@ describe Tariff do
   include FactoryGirl::Syntax::Methods
   
   before do
+    @tent_sites = create(:accommodation_type)
     @tariff = Tariff.new(
         tariff_category: 'C3',
         tariff: 8000,
-        effective_date: Date.new(2010, 11, 30)
+        effective_date: Date.new(2010, 11, 30),
+        accommodation_type_id: @tent_sites.id
       )
   end
 
@@ -18,14 +20,17 @@ describe Tariff do
   it { should respond_to(:tariff) }
   it { should respond_to(:effective_date) }
   it { should respond_to(:end_date) }
+  it { should respond_to(:accommodation_type_id) }
+  it { should respond_to(:accommodation_type) }
 
   it "must be valid" do
     expect(@tariff).to be_valid
   end
 
   it "must have a valid factory" do
-    tariff_factory = build(:tariff)
+    tariff_factory = build(:tariff, accommodation_type: @tent_sites)
     expect(tariff_factory).to be_valid
+    expect(tariff_factory.accommodation_type).to eq(@tent_sites)
   end
 
   it "must ensure the tariff_category have a valid format" do
