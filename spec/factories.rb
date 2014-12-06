@@ -33,6 +33,8 @@ FactoryGirl.define do
   factory :tariff do
     tariff_category "B2"
     tariff 9000
+    with_power_points true
+    season_class 'in_season_tariff'
     effective_date Date.today - 300
     end_date Date.today + 300
     association :accommodation_type

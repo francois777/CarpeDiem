@@ -2,7 +2,10 @@ require 'singleton'
 
 class AppConfig
   include Singleton
-  attr_reader :version, :designer, :designer_email, :child_discount, :child_age_range
+  attr_reader :version, :designer, :designer_email, :child_discount_percentage, :child_age_range,
+              :day_visitor_in_time, :day_visitor_out_time, :chalet_in_time, :chalet_out_time,
+              :tents_and_caravans_checkin_time, :tents_and_caravans_checkout_time,
+              :remain_on_premises_time
 
   def initialize
     @version = '1.0.0'

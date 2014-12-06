@@ -80,19 +80,17 @@ en:
       can_arrange_picnic_basket: can arrange for picnic basket
       fully_equipped: fully equipped
       tents_and_caravans: tents and caravans
+      comment1: See (1)
     tariff_2_columns:
-      site_person_tariff: "R%{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = R%{child_tariff})"
-      site_weekend_tariff: "R%{amount} per person for weekend"
-      chalet_type_a_tariff: "R%{amount} (MAXIMUM 8 PERSONS)"
-      chalet_type_b_tariff: "R%{amount} (MAXIMUM 8 PERSONS)"
-      chalet_type_c_tariff: "R%{amount} (MAXIMUM 8 PERSONS)"
-      group_reservations_budget: "R%{amount} FOR WEEKEND"
-      group_reservations_meals: "R%{amount} FOR WEEKEND"
+      site_person_tariff: "R %{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
+      site_weekend_tariff: "R %{amount} per person for weekend"
+      chalet_tariff: "R %{amount} (MAXIMUM 8 PERSONS)"
+      group_reservations: "R %{amount} FOR WEEKEND"
     restriction_columns:  
       site_limit: Maximum 6 persons per stand
       friday_to_sunday: "In: Fridays: %{in_time},  Out: Sundays: %{out_time}"
       day_visitor_times: "In: %{in_time},  Out: %{out_time}"
-      chalet_times: "In: %{in_time},  Out: %{out_time}  (may remain on premises until 17H30)"
+      chalet_times: "In: %{in_time},  Out: %{out_time}  (may remain on premises until %{remain_on_premises_time})"
   accommodation_period_indicators:
     from: from
     until: until

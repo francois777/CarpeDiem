@@ -10,7 +10,9 @@ describe Tariff do
         tariff_category: 'C3',
         tariff: 8000,
         effective_date: Date.new(2010, 11, 30),
-        accommodation_type_id: @tent_sites.id
+        accommodation_type_id: @tent_sites.id,
+        with_power_points: true,
+        season_class: :normal_tariff
       )
   end
 
@@ -22,6 +24,8 @@ describe Tariff do
   it { should respond_to(:end_date) }
   it { should respond_to(:accommodation_type_id) }
   it { should respond_to(:accommodation_type) }
+  it { should respond_to(:with_power_points) }
+  it { should respond_to(:season_class) }
 
   it "must be valid" do
     expect(@tariff).to be_valid

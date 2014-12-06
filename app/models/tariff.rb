@@ -15,6 +15,10 @@ class Tariff < ActiveRecord::Base
   validate :tariff_cannot_be_zero
 
   default_scope { order('tariff_category ASC, effective_date DESC') }
+  scope :promotions, -> { where('show_promotion = ?', true) }
+  scope :no_power, -> { where('with_power_points = ?', false) }  
+
+  enum season_class: [:normal_tariff, :in_season_tariff, :promotion_tariff]
 
   def validate_effective_date_before_end_date
     if effective_date && end_date

@@ -1,0 +1,84 @@
+%section.accommodation
+  %h1 
+    = t(:accommodation, scope: [:accommodation]).upcase
+    %span
+      = "(#{t(:no_alcohol, scope: [:accommodation]).upcase})"
+        
+  %p.sub-heading 
+    = t(:book_in_times, scope: [:accommodation]).upcase
+
+  - if @no_power_dtl_lines.any?
+    %section.privilege_type
+      .row
+        %table
+          %thead
+            - @no_power_header.each do |hdr|
+              %th
+                = hdr
+          %tbody
+            - @no_power_dtl_lines.each do |row|
+              %tr
+                - row.each_with_index do |col|
+                  %td
+                    =col    
+
+  - if @power_dtl_lines.any?
+    %section.privilege_type
+      .row
+        %table
+          %thead
+            - @power_header.each do |hdr|
+              %th
+                = hdr
+          %tbody
+            - @power_dtl_lines.each do |row|
+              %tr
+                - row.each do |col| 
+                  %td
+                    =col    
+
+  - if @day_visitor_dtl_lines.any?
+    %section.privilege_type.day_visitor
+      .row
+        %table
+          %thead
+            - @day_visitor_header.each do |hdr|
+              %th
+                = hdr
+          %tbody
+            - @day_visitor_dtl_lines.each do |row|
+              %tr
+                - row.each do |col| 
+                  %td
+                    =col    
+    %p.day-visitor-comment
+      = " (1) #{I18n.t(:can_arrange_picnic_basket, scope: [:accommodation, :tariff_1_columns]).capitalize}"             
+  - if @chalet_dtl_lines.any?
+    %section.privilege_type
+      .row
+        %table
+          %thead
+            - @chalet_header.each do |hdr|
+              %th
+                = hdr
+          %tbody
+            - @chalet_dtl_lines.each do |row|
+              %tr
+                - row.each do |col| 
+                  %td
+                    =col    
+
+  - if @group_dtl_lines.any?
+    %section.privilege_type
+      .row
+        %table
+          %thead
+            - @groups_header.each do |hdr|
+              %th
+                = hdr
+          %tbody
+            - @group_dtl_lines.each do |row|
+              %tr
+                - row.each do |col| 
+                  %td
+                    =col    

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index]
     resources :accommodation_types do
-      resources :tariffs
+      resources :tariffs do
+      end
     end    
     resources :season_detail_lines do
       member do
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/facilities', to: 'static_pages#facilities'
-  get '/accommodation', to: 'season_detail_lines#show'
+  get '/accommodation', to: 'admin/tariffs#summary'
   get '/directions', to: 'static_pages#directions'
   get '/test', to: 'static_pages#test'
 
