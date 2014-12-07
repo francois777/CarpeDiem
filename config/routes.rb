@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/facilities', to: 'static_pages#facilities'
-  get '/accommodation', to: 'admin/tariffs#summary'
+  get '/accommodation', to: 'tariffs#summary'
   get '/directions', to: 'static_pages#directions'
   get '/test', to: 'static_pages#test'
   get '/afrikaans', to: 'users#to_afrikaans'

@@ -8,6 +8,10 @@
     = t(:book_in_times, scope: [:accommodation]).upcase
 
   - if @no_power_dtl_lines.any?
+    %figure.facility
+      = image_tag('tent.gif')
+      = image_tag('caravan.gif')
+      = image_tag('roman-soldier.png')
     %section.privilege_type
       .row
         %table
@@ -23,6 +27,11 @@
                     =col    
 
   - if @power_dtl_lines.any?
+    %figure.facility
+      = image_tag('electricity-sm.png')
+      = image_tag('tent.gif')
+      = image_tag('caravan.gif')
+
     %section.privilege_type
       .row
         %table
@@ -39,6 +48,8 @@
 
   - if @day_visitor_dtl_lines.any?
     %section.privilege_type.day_visitor
+      %figure.facility
+        = image_tag('picnic-basket.png')
       .row
         %table
           %thead
@@ -53,7 +64,10 @@
                     =col    
     %p.comment
       = " (1) #{I18n.t(:can_arrange_picnic_basket, scope: [:accommodation, :tariff_1_columns]).capitalize}"             
+
   - if @chalet_dtl_lines.any?
+    %figure.facility
+      = image_tag('cottage.png')
     %section.privilege_type
       .row
         %table
@@ -71,6 +85,8 @@
       = " (2) #{I18n.t(:may_remain_until, scope: [:accommodation], remain_on_premises_time: @settings.remain_on_premises_time)}"     
 
   - if @group_dtl_lines.any?
+    %figure.facility
+      = image_tag('crowd.gif')
     %section.privilege_type
       .row
         %table

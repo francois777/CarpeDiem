@@ -475,6 +475,16 @@ section.font-test {
   section.accommodation {
     margin: 0.2em;
     .row { margin: 0; }
+    figure.facility {
+      margin-top: 1.2em;
+      display: block;
+      img {
+        display: inline-block;
+        float: left;
+        height: 40px;
+        width: 60px;
+      }
+    }
     h1 {
       margin: 1em 0.2em;
       font-size: 2em;
@@ -494,7 +504,7 @@ section.font-test {
       font-size: 0.8em;
     }
     .privilege_type {
-      margin-top: 0.8em;
+      margin-top: 1.2em;
       btn { 
         margin-top: 0.5em;
         // padding: 0.8em 1.5em; 
@@ -505,9 +515,6 @@ section.font-test {
         width: 1.2em;
       }
     }
-    // .privilege_type.day_visitor {
-    //     margin-bottom: 0.2em;
-    // }
 
     table {
       width: 100%;
@@ -933,7 +940,7 @@ section.font-test {
     margin-bottom: 3em;
 
     p.sub-heading {
-      margin-bottom: 2em;
+      margin-bottom: 0.4em;
     }
 
     table {
