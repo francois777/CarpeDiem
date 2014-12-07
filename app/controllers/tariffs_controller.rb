@@ -126,7 +126,7 @@ class TariffsController < ApplicationController
       adult_tariff: tariff_local_amount, 
       child_age_from: @settings.child_age_range.begin.to_s,
       child_age_to: @settings.child_age_range.end.to_s,
-      child_tariff: to_local_amount(tariff.tariff)
+      child_tariff: to_local_amount(tariff.tariff * 0.01 * @settings.child_discount_percentage)
       )
     col4 = t(:site_limit, scope: [:accommodation, :restriction_columns])
     [col1, col2, col3, col4]
@@ -140,7 +140,7 @@ class TariffsController < ApplicationController
       adult_tariff: tariff_local_amount, 
       child_age_from: @settings.child_age_range.begin.to_s,
       child_age_to: @settings.child_age_range.end.to_s,
-      child_tariff: to_local_amount(tariff.tariff)
+      child_tariff: to_local_amount(tariff.tariff * 0.01 * @settings.child_discount_percentage)
       )
     col4 = t(:day_visitor_times, scope: [:accommodation, :restriction_columns], 
                in_time: @settings.day_visitor_in_time,
