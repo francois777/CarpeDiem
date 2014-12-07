@@ -37,7 +37,6 @@ class Admin::AccommodationTypesController < ApplicationController
 
   def update
     if @accommodation_type.update_attributes(accommodation_type_params)
-      undo_link = view_context.link_to(t(:undo, scope:[:actions]), revert_version_path(:admin, @accommodation_type.versions.last), :method => :post)
       flash[:success] = "#{t(:accommodation_type_updated, scope: [:success])} (#{undo_link})"
       redirect_to [:admin, @accommodation_type, @tariff]
     else
@@ -57,6 +56,17 @@ class Admin::AccommodationTypesController < ApplicationController
   end
 
   private
+
+    def undo_link
+      if @accommodation_type.versions.any?
+        view_context.link_to(t(:undo, scope: [:actions]), revert_version_path(@accommodation_type.versions.last), method: :post)
+      end
+    end
+
+    def redo_link
+      params[:redo] == "true" ? link = "Undo that plz!" : link = "Redo that plz!"
+      view_context.link_to link, undo_path(@accommodation_type.next, redo: !params[:redo]), method: :post
+    end
 
     def set_accommodation_type
       @accommodation_type = AccommodationType.find(params[:id].to_i)
