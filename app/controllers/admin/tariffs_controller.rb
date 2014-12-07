@@ -38,7 +38,8 @@ class Admin::TariffsController < ApplicationController
     @tariff = @accommodation_type.tariffs.new(tariff_params)
     @tariff.tariff = to_base_amount(params[:tariff][:tariff])
     if @tariff.save
-      flash[:notice] = t(:tariff_created, scope: [:success])
+      undo_link = view_context.link_to(t(:undo, scope:[:actions]), revert_version_path(:admin, @tariff.versions.last), :method => :post)
+      flash[:success] = "#{t(:tariff_created, scope: [:success])} (#{undo_link})"
       redirect_to [:admin, @accommodation_type, @tariff]
     else
       flash[:alert] = t(:tariff_create_failed, scope: [:failure])
@@ -47,8 +48,14 @@ class Admin::TariffsController < ApplicationController
   end
 
   def update
-    if @tariff.update_attributes(tariff_params)
-      flash[:success] = t(:tariff_updated, scope: [:success])
+    tariff_params[:tariff] = to_base_amount(tariff_params[:tariff])
+    updated_params = tariff_params
+    updated_params[:tariff] = to_base_amount(tariff_params[:tariff])
+    if @tariff.update_attributes(updated_params)
+      # undo_link = view_context.link_to(t(:undo, scope:[:actions]), revert_version_path(:admin, @tariff.versions.last), :method => :post)
+      puts "TariffsController#update, undo_link:"
+      puts undo_link
+      flash[:success] = "#{t(:tariff_updated, scope: [:success])} (#{undo_link})"
       redirect_to [:admin, @accommodation_type, @tariff]
     else
       flash[:alert] = t(:tariff_update_failed, scope: [:failure])
@@ -88,6 +95,17 @@ class Admin::TariffsController < ApplicationController
       unless signed_in? 
         redirect_to root_path, :status => 302 
       end  
+    end
+
+    def undo_link
+      if @tariff.versions.any?
+        view_context.link_to(t(:undo, scope: [:actions]), revert_version_path(@tariff.versions.last), method: :post)
+      end
+    end
+
+    def redo_link
+      params[:redo] == "true" ? link = "Undo that plz!" : link = "Redo that plz!"
+      view_context.link_to link, undo_path(@tariff.next, redo: !params[:redo]), method: :post
     end
 
 end

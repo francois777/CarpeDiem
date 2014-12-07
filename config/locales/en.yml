@@ -36,7 +36,10 @@ en:
     ps_118v24: |-
       This is the day that the Lord has made; let us rejoice and be glad in it.
   actions:
-    save_changes: Save changes    
+    save_changes: Save changes
+    undo: Undo
+    redo: Redo
+    undid: Undid
   months:
     january: January
     february: February

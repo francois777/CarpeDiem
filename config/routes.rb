@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:show]
   resources :season_detail_lines, only: [:show]
+  post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 
   namespace :admin do
     resources :users, only: [:index]

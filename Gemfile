@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'http://gemcutter.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -29,6 +29,7 @@ gem 'spring',  group: :development
 gem 'rails_12factor', group: :production
 gem 'pg',      group: :production
 gem 'rake', '~> 10.3.2'
+gem 'paper_trail', '~> 3.0.6'
 
 group :test, :development do
   gem 'rspec-rails'

@@ -1,5 +1,7 @@
 class AccommodationType < ActiveRecord::Base
 
+  has_paper_trail on: [:update, :destroy]
+
   VALID_ACCOMMODATION_TYPE = /\A[A-K]\z/
   ACCOMMODATION_TYPES = I18n.t(:types, scope: [:activerecord, :attributes, :accommodation_types])
   ACCOMMODATION_NAMES = { tent_site_without_power: 'A',

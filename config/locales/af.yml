@@ -37,6 +37,9 @@ af:
       Dit is die dag wat die Here gemaak het. Laat ons daaroor juig en bly wees.
   actions:
     save_changes: Stoor veranderings    
+    undo: Herstel
+    redo: Herhaal
+    undid: Verandering teruggedraai
   months:
     january: Januarie
     february: Februarie

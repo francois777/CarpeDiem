@@ -37,7 +37,8 @@ class Admin::AccommodationTypesController < ApplicationController
 
   def update
     if @accommodation_type.update_attributes(accommodation_type_params)
-      flash[:success] = t(:accommodation_type_updated, scope: [:success])
+      undo_link = view_context.link_to(t(:undo, scope:[:actions]), revert_version_path(:admin, @accommodation_type.versions.last), :method => :post)
+      flash[:success] = "#{t(:accommodation_type_updated, scope: [:success])} (#{undo_link})"
       redirect_to [:admin, @accommodation_type, @tariff]
     else
       flash[:alert] = t(:accommodation_type_update_failed, scope: [:failure])

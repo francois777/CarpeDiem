@@ -1,5 +1,7 @@
 class Tariff < ActiveRecord::Base
 
+  has_paper_trail on: [:create, :update, :destroy]
+
   VALID_TARIFF_CATEGORY = /\A[A-J][1-3]\z/
   TARIFF_CATEGORIES = I18n.t(:tariff_categories, scope: [:activerecord, :attributes, :tariff])
 
