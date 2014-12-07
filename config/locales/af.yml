@@ -3,6 +3,7 @@ af:
     camping_grounds: "Kampterrein"
     name_and_place: "Carpe Diem - Hekpoort"
     site_name: "Carpe Diem"
+    site_town: "Hekpoort"
     owners: Jacques en Henriëtte Kotzé
   menu:
     about_us: Wie is ons?
@@ -62,7 +63,8 @@ af:
     per_person_per_night: per persoon per nag
     per_night_for_chalet: per nag vir rondawel
     tents_and_caravans: tente en karavane
-    reference_1: sien (1)
+    reference: sien (%{num})
+    tents_and_caravans: tente en karavane
     column_1: Column 1
     column_2: Column 2
     column_3: Column 3
@@ -79,7 +81,6 @@ af:
     col_2:
       can_arrange_picnic_basket: kan reël vir piekniek mandjie
       fully_equipped: ten volle toegerus
-      tents_and_caravans: tente en karavane
       comment1: sien (1)
     col_3:
       child_amount_a: R70 (kinders 6-12jr = R40)

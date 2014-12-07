@@ -51,7 +51,7 @@
                 - row.each do |col| 
                   %td
                     =col    
-    %p.day-visitor-comment
+    %p.comment
       = " (1) #{I18n.t(:can_arrange_picnic_basket, scope: [:accommodation, :tariff_1_columns]).capitalize}"             
   - if @chalet_dtl_lines.any?
     %section.privilege_type
@@ -67,6 +67,8 @@
                 - row.each do |col| 
                   %td
                     =col    
+    %p.comment
+      = " (2) #{I18n.t(:may_remain_until, scope: [:accommodation], remain_on_premises_time: @settings.remain_on_premises_time)}"     
 
   - if @group_dtl_lines.any?
     %section.privilege_type
@@ -82,3 +84,5 @@
                 - row.each do |col| 
                   %td
                     =col    
+    %p.comment
+      = " (3) #{I18n.t(:tents_and_caravans, scope: [:accommodation], remain_on_premises_time: @settings.remain_on_premises_time)}"     

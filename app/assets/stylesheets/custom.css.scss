@@ -9,26 +9,54 @@ $darker-green: rgb(75, 97, 64);
 $golden-brown: #7F734D;
 
 /*-- RESET ------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, 
-caption, tbody, tfoot, thead, tr, th, td 
-                  {margin: 0; padding: 0; border: 0; outline: 0;
-                  font-size: 100%; vertical-align: baseline;
-                  background: transparent;}
-// body              {line-height: 1;}
-ol, ul            {list-style: none;}
-blockquote, q     {quotes: none;}
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
 blockquote:before, blockquote:after,
-q:before, q:after {content: ''; content: none;}
-:focus            {outline: 0;}
-ins               {text-decoration: none;}
-del               {text-decoration: line-through;}
-table             {border-collapse: collapse; border-spacing: 0;}
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 @font-face{ 
   font-family: 'MuseoSlab';
@@ -181,7 +209,6 @@ section.font-test {
   }
 
   ul.nav.navbar-nav li {
-    // background-color: $medium-brown;  
     background-image: image-url('bg-nav.png');
     z-index: 5;
     opacity: 0.9;
@@ -190,14 +217,11 @@ section.font-test {
   .navbar-inverse .navbar-nav,
   .navbar-default .navbar-nav {
     > li > a {
-      // color: #543F20;
-      // color: lighten($dark-brown, 10%);
       color: $dark-brown;
     }
     > .open {
       a, a:hover, a:focus {
         color: white;
-        // background-color: $medium-brown;
         background-image: image-url('bg-nav.png');
       }
 
@@ -287,11 +311,8 @@ section.font-test {
   }
 
   section.carpediem {
-    // margin: 20px;
     background-image: image-url('bg-texture-light.png');
-    // background-color: lightgoldenrodyellow;
     vertical-align: middle;
-    // float: right;
     padding: 20px;
     padding-bottom: 0;
     h2 {
@@ -299,8 +320,6 @@ section.font-test {
     }
     figure.logo {
       background-image: image-url('bg-texture-light.png');
-      // padding-right: 20px;
-      // padding-bottom: 20px;
       figcaption {
         color: $golden-brown;
         display: block;
@@ -318,25 +337,35 @@ section.font-test {
         }
       }
     }
-    figure.entrance {
-      display: none;
-    }
   }
 
   section.intro {
-    padding: 20px;
-    padding-top: 0;
-    margin-top: 0;
-    background-image: image-url('bg-texture-light.png');
-    // background-color: lightgoldenrodyellow;
-    h2 {
-      padding-top: 5px;
-      padding-bottom: 10px;
-      font-size: 1.6em;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 2em 1.6em 1em 1.6em;
+    header.entrance {
+      display: inline-block;
+      figure {
+        display: inline-block;
+        margin-right: 1em;
+        float: left;
+        img {
+          width: 140px;
+          padding: 0 0.5em 0.5em 0;
+        }
+      }
+      h2 {
+        font-size: 1.8em;
+        display: inline-block;
+        padding-right: 0.5em;
+        float: left;
+      }
     }
     p {
-      font-size: 0.8em;
-      font-family: 'SofiaProLight';
+      display: block;
+      clear: left;
+      font-size: 1em;
+      // font-family: SofiaProLight;
     }
   }
 
@@ -461,11 +490,11 @@ section.font-test {
       text-align: center;
       font-size: 1em;
     }
-    p.day-visitor-comment {
+    p.comment {
       font-size: 0.8em;
     }
     .privilege_type {
-      margin-bottom: 1em;
+      margin-top: 0.8em;
       btn { 
         margin-top: 0.5em;
         // padding: 0.8em 1.5em; 
@@ -476,9 +505,9 @@ section.font-test {
         width: 1.2em;
       }
     }
-    .privilege_type.day_visitor {
-        margin-bottom: 0.2em;
-    }
+    // .privilege_type.day_visitor {
+    //     margin-bottom: 0.2em;
+    // }
 
     table {
       width: 100%;
@@ -618,32 +647,30 @@ section.font-test {
   section.admin-header {
     height: 50px;
     width: 100%;
+    padding: 0.7em 3% 0 3%;
     background-color: black; 
     font-family: Arial;
-    // background-image: image-url('bg-nav-dark.png');
     ul.nav.nav-pills {
       color: white;
-      padding-left: 2em;
-      font-size: 1em;
+      font-size: 0.9em;
       font-family: Arial;
       float: left;
       a {
         padding: 0.4em 0.8em;
-        margin-left: 1em;
-        margin-top: 0.4em;
         border-radius: 6px;
+        font-family: Fertigo_PRO;
       }
     }
 
     p.navbar-text {
-      padding: 0.4em;
-      padding-right: 2em;
-      margin: 0.2em;
+      padding: 0;
+      margin: 0;
       font-family: Arial, sans-serif;
-      font-size: 1em;
+      font-size: 0.9em;
+      background-color: black;
+      color: #9f9f9f;
+      a { color: white; }
     }
-    p, a { color: white; }
-    .admin { background-color: black; }
   }
 
   .actions {
@@ -682,18 +709,18 @@ section.font-test {
     }
   }
 
-  section.intro {
-    padding: 30px;
-    padding-top: 0;
-    h2 {
-      padding-top: 5px;
-      padding-bottom: 16px;
-      font-size: 2em;
-    }
-    p {
-      font-size: 1em;
-    }
-  }
+  // section.intro {
+  //   padding: 30px;
+  //   padding-top: 0;
+  //   h2 {
+  //     padding-top: 5px;
+  //     padding-bottom: 16px;
+  //     font-size: 2em;
+  //   }
+  //   p {
+  //     font-size: 1em;
+  //   }
+  // }
 
   section.facilities {
     margin: 0 1em;
@@ -801,16 +828,22 @@ section.font-test {
   }
 
   section.intro {
-    margin: 20px auto;
-    margin-bottom: 0;
+    margin-top: 0;
     padding: 2em 1.6em 1em 1.6em;
-    h2 {
-      // padding-top: 5px;
-      padding-bottom: 30px;
-      font-size: 1.6em;
+    header.entrance {
+      figure {
+        img {
+          width: 130px;
+          padding: 0 0.5em 0.5em 0;
+        }
+      }
+      h2 {
+        font-size: 1.6em;
+      }
     }
     p {
       font-size: 1em;
+      // font-family: SofiaProLight;
     }
   }
 
@@ -921,6 +954,27 @@ section.font-test {
   section.test {
     background-color: lightsteelblue;
   }
+
+  section.intro {
+    margin-top: 0;
+    padding: 2em 1.6em 1em 1.6em;
+    header.entrance {
+      figure {
+        img {
+          width: 150px;
+          padding: 0 1em 0.5em 0;
+        }
+      }
+      h2 {
+        font-size: 1.8em;
+      }
+    }
+    p {
+      font-size: 1em;
+      // font-family: SofiaProLight;
+    }
+  }
+
 
   section.facilities {
     h1 {

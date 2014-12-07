@@ -6,6 +6,7 @@ class AppConfig
               :day_visitor_in_time, :day_visitor_out_time, :chalet_in_time, :chalet_out_time,
               :tents_and_caravans_checkin_time, :tents_and_caravans_checkout_time,
               :remain_on_premises_time
+  attr_accessor :language
 
   def initialize
     @version = '1.0.0'
@@ -20,5 +21,6 @@ class AppConfig
     @tents_and_caravans_checkin_time = '11H00'
     @tents_and_caravans_checkout_time = '17H00'
     @remain_on_premises_time = '17H30'
+    @language = 'en'
   end
 end

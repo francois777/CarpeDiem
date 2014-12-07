@@ -151,7 +151,7 @@ class Admin::TariffsController < ApplicationController
   def day_visitor_tariffs(tariff)
     tariff_local_amount = to_local_amount(tariff.tariff)
     col1 = t(:day_visitors, scope: [:accommodation, :title_columns]).upcase
-    col2 = t(:comment1, scope: [:accommodation, :tariff_1_columns])
+    col2 = t(:reference, scope: [:accommodation], num: "1")
     col3 = t(:site_person_tariff, scope: [:accommodation, :tariff_2_columns], 
       adult_tariff: tariff_local_amount, 
       child_age_from: @settings.child_age_range.begin.to_s,
@@ -187,7 +187,8 @@ class Admin::TariffsController < ApplicationController
     col4 = t(:chalet_times, scope: [:accommodation, :restriction_columns], 
                in_time: @settings.day_visitor_in_time,
                out_time: @settings.day_visitor_out_time,
-               remain_on_premises_time: @settings.remain_on_premises_time )
+               ref: '2'
+            )
     [col1, col2, col3, col4]
   end
 
@@ -200,7 +201,7 @@ class Admin::TariffsController < ApplicationController
     else  
       col1 = t(:group_reservations_meals, scope: [:accommodation, :title_columns]).upcase
     end
-    col2 = t(:tents_and_caravans, scope: [:accommodation, :tariff_1_columns])
+    col2 = t(:reference, scope: [:accommodation], num: "3")
     col3 = t(:group_reservations, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount)
     col4 = t(:friday_to_sunday, scope: [:accommodation, :restriction_columns], 
                in_time: @settings.tents_and_caravans_checkin_time,

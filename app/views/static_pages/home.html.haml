@@ -13,13 +13,16 @@
                 = t('ps_118v24', scope: [:articles]).upcase
               %p
                 = t('ps_118v24', scope: [:references]).upcase
-        %figure.entrance
-          = image_tag('entrance.jpg')
         
     .col-sm-6.clearfix
       %section.intro
-        %h2 
-          = t('name_and_place', scope: ['site'])
+        %header.entrance
+          %figure
+            = image_tag('entrance-sm.jpg')
+          %h2 
+            = t('site_name', scope: ['site'])
+          %h2
+            = t('site_town', scope: ['site'])  
         %p
           = t('carpediem', scope: ['articles'])
         %p

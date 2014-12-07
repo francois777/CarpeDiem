@@ -3,6 +3,7 @@ en:
     camping_grounds: "Camping grounds"
     name_and_place: "Carpe Diem - Hekpoort"
     site_name: "Carpe Diem"
+    site_town: "Hekpoort"
     owners: Jacques and Henriëtte Kotzé
   menu:
     about_us: About us  
@@ -62,7 +63,9 @@ en:
     per_person_per_night: per person per night
     per_night_for_chalet: per night for chalet
     tents_and_caravans: tents and caravans
-    reference_1: see (1)
+    may_remain_until: "may remain on premises until %{remain_on_premises_time}"
+    reference: see (%{num})
+    tents_and_caravans: tents and caravans
     column_1: Column 1
     column_2: Column 2
     column_3: Column 3
@@ -79,8 +82,7 @@ en:
     tariff_1_columns:  
       can_arrange_picnic_basket: can arrange for picnic basket
       fully_equipped: fully equipped
-      tents_and_caravans: tents and caravans
-      comment1: See (1)
+      comment: See (1)
     tariff_2_columns:
       site_person_tariff: "R %{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
       site_weekend_tariff: "R %{amount} per person for weekend"
@@ -90,7 +92,7 @@ en:
       site_limit: Maximum 6 persons per stand
       friday_to_sunday: "In: Fridays: %{in_time},  Out: Sundays: %{out_time}"
       day_visitor_times: "In: %{in_time},  Out: %{out_time}"
-      chalet_times: "In: %{in_time},  Out: %{out_time}  (may remain on premises until %{remain_on_premises_time})"
+      chalet_times: "In: %{in_time},  Out: %{out_time}  see (%{ref})"
   accommodation_period_indicators:
     from: from
     until: until

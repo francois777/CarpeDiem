@@ -14,14 +14,14 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-06T18:48:59+10:00">2014-12-06T18:48:59+10:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-07T12:38:00+10:00">2014-12-07T12:38:00+10:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">74.91%</span></span>
+    (<span class="covered_percent"><span class="red">75.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>26</b> files in total.
-    <b>821</b> relevant lines. 
+    <b>820</b> relevant lines. 
     <span class="green"><b>615</b> lines covered</span> and
-    <span class="red"><b>206</b> lines missed </span>
+    <span class="red"><b>205</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#7a95ecd7e2fb6c872fbacac7d5a7e45a611cd7e3" class="src_link" title="app/controllers/admin/tariffs_controller.rb">app/controllers/admin/tariffs_controller.rb</a></td>
         <td class="red strong">25.69 %</td>
-        <td>370</td>
+        <td>371</td>
         <td>218</td>
         <td>56</td>
         <td>162</td>
@@ -93,7 +93,7 @@
       <tr>
         <td class="strong"><a href="#9465208f08b983e287e3a7cb528db99495e8d8d0" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="red strong">71.43 %</td>
-        <td>26</td>
+        <td>27</td>
         <td>14</td>
         <td>10</td>
         <td>4</td>
@@ -122,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#04cbb63dc6e5894fec7b5d8cc0ed56e192e03595" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="red strong">58.33 %</td>
-        <td>25</td>
-        <td>12</td>
-        <td>7</td>
+        <td class="red strong">55.56 %</td>
+        <td>16</td>
+        <td>9</td>
         <td>5</td>
-        <td>1.3</td>
+        <td>4</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -143,9 +143,9 @@
       <tr>
         <td class="strong"><a href="#fadb5284568674846086e1ba2cd73151ba937854" class="src_link" title="app/models/app_config.rb">app/models/app_config.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>24</td>
-        <td>17</td>
-        <td>17</td>
+        <td>26</td>
+        <td>19</td>
+        <td>19</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -2131,7 +2131,7 @@
         <li class="missed" data-hits="0" data-linenumber="154">
           
           
-          <code class="ruby">    col2 = t(:comment1, scope: [:accommodation, :tariff_1_columns])</code>
+          <code class="ruby">    col2 = t(:reference, scope: [:accommodation], num: &quot;1&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="155">
@@ -2347,1084 +2347,1090 @@
         <li class="never" data-hits="" data-linenumber="190">
           
           
-          <code class="ruby">               remain_on_premises_time: @settings.remain_on_premises_time )</code>
+          <code class="ruby">               ref: &#39;2&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="191">
+        <li class="never" data-hits="" data-linenumber="191">
+          
+          
+          <code class="ruby">            )</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="192">
           
           
           <code class="ruby">    [col1, col2, col3, col4]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="192">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="193">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="194">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="194">
+        <li class="covered" data-hits="1" data-linenumber="195">
           <span class="hits">1</span>
           
           <code class="ruby">  def group_tariffs(tariff, options = {})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="195">
+        <li class="missed" data-hits="0" data-linenumber="196">
           
           
           <code class="ruby">    puts &quot;TariffsController#group_tariffs&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="196">
+        <li class="missed" data-hits="0" data-linenumber="197">
           
           
           <code class="ruby">    puts &quot;tariff: #{tariff.inspect}&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="197">
+        <li class="missed" data-hits="0" data-linenumber="198">
           
           
           <code class="ruby">    tariff_local_amount = to_local_amount(tariff.tariff)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="198">
+        <li class="missed" data-hits="0" data-linenumber="199">
           
           
           <code class="ruby">    if options[:type] == :basic</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="199">
+        <li class="missed" data-hits="0" data-linenumber="200">
           
           
           <code class="ruby">      col1 = t(:group_reservations_budget, scope: [:accommodation, :title_columns]).upcase</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby">    else  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="201">
+        <li class="missed" data-hits="0" data-linenumber="202">
           
           
           <code class="ruby">      col1 = t(:group_reservations_meals, scope: [:accommodation, :title_columns]).upcase</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="never" data-hits="" data-linenumber="203">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="203">
-          
-          
-          <code class="ruby">    col2 = t(:tents_and_caravans, scope: [:accommodation, :tariff_1_columns])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="204">
           
           
-          <code class="ruby">    col3 = t(:group_reservations, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount)</code>
+          <code class="ruby">    col2 = t(:reference, scope: [:accommodation], num: &quot;3&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="205">
           
           
-          <code class="ruby">    col4 = t(:friday_to_sunday, scope: [:accommodation, :restriction_columns], </code>
+          <code class="ruby">    col3 = t(:group_reservations, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="206">
+        <li class="missed" data-hits="0" data-linenumber="206">
           
           
-          <code class="ruby">               in_time: @settings.tents_and_caravans_checkin_time,</code>
+          <code class="ruby">    col4 = t(:friday_to_sunday, scope: [:accommodation, :restriction_columns], </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="207">
           
           
-          <code class="ruby">               out_time: @settings.tents_and_caravans_checkout_time,</code>
+          <code class="ruby">               in_time: @settings.tents_and_caravans_checkin_time,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="208">
           
           
+          <code class="ruby">               out_time: @settings.tents_and_caravans_checkout_time,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="209">
+          
+          
           <code class="ruby">               remain_on_premises_time: @settings.remain_on_premises_time )</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="209">
+        <li class="missed" data-hits="0" data-linenumber="210">
           
           
           <code class="ruby">    [col1, col2, col3, col4]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="210">
+        <li class="never" data-hits="" data-linenumber="211">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="211">
+        <li class="never" data-hits="" data-linenumber="212">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="212">
+        <li class="covered" data-hits="1" data-linenumber="213">
           <span class="hits">1</span>
           
           <code class="ruby">  def options(accID)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="213">
+        <li class="never" data-hits="" data-linenumber="214">
           
           
           <code class="ruby">    { normal_prices: @accTypes[accID][&#39;show_normal_price&#39;], </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="214">
+        <li class="never" data-hits="" data-linenumber="215">
           
           
           <code class="ruby">      in_season_prices: @accTypes[accID][&#39;show_in_season_price&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="215">
+        <li class="never" data-hits="" data-linenumber="216">
           
           
           <code class="ruby">      promotion_prices: @accTypes[accID][&#39;show_promotion&#39;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="216">
+        <li class="missed" data-hits="0" data-linenumber="217">
           
           
           <code class="ruby">    }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="217">
+        <li class="never" data-hits="" data-linenumber="218">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="218">
+        <li class="never" data-hits="" data-linenumber="219">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="219">
+        <li class="covered" data-hits="1" data-linenumber="220">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_tent_sites_without_power?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="220">
+        <li class="never" data-hits="" data-linenumber="221">
           
           
           <code class="ruby">    # @accTypes = AccommodationType.to_hash</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="221">
+        <li class="missed" data-hits="0" data-linenumber="222">
           
           
           <code class="ruby">    @accTypes[@accNames[:tent_site_without_power]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="222">
+        <li class="never" data-hits="" data-linenumber="223">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="223">
+        <li class="never" data-hits="" data-linenumber="224">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="224">
+        <li class="covered" data-hits="1" data-linenumber="225">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_tent_sites_with_power?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="225">
+        <li class="missed" data-hits="0" data-linenumber="226">
           
           
           <code class="ruby">    @accTypes[@accNames[:tent_site_with_power]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="226">
+        <li class="never" data-hits="" data-linenumber="227">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="227">
+        <li class="never" data-hits="" data-linenumber="228">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="228">
+        <li class="covered" data-hits="1" data-linenumber="229">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_caravan_sites_without_power?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="229">
+        <li class="missed" data-hits="0" data-linenumber="230">
           
           
           <code class="ruby">    @accTypes[@accNames[:caravan_site_without_power]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="230">
+        <li class="never" data-hits="" data-linenumber="231">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="231">
+        <li class="never" data-hits="" data-linenumber="232">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="232">
+        <li class="covered" data-hits="1" data-linenumber="233">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_caravan_sites_with_power?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="233">
+        <li class="missed" data-hits="0" data-linenumber="234">
           
           
           <code class="ruby">    @accTypes[@accNames[:caravan_site_with_power]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="234">
+        <li class="never" data-hits="" data-linenumber="235">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="235">
+        <li class="never" data-hits="" data-linenumber="236">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="236">
+        <li class="covered" data-hits="1" data-linenumber="237">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_king_and_warrior_camps?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="237">
+        <li class="missed" data-hits="0" data-linenumber="238">
           
           
           <code class="ruby">    @accTypes[@accNames[:king_and_warrior_camps]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="238">
+        <li class="never" data-hits="" data-linenumber="239">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="239">
+        <li class="never" data-hits="" data-linenumber="240">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="240">
+        <li class="covered" data-hits="1" data-linenumber="241">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_day_visitors?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="241">
+        <li class="missed" data-hits="0" data-linenumber="242">
           
           
           <code class="ruby">    @accTypes[@accNames[:day_visitor]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="242">
+        <li class="never" data-hits="" data-linenumber="243">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="243">
+        <li class="never" data-hits="" data-linenumber="244">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="244">
+        <li class="covered" data-hits="1" data-linenumber="245">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_basic_chalets?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="245">
+        <li class="missed" data-hits="0" data-linenumber="246">
           
           
           <code class="ruby">    @accTypes[@accNames[:chalet_basic]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="246">
+        <li class="never" data-hits="" data-linenumber="247">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="247">
+        <li class="never" data-hits="" data-linenumber="248">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="248">
+        <li class="covered" data-hits="1" data-linenumber="249">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_standard_chalets?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="249">
+        <li class="missed" data-hits="0" data-linenumber="250">
           
           
           <code class="ruby">    @accTypes[@accNames[:chalet_standard]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="250">
+        <li class="never" data-hits="" data-linenumber="251">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="251">
+        <li class="never" data-hits="" data-linenumber="252">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="252">
+        <li class="covered" data-hits="1" data-linenumber="253">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_group_tariffs_budget?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="253">
+        <li class="missed" data-hits="0" data-linenumber="254">
           
           
           <code class="ruby">    @accTypes[@accNames[:group_tariff_budget]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="254">
+        <li class="never" data-hits="" data-linenumber="255">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="255">
+        <li class="never" data-hits="" data-linenumber="256">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="256">
+        <li class="covered" data-hits="1" data-linenumber="257">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_group_tariffs_meals_included?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="257">
+        <li class="missed" data-hits="0" data-linenumber="258">
           
           
           <code class="ruby">    @accTypes[@accNames[:group_tariff_with_meals]][&#39;show&#39;] == true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="258">
+        <li class="never" data-hits="" data-linenumber="259">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="259">
+        <li class="never" data-hits="" data-linenumber="260">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="260">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="261">
           <span class="hits">1</span>
           
+          <code class="ruby">  def new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="262">
+          <span class="hits">1</span>
+          
           <code class="ruby">    if params[:tariff]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="262">
+        <li class="missed" data-hits="0" data-linenumber="263">
           
           
           <code class="ruby">      @tariff = params[:tariff]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="263">
+        <li class="never" data-hits="" data-linenumber="264">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="264">
+        <li class="covered" data-hits="1" data-linenumber="265">
           <span class="hits">1</span>
           
           <code class="ruby">      @tariff = Tariff.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="265">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="266">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="267">
           
           
-          <code class="ruby"> </code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="268">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="268">
           
-          <code class="ruby">  def create</code>
+          
+          <code class="ruby"> </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="269">
           <span class="hits">1</span>
           
-          <code class="ruby">    @tariff = @accommodation_type.tariffs.new(tariff_params)</code>
+          <code class="ruby">  def create</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="270">
           <span class="hits">1</span>
           
-          <code class="ruby">    @tariff.tariff = to_base_amount(params[:tariff][:tariff])</code>
+          <code class="ruby">    @tariff = @accommodation_type.tariffs.new(tariff_params)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="271">
           <span class="hits">1</span>
           
-          <code class="ruby">    if @tariff.save</code>
+          <code class="ruby">    @tariff.tariff = to_base_amount(params[:tariff][:tariff])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="272">
           <span class="hits">1</span>
           
-          <code class="ruby">      flash[:notice] = t(:tariff_created, scope: [:success])</code>
+          <code class="ruby">    if @tariff.save</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="273">
           <span class="hits">1</span>
           
+          <code class="ruby">      flash[:notice] = t(:tariff_created, scope: [:success])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="274">
+          <span class="hits">1</span>
+          
           <code class="ruby">      redirect_to [:admin, @accommodation_type, @tariff]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="274">
+        <li class="never" data-hits="" data-linenumber="275">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="275">
-          
-          
-          <code class="ruby">      flash[:alert] = t(:tariff_create_failed, scope: [:failure])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="276">
           
           
-          <code class="ruby">      render :new</code>
+          <code class="ruby">      flash[:alert] = t(:tariff_create_failed, scope: [:failure])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="277">
+        <li class="missed" data-hits="0" data-linenumber="277">
           
           
-          <code class="ruby">    end  </code>
+          <code class="ruby">      render :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="278">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="279">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="280">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="280">
           
-          <code class="ruby">  def update</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="281">
           <span class="hits">1</span>
           
-          <code class="ruby">    if @tariff.update_attributes(tariff_params)</code>
+          <code class="ruby">  def update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="282">
           <span class="hits">1</span>
           
-          <code class="ruby">      flash[:success] = t(:tariff_updated, scope: [:success])</code>
+          <code class="ruby">    if @tariff.update_attributes(tariff_params)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="283">
           <span class="hits">1</span>
           
+          <code class="ruby">      flash[:success] = t(:tariff_updated, scope: [:success])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="284">
+          <span class="hits">1</span>
+          
           <code class="ruby">      redirect_to [:admin, @accommodation_type, @tariff]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="284">
+        <li class="never" data-hits="" data-linenumber="285">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="285">
+        <li class="missed" data-hits="0" data-linenumber="286">
           
           
           <code class="ruby">      flash[:alert] = t(:tariff_update_failed, scope: [:failure])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="286">
+        <li class="missed" data-hits="0" data-linenumber="287">
           
           
           <code class="ruby">      render :edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="287">
+        <li class="never" data-hits="" data-linenumber="288">
           
           
           <code class="ruby">    end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="288">
+        <li class="never" data-hits="" data-linenumber="289">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="289">
+        <li class="never" data-hits="" data-linenumber="290">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="290">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def edit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="291">
           <span class="hits">1</span>
           
-          <code class="ruby">    unless (current_user &amp;&amp; current_user.admin?)</code>
+          <code class="ruby">  def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="292">
+        <li class="covered" data-hits="1" data-linenumber="292">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      flash[:alert] = t(:update_not_allowed, scope: [:failure])</code>
+          <code class="ruby">    unless (current_user &amp;&amp; current_user.admin?)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="293">
           
           
-          <code class="ruby">      redirect_to root_path</code>
+          <code class="ruby">      flash[:alert] = t(:update_not_allowed, scope: [:failure])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="294">
+        <li class="missed" data-hits="0" data-linenumber="294">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      redirect_to root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="295">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="296">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="297">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="297">
+        <li class="covered" data-hits="1" data-linenumber="298">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="298">
+        <li class="never" data-hits="" data-linenumber="299">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="299">
+        <li class="never" data-hits="" data-linenumber="300">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="300">
+        <li class="covered" data-hits="1" data-linenumber="301">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="301">
+        <li class="never" data-hits="" data-linenumber="302">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="302">
+        <li class="covered" data-hits="1" data-linenumber="303">
           <span class="hits">1</span>
           
           <code class="ruby">    def header_line(accommodation_type)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="303">
+        <li class="missed" data-hits="0" data-linenumber="304">
           
           
           <code class="ruby">      case accommodation_type</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="304">
+        <li class="never" data-hits="" data-linenumber="305">
           
           
           <code class="ruby">      when :promotion</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="305">
+        <li class="missed" data-hits="0" data-linenumber="306">
           
           
           <code class="ruby">        [ &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;] </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="306">
+        <li class="never" data-hits="" data-linenumber="307">
           
           
           <code class="ruby">      when :without_power_points</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="307">
+        <li class="missed" data-hits="0" data-linenumber="308">
           
           
           <code class="ruby">        [ t(:without_power_points, scope: [:accommodation]).upcase,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="308">
-          
-          
-          <code class="ruby">          t(:per_site, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="309">
           
           
-          <code class="ruby">          t(:per_person_per_night, scope: [:accommodation]).upcase,</code>
+          <code class="ruby">          t(:per_site, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="310">
           
           
-          <code class="ruby">          &quot;&quot;</code>
+          <code class="ruby">          t(:per_person_per_night, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="311">
           
           
-          <code class="ruby">        ]</code>
+          <code class="ruby">          &quot;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="312">
           
           
+          <code class="ruby">        ]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="313">
+          
+          
           <code class="ruby">      when :powered_tariff</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="313">
+        <li class="missed" data-hits="0" data-linenumber="314">
           
           
           <code class="ruby">        [ t(:with_power_points, scope: [:accommodation]).upcase,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="314">
-          
-          
-          <code class="ruby">          t(:per_site, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="315">
           
           
-          <code class="ruby">          t(:per_person_per_night, scope: [:accommodation]).upcase,</code>
+          <code class="ruby">          t(:per_site, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="316">
           
           
-          <code class="ruby">          &quot;&quot;</code>
+          <code class="ruby">          t(:per_person_per_night, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="317">
           
           
-          <code class="ruby">        ]</code>
+          <code class="ruby">          &quot;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="318">
           
           
+          <code class="ruby">        ]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="319">
+          
+          
           <code class="ruby">      when :day_visitor</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="319">
+        <li class="missed" data-hits="0" data-linenumber="320">
           
           
           <code class="ruby">        [ &quot;&quot;, &quot;&quot;, t(:per_person, scope: [:accommodation]).upcase, &quot;&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="320">
+        <li class="never" data-hits="" data-linenumber="321">
           
           
           <code class="ruby">      when :chalet_tariff</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="321">
+        <li class="missed" data-hits="0" data-linenumber="322">
           
           
           <code class="ruby">        [ t(:with_power_points, scope: [:accommodation]).upcase,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="322">
-          
-          
-          <code class="ruby">          &quot;&quot;,</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="323">
           
           
-          <code class="ruby">          t(:per_night_for_chalet, scope: [:accommodation]).upcase,</code>
+          <code class="ruby">          &quot;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="324">
           
           
-          <code class="ruby">          &quot;&quot;</code>
+          <code class="ruby">          t(:per_night_for_chalet, scope: [:accommodation]).upcase,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="325">
           
           
-          <code class="ruby">        ]</code>
+          <code class="ruby">          &quot;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="326">
           
           
+          <code class="ruby">        ]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="327">
+          
+          
           <code class="ruby">      when :group_tariff</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="327">
+        <li class="missed" data-hits="0" data-linenumber="328">
           
           
           <code class="ruby">        [ t(:without_power_points, scope: [:accommodation]).upcase,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="328">
+        <li class="never" data-hits="" data-linenumber="329">
           
           
           <code class="ruby">          &quot;&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="329">
+        <li class="never" data-hits="" data-linenumber="330">
           
           
           <code class="ruby">          t(:per_person, scope: [:accommodation]).upcase,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="330">
+        <li class="never" data-hits="" data-linenumber="331">
           
           
           <code class="ruby">          t(:tents_and_caravans, scope: [:accommodation]).upcase</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="331">
+        <li class="never" data-hits="" data-linenumber="332">
           
           
           <code class="ruby">        ]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="332">
+        <li class="never" data-hits="" data-linenumber="333">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="333">
+        <li class="missed" data-hits="0" data-linenumber="334">
           
           
           <code class="ruby">       [ &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="334">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="335">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="336">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="337">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="337">
+        <li class="covered" data-hits="1" data-linenumber="338">
           <span class="hits">1</span>
           
           <code class="ruby">    def tariff_details(accommodation_type)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="338">
+        <li class="missed" data-hits="0" data-linenumber="339">
           
           
           <code class="ruby">      case accommodation_type</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="339">
+        <li class="never" data-hits="" data-linenumber="340">
           
           
           <code class="ruby">      when :promotion</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="340">
+        <li class="missed" data-hits="0" data-linenumber="341">
           
           
           <code class="ruby">        if AccommodationType.where(show: true)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="341">
+        <li class="missed" data-hits="0" data-linenumber="342">
           
           
           <code class="ruby">          [ &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="342">
+        <li class="never" data-hits="" data-linenumber="343">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="343">
+        <li class="missed" data-hits="0" data-linenumber="344">
           
           
           <code class="ruby">          [ &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="344">
+        <li class="never" data-hits="" data-linenumber="345">
           
           
           <code class="ruby">        end    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="345">
-          
-          
-          <code class="ruby">      end  </code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="346">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="347">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="348">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="348">
+        <li class="covered" data-hits="1" data-linenumber="349">
           <span class="hits">1</span>
           
           <code class="ruby">    def get_accom_type</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="349">
+        <li class="covered" data-hits="8" data-linenumber="350">
           <span class="hits">8</span>
           
           <code class="ruby">      if params[:accommodation_type_id].nil? || params[:accommodation_type_id].empty?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="350">
+        <li class="missed" data-hits="0" data-linenumber="351">
           
           
           <code class="ruby">        flash[:alert] = &quot;Accommodation type missing&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="351">
+        <li class="missed" data-hits="0" data-linenumber="352">
           
           
           <code class="ruby">        redirect_to admin_accommodation_types_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="352">
+        <li class="never" data-hits="" data-linenumber="353">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="353">
+        <li class="covered" data-hits="8" data-linenumber="354">
           <span class="hits">8</span>
           
           <code class="ruby">      @accommodation_type = AccommodationType.find(params[:accommodation_type_id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="354">
+        <li class="never" data-hits="" data-linenumber="355">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="355">
+        <li class="never" data-hits="" data-linenumber="356">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="356">
+        <li class="covered" data-hits="1" data-linenumber="357">
           <span class="hits">1</span>
           
           <code class="ruby">    def set_tariff</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="357">
+        <li class="covered" data-hits="4" data-linenumber="358">
           <span class="hits">4</span>
           
           <code class="ruby">      @tariff = Tariff.find(params[:id].to_i)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="358">
+        <li class="never" data-hits="" data-linenumber="359">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="359">
+        <li class="never" data-hits="" data-linenumber="360">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="360">
+        <li class="covered" data-hits="1" data-linenumber="361">
           <span class="hits">1</span>
           
           <code class="ruby">    def tariff_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="361">
+        <li class="covered" data-hits="2" data-linenumber="362">
           <span class="hits">2</span>
           
           <code class="ruby">      params.require(:tariff).permit(:tariff_category, :tariff, :effective_date, :end_date)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="362">
+        <li class="never" data-hits="" data-linenumber="363">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="363">
+        <li class="never" data-hits="" data-linenumber="364">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="364">
+        <li class="covered" data-hits="1" data-linenumber="365">
           <span class="hits">1</span>
           
           <code class="ruby">    def redirect_unless_signed_in</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="365">
+        <li class="covered" data-hits="8" data-linenumber="366">
           <span class="hits">8</span>
           
           <code class="ruby">      unless signed_in? </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="366">
+        <li class="covered" data-hits="1" data-linenumber="367">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to root_path, :status =&gt; 302 </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="367">
+        <li class="never" data-hits="" data-linenumber="368">
           
           
           <code class="ruby">      end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="368">
+        <li class="never" data-hits="" data-linenumber="369">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="369">
+        <li class="never" data-hits="" data-linenumber="370">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="370">
+        <li class="never" data-hits="" data-linenumber="371">
           
           
           <code class="ruby">end</code>
@@ -3541,7 +3547,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :set_locale, :define_settings</code>
+          <code class="ruby">  before_action :define_settings, :set_locale</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -3568,91 +3574,97 @@
           <code class="ruby">      logger.debug &quot;* Accept-Language: #{request.env[&#39;HTTP_ACCEPT_LANGUAGE&#39;]}&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">      I18n.locale = extract_locale_from_accept_language_header # unless Rails.env = &quot;test&quot;</code>
+          <code class="ruby">      # I18n.locale = extract_locale_from_accept_language_header # unless Rails.env = &quot;test&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">      logger.debug &quot;* Locale set to &#39;#{I18n.locale}&#39;&quot;</code>
+          <code class="ruby">      I18n.locale = @settings.language</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      logger.debug &quot;* Locale set to &#39;#{I18n.locale}&#39;&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  def define_settings</code>
         </li>
       
-        <li class="covered" data-hits="62" data-linenumber="18">
+        <li class="covered" data-hits="62" data-linenumber="19">
           <span class="hits">62</span>
           
           <code class="ruby">    @settings ||= AppConfig.instance</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">    def extract_locale_from_accept_language_header</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
           <code class="ruby">      request.env[&#39;HTTP_ACCEPT_LANGUAGE&#39;].scan(/^[a-z]{2}/).first</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
@@ -3917,11 +3929,11 @@
         <div class="source_table" id="04cbb63dc6e5894fec7b5d8cc0ed56e192e03595">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="red">58.33 %</span> covered</h4>
+    <h4><span class="red">55.56 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -3973,106 +3985,52 @@
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">    Carpediem::Application.change_locale(:af)</code>
+          <code class="ruby">    @settings.language = &#39;af&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">    # Rails.configuration.i18n.default_locale = :af</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">    # I18n.locale = I18n.default_locale = Rails.configuration.i18n.locale = Rails.configuration.i18n.default_locale</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    # puts &quot;Locale is now set to #{I18n.locale}&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="missed" data-hits="0" data-linenumber="9">
           
           
           <code class="ruby">    redirect_to &#39;/&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">    # render nothing: true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">module Carpediem</code>
+          <code class="ruby">  def to_english</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
           
-          <code class="ruby">  class Application</code>
+          
+          <code class="ruby">    @settings.language = &#39;en&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
           
-          <code class="ruby">    def change_locale(new_locale)</code>
+          
+          <code class="ruby">    redirect_to &#39;/&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
-          
-          <code class="ruby">      puts &quot;doing the impossible&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">      config.i18n.default_locale = new_locale</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">      config.i18n.locale = new_locale</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -4333,8 +4291,8 @@
     <h3>app/models/app_config.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>19</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4390,97 +4348,109 @@
           <code class="ruby">              :remain_on_premises_time</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_accessor :language</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    @version = &#39;1.0.0&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    @designer = &#39;Francois van der Hoven&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    @designer_email = &#39;francoisvanderhoven@gmail.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    @child_discount_percentage = 0.3</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    @child_age_range = (6..12)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">    @day_visitor_in_time = &#39;08H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">    @day_visitor_out_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    @chalet_in_time = &#39;11H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">    @chalet_out_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    @tents_and_caravans_checkin_time = &#39;11H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">    @tents_and_caravans_checkout_time = &#39;17H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    @remain_on_premises_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @language = &#39;en&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>

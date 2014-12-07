@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get '/accommodation', to: 'admin/tariffs#summary'
   get '/directions', to: 'static_pages#directions'
   get '/test', to: 'static_pages#test'
+  get '/afrikaans', to: 'users#to_afrikaans'
+  get '/english', to: 'users#to_english'
 
   # match "/admin/season_detail_lines/no_powerpoints", to: "admin/season_detail_lines#no_powerpoints", via: 'get'
 
