@@ -201,7 +201,8 @@ section.font-test {
     img {
       width: 100%;
       height: auto;
-      max-height: 150px;
+      min-height: 120px;
+      max-height: 160px;
       vertical-align: middle;
       border: 0;
       float: left;
@@ -211,7 +212,7 @@ section.font-test {
   header.top-banner .preference {
     position: absolute;
     z-index: 5;
-    top: 90px;
+    top: 85px;
     right: 20px;
     p {
       font-size: 0.9em;
@@ -228,7 +229,7 @@ section.font-test {
       a:visited { color: white; }
       a:hover { color: #67D959; }
       float: left;
-      margin-left: 1.5em;
+      margin-left: 1em;
     }
   }
 
@@ -720,6 +721,7 @@ section.font-test {
       color: white;
       font-size: 0.9em;
       font-family: Arial;
+      margin-right: 1em;
       float: left;
       a {
         padding: 0.4em 0.8em;
@@ -766,7 +768,7 @@ section.font-test {
   header.top-banner .preference {
     position: absolute;
     z-index: 5;
-    top: 70px;
+    top: 60px;
     right: 20px;
   }
 
