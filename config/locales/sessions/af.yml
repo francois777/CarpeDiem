@@ -2,6 +2,6 @@ af:
   activerecord:
     attributes:
       session:
-        email: Email
+        email: Epos
         password: Wagwoord
         confirmation: Bevestiging

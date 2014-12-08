@@ -1,7 +1,7 @@
 af:
   admin:
     menu:
-      tariffs: Tariffs
+      tariffs: Tariewe
     tariffs:
       new: 
         new_tariff: Nuwe Tarief
@@ -20,10 +20,10 @@ af:
         tariff: Tarief
         effective_date: Aanvangsdatum
         end_date: Einddatum        
-        return_to_tariff_list: Return to Tariff List
+        return_to_tariff_list: Keer terug na Tarief Lys
         edit: Edit
       edit:
-        update_tariff: Update Tariff  
+        update_tariff: Verander Tarief  
       fields:
         tariff_category: Tarief Kategorie
         tariff: Tarief
