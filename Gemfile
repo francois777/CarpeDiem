@@ -12,6 +12,16 @@ gem 'bootstrap-sass', '~>3.2.0'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-leaflet'
 gem 'sass'
+#  The gem 'sass' was added as a solution for these errors
+#  Preparing app for Rails asset pipeline
+#       Running: rake assets:precompile
+#       Warning. Error encountered while saving cache 0d86f4464e29aec3f23db1b674c376d83192726b/custom.css.scssc: can't dump anonymous class #<Class:0x007f35edece738>
+#       Warning. Error encountered while saving cache 2e9b983368d59fcf6e2bfae46ff2961a76bbbc95/bootstrap.scssc: can't dump anonymous class #<Class:0x007f35edece738>
+#       Warning. Error encountered while saving cache 742f9d86bd66522b7017a14fe94674be6de9da87/bootstrap.scssc: can't dump anonymous class #<Class:0x007f35edece738>
+#       I, [2014-12-08T09:07:44.018937 #666]  INFO -- : Writing /tmp/build_da67261288823c8a10d6a65e5a00c1a4/public/assets/application-396b5735fe52f122c2a4a99a0fa7cb0f.css
+#       Asset precompilation completed (4.66s)
+# http://stackoverflow.com/questions/22276991/heroku-error-encountered-while-saving-cache
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
