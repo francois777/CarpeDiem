@@ -15,6 +15,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-
-// investigate https://rails-assets.org/
