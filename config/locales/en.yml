@@ -93,7 +93,7 @@ en:
       chalet_tariff: "R %{amount} (MAXIMUM 8 PERSONS)"
       group_reservations: "R %{amount} FOR WEEKEND"
     restriction_columns:  
-      site_limit: Maximum 6 persons per stand
+      site_limit: Maximum 6 persons per site
       friday_to_sunday: "In: Fridays: %{in_time},  Out: Sundays: %{out_time}"
       day_visitor_times: "In: %{in_time},  Out: %{out_time}"
       chalet_times: "In: %{in_time},  Out: %{out_time}  see (%{ref})"

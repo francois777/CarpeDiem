@@ -3,6 +3,11 @@
   .row
     .heading-pic
       = image_tag("stroompie.jpg")
+    .preference.pull-right
+      %p
+        = link_to 'Afrikaans', afrikaans_path
+      %p
+        = link_to 'English', english_path    
   %nav.navbar.navbar-default.navbar-inverse.main-nav{:role => "navigation"}
     .container-fluid
       .navbar-header

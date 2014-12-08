@@ -67,13 +67,14 @@ af:
     per_person_per_night: per persoon per nag
     per_night_for_chalet: per nag vir rondawel
     tents_and_caravans: tente en karavane
+    may_remain_until: "mag vertoef op perseel tot %{remain_on_premises_time}"
     reference: sien (%{num})
     tents_and_caravans: tente en karavane
     column_1: Column 1
     column_2: Column 2
     column_3: Column 3
     column_4: Column 4
-    column_1:
+    title_columns:
       day_visitors: dag besoekers
       tent_sites: tent staanplekke
       caravan_sites: karavaan staanplekke
@@ -82,23 +83,20 @@ af:
       chalet_b: chalet b
       group_reservations_budget: groep besprekings (eie kos)
       group_reservations_meals: groep besprekings (met etes)
-    col_2:
+    tariff_1_columns:  
       can_arrange_picnic_basket: kan reël vir piekniek mandjie
       fully_equipped: ten volle toegerus
       comment1: sien (1)
-    col_3:
-      child_amount_a: R70 (kinders 6-12jr = R40)
-      child_amount_b: R90 (kinders 6-12jr = R60)
-      child_amount_c: R100 (kinders 6-12jr = R70)
-      person_weekend_tariff: R200 per persoon vir naweek
-      chalet_a_tariff: R700 (MAKSIMUM 8 PERSONE)
-      group_reservations_budget: R200 PER NAWEEK
-      group_reservations_meals: R400 PER NAWEEK
-    col_4:
+    tariff_2_columns:
+      site_person_tariff: "R %{adult_tariff} (kinders %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
+      site_weekend_tariff: "R %{amount} per persoon vir naweek"
+      chalet_tariff: "R %{amount} (MAKSIMUM 8 PERSONE)"
+      group_reservations: "R %{amount} VIR NAWEEK"
+    restriction_columns:  
       site_limit: Maksimum 6 persone per staanplek
-      friday_to_sunday: 'In: Vrydae: 11H00,  Uit: Sondae: 17H30'
-      day_visitor_times: 'In: 08H00,  Uit: 17H30'
-      chalet_times: 'In: 11H00,  Out: 10H00  (mag op terrein bly tot 17H30)'
+      friday_to_sunday: "In: Vrydae: %{in_time},  Uit: Sondae: %{out_time}"
+      day_visitor_times: "In: %{in_time},  Uit: %{out_time}"
+      chalet_times: "In: %{in_time},  Uit: %{out_time}  sien (%{ref})"
   accommodation_period_indicators:
     from: van
     until: tot
@@ -107,8 +105,13 @@ af:
     easter: Paasnaweek
   success:
     tariff_created: Tarief is suksesvol bygevoeg
+    tariff_updated: Tarief suksesvol verander
+    accommodation_type_created: Akkommodasie Tipe suksesvol bygevoeg
+    accommodation_type_updated: Akkommodasie Tipe suksesvol verander
   failure:
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
     tariff_create_failed: Tarief kon nie bygevoeg word nie.
     tariff_not_found: Tarief nie gevind nie
+    accommodation_type_create_failed: Akkommodasie Tipe bygevoeging het misluk
+    accommodation_type_not_found: Akkommodasie Tipe kon nie gevind word nie
     
