@@ -21,7 +21,6 @@ feature "Application pages" do
 
     scenario "Visiting user looks at menu and footer" do
       visit '/'
-      expect(page).to have_link('Home')
       expect(page).to have_link('Accommodation')
       expect(page).to have_link('Activities')
       expect(page).to have_link('Facilities')

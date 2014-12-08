@@ -1,27 +1,29 @@
+- provide(:title, t(:where_are_we, scope: [:menu]))
+
 .row
   %section.directions.clearfix
-    %h1 Waar is ons?
-
-    .col-sm-5
-      %section.address
-        %h2 Roete R563
-        .row
-          .col-sm-10.col-sm-offset-1
-            %p.formal-address
-              Farm Hekpoort <br/>
-              J504, Portion 396 </br>
-              Hekpoort </br>
-              1739
-        .row 
-          .col-sm-10.col-sm-offset-1
-            %p.distances
-              Afstand vanaf: 
-              Krugersdorp  -  20 minute <br/>
-              Pretoria  - 90 km <br/>
-              Johannesburg - 80 km <br/>
-              Rustenburg - 70 km <br/>
-              Magaliesburg - 20 km <br/>
-    .col-sm-7
-      %section.map
-        %figure
-          = image_tag('map.png', class: 'map')
+    .address
+      %h1 
+        = t(:where_are_we, scope: [:menu])
+      .col-sm-5
+        .formal-address
+          %h2 Roete R563
+          %p
+            Farm Hekpoort <br/>
+            J504, Portion 396 </br>
+            Hekpoort </br>
+            1739
+      .col-sm-7
+        .map
+          %figure
+            = image_tag('map.png', class: 'map')
+    .row        
+      .col-sm-6.col-sm-offset-3
+        .distances 
+          %p
+            Afstand vanaf: 
+            Krugersdorp  -  20 minute <br/>
+            Pretoria  - 90 km <br/>
+            Johannesburg - 80 km <br/>
+            Rustenburg - 70 km <br/>
+            Magaliesburg - 20 km <br/>

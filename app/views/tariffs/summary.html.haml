@@ -1,6 +1,8 @@
-%section.accommodation
+- provide(:title, t(:tariffs, scope: [:menu]))
+
+%section.accom-tariffs
   %h1 
-    = t(:accommodation, scope: [:accommodation]).upcase
+    = t(:tariffs, scope: [:menu]).upcase
     %span
       = "(#{t(:no_alcohol, scope: [:accommodation]).upcase})"
         

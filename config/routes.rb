@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:show]
-  resources :season_detail_lines, only: [:show]
   post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 
   namespace :admin do
@@ -11,19 +10,15 @@ Rails.application.routes.draw do
       resources :tariffs do
       end
     end    
-    resources :season_detail_lines do
-      member do
-        get :no_powerpoints
-        get :with_powerpoints
-      end
-    end
   end
 
   root 'static_pages#home'
-
+  get '/home', to: 'static_pages#home'
   get '/facilities', to: 'static_pages#facilities'
-  get '/accommodation', to: 'tariffs#summary'
+  get '/tariffs', to: 'tariffs#summary'
   get '/directions', to: 'static_pages#directions'
+  get '/accommodation', to: 'static_pages#accommodation'
+  get '/activities', to: 'static_pages#activities'
   get '/test', to: 'static_pages#test'
   get '/afrikaans', to: 'users#to_afrikaans'
   get '/english', to: 'users#to_english'

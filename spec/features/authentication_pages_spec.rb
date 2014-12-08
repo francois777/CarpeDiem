@@ -20,7 +20,7 @@ feature "Authentication pages" do
 
       expect(page).to have_text('Invalid')
 
-      click_link "Home"
+      visit home_path
       expect(page).not_to have_selector('div.alert.alert-error')
     end
 

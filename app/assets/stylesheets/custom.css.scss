@@ -60,29 +60,29 @@ table {
 
 @font-face{ 
   font-family: 'MuseoSlab';
-  src: asset_url('Museo_Slab_500_2-webfont.eot');
-  src: asset_url('Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
-       asset_url('Museo_Slab_500_2-webfont.woff') format('woff'),
-       asset_url('Museo_Slab_500_2-webfont.ttf') format('truetype'),
-       asset_url('Museo_Slab_500_2-webfont.svg#webfont') format('svg');
+  src: font-url('Museo_Slab_500_2-webfont.eot');
+  src: font-url('Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('Museo_Slab_500_2-webfont.woff') format('woff'),
+       font-url('Museo_Slab_500_2-webfont.ttf') format('truetype'),
+       font-url('Museo_Slab_500_2-webfont.svg#webfont') format('svg');
 }
 
 @font-face{ 
   font-family: 'Fertigo_PRO';
-  src: asset_url('Fertigo_PRO-webfont.eot');
-  src: asset_url('Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
-       asset_url('Fertigo_PRO-webfont.woff') format('woff'),
-       asset_url('Fertigo_PRO-webfont.ttf') format('truetype'),
-       asset_url('Fertigo_PRO-webfont.svg#webfont') format('svg');
+  src: font-url('Fertigo_PRO-webfont.eot');
+  src: font-url('Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('Fertigo_PRO-webfont.woff') format('woff'),
+       font-url('Fertigo_PRO-webfont.ttf') format('truetype'),
+       font-url('Fertigo_PRO-webfont.svg#webfont') format('svg');
 }
 
 @font-face{ 
   font-family: 'SofiaProLight';
-  src: asset_url('SofiaProLight-webfont.eot');
-  src: asset_url('SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
-       asset_url('SofiaProLight-webfont.woff') format('woff'),
-       asset_url('SofiaProLight-webfont.ttf') format('truetype'),
-       asset_url('SofiaProLight-webfont.svg#webfont') format('svg');
+  src: font-url('SofiaProLight-webfont.eot');
+  src: font-url('SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+       font-url('SofiaProLight-webfont.woff') format('woff'),
+       font-url('SofiaProLight-webfont.ttf') format('truetype'),
+       font-url('SofiaProLight-webfont.svg#webfont') format('svg');
 }
 
 h1, h2, h3, h4 {
@@ -229,9 +229,11 @@ section.font-test {
 
     .open .dropdown-menu > li {
       > a {
-      background-color: $medium-brown;
-      z-index: 5;
-      color: darken($dark-brown, 10%);
+        font-family: Arial;
+        font-size: 1.1em;
+        background-color: $medium-brown;
+        z-index: 5;
+        color: darken($dark-brown, 10%);
       }
       > a:hover, > a:focus {
         color: white;
@@ -369,7 +371,7 @@ section.font-test {
     }
   }
 
-  section.tariffs {
+  section.accom-tariffs {
     margin: 0.2em;
     .row { margin: 0; }
     header {
@@ -472,7 +474,7 @@ section.font-test {
     }
   }
 
-  section.accommodation {
+  section.accom-tariffs {
     margin: 0.2em;
     .row { margin: 0; }
     figure.facility {
@@ -597,7 +599,7 @@ section.font-test {
     }
   }
 
-  section.directions {
+  section.facilities {
     margin-bottom: 1em;
 
     h1 {
@@ -605,35 +607,62 @@ section.font-test {
       margin-bottom: 0.5em;
       font-size: 2em;      
     }
-    figure {
-      margin-left: 2em;
-      .map {
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-      }  
+  }
+
+  section.accommodation {
+    margin-bottom: 1em;
+
+    h1 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
     }
   }
 
-  section.address {
-    margin-left: 2em 0;
-    h2 {
-      font-size: 1.6em;
-     }
-    div {
-      display: block;
-      p.distances {
-        color: #A66E00;
-        margin: 1em 1.8em;
-      }
-      p.formal-address {
-        display: block;
-        border: 2px solid white;
-        margin: 1em 1.8em;
-        padding: 10px 30px;;
+  section.directions {
+    margin: 0 2em 1em 2em;
+    h1 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
+    }
+    figure {
+      // margin-left: 2em;
+      padding: 1em;
+      // border: 1px solid white;
+      //   margin-left: auto;
+      //   margin-right: auto;
+      //   width: 90%;
+      img {
+        border: none;
+        width: 90%;
       }
     }
+    .address {
+      display: inline-block;
+      margin-left: 2em;
+      margin-right: 2em;
+      .formal-address {
+        border: 1px solid white;
+        padding-top: 1em;
+        h2 {
+          font-size: 1.6em;
+         }
+        p { 
+          display: block;
+          margin: 1em 1.8em;
+          padding: 10px 30px;
+        }
+      }
+    }
+    .distances {
+      display: inline-block;
+      margin-top: 1em;
+      color: #A66E00;
+      margin: 1em 1.8em;
+    }
   }
+
 
   section.footer-container {
     width: 100%;
@@ -652,7 +681,7 @@ section.font-test {
   }
 
   section.admin-header {
-    height: 50px;
+    height: 80px;
     width: 100%;
     padding: 0.7em 3% 0 3%;
     background-color: black; 
@@ -670,7 +699,9 @@ section.font-test {
     }
 
     p.navbar-text {
+      float: left;
       padding: 0;
+      padding-top: 0.7em;
       margin: 0;
       font-family: Arial, sans-serif;
       font-size: 0.9em;
@@ -694,6 +725,14 @@ section.font-test {
 /* Extra small devices, Phones */
 @media only screen and (min-width : 480px) {  
 
+  section.admin-header {
+    height: 50px;
+    p.navbar-text {
+      padding: 0;
+      float: right;
+    }
+  }
+
   section.test {
     background: transparent;
     background-color: darkseagreen;
@@ -715,19 +754,6 @@ section.font-test {
       }
     }
   }
-
-  // section.intro {
-  //   padding: 30px;
-  //   padding-top: 0;
-  //   h2 {
-  //     padding-top: 5px;
-  //     padding-bottom: 16px;
-  //     font-size: 2em;
-  //   }
-  //   p {
-  //     font-size: 1em;
-  //   }
-  // }
 
   section.facilities {
     margin: 0 1em;
@@ -876,7 +902,7 @@ section.font-test {
     }
   }
 
-  section.tariffs {
+  section.accom-tariffs {
     margin: 0.4em;
     h1 {
       margin: 0.5em 0.2em;
@@ -935,12 +961,16 @@ section.font-test {
   }
 
 
-  section.accommodation {
+  section.accom-tariffs {
     margin: 1em;
     margin-bottom: 3em;
 
     p.sub-heading {
       margin-bottom: 0.4em;
+    }
+
+    p.comment {
+      font-size: 0.8em;
     }
 
     table {
@@ -1002,12 +1032,14 @@ section.font-test {
     }
   }  
 
-  section.accommodation {
+  section.accom-tariffs {
     margin: 1em 2em;
 
+    p.comment {
+      font-size: 0.9em;
+    }
     table {
       width: 100%;
-
       th, td {
         font-size: 0.8em;
       }

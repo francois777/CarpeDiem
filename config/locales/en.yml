@@ -16,9 +16,10 @@ en:
     make_reservation: Make reservation
     menu: Menu
     things_to_see: Things to see
+    guest_memories: Memories of our guests
     tariffs: Tariffs
     visit_us: Visit us
-    where_to_find_us: Where are we?
+    where_are_we: Where are we?
     signin: Sign in
     signout: Sign out
   references:

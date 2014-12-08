@@ -16,9 +16,10 @@ af:
     make_reservation: Plaas bespreking
     menu: Spyskaart
     things_to_see: Dinge te sien
+    guest_memories: Herinneringe van ons gaste
     tariffs: Tariewe
     visit_us: Besoek ons
-    where_to_find_us: Waar is ons?
+    where_are_we: Waar is ons?
     signin: Teken in
     signout: Teken af
   references:
