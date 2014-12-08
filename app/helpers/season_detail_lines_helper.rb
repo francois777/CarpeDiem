@@ -1,2 +1,0 @@
-module SeasonDetailLinesHelper
-end
