@@ -211,8 +211,8 @@ section.font-test {
   header.top-banner .preference {
     position: absolute;
     z-index: 5;
-    top: 10px;
-    right: 10px;
+    top: 90px;
+    right: 20px;
     p {
       font-size: 0.9em;
       padding-top: 2px;
@@ -227,6 +227,8 @@ section.font-test {
       a:link { color: white; }
       a:visited { color: white; }
       a:hover { color: #67D959; }
+      float: left;
+      margin-left: 1.5em;
     }
   }
 
@@ -440,7 +442,7 @@ section.font-test {
     }
   }
 
- section.accommodation_types {
+  section.accommodation_types {
 
     input#accommodation_type_show {
       display: block;
@@ -759,6 +761,13 @@ section.font-test {
       padding: 0;
       float: right;
     }
+  }
+
+  header.top-banner .preference {
+    position: absolute;
+    z-index: 5;
+    top: 70px;
+    right: 20px;
   }
 
   section.test {

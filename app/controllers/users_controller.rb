@@ -6,11 +6,15 @@ class UsersController < ApplicationController
 
   def to_afrikaans
     @settings.language = 'af'
-    redirect_to '/'
+    session[:language] = 'af'
+    I18n.locale = 'af'
+    redirect_to :back
   end
 
   def to_english
     @settings.language = 'en'
-    redirect_to '/'
+    session[:language] = 'en'
+    I18n.locale = 'en'
+    redirect_to :back
   end
 end

@@ -1,38 +1,40 @@
 af:
   admin:
     menu:
-      accommodation_types: Accommodation Types
+      accommodation_types: Akkommodasie Tipes
     accommodation_types:
+      accommodation_type:
+        tariffs: Tariewe
       new: 
-        new_accommodation_type: New Accommodation Type
-        create_accommodation_type: Create Accommodation Type
+        new_accommodation_type: Nuwe Akkommodasie Tipe
+        create_accommodation_type: Skep nuwe Akkommodasie Tipe
       index:
-        accommodation_type_list: Accommodation Type List
-        add_accommodation_type: Add Accommodation Type
-        no_accommodation_types_found: No Accommodation Types found  
-        accom_type: Accommodation Type 
-        description: Description
-        show: Show this accommodation type
-        show_normal_price: Show normal prices 
-        show_in_season_price: Show in-season prices
-        show_promotion: Show promotional prices
-        tariffs: Tariffs
+        accommodation_type_list: Akkommodasie Tipe Lys
+        add_accommodation_type: Voeg Nuwe Akkommodasie Tipe By
+        no_accommodation_types_found: Geen Akkommodasie Tipes gevind nie  
+        accom_type: Akkommodasie Tipe 
+        description: Beskrywing
+        show: Wys die Akkommodasie Tipe
+        show_normal_prices: Wys normale pryse 
+        show_in_season_prices: Wys in-seisoen pryse
+        show_promotional_prices: Wys promosie pryse
+        tariffs: Tariewe
       show:
-        accommodation_type_details: Accommodation Type Details  
-        accom_type: Accommodation Type 
-        description: Description
-        show: Show this accommodation type
-        show_normal_price: Show normal prices 
-        show_in_season_price: Show in-season prices
-        show_promotion: Show promotional prices
-        return_to_accommodation_type_list: Return to Accommodation Type List
-        edit: Edit
+        accommodation_type_details: Akkommodasie Tipe Details  
+        accom_type: Akkommodasie Tipe 
+        description: Beskrywing
+        show: Wys die Akkommodasie Tipe
+        show_normal_price: Wys normale pryse 
+        show_in_season_price: Wys in-seisoen pryse
+        show_promotion: Wys promosie pryse
+        return_to_accommodation_type_list: Keer terug na Akkommodasie Tipe Lys
+        edit: Wysig
       edit:
-        update_accommodation_type: Update Accommodation Type
+        update_accommodation_type: Wysig Akkommodasie Tipe
       fields:
-        accom_type: Accommodation Type 
-        description: Description
-        show: Show this accommodation type
-        show_normal_price: Show normal prices 
-        show_in_season_price: Show in-season prices
-        show_promotion: Show promotional prices
+        accom_type: Akkommodasie Tipe 
+        description: Beskrywing
+        show: Wys die Akkommodasie Tipe
+        show_normal_price: Wys normale pryse 
+        show_in_season_price: Wys in-seisoen pryse
+        show_promotion: Wys promosie pryse

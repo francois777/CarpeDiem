@@ -6,6 +6,8 @@ class Admin::AccommodationTypesController < ApplicationController
   before_action :redirect_unless_signed_in
 
   def index
+    puts "Admin::AccommodationTypesController#index"
+    puts "locale currently set to #{I18n.locale}"
     @accommodation_types = AccommodationType.all
   end
 

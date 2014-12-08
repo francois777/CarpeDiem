@@ -3,6 +3,8 @@ en:
     menu:
       accommodation_types: Accommodation Types
     accommodation_types:
+      accommodation_type:
+        tariffs: Tariffs
       new: 
         new_accommodation_type: New Accommodation Type
         create_accommodation_type: Create Accommodation Type

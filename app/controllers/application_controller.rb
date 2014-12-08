@@ -10,6 +10,21 @@ class ApplicationController < ActionController::Base
     if request.env['HTTP_ACCEPT_LANGUAGE']
       logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
       # I18n.locale = extract_locale_from_accept_language_header # unless Rails.env = "test"
+      puts "\n\n"
+      puts "Current language setting is #{session[:language]}"
+      unless (session[:language] == 'en' || session[:language] == 'af')
+        session[:language] = 'en'
+        @settings.language = 'en'
+      end
+      if session[:language]
+        puts "session[:language] = #{session[:language]}"
+        @settings.language = session[:language]
+      else
+        @settings.language = request.env['HTTP_ACCEPT_LANGUAGE']
+        puts "settings.language = #{settings.language}"
+        session[:language] = @settings.language
+      end
+      puts "\n\n"
       I18n.locale = @settings.language
       logger.debug "* Locale set to '#{I18n.locale}'"
     end
