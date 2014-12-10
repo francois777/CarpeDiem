@@ -2,15 +2,15 @@ en:
   events:
     show:
       event_details: Event Details  
-      event_title: Event Name
+      title: Event Name
       organiser_name: Organiser Name
       organiser_telephone: Organiser Telephone
       start_date: Start Date
       end_date: End Date
       confirmed: Confirmed?
-      estimated_guests_count: Estimated number of guests
-      estimated_chalets_required: Estimated number of chalets required
-      estimated_sites_required: Estimated number of sites required
+      estimated_guests_count: Number of guests
+      estimated_chalets_required: Number of chalets required
+      estimated_sites_required: Number of sites required
       power_required: Power required?
       meals_required: Meals required?
       quoted_cost: Estimated cost quoted

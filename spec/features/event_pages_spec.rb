@@ -3,21 +3,20 @@ require 'spec_helper'
 feature "Event pages" do
 
   include FactoryGirl::Syntax::Methods
-  # include ApplicationHelper
+  include ApplicationHelper
   include SessionsHelper
 
   context "Admin user create new event" do
 
     before do
-      admin = create(:admin)
+      @admin = create(:admin)
       @event = create(:event)
-      login(admin)
+      login(@admin)
     end
 
     scenario "Visit new event page" do
       visit new_admin_event_path
       expect(page).to have_title('New Event')
-
       expect(page).to have_selector('h1', text: "New Event")
       expect(page).to have_text('Event Name')
       expect(page).to have_text('Start Date')
@@ -51,8 +50,68 @@ feature "Event pages" do
       expect(page).to have_text('Event created successfully')
       expect(page).to have_title('Event Details')
       expect(page).to have_selector('h1', text: "Event Details")
-      # expect( find(:css, "input#event_title").value ).to eq('Chalet Luxury, Promotion')
-      # expect( find(:css, "input#tariff_tariff").value ).to eq('R 55.90')
+    end
+
+    scenario "View event (as administrator)" do
+      @event.start_date = Date.new(2015, 3, 31)
+      @event.end_date = Date.new(2015, 4, 1)
+      @event.save
+      visit event_path(@event)
+      expect(page).to have_title('Event Details')
+      expect(page).to have_selector('h1', text: "Event Details")
+      expect(page).to have_text('Organiser Name')
+      expect(page).to have_text('Organiser Telephone')
+      expect(page).to have_text('Start Date')
+      expect(page).to have_text('End Date')
+      expect(page).to have_text('Confirmed?')
+      expect(page).to have_text('Number of guests')
+      expect(page).to have_text('Number of chalets required')
+      expect(page).to have_text('Power required?')
+      expect(page).to have_text('Meals required?')
+      expect(page).to have_text('Estimated cost quoted')
+      expect(page).to have_selector(:button, 'Edit Event')
+
+      expect( find(:css, "input#event_title").value).to eq('Annual Staff Reunion')
+      expect( find(:css, "input#event_organiser_name").value).to eq('Victor Korestensky')
+      expect( find(:css, "input#event_organiser_telephone").value).to eq('08 6511 1122')
+      expect( find(:css, "input#event_start_date").value ).to eq('31 March 2015')
+      expect( find(:css, "input#event_end_date").value ).to eq('01 April 2015')
+      expect( find(:css, "input#event_confirmed").value).to eq "Yes"
+      expect( find(:css, "input#event_estimated_guests_count").value ).to eq('20')
+      expect( find(:css, "input#event_estimated_chalets_required").value ).to eq('2')
+      expect( find(:css, "input#event_power_required").value).to eq "Yes"
+      expect( find(:css, "input#event_meals_required").value).to eq "Yes"
+      expect( find(:css, "input#event_quoted_cost").value).to eq "R 350.00"
+      expect(page).to have_selector(:button, 'Return to calendar')
+      expect(page).to have_selector(:button, 'Edit Event')
+    end
+
+    scenario "Update an event (as administrator)" do
+      # Failure/Error: puts "Current user: #{current_user.inspect}"
+      # NameError:
+      #  undefined local variable or method `cookies' for 
+      #  #<RSpec::ExampleGroups::EventPages::AdminUserCreateNewEvent:
+      #  0x007fd54323c9c0>
+
+      # login(@admin)
+      # visit event_path(@event)
+      # expect(page).to have_selector(:button, 'Edit Event')
+      # click_button "Edit Event"
+      # puts "Current user: #{current_user.inspect}"
+      # #expect(page).to have_title('Update Event')
+      # expect(page).to have_selector('h1', text: "Update Event")
+      # expect(page).to have_text('Event Name')
+      # expect(page).to have_text('Start Date')
+      # expect(page).to have_text('End Date')
+      # expect(page).to have_text('Organiser Name')
+      # expect(page).to have_text('Organiser Telephone')
+      # expect(page).to have_text('Confirmed?')
+      # expect(page).to have_text('Number of guests')
+      # expect(page).to have_text('Number of chalets required')
+      # expect(page).to have_text('Power required?')
+      # expect(page).to have_text('Meals required?')
+      # expect(page).to have_text('Estimated cost quoted')
+      # expect(page).to have_selector(:button, 'Update Event')
     end
 
   end
