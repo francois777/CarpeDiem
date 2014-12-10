@@ -1,0 +1,58 @@
+- provide(:title, t(:memories, scope: [:menu]))
+
+.row
+  %section.memories
+    %h1 
+      = t(:memories, scope: [:menu])
+    #memories
+      %ul.medium-wrap
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('besoekers-1.png')
+              %span.caption Photo 1
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('kampeerders-1.png')
+              %span.caption Photo 2
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('kampeerders-2.png')
+              %span.caption Photo 3
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('kampeerders-3.png')
+              %span.caption Photo 4
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('kampeerders-4.png')
+              %span.caption Photo 5
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('wandelaars-1.png')
+              %span.caption Photo 6
+        %li
+          %div
+            = link_to "#" do
+              %span.wring
+                %span
+                  = image_tag('wandelaars-2.png')
+              %span.caption Photo 7
+

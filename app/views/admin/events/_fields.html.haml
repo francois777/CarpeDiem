@@ -9,7 +9,7 @@
   .col-sm-8
     = f.text_field :organiser_name, class: "form-control", required: true
 .form-group
-  = f.label :title, t(".organiser_telephone"), class: "col-sm-4 control-label"
+  = f.label :organiser_telephone, t(".organiser_telephone"), class: "col-sm-4 control-label"
   .col-sm-3
     = f.text_field :organiser_telephone, class: "form-control", required: true
 .form-group
@@ -41,7 +41,7 @@
   .col-sm-3
     = f.check_box :meals_required, {}, checked_value = "1", unchecked_value = "0"
 .form-group
-  = f.label :title, t(".quoted_cost"), class: "col-sm-4 control-label"
+  = f.label :quoted_cost, t(".quoted_cost"), class: "col-sm-4 control-label"
   .col-sm-8
     = f.text_field :quoted_cost, value: to_local_amount(@event.quoted_cost), class: "form-control"
 

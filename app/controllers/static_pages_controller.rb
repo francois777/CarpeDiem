@@ -12,6 +12,12 @@ class StaticPagesController < ApplicationController
   def directions
   end
 
+  def memories
+  end
+
+  def views
+  end
+
   def test
   end
 end

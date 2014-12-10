@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/directions', to: 'static_pages#directions'
   get '/accommodation', to: 'static_pages#accommodation'
   get '/activities', to: 'static_pages#activities'
+  get '/memories', to: 'static_pages#memories'
+  get '/views', to: 'static_pages#views'
   get '/test', to: 'static_pages#test'
   get '/afrikaans', to: 'users#to_afrikaans'
   get '/english', to: 'users#to_english'

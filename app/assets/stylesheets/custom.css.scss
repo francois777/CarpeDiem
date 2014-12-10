@@ -809,6 +809,85 @@ section.font-test {
       width: 90%;
     }  
   }
+
+  section.memories {
+    margin: 1em auto;
+  }
+
+  #memories {
+    width: 0 auto;
+
+    span.wring img {
+      border-radius: 10px;  
+    }
+
+    ul {
+      display: block;
+      list-style-type: disc;
+      text-align: center;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      -webkit-padding-start: 40px;
+    }
+    .medium-wrap>li .wring {
+      display: table-cell;
+      vertical-align: middle;
+      width: 199px;
+      // height: 199px;    
+    }
+    .thumb-wrap>li .wring {
+      display: table-cell;
+      vertical-align: middle;
+      width: 120px;
+      height: 120px;    
+    }
+    .thumb-wrap {
+      padding: 15px 8px 0 8px;
+      li {
+        margin: 0 4px 15px 4px;
+        width: 132px;
+        padding: 5px;
+      }
+    }
+    .medium-wrap {
+      padding: 15px 8px 0 8px;
+      li {
+        margin: 0 7px 15px 7px;
+        width: 262px;
+        padding: 5px;
+      }
+      .caption {
+        display: block;
+        padding: .3em 5px;
+        font-size: .9em;
+        line-height: 1.1;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        .title {
+          color: #fff;
+        }
+      }
+    }
+    .medium-wrap, .thumb-wrap {
+      margin: 0;
+      li {
+        display: -moz-inline-box;
+        display: inline-block;
+        border: none;   //1px solid #fff;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        img {
+          vertical-align: middle;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 /* Extra small devices, Phones */

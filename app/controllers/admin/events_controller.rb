@@ -15,7 +15,7 @@ class Admin::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.quoted_cost = to_base_amount(params[:event][:quoted_cost])
+    @event.quoted_cost = to_base_amount(params[:event][:quoted_cost].to_i)
     if @event.save
       flash[:success] = "#{t(:event_created, scope: [:success])}"
       redirect_to @event

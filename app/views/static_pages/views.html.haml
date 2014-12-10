@@ -1,0 +1,22 @@
+- provide(:title, t(:memories, scope: [:menu]))
+
+.row
+  %section.views
+    %h1 
+      = t(:views, scope: [:menu])
+    #memories
+      / %ul.medium-wrap
+      /   %li
+      /     %div
+      /       = link_to "#" do
+      /         %span.wring
+      /           %span
+      /             = image_tag('besoekers-1.png')
+      /         %span.caption Photo 1
+      /   %li
+      /     %div
+      /       = link_to "#" do
+      /         %span.wring
+      /           %span
+      /             = image_tag('kampeerders-1.png')
+      /         %span.caption Photo 2
