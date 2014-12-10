@@ -6,14 +6,6 @@ af:
       new: 
         new_event: Nuwe Gebeurtenis
         create_event: Voeg gebeurtenis by
-      index:
-        event_list: Lys van Kampe en Gebeure
-        add_event: Voeg by
-        no_events_found: Geen inskrywings gevind nie  
-        event_title: Gebeurtenis Naam
-        organiser_name: Organiseerder Naam
-        start_date: Begin Datum
-        end_date: Eind Datum
       edit:
         update_event: Update Event
       fields:

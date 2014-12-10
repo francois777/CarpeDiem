@@ -16,3 +16,8 @@ en:
       quoted_cost: Estimated cost quoted
       return_to_event_list: Return to calendar
       edit: Edit
+    index:
+      event_list: Event List
+      add_event: Add Event
+      no_events_found: No events found  
+      event_title: Event Name

@@ -1,0 +1,14 @@
+- provide(:title, t(".update_event"))
+.row
+  %section.events
+    %h1 
+      = t(".update_event")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for([:admin, @event], html: {class: "form-horizontal", role: "form"}) do |f|
+          = render 'fields', f: f
+          .centered
+            .button.btn
+              = f.submit t(".update_event"), class: "btn btn-large btn-primary"        
+      
+        

@@ -26,10 +26,23 @@ class Admin::EventsController < ApplicationController
   end
 
   def edit
+    unless (current_user && current_user.admin?)
+      flash[:alert] = t(:update_not_allowed, scope: [:failure])
+      redirect_to root_path
+    end
   end
 
   def update
-  end
+    updated_params = event_params
+    updated_params[:quoted_cost] = to_base_amount(event_params[:quoted_cost])
+    if @event.update_attributes(updated_params)
+      flash[:success] = "#{t(:event_updated, scope: [:success])} (#{undo_link})"
+      redirect_to @event
+    else
+      flash[:alert] = t(:event_update_failed, scope: [:failure])
+      render :edit
+    end  
+  end  
 
   def destroy
   end

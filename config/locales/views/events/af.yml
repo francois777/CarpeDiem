@@ -16,3 +16,8 @@ af:
       quoted_cost: Geraamde koste gemeld?
       return_to_event_list: Keer terug na kalender
       edit: Wysig
+    index:
+      event_list: Lys van Kampe en Gebeure
+      add_event: Voeg by
+      no_events_found: Geen inskrywings gevind nie  
+      event_title: Gebeurtenis Naam

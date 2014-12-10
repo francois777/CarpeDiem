@@ -16,5 +16,10 @@
               %li
                 %span.title
                   = link_to event.title, event
+  .row
+    .actions
+      -if current_user && current_user.admin?
+        %button.btn.btn-info
+          = link_to t(".add_event"), new_admin_event_path
 
 -# debug @events_by_start_date
