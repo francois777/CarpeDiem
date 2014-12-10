@@ -40,9 +40,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',  group: :development
-gem 'rails_12factor', group: :production
-gem 'pg',      group: :production
+group :development do
+  gem 'spring'
+  gem 'rails_12factor'
+  gem 'pg'
+  #  Use this gem to overcome problem: Error encountered 
+  #  while saving cache , can't dump anonymous class
+  gem 'sass-rails-source-maps'
+end
 gem 'rake', '~> 10.3.2'
 gem 'paper_trail', '~> 3.0.6'
 

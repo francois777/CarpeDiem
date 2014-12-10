@@ -139,6 +139,10 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     sass (3.4.7)
+    sass-rails-source-maps (0.0.4)
+      rails
+      sass (>= 3.3.0.rc.3)
+      sprockets (>= 2.3.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -194,6 +198,7 @@ DEPENDENCIES
   rake (~> 10.3.2)
   rspec-rails
   sass
+  sass-rails-source-maps
   sdoc (~> 0.4.0)
   simplecov
   spring
