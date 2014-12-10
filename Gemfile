@@ -38,12 +38,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'pg'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
   gem 'spring'
   gem 'rails_12factor'
-  gem 'pg'
   #  Use this gem to overcome problem: Error encountered 
   #  while saving cache , can't dump anonymous class
   gem 'sass-rails-source-maps'
@@ -62,7 +62,6 @@ group :test do
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'factory_girl_rails'
 end
-
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
