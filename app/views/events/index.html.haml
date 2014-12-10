@@ -1,3 +1,5 @@
+- provide(:title, t(".events"))
+
 #events
   %h2{ id: 'month' }
     = link_to "<", date: @date.prev_month.strftime("%y-%m-%d")
@@ -8,9 +10,7 @@
       = calendar do |date| 
         = date.day
         - dte2 = date.strftime("%d-%m-%y")
-        -# puts "Inside calendar loop, passing date = #{dte2}" 
         - if @events_by_start_date[dte2]
-          -# puts "Found an entry in @events_by_start_date[date]"
           %ul
             - @events_by_start_date[dte2].each do |event|
               %li
@@ -21,5 +21,3 @@
       -if current_user && current_user.admin?
         %button.btn.btn-info
           = link_to t(".add_event"), new_admin_event_path
-
--# debug @events_by_start_date

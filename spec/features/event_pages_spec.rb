@@ -87,33 +87,32 @@ feature "Event pages" do
     end
 
     scenario "Update an event (as administrator)" do
-      # Failure/Error: puts "Current user: #{current_user.inspect}"
-      # NameError:
-      #  undefined local variable or method `cookies' for 
-      #  #<RSpec::ExampleGroups::EventPages::AdminUserCreateNewEvent:
-      #  0x007fd54323c9c0>
-
-      # login(@admin)
-      # visit event_path(@event)
-      # expect(page).to have_selector(:button, 'Edit Event')
-      # click_button "Edit Event"
-      # puts "Current user: #{current_user.inspect}"
-      # #expect(page).to have_title('Update Event')
-      # expect(page).to have_selector('h1', text: "Update Event")
-      # expect(page).to have_text('Event Name')
-      # expect(page).to have_text('Start Date')
-      # expect(page).to have_text('End Date')
-      # expect(page).to have_text('Organiser Name')
-      # expect(page).to have_text('Organiser Telephone')
-      # expect(page).to have_text('Confirmed?')
-      # expect(page).to have_text('Number of guests')
-      # expect(page).to have_text('Number of chalets required')
-      # expect(page).to have_text('Power required?')
-      # expect(page).to have_text('Meals required?')
-      # expect(page).to have_text('Estimated cost quoted')
-      # expect(page).to have_selector(:button, 'Update Event')
+      visit event_path(@event)
+      expect(page).to have_selector(:button, 'Edit Event')
+      visit edit_admin_event_path(@event)
+      expect(page).to have_title('Update Event')
+      expect(page).to have_selector('h1', text: "Update Event")
+      expect(page).to have_text('Event Name')
+      expect(page).to have_text('Start Date')
+      expect(page).to have_text('End Date')
+      expect(page).to have_text('Organiser Name')
+      expect(page).to have_text('Organiser Telephone')
+      expect(page).to have_text('Confirmed?')
+      expect(page).to have_text('Number of guests')
+      expect(page).to have_text('Number of chalets required')
+      expect(page).to have_text('Power required?')
+      expect(page).to have_text('Meals required?')
+      expect(page).to have_text('Estimated cost quoted')
+      expect(page).to have_selector(:button, 'Update Event')
     end
 
+    scenario "Admin user looks at month calender" do
+      current_month = Date.today.strftime("%B")
+      visit events_path
+      expect(page).to have_title('Events')
+      expect(page).to have_selector('h2', text: current_month)
+      expect(page).to have_selector(:button, 'Add Event')
+    end
   end
 
   def login(user)

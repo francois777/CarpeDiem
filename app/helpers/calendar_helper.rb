@@ -6,7 +6,6 @@ module CalendarHelper
       pdate = params['date']
       newdate = Date.new(pdate[0..1].to_i + 2000, pdate[3..4].to_i, pdate[6..7].to_i)
     end
-    puts "newdate = #{newdate}"
     Calendar.new(self, newdate, block).table
   end
 

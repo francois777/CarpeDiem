@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-10T18:30:40+10:00">2014-12-10T18:30:40+10:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-10T18:50:14+10:00">2014-12-10T18:50:14+10:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">89.46%</span></span>
+    (<span class="covered_percent"><span class="green">91.11%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.99
+         2.05
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>30</b> files in total.
-    <b>854</b> relevant lines. 
-    <span class="green"><b>764</b> lines covered</span> and
-    <span class="red"><b>90</b> lines missed </span>
+    <b>877</b> relevant lines. 
+    <span class="green"><b>799</b> lines covered</span> and
+    <span class="red"><b>78</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,11 +62,11 @@
       
       <tr>
         <td class="strong"><a href="#76323f15ae919150cb5d6e863e614849df151a87" class="src_link" title="app/controllers/admin/events_controller.rb">app/controllers/admin/events_controller.rb</a></td>
-        <td class="red strong">57.14 %</td>
+        <td class="red strong">61.9 %</td>
         <td>77</td>
         <td>42</td>
-        <td>24</td>
-        <td>18</td>
+        <td>26</td>
+        <td>16</td>
         <td>0.7</td>
       </tr>
       
@@ -107,17 +107,17 @@
         <td>21</td>
         <td>10</td>
         <td>11</td>
-        <td>7.7</td>
+        <td>8.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#42c09412083548752bb200f5770ea44a9350f7f1" class="src_link" title="app/controllers/events_controller.rb">app/controllers/events_controller.rb</a></td>
-        <td class="red strong">40.91 %</td>
+        <td class="yellow strong">86.36 %</td>
         <td>38</td>
         <td>22</td>
-        <td>9</td>
-        <td>13</td>
-        <td>0.5</td>
+        <td>19</td>
+        <td>3</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -127,7 +127,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>5.6</td>
+        <td>5.9</td>
       </tr>
       
       <tr>
@@ -147,7 +147,7 @@
         <td>13</td>
         <td>5</td>
         <td>8</td>
-        <td>1.4</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -177,7 +177,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>4.2</td>
+        <td>4.4</td>
       </tr>
       
       <tr>
@@ -197,7 +197,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>20.9</td>
+        <td>23.0</td>
       </tr>
       
       <tr>
@@ -273,9 +273,9 @@
       <tr>
         <td class="strong"><a href="#d8c7522834367fd4f7899836b95a508d081127a5" class="src_link" title="spec/features/event_pages_spec.rb">spec/features/event_pages_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>127</td>
-        <td>80</td>
-        <td>80</td>
+        <td>126</td>
+        <td>103</td>
+        <td>103</td>
         <td>0</td>
         <td>1.3</td>
       </tr>
@@ -885,11 +885,11 @@
         <div class="source_table" id="76323f15ae919150cb5d6e863e614849df151a87">
   <div class="header">
     <h3>app/controllers/admin/events_controller.rb</h3>
-    <h4><span class="red">57.14 %</span> covered</h4>
+    <h4><span class="red">61.9 %</span> covered</h4>
     <div>
       <b>42</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
     </div>
   </div>
   
@@ -1064,8 +1064,8 @@
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
-          
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
           <code class="ruby">    unless (current_user &amp;&amp; current_user.admin?)</code>
         </li>
@@ -1208,8 +1208,8 @@
           <code class="ruby">    def set_event</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
           <code class="ruby">      @event = Event.find(params[:id].to_i)</code>
         </li>
@@ -1334,8 +1334,8 @@
           <code class="ruby">    def redirect_unless_signed_in</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="74">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="74">
+          <span class="hits">4</span>
           
           <code class="ruby">      redirect_to root_path unless current_user</code>
         </li>
@@ -2240,8 +2240,8 @@
           <code class="ruby">  def set_locale</code>
         </li>
       
-        <li class="covered" data-hits="77" data-linenumber="10">
-          <span class="hits">77</span>
+        <li class="covered" data-hits="83" data-linenumber="10">
+          <span class="hits">83</span>
           
           <code class="ruby">    if request.env[&#39;HTTP_ACCEPT_LANGUAGE&#39;]</code>
         </li>
@@ -2354,8 +2354,8 @@
           <code class="ruby">  def define_settings</code>
         </li>
       
-        <li class="covered" data-hits="77" data-linenumber="29">
-          <span class="hits">77</span>
+        <li class="covered" data-hits="83" data-linenumber="29">
+          <span class="hits">83</span>
           
           <code class="ruby">    @settings ||= AppConfig.instance</code>
         </li>
@@ -2415,11 +2415,11 @@
         <div class="source_table" id="42c09412083548752bb200f5770ea44a9350f7f1">
   <div class="header">
     <h3>app/controllers/events_controller.rb</h3>
-    <h4><span class="red">40.91 %</span> covered</h4>
+    <h4><span class="yellow">86.36 %</span> covered</h4>
     <div>
       <b>22</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <span class="green"><b>19</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -2462,14 +2462,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
           <code class="ruby">    puts &quot;EventsController#index&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">    @events = Event.all</code>
         </li>
@@ -2486,32 +2486,32 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
           <code class="ruby">    result = {}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    @events.group_by do |event|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
           <code class="ruby">      stdate = event.start_date.strftime(&quot;%d-%m-%y&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
           <code class="ruby">      if result[stdate].nil?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
           <code class="ruby">        result[stdate] = [event]</code>
         </li>
@@ -2540,20 +2540,20 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">    @events_by_start_date = result</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">    temp_date = params[:date] ? Date.parse(params[:date]) : Date.today</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
           <code class="ruby">    @date = Date.new(temp_date.year, temp_date.month, temp_date.day)</code>
         </li>
@@ -2576,8 +2576,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
           
           <code class="ruby">    if @event.nil?</code>
         </li>
@@ -2630,8 +2630,8 @@
           <code class="ruby">    def set_event</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="35">
+          <span class="hits">3</span>
           
           <code class="ruby">      @event = Event.find(params[:id].to_i)</code>
         </li>
@@ -2714,26 +2714,26 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="8">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="8">
+          <span class="hits">17</span>
           
           <code class="ruby">    user = User.find_by(email: params[:session][:email].downcase)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="9">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="9">
+          <span class="hits">17</span>
           
           <code class="ruby">    if user &amp;&amp; user.authenticate(params[:session][:password])</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="10">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="10">
+          <span class="hits">15</span>
           
           <code class="ruby">      sign_in user</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="11">
+          <span class="hits">15</span>
           
           <code class="ruby">      redirect_back_or user</code>
         </li>
@@ -2996,8 +2996,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="4">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="4">
+          <span class="hits">15</span>
           
           <code class="ruby">    @user = User.find(params[:id])</code>
         </li>
@@ -3638,14 +3638,14 @@
           <code class="ruby">  def validate_end_date_before_start_date</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="16">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="16">
+          <span class="hits">20</span>
           
           <code class="ruby">    if start_date &amp;&amp; end_date</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="17">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="19" data-linenumber="17">
+          <span class="hits">19</span>
           
           <code class="ruby">      errors.add(:end_date, &quot;End date is before start date&quot;) if end_date &lt; start_date</code>
         </li>
@@ -3938,8 +3938,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="4">
-          <span class="hits">32</span>
+        <li class="covered" data-hits="34" data-linenumber="4">
+          <span class="hits">34</span>
           
           <code class="ruby">  before_save { email.downcase! }</code>
         </li>
@@ -4028,8 +4028,8 @@
           <code class="ruby">  def self.new_remember_token</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="19">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="33" data-linenumber="19">
+          <span class="hits">33</span>
           
           <code class="ruby">    SecureRandom.urlsafe_base64</code>
         </li>
@@ -4052,8 +4052,8 @@
           <code class="ruby">  def self.hash(token)</code>
         </li>
       
-        <li class="covered" data-hits="212" data-linenumber="23">
-          <span class="hits">212</span>
+        <li class="covered" data-hits="237" data-linenumber="23">
+          <span class="hits">237</span>
           
           <code class="ruby">    Digest:: SHA1.hexdigest(token.to_s)</code>
         </li>
@@ -4076,8 +4076,8 @@
           <code class="ruby">  def full_name</code>
         </li>
       
-        <li class="covered" data-hits="74" data-linenumber="27">
-          <span class="hits">74</span>
+        <li class="covered" data-hits="81" data-linenumber="27">
+          <span class="hits">81</span>
           
           <code class="ruby">    first_name + &#39; &#39; + last_name</code>
         </li>
@@ -4112,8 +4112,8 @@
           <code class="ruby">    def create_remember_token</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="33">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="33">
+          <span class="hits">16</span>
           
           <code class="ruby">      self.remember_token = User.hash(User.new_remember_token)</code>
         </li>
@@ -6167,8 +6167,8 @@
     <h3>spec/features/event_pages_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>80</b> relevant lines. 
-      <span class="green"><b>80</b> lines covered</span> and
+      <b>103</b> relevant lines. 
+      <span class="green"><b>103</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6242,20 +6242,20 @@
           <code class="ruby">    before do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="12">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="12">
+          <span class="hits">5</span>
           
           <code class="ruby">      @admin = create(:admin)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="13">
+          <span class="hits">5</span>
           
           <code class="ruby">      @event = create(:event)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="14">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="14">
+          <span class="hits">5</span>
           
           <code class="ruby">      login(@admin)</code>
         </li>
@@ -6710,154 +6710,154 @@
           <code class="ruby">    scenario &quot;Update an event (as administrator)&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # Failure/Error: puts &quot;Current user: #{current_user.inspect}&quot;</code>
+          <code class="ruby">      visit event_path(@event)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # NameError:</code>
+          <code class="ruby">      expect(page).to have_selector(:button, &#39;Edit Event&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      #  undefined local variable or method `cookies&#39; for </code>
+          <code class="ruby">      visit edit_admin_event_path(@event)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      #  #&lt;RSpec::ExampleGroups::EventPages::AdminUserCreateNewEvent:</code>
+          <code class="ruby">      expect(page).to have_title(&#39;Update Event&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      #  0x007fd54323c9c0&gt;</code>
+          <code class="ruby">      expect(page).to have_selector(&#39;h1&#39;, text: &quot;Update Event&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      expect(page).to have_text(&#39;Event Name&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # login(@admin)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Start Date&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="covered" data-hits="1" data-linenumber="97">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # visit event_path(@event)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;End Date&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_selector(:button, &#39;Edit Event&#39;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Organiser Name&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # click_button &quot;Edit Event&quot;</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Organiser Telephone&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # puts &quot;Current user: #{current_user.inspect}&quot;</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Confirmed?&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="101">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # #expect(page).to have_title(&#39;Update Event&#39;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Number of guests&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_selector(&#39;h1&#39;, text: &quot;Update Event&quot;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Number of chalets required&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Event Name&#39;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Power required?&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Start Date&#39;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Meals required?&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;End Date&#39;)</code>
+          <code class="ruby">      expect(page).to have_text(&#39;Estimated cost quoted&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="106">
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Organiser Name&#39;)</code>
+          <code class="ruby">      expect(page).to have_selector(:button, &#39;Update Event&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
-          <code class="ruby">      # expect(page).to have_text(&#39;Organiser Telephone&#39;)</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">      # expect(page).to have_text(&#39;Confirmed?&#39;)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Number of guests&#39;)</code>
+          <code class="ruby">    scenario &quot;Admin user looks at month calender&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Number of chalets required&#39;)</code>
+          <code class="ruby">      current_month = Date.today.strftime(&quot;%B&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Power required?&#39;)</code>
+          <code class="ruby">      visit events_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Meals required?&#39;)</code>
+          <code class="ruby">      expect(page).to have_title(&#39;Events&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="covered" data-hits="1" data-linenumber="113">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_text(&#39;Estimated cost quoted&#39;)</code>
+          <code class="ruby">      expect(page).to have_selector(&#39;h2&#39;, text: current_month)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="114">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # expect(page).to have_selector(:button, &#39;Update Event&#39;)</code>
+          <code class="ruby">      expect(page).to have_selector(:button, &#39;Add Event&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="115">
@@ -6869,70 +6869,64 @@
         <li class="never" data-hits="" data-linenumber="116">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="117">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
+        <li class="covered" data-hits="1" data-linenumber="118">
           <span class="hits">1</span>
           
           <code class="ruby">  def login(user)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="120">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="119">
+          <span class="hits">5</span>
           
           <code class="ruby">    visit signin_path</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="121">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="120">
+          <span class="hits">5</span>
           
           <code class="ruby">    fill_in &quot;Email&quot;, with: user.email</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="122">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="121">
+          <span class="hits">5</span>
           
           <code class="ruby">    fill_in &quot;Password&quot;, with: user.password</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="123">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="122">
+          <span class="hits">5</span>
           
           <code class="ruby">    click_button &quot;Sign in&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="123">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="125">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
           <code class="ruby"></code>
