@@ -6,8 +6,6 @@ class Admin::AccommodationTypesController < ApplicationController
   before_action :redirect_unless_signed_in
 
   def index
-    puts "Admin::AccommodationTypesController#index"
-    puts "locale currently set to #{I18n.locale}"
     @accommodation_types = AccommodationType.all
   end
 
@@ -79,9 +77,7 @@ class Admin::AccommodationTypesController < ApplicationController
     end
 
     def redirect_unless_signed_in
-      unless signed_in? 
-        redirect_to root_path, :status => 302 
-      end  
+      redirect_to root_path unless current_user 
     end
 
 end

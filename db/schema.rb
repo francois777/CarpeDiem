@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208042350) do
+ActiveRecord::Schema.define(version: 20141208174847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20141208042350) do
     t.boolean "show_normal_price",    default: false
     t.boolean "show_in_season_price", default: false
     t.boolean "show_promotion",       default: false
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.string   "organiser_name"
+    t.string   "organiser_telephone"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "confirmed",                  default: false
+    t.integer  "estimated_guests_count",     default: 0
+    t.integer  "estimated_chalets_required", default: 0
+    t.integer  "estimated_sites_required",   default: 0
+    t.boolean  "power_required",             default: false
+    t.boolean  "meals_required",             default: false
+    t.integer  "quoted_cost",                default: 0
+    t.string   "comments",                   default: ""
   end
 
   create_table "season_detail_lines", force: true do |t|

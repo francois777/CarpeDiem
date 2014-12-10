@@ -52,14 +52,13 @@ module ApplicationHelper
   end
 
   def display_date(date, options = {})
-    if date == nil
-      ""
-    else  
-      if options[:format] && options[:format] == :short
+    return "" if date == nil
+    return date.strftime("%d %B %Y") unless options[:format]
+    case options[:format]
+      when :short
         date.strftime("%d/%m/%Y")
-      else  
-        date.strftime("%d %B %Y")
-      end  
+      when :month  
+        date.strftime("%B %Y")
     end
   end
 

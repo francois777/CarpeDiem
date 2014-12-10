@@ -1,0 +1,18 @@
+af:
+  events:
+    show:
+      event_details: Inskrywing Details  
+      event_title: Gebeurtenis Name
+      organiser_name: Organiseerder Name
+      organiser_telephone: Organiseerder Telefoon
+      start_date: Begin Datum
+      end_date: Eind Datum
+      confirmed: Bevestig?
+      estimated_guests_count: Geraamde aantal gaste
+      estimated_chalets_required: Geraamde aantal chalets benodig
+      estimated_sites_required: Geraamde aantal staanplekke benodig
+      power_required: Kragpunte benodig?
+      meals_required: Maaltye benodig?
+      quoted_cost: Geraamde koste gemeld?
+      return_to_event_list: Keer terug na kalender
+      edit: Wysig

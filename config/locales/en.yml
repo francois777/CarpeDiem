@@ -108,9 +108,15 @@ en:
     tariff_updated: Tariff updated successfully
     accommodation_type_created: Accommodation Type created successfully
     accommodation_type_updated: Accommodation Type updated successfully
+    event_created: Event created successfully
+    event_updated: Event updated successfully
   failure:
     invalid_email_password: Invalid email/password combination.
     tariff_create_failed: Tariff create was not successful
     tariff_not_found: Tariff not found
     accommodation_type_create_failed: Accommodation Type create was not successful
+    accommodation_type_update_failed: Accommodation Type update was not successful
     accommodation_type_not_found: Accommodation Type not found
+    event_create_failed: Event create was not successful
+    event_update_failed: Event update was not successful
+    event_not_found: Event not found

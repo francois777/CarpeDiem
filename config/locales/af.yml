@@ -105,13 +105,19 @@ af:
     easter: Paasnaweek
   success:
     tariff_created: Tarief is suksesvol bygevoeg
-    tariff_updated: Tarief suksesvol verander
+    tariff_updated: Tarief verandering suksesvol
     accommodation_type_created: Akkommodasie Tipe suksesvol bygevoeg
     accommodation_type_updated: Akkommodasie Tipe suksesvol verander
+    event_created: Gebeurtenis suksesvol bygevoeg
+    event_updated: Gebeurtenis verandering suksesvol
   failure:
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
     tariff_create_failed: Tarief kon nie bygevoeg word nie.
     tariff_not_found: Tarief nie gevind nie
     accommodation_type_create_failed: Akkommodasie Tipe bygevoeging het misluk
+    accommodation_type_update_failed: Accommodation Type update was not successful
     accommodation_type_not_found: Akkommodasie Tipe kon nie gevind word nie
+    event_create_failed: Gebeurtenis bygevoeging het misluk
+    event_update_failed: Gebeurtenis verandering het misluk
+    event_not_found: Gebeurtenis kon nie gevind word nie
     

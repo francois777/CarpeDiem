@@ -19,13 +19,6 @@ class Admin::TariffsController < ApplicationController
   end
 
 
-  def options(accID)
-    { normal_prices: @accTypes[accID]['show_normal_price'], 
-      in_season_prices: @accTypes[accID]['show_in_season_price'],
-      promotion_prices: @accTypes[accID]['show_promotion']
-    }
-  end
-
   def new
     if params[:tariff]
       @tariff = params[:tariff]
@@ -69,6 +62,13 @@ class Admin::TariffsController < ApplicationController
   def destroy
   end
 
+  def options(accID)
+    { normal_prices: @accTypes[accID]['show_normal_price'], 
+      in_season_prices: @accTypes[accID]['show_in_season_price'],
+      promotion_prices: @accTypes[accID]['show_promotion']
+    }
+  end
+
   private
 
     def undo_link
@@ -99,9 +99,7 @@ class Admin::TariffsController < ApplicationController
     end
 
     def redirect_unless_signed_in
-      unless signed_in? 
-        redirect_to root_path, :status => 302 
-      end  
+      redirect_to signin_path unless current_user 
     end
 
 end

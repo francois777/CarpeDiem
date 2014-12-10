@@ -1,0 +1,32 @@
+af:
+  admin:
+    menu:
+      events: Kampe en Gebeure
+    events:
+      new: 
+        new_event: Nuwe Gebeurtenis
+        create_event: Voeg gebeurtenis by
+      index:
+        event_list: Lys van Kampe en Gebeure
+        add_event: Voeg by
+        no_events_found: Geen inskrywings gevind nie  
+        event_title: Gebeurtenis Naam
+        organiser_name: Organiseerder Naam
+        start_date: Begin Datum
+        end_date: Eind Datum
+      edit:
+        update_event: Update Event
+      fields:
+        event: Event
+        title: Gebeurtenis Naam
+        organiser_name: Organiseerder Naam
+        organiser_telephone: Organiseerder Telefoon
+        start_date: Begin Datum
+        end_date: Eind Datum
+        confirmed: Bevestig?
+        estimated_guests_count: Geraamde aantal gaste
+        estimated_chalets_required: Geraamde aantal chalets
+        estimated_sites_required: Geraamde aantal staanplekke
+        power_required: Kragpunte benodig?
+        meals_required: Maaltye benodig?
+        quoted_cost: Geraamde koste gemeld?

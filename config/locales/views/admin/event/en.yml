@@ -1,0 +1,32 @@
+en:
+  admin:
+    menu:
+      events: Events
+    events:
+      new: 
+        new_event: New Event
+        create_event: Create Event
+      index:
+        event_list: Event List
+        add_event: Add Event
+        no_events_found: No events found  
+        event_title: Event Name
+        organiser_name: Organiser Name
+        start_date: Start Date
+        end_date: End Date
+      edit:
+        update_event: Update Event
+      fields:
+        event: Event
+        title: Event Name
+        organiser_name: Organiser Name
+        organiser_telephone: Organiser Telephone
+        start_date: Start Date
+        end_date: End Date
+        confirmed: Confirmed?
+        estimated_guests_count: Number of guests
+        estimated_chalets_required: Number of chalets required
+        estimated_sites_required: Number of sites required
+        power_required: Power required?
+        meals_required: Meals required?
+        quoted_cost: Estimated cost quoted

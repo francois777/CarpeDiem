@@ -1,0 +1,20 @@
+#events
+  %h2{ id: 'month' }
+    = link_to "<", date: @date.prev_month.strftime("%y-%m-%d")
+    = display_date(@date, {format: :month})
+    = link_to ">", date: @date.next_month.strftime("%y-%m-%d")
+  .row
+    .col-sm-10.col-sm-offset-1
+      = calendar do |date| 
+        = date.day
+        - dte2 = date.strftime("%d-%m-%y")
+        -# puts "Inside calendar loop, passing date = #{dte2}" 
+        - if @events_by_start_date[dte2]
+          -# puts "Found an entry in @events_by_start_date[date]"
+          %ul
+            - @events_by_start_date[dte2].each do |event|
+              %li
+                %span.title
+                  = link_to event.title, event
+
+-# debug @events_by_start_date

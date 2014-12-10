@@ -2,20 +2,23 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:show]
+  resources :events, only: [:index, :show]
+
   post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 
   namespace :admin do
     resources :users, only: [:index]
     resources :accommodation_types do
-      resources :tariffs do
-      end
+      resources :tariffs
     end    
+    resources :events, only: [:new, :create, :edit, :update, :destroy]
   end
 
   root 'static_pages#home'
   get '/home', to: 'static_pages#home'
   get '/facilities', to: 'static_pages#facilities'
   get '/tariffs', to: 'tariffs#summary'
+  get '/events', to: 'events#index'
   get '/directions', to: 'static_pages#directions'
   get '/accommodation', to: 'static_pages#accommodation'
   get '/activities', to: 'static_pages#activities'

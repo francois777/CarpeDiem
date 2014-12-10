@@ -1,0 +1,47 @@
+= render 'shared/error_messages', object: f.object
+
+.form-group
+  = f.label :title, t(".title"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :title, class: "form-control", required: true
+.form-group
+  = f.label :organiser_name, t(".organiser_name"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :organiser_name, class: "form-control", required: true
+.form-group
+  = f.label :title, t(".organiser_telephone"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.text_field :organiser_telephone, class: "form-control", required: true
+.form-group
+  = f.label :start_date, t(".start_date"), class: "col-sm-4 control-label"
+  .col-sm-3
+    =f.text_field :start_date, class: "form-control", required: true    
+.form-group
+  = f.label :end_date, t(".end_date"), class: "col-sm-4 control-label"
+  .col-sm-3
+    =f.text_field :end_date, class: "form-control", required: true    
+.form-group
+  = f.label :confirmed, t(".confirmed"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.check_box :confirmed, {}, checked_value = "1", unchecked_value = "0"
+.form-group
+  = f.label :estimated_guests_count, t(".estimated_guests_count"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.number_field :estimated_guests_count, class: "form-control", required: true
+.form-group
+  = f.label :estimated_chalets_required, t(".estimated_chalets_required"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.number_field :estimated_chalets_required, class: "form-control", required: true
+.form-group
+  = f.label :power_required, t(".power_required"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.check_box :power_required, {}, checked_value = "1", unchecked_value = "0"
+.form-group
+  = f.label :meals_required, t(".meals_required"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.check_box :meals_required, {}, checked_value = "1", unchecked_value = "0"
+.form-group
+  = f.label :title, t(".quoted_cost"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :quoted_cost, value: to_local_amount(@event.quoted_cost), class: "form-control"
+

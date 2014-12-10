@@ -12,15 +12,6 @@ FactoryGirl.define do
     end
   end
 
-  factory :season_detail_line do
-    add_attribute :sequence, 1
-    season_group_type 0
-    line_col_1 'TENT SITES'
-    line_col_2 'R110'
-    line_col_3 'R70 (children 6-12yr=R40)'
-    line_col_4 'Maximum 6 persons per site'
-  end
-
   factory :accommodation_type do
     accom_type 'A'
     description 'Tent Site Without Power'
@@ -39,6 +30,23 @@ FactoryGirl.define do
     end_date Date.today + 300
     association :accommodation_type
   end
+
+  factory :event do
+    title 'Annual Staff Reunion'
+    organiser_name 'Victor Korestensky'
+    organiser_telephone '08 6511 1122'
+    start_date Date.today + 30
+    end_date Date.today + 34
+    confirmed true
+    estimated_guests_count 20
+    estimated_chalets_required 2
+    estimated_sites_required 3
+    power_required true
+    meals_required true
+    quoted_cost 35000
+    comments 'Will confirm in two weeks'
+  end  
+
 
 end
 

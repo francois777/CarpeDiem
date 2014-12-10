@@ -1,0 +1,49 @@
+- provide(:title, t(".event_details"))
+
+.row
+  %section.events.clearfix
+    %h1
+      = t(".event_details")
+    .row
+      .col-xs-8.col-xs-offset-2.col-md-6.col-md-offset-3
+        = form_for(@event, html: {class: "form-horizontal", role: "form"}) do |f|
+          .form-group
+            = f.label :title, t(".title"), class: "col-sm-4 control-label"
+            .col-sm-8
+              = f.text_field :title, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :organiser_name, t(".organiser_name"), class: "col-sm-4 control-label"
+            .col-sm-8
+              = f.text_field :organiser_name, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :organiser_telephone, t(".organiser_telephone"), class: "col-sm-4 control-label"
+            .col-sm-4
+              = f.text_field :organiser_telephone, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :start_date, t(".start_date"), class: "col-sm-4 control-label"
+            .col-sm-4
+              = f.text_field :start_date, readonly: "", value: display_date(@event.start_date), class: 'form-control'
+          .form-group
+            = f.label :confirmed, t(".confirmed"), class: "col-sm-4 control-label" 
+            .col-sm-2
+              = f.text_field :confirmed, readonly: "", value: @event.confirmed? ? 'Yes' : 'No', class: 'form-control'
+          .form-group
+            = f.label :estimated_guests_count, t(".estimated_guests_count"), class: "col-sm-4 control-label"
+            .col-sm-2
+              = f.text_field :estimated_guests_count, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :estimated_chalets_required, t(".estimated_chalets_required"), class: "col-sm-4 control-label"
+            .col-sm-2
+              = f.text_field :estimated_chalets_required, readonly: "", value: @event.estimated_chalets_required? ? 'Yes' : 'No', class: "form-control"
+          .form-group
+            = f.label :power_required, t(".power_required"), class: "col-sm-4 control-label"
+            .col-sm-2
+              = f.text_field :power_required, readonly: "", value: @event.power_required? ? 'Yes' : 'No', class: "form-control"
+          .form-group
+            = f.label :meals_required, t(".meals_required"), class: "col-sm-4 control-label"
+            .col-sm-2
+              = f.check_box :meals_required, readonly: "", value: @event.meals_required? ? 'Yes' : 'No', class: "form-control"
+          .form-group
+            = f.label :quoted_cost, t(".quoted_cost"), class: "col-sm-4 control-label"
+            .col-sm-3
+              = f.text_field :quoted_cost, readonly: "", value: to_local_amount(@event.quoted_cost), class: "form-control"

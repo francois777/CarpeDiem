@@ -210,7 +210,7 @@ section.font-test {
   }
 
   header.top-banner .preference {
-    position: absolute;
+    position: fixed;
     z-index: 5;
     top: 85px;
     right: 20px;
@@ -295,6 +295,7 @@ section.font-test {
       clear:both;
   }
 
+  // 320px+
   .main-nav {
     border: none;
     border-radius: 0;
@@ -343,6 +344,7 @@ section.font-test {
     text-align: center;
   }
 
+  // 320px+
   section.carpediem {
     background-image: image-url('bg-texture-light.png');
     vertical-align: middle;
@@ -402,6 +404,7 @@ section.font-test {
     }
   }
 
+  // 320px+
   section.accom-tariffs {
     margin: 0.2em;
     .row { margin: 0; }
@@ -505,6 +508,7 @@ section.font-test {
     }
   }
 
+  // 320px+
   section.accom-tariffs {
     margin: 0.2em;
     .row { margin: 0; }
@@ -578,13 +582,15 @@ section.font-test {
 
   section.facilities {
     margin-right: 0.5em;
+    margin-bottom: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
     background-image: image-url('bg-texture-light.png');
 
     h1 {
-      margin-bottom: 0.4em;
-      font-size: 1.6em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
     }
 
     .topic {
@@ -630,16 +636,7 @@ section.font-test {
     }
   }
 
-  section.facilities {
-    margin-bottom: 1em;
-
-    h1 {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: 2em;      
-    }
-  }
-
+  // 320px+
   section.accommodation {
     margin-bottom: 1em;
 
@@ -650,6 +647,61 @@ section.font-test {
     }
   }
 
+  #events {
+    margin: 0 2px;
+    h2 {
+      margin: 1em auto;
+    }
+    table {
+      padding: 1em;
+      margin: 0 auto;
+      width: 100%;
+      th, td {
+        border: 1px solid white;
+        text-align: center;
+        height: 3em;
+      }
+      tbody tr {
+        // background-color: #3e3e3e;
+        th {
+          color: $golden-brown;
+          vertical-align: middle;
+          font-size: 0.9em;
+        }
+        td {
+          width: 14.285714285%;
+          color: $dark-brown;
+          vertical-align: top;
+          padding: 2px;
+          ul li {
+            display: inline;
+            font-size: 0.7em;
+            span.title {
+              a:visited, a:link {
+                color: #F04E42;
+              }
+            }
+          }
+        }
+        td.notmonth {
+          background-image: image-url('bg-texture2.png');
+        }
+      }
+    }
+  }
+
+  section.events {
+    margin-bottom: 1em;
+
+    h1 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
+    }
+
+  }
+
+  // 320px+
   section.directions {
     margin: 0 2em 1em 2em;
     h1 {
@@ -752,6 +804,16 @@ section.font-test {
     }
   }
 
+  #events {
+    margin: auto;
+    h2 {
+      margin: 1em auto;
+    }
+    table {
+      padding: 1em;
+      width: 90%;
+    }  
+  }
 }
 
 /* Extra small devices, Phones */
@@ -766,7 +828,7 @@ section.font-test {
   }
 
   header.top-banner .preference {
-    position: absolute;
+    position: fixed;
     z-index: 5;
     top: 60px;
     right: 20px;
@@ -777,6 +839,7 @@ section.font-test {
     background-color: darkseagreen;
   }
 
+  //480px+
   section.carpediem {
     float: none;
     figure {
@@ -798,6 +861,7 @@ section.font-test {
     margin: 0 1em;
   }
 
+  //480px+
   section.tariffs {
     margin: 0.2em;
     .row { margin: 0; }
@@ -875,6 +939,7 @@ section.font-test {
     }
   }
 
+  // 768px+
   section.carpediem {
     margin: 20px auto;
     // float: right;
@@ -941,6 +1006,7 @@ section.font-test {
     }
   }
 
+  // 768px+
   section.accom-tariffs {
     margin: 0.4em;
     h1 {
@@ -999,7 +1065,7 @@ section.font-test {
     }
   }
 
-
+  // 768px+
   section.accom-tariffs {
     margin: 1em;
     margin-bottom: 3em;
@@ -1071,6 +1137,7 @@ section.font-test {
     }
   }  
 
+  // 992px+
   section.accom-tariffs {
     margin: 1em 2em;
 
