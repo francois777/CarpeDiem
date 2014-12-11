@@ -10,12 +10,12 @@
       = calendar do |date| 
         = date.day
         - dte2 = date.strftime("%d-%m-%y")
-        - if @events_by_start_date[dte2]
+        - if @grouped_cal_days[dte2]
           %ul
-            - @events_by_start_date[dte2].each do |event|
+            - @grouped_cal_days[dte2].each do |calday|
               %li
                 %span.title
-                  = link_to event.title, event
+                  = link_to calday.diarisable.title, calday.diarisable
   .row
     .actions
       -if current_user && current_user.admin?

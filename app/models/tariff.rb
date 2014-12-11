@@ -20,7 +20,7 @@ class Tariff < ActiveRecord::Base
   scope :promotions, -> { where('show_promotion = ?', true) }
   scope :no_power, -> { where('with_power_points = ?', false) }  
 
-  enum season_class: [:normal_tariff, :in_season_tariff, :promotion_tariff]
+  enum price_class: [:normal_price, :in_season_price, :special_price]
 
   def validate_effective_date_before_end_date
     if effective_date && end_date

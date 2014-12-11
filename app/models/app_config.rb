@@ -5,7 +5,7 @@ class AppConfig
   attr_reader :version, :designer, :designer_email, :child_discount_percentage, :child_age_range,
               :day_visitor_in_time, :day_visitor_out_time, :chalet_in_time, :chalet_out_time,
               :tents_and_caravans_checkin_time, :tents_and_caravans_checkout_time,
-              :remain_on_premises_time
+              :remain_on_premises_time, :longest_event_duration
   attr_accessor :language
 
   def initialize
@@ -22,5 +22,6 @@ class AppConfig
     @tents_and_caravans_checkout_time = '17H00'
     @remain_on_premises_time = '17H30'
     @language = 'en'
+    @longest_event_duration = 14
   end
 end

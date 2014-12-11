@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 
   has_paper_trail on: [:update, :destroy]
+  has_many :diary_days, as: :diarisable
 
   validates :title, presence: true, 
                     length: { minimum: 10, maximum: 50 }
@@ -11,11 +12,43 @@ class Event < ActiveRecord::Base
   validates :start_date, presence:true
   validates :comments, length: { minimum: 0, maximum: 200 }
   validate :validate_end_date_before_start_date
+  validate :validate_event_duration
 
-  def validate_end_date_before_start_date
-    if start_date && end_date
-      errors.add(:end_date, "End date is before start date") if end_date < start_date
+  after_save :remove_existing_diary_dates, :add_diary_dates
+
+
+  private
+
+    def validate_end_date_before_start_date
+      if start_date && end_date
+        errors.add(:end_date, :end_date_before_start_date) if end_date < start_date
+      end
     end
-  end
+
+    def validate_event_duration
+      if end_date && start_date &&
+        ((end_date.to_datetime - start_date.to_datetime).to_i + 1).to_i > AppConfig.instance.longest_event_duration
+        errors.add(:end_date, :event_exceeds_max_duration)
+      end   
+    end
+
+    def add_diary_dates
+      dte1 = start_date.to_datetime
+      dte2 = end_date.to_datetime
+
+      while dte1 <= dte2 do
+        DiaryDay.create(
+            day: dte1,
+            diarisable: self
+          )
+        dte1 += 1
+      end
+    end
+
+    def remove_existing_diary_dates
+      diary_days.each do |date|
+        date.delete
+      end  
+    end
 
 end

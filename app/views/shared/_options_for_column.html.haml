@@ -1,9 +1,0 @@
-.dropdown
-  %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "data-toggle" => "dropdown", :type => "button"}
-    = "Change column #{colId}"
-    %span.caret
-  %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1", :role => "menu", data: { id: @season_detail_line.id }}
-    - object.each_with_index do |colname, index|
-      %li{:role => "presentation"}
-        %a{:id => "#{@season_detail_line.id.to_s}-#{index.to_s}", :href => "#", :role => "menuitem", :tabindex => "-1"} 
-          = colname[0].upcase

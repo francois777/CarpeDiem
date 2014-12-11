@@ -1,0 +1,9 @@
+af:
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            end_date:
+              end_date_before_start_date: Eind datum is voor begin datum
+              event_exceeds_max_duration: Gebeurtenis oorskry maksimum tydperk

@@ -5,6 +5,12 @@ class TariffsController < ApplicationController
   def summary
     @accTypes = AccommodationType.to_hash
     @accNames = AccommodationType::ACCOMMODATION_NAMES
+    puts "@accTypes[@accNames]"
+    puts @accTypes[@accNames]
+    unless AccommodationType.any? || Tariff.any?
+      redirect_to root_path 
+      return
+    end
     promotions = AccommodationType.promotions
     if promotions.any?
       @promotion_header = header_line(:promotion)
@@ -195,7 +201,6 @@ class TariffsController < ApplicationController
   end
 
   def show_tent_sites_without_power?
-    # @accTypes = AccommodationType.to_hash
     @accTypes[@accNames[:tent_site_without_power]]['show'] == true
   end
 

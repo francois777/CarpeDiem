@@ -28,8 +28,6 @@ Rails.application.routes.draw do
   get '/afrikaans', to: 'users#to_afrikaans'
   get '/english', to: 'users#to_english'
 
-  # match "/admin/season_detail_lines/no_powerpoints", to: "admin/season_detail_lines#no_powerpoints", via: 'get'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

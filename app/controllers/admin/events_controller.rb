@@ -16,6 +16,7 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.quoted_cost = to_base_amount(params[:event][:quoted_cost].to_i)
+    @event.end_date = @event.start_date if @event.end_date.nil?
     if @event.save
       flash[:success] = "#{t(:event_created, scope: [:success])}"
       redirect_to @event
@@ -35,6 +36,7 @@ class Admin::EventsController < ApplicationController
   def update
     updated_params = event_params
     updated_params[:quoted_cost] = to_base_amount(event_params[:quoted_cost])
+    @event.end_date = @event.start_date if @event.end_date.nil?
     if @event.update_attributes(updated_params)
       flash[:success] = "#{t(:event_updated, scope: [:success])} (#{undo_link})"
       redirect_to @event

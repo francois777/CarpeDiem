@@ -84,4 +84,14 @@ describe Event do
     expect(@event).not_to be_valid
   end
 
+  it "must know about its diarisable children" do
+    @event.save
+    expect(@event.diary_days.count).to eq(1)
+  end
+
+  it "must not exceed the maximum duration" do
+    @event.end_date = @event.start_date.to_datetime + 14
+    expect(@event).not_to be_valid
+  end
+
 end

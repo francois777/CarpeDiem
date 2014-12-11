@@ -5,19 +5,21 @@ class EventsController < ApplicationController
 
   def index
     puts "EventsController#index"
-    @events = Event.all
+    #@events = Event.all
     # @events_by_start_date = @events.group_by(&:start_date)
 
+    @cal_days = DiaryDay.all
+
     result = {}
-    @events.group_by do |event|
-      stdate = event.start_date.strftime("%d-%m-%y")
-      if result[stdate].nil?
-        result[stdate] = [event]
+    @cal_days.group_by do |calday|
+      formatted_dte = calday.day.strftime("%d-%m-%y")
+      if result[formatted_dte].nil?
+        result[formatted_dte] = [calday]
       else
-        result[stdate].push(event)
+        result[formatted_dte].push(calday)
       end  
     end
-    @events_by_start_date = result
+    @grouped_cal_days = result
     temp_date = params[:date] ? Date.parse(params[:date]) : Date.today
     @date = Date.new(temp_date.year, temp_date.month, temp_date.day)
   end
