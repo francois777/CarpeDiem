@@ -1,0 +1,14 @@
+af:
+  admin:
+    users:
+      edit:
+        update_user: Wysig Verbruiker
+        update_profile: Verander my profiel
+        save_changes: Stoor veranderings
+        change: Verander
+      index:
+        all_administrators: Alle administreerders  
+        new_user: Nuwe verbruiker
+      new:
+        add_user: Voeg verbruiker by  
+        save_changes: Stoor veranderings

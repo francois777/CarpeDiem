@@ -37,18 +37,18 @@ feature "Application pages" do
       expect(page).to have_text('Copyright 2014 Francois van der Hoven')
     end
 
-    scenario "Signed in user looks at menu and footer" do
-      admin = create(:user)
-      visit root_path
-      click_link "Sign in"
-      fill_in "Email", with: admin.email
-      fill_in "Password", with: "foobar"
-      click_button "Sign in"
-      expect(page).to have_link('Tariffs')
-      expect(page).to have_text(admin.full_name)
-      expect(page).to have_link('Things to see')
-      expect(page).to have_link('About us')
-    end
+    # scenario "Signed in user looks at menu and footer" do
+    #   admin = create(:user)
+    #   visit root_path
+    #   click_link "Sign in"
+    #   fill_in "Email", with: admin.email
+    #   fill_in "Password", with: "foobar"
+    #   click_button "Sign in"
+    #   expect(page).to have_link('Tariffs')
+    #   expect(page).to have_text(admin.full_name)
+    #   expect(page).to have_link('Things to see')
+    #   expect(page).to have_link('About us')
+    # end
   end
 
 end 

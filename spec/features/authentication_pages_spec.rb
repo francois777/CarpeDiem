@@ -30,21 +30,21 @@ feature "Authentication pages" do
       fill_in "Email", with: user.email
       fill_in "Password", with: 'invalid'
       click_button "Sign in"
-      expect(page).to have_text('Invalid email/password combination')
+      expect(page).to have_text('Only an administrator may sign in')
     end
 
-    scenario "normal user signs in with valid information" do
+    # scenario "normal user signs in with valid information" do
 
-      user = create(:user)
-      puts "Test: about to sign_in user"
-      sign_in user
+    #   user = create(:user)
+    #   puts "Test: about to sign_in user"
+    #   sign_in user
 
-      expect(page).to have_title(user.full_name)
-      expect(page).to have_css('a', 'Sign out')
+    #   expect(page).to have_title(user.full_name)
+    #   expect(page).to have_css('a', 'Sign out')
 
-      click_link "Sign out"
-      expect(page).to have_css('a', 'Sign in')
-    end    
+    #   click_link "Sign out"
+    #   expect(page).to have_css('a', 'Sign in')
+    # end    
 
     scenario "admin user signs in with valid information" do
       admin_user = create(:admin)

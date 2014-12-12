@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def to_afrikaans
     @settings.language = 'af'
     session[:language] = 'af'

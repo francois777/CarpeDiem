@@ -1,0 +1,15 @@
+- provide(:title, t(".update_user"))
+
+%section.user
+  %h1
+    = t(".update_profile")
+  .row
+    = form_for([:admin, @user], html: {class: "form-horizontal", role: "form"}) do |f|
+      = render 'fields', f: f
+      .centered
+        .button.btn
+          = f.submit t(".save_changes"), class: "btn btn-large btn-primary"
+
+    = gravatar_for(@user, { size: 150 })
+    %p
+      = link_to t(".change"), "http://gravatar.com/emails"

@@ -24,7 +24,7 @@ class AccommodationType < ActiveRecord::Base
                          format: { with: VALID_ACCOMMODATION_TYPE }
 
   validates :description, presence: true
-
+  default_scope { order('accom_type ASC') }
   scope :promotions, -> { where('show_promotion = ?', true) }
   scope :in_season_prices, -> { where('show_in_season_price = ?', true) }
   scope :normal_prices, -> { where('show_normal_price = ?', true) }

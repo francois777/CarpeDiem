@@ -1,0 +1,12 @@
+- provide(:title, t(".add_user"))
+
+%section.user
+  %h1
+    = t(".add_user")
+  .row
+    = form_for([:admin, @user], html: {class: "form-horizontal", role: "form"}) do |f|
+      = render 'fields', f: f
+      .centered
+        .button.btn
+          = f.submit t(".save_changes"), class: "btn btn-large btn-primary"
+

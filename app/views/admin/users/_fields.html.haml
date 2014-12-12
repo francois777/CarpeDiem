@@ -1,0 +1,23 @@
+= render 'shared/error_messages', object: f.object
+
+
+.form-group
+  = f.label :first_name, t(".first_name"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :first_name, class: "form-control"
+.form-group
+  = f.label :last_name, t(".last_name"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :last_name, class: "form-control"
+.form-group
+  = f.label :email, t(".email"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.text_field :email, class: "form-control"
+.form-group
+  = f.label :password, t(".password"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.password_field :password, class: "form-control"
+.form-group
+  = f.label :password_confirmation, t(".password_confirmation"), class: "col-sm-4 control-label"
+  .col-sm-8
+    = f.password_field :password_confirmation, class: "form-control"

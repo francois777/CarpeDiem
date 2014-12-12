@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
   resources :events, only: [:index, :show]
 
   post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users do
+      member do
+        get :change_password
+      end
+    end
     resources :accommodation_types do
       resources :tariffs
     end    
@@ -44,6 +48,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   get "/signin",  to: "sessions#new"
+  # get "/change_password", to: "admin/users#change_password"
   match "/signout", to: "sessions#destroy", via: 'get'
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy"

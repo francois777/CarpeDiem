@@ -5,6 +5,8 @@ af:
     site_name: "Carpe Diem"
     site_town: "Hekpoort"
     owners: Jacques en Henriëtte Kotzé
+  global:
+    please_sign_in: Teken asseblief in  
   menu:
     about_us: Wie is ons?
     accommodation: Akkomodasie
@@ -24,6 +26,10 @@ af:
     where_are_we: Waar is ons?
     signin: Teken in
     signout: Teken af
+    change_password: Verander my wagwoord
+    my_settings: My details
+    users: Verbruikers
+    all_users: Alle verbruikers
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -112,6 +118,8 @@ af:
     accommodation_type_updated: Akkommodasie Tipe suksesvol verander
     event_created: Gebeurtenis suksesvol bygevoeg
     event_updated: Gebeurtenis verandering suksesvol
+    profile_updated: Profiel is verander
+    new_user_added: New user has been added
   failure:
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
     tariff_create_failed: Tarief kon nie bygevoeg word nie.
@@ -122,4 +130,5 @@ af:
     event_create_failed: Gebeurtenis bygevoeging het misluk
     event_update_failed: Gebeurtenis verandering het misluk
     event_not_found: Gebeurtenis kon nie gevind word nie
+    only_admin_user_can_sign_in: Net administreerders mag inteken
     

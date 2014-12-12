@@ -106,15 +106,6 @@ h4 {
   font-size: 1.2em;
 }
 
-nav.navbar.navbar-default.navbar-inverse.main-nav {
-  margin: 0;
-}
-
-.navbar-collapse {
-  position: relative;
-  z-index: 2;
-}
-
 html {
   height: 100%;
 }
@@ -177,6 +168,15 @@ section.font-test {
     background-color: khaki;
   }
 
+  nav.navbar.navbar-default.navbar-inverse.main-nav {
+    margin: 0;
+  }
+
+  .navbar-collapse {
+    position: relative;
+    z-index: 2;
+  }
+
   .main-container {
     background-image: image-url('bg-texture.png');
     // background-image: none;
@@ -228,55 +228,53 @@ section.font-test {
     }
   }
 
-  ul.visible li {
-    opacity: 1;
-    z-index: 5;
-    background-color: $medium-brown;  
-  }
-
-  ul.nav.navbar-nav li {
-    background-image: image-url('bg-nav.png');
-    z-index: 5;
-    opacity: 0.9;
-  }
-
-  .navbar-inverse .navbar-nav,
-  .navbar-default .navbar-nav {
-    > li > a {
-      color: $dark-brown;
-    }
-    > .open {
-      a, a:hover, a:focus {
-        color: white;
-        background-image: image-url('bg-nav.png');
-      }
-
-    }
-
-    .open .dropdown-menu > li {
-      > a {
-        font-family: Arial;
-        font-size: 1.1em;
-        background-color: $medium-brown;
-        z-index: 5;
-        color: darken($dark-brown, 10%);
-      }
-      > a:hover, > a:focus {
-        color: white;
-      }
-    }
-
-  }
-
-  ul.dropdown-menu {
-    padding-top: 0;
-    padding-bottom: 0;
-    border: none;
-    li {
-      background-color: rgb(206,185,136);
+  header.top-banner {
+    ul.visible li {
+      opacity: 1;
       z-index: 5;
-      a :hover {
-        font: white;
+      background-color: $medium-brown;  
+    }
+
+    ul.nav.navbar-nav li {
+      background-image: image-url('bg-nav.png');
+      z-index: 5;
+      opacity: 0.9;
+    }
+    .navbar-inverse .navbar-nav,
+    .navbar-default .navbar-nav {
+      > li > a {
+        color: $dark-brown;
+      }
+      > .open {
+        a, a:hover, a:focus {
+          color: white;
+          background-image: image-url('bg-nav.png');
+        }
+
+      }
+      .open .dropdown-menu > li {
+        > a {
+          font-family: Arial;
+          font-size: 1.1em;
+          background-color: $medium-brown;
+          z-index: 5;
+          color: darken($dark-brown, 10%);
+        }
+        > a:hover, > a:focus {
+          color: white;
+        }
+      }
+    }
+    ul.dropdown-menu {
+      padding-top: 0;
+      padding-bottom: 0;
+      border: none;
+      li {
+        background-color: rgb(206,185,136);
+        z-index: 5;
+        a :hover {
+          font: white;
+        }
       }
     }
   }
@@ -311,6 +309,53 @@ section.font-test {
     border-radius: 40px 0 20px 0;
     display: block;
     z-index: 1;
+  }
+
+  section.user {
+    h1 {
+      margin: 0.5em 0;
+    }
+    form {
+      width: 80%;
+      margin: 1em auto;
+    }    
+    p {
+      text-align: center;
+    }
+  }
+
+  // 320px+
+  section.users {
+    h1 {
+      margin: 0.5em 0;
+    }
+    margin: 0;
+    table.users {
+      width: 100%;
+      tbody tr {
+        line-height: 0.8em;
+        padding: 0.2em;
+        td {
+          vertical-align: middle;
+          font-size: 1em;
+          img {
+            width: 60px;
+            margin: 0.5em;
+            display: table-cell;
+          }
+        }
+        td:nth-child(1) { width: 30%; }
+        td:nth-child(2) { width: 70%; }
+        td:nth-child(3) { 
+          width: 0%; 
+          display: none;
+        }
+        td:nth-child(4) { 
+          width: 0%; 
+          display: none;
+        }
+      }
+    }
   }
 
   .sign-in {
@@ -410,7 +455,7 @@ section.font-test {
         font-size: 2em;
       }
       h3 {
-
+         
       }
     }
     form {
@@ -572,6 +617,12 @@ section.font-test {
       tr:first-child { 
         background: transparent; 
       }
+    }
+  }
+
+  section.tariffs {
+    h3 {
+      margin-bottom: 0.5em;
     }
   }
 
@@ -759,28 +810,46 @@ section.font-test {
   }
 
   section.admin-header {
-    height: 80px;
+    height: 50px;
     width: 100%;
-    padding: 0.7em 3% 0 3%;
     background-color: black; 
     font-family: Arial;
-    ul.nav.nav-pills {
-      color: white;
-      font-size: 0.9em;
-      font-family: Arial;
-      margin-right: 1em;
+
+    nav.navbar {
       float: left;
-      a {
-        padding: 0.4em 0.8em;
-        border-radius: 6px;
-        font-family: Fertigo_PRO;
+      background-color: black;
+      .navbar-collapse ul.dropdown-menu {
+        background-color: black;
+        color: #b9b9b9;
+        li {
+          a:hover, a:focus {
+            background-color: black;
+            color: white;
+          }
+        }
+        li a {
+          color: #b9b9b9;
+        }
       }
     }
+    // ul.nav.nav-pills {
+    //   color: white;
+    //   font-size: 0.9em;
+    //   font-family: Arial;
+    //   margin-right: 1em;
+    //   float: left;
+    //   a {
+    //     padding: 0.4em 0.8em;
+    //     border-radius: 6px;
+    //     font-family: Fertigo_PRO;
+    //   }
+    // }
 
     p.navbar-text {
-      float: left;
-      padding: 0;
-      padding-top: 0.7em;
+      float: right;
+      // padding: 0;
+      // padding-top: 0.7em;
+      padding: 0.8em;
       margin: 0;
       font-family: Arial, sans-serif;
       font-size: 0.9em;
@@ -896,10 +965,10 @@ section.font-test {
   section.admin-header {
     height: 50px;
     p.navbar-text {
-      padding: 0;
+      padding: 0.8em;
       float: right;
     }
-  }
+  }  
 
   header.top-banner .preference {
     // z-index: 5;
@@ -959,55 +1028,95 @@ section.font-test {
     background-color: lightpink;
   }
 
-  ul.visible li {
-    opacity: 0.8;
-    z-index: 5;
-    // background-color: $medium-brown;  
-  }
-
-  ul.nav.navbar-nav li {
-    // background-color: $medium-brown;  
-    background-image: image-url('bg-nav.png');
-    z-index: 5;
-  }
-
-  .navbar-inverse .navbar-nav,
-  .navbar-default .navbar-nav {
-    > li > a {
-      // color: #543F20;
-      // color: lighten($dark-brown, 10%);
-      color: $dark-brown;
+  section.users {
+    h1 {
+      margin: 0.8em 0;
     }
-    > .open {
-      a, a:hover, a:focus {
-        color: white;
+    margin: 0;
+    table.users {
+      // thead {
+      //   th:nth-child(1) { width: 20%; }
+      //   th:nth-child(2) { width: 40%; }
+      //   th:nth-child(3) { 
+      //     width: 40%; 
+      //     display: table-cell;
+      //   }
+      //   th:nth-child(4) { 
+      //     width: 0%; 
+      //     display: none;
+      //   }
+      // }
+      tbody tr {
+        vertical-align: middle;
+        td:nth-child(1) {
+          width: 20%;
+        }
+        td:nth-child(2) {
+          width: 40%;
+        }
+        td:nth-child(3) {
+          width: 40%;
+          display: table-cell;
+        }
+        td:nth-child(4) {
+          width: 0%;
+          display: none;
+        }
+      }
+    }
+  }
+
+  header.top-banner {
+    ul.visible li {
+      opacity: 0.8;
+      z-index: 5;
+      // background-color: $medium-brown;  
+    }
+
+    ul.nav.navbar-nav li {
+      // background-color: $medium-brown;  
+      background-image: image-url('bg-nav.png');
+      z-index: 5;
+    }
+
+    .navbar-inverse .navbar-nav,
+    .navbar-default .navbar-nav {
+      > li > a {
+        // color: #543F20;
+        // color: lighten($dark-brown, 10%);
+        color: $dark-brown;
+      }
+      > .open {
+        a, a:hover, a:focus {
+          color: white;
+          background-color: $medium-brown;
+        }
+
+      }
+
+      .open .dropdown-menu > li {
+        > a {
         background-color: $medium-brown;
+        z-index: 5;
+        color: darken($dark-brown, 10%);
+        }
+        > a:hover, > a:focus {
+          color: white;
+        }
       }
 
     }
 
-    .open .dropdown-menu > li {
-      > a {
-      background-color: $medium-brown;
-      z-index: 5;
-      color: darken($dark-brown, 10%);
-      }
-      > a:hover, > a:focus {
-        color: white;
-      }
-    }
-
-  }
-
-  ul.dropdown-menu {
-    padding-top: 0;
-    padding-bottom: 0;
-    border: none;
-    li {
-      background-color: rgb(206,185,136);
-      z-index: 5;
-      a :hover {
-        font: white;
+    ul.dropdown-menu {
+      padding-top: 0;
+      padding-bottom: 0;
+      border: none;
+      li {
+        background-color: rgb(206,185,136);
+        z-index: 5;
+        a :hover {
+          font: white;
+        }
       }
     }
   }

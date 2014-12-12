@@ -1,0 +1,14 @@
+en:
+  admin:
+    users:
+      edit:
+        update_user: Update User
+        update_profile: Update My Profile
+        save_changes: Save Changes
+        change: Change
+      index:
+        all_administrators: All administrators  
+        new_user: New user
+      new:
+        add_user: Add user  
+        save_changes: Save Changes
