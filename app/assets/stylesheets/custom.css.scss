@@ -7,6 +7,7 @@ $lighter-brown: #c2ae84;
 $dark-green: rgb(108, 140, 77);
 $darker-green: rgb(75, 97, 64);
 $golden-brown: #7F734D;
+$error-field: #F2E590;
 
 /*-- RESET ------*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -130,6 +131,13 @@ section.test {
   padding: 0.5em;
   width: 100%;
   height: 60px;
+}
+
+#error_message {
+  display: block;
+  background-color: $error-field;
+  padding: 0.5em;
+  text-align: right;
 }
 
 section.font-test {
@@ -311,7 +319,7 @@ section.font-test {
     z-index: 1;
   }
 
-  section.user {
+  section.user, section.forgot-password, section.password-reset {
     h1 {
       margin: 0.5em 0;
     }
@@ -832,19 +840,6 @@ section.font-test {
         }
       }
     }
-    // ul.nav.nav-pills {
-    //   color: white;
-    //   font-size: 0.9em;
-    //   font-family: Arial;
-    //   margin-right: 1em;
-    //   float: left;
-    //   a {
-    //     padding: 0.4em 0.8em;
-    //     border-radius: 6px;
-    //     font-family: Fertigo_PRO;
-    //   }
-    // }
-
     p.navbar-text {
       float: right;
       // padding: 0;

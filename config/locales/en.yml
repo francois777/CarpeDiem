@@ -27,9 +27,11 @@ en:
     signin: Sign in
     signout: Sign out
     change_password: Change my password
+    forgot_password: Forgot Password
     my_settings: My settings
     users: Users
     all_users: All users
+    account_settings: Account Settings
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -120,7 +122,9 @@ en:
     event_updated: Event updated successfully
     profile_updated: Profile updated
     new_user_added: New user has been added
+    account_settings_have_changed: Account settings have been changed
   failure:
+    an_error_occurred: An error has occurred
     invalid_email_password: Invalid email/password combination.
     tariff_create_failed: Tariff create was not successful
     tariff_not_found: Tariff not found
@@ -131,3 +135,12 @@ en:
     event_update_failed: Event update was not successful
     event_not_found: Event not found
     only_admin_user_can_sign_in: Only an administrator may sign in
+    password_is_incorrect: Password is incorrect
+    new_password_required: New password is required
+    confirmation_required_same_as_new_pw: Confirmation is required and must be same as new password
+    user_not_registered: "%{email} is not a registered user"
+    password_expired_request_reset: Password reset has expired. Please request a new password reset.
+    you_have_not_requested_pw_reset: You have not requested a password reset
+    not_blank_and_match_pw_verification: Cannot be blank and must match the password verification
+  info:
+    nothing_changed: Nothing has changed  

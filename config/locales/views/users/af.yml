@@ -1,0 +1,19 @@
+af:
+  users:
+    forgot_password:
+      request_new_password: "Gee my asseblief 'n nuwe wagwoord"
+    account_settings:
+      account_settings: Rekening besonderhede  
+      save_changes: Stoor veranderings
+    password_reset:
+      requested_pw_reset_enter_pw: "%{user_name} het 'n nuwe wagwoord versoek. Verskaf asseblief jou nuwe wagwoord:" 
+      new_password: Nuwe wagwoord
+      password_confirmation: Wagwoord bevestiging
+      update: Verander
+    fields:
+      first_name: Voornaam
+      last_name: Van          
+      new_password: Nuwe wagwoord
+      new_password_confirmation: Nuwe wagwoord bevestiging
+      email: EPos
+      current_password: Huidige wagwoord

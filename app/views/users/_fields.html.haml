@@ -1,0 +1,37 @@
+.form-group
+  = f.label :first_name, t(".first_name"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.text_field :first_name, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :first_name)  
+.form-group
+  = f.label :last_name, t(".last_name"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.text_field :last_name, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :last_name)  
+.form-group
+  = f.label :email, t(".email"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.text_field :email, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :email)  
+.form-group
+  = f.label :password, t(".current_password"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.password_field :password, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :password)  
+.form-group
+  = f.label :new_password, t(".new_password"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.password_field :new_password, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :new_password)  
+.form-group
+  = f.label :new_password_confirmation, t(".new_password_confirmation"), class: "col-sm-4 control-label"
+  .col-sm-7
+    = f.password_field :new_password_confirmation, class: "form-control"
+  .col-sm-7.col-sm-offset-4
+    = show_field_error(@user, :new_password_confirmation)  
+

@@ -12,3 +12,5 @@ af:
       new:
         add_user: Voeg verbruiker by  
         save_changes: Stoor veranderings
+      account_settings:
+        account_settings: Account Settings  

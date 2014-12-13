@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
-  # resources :users, only: [:show]
   resources :events, only: [:index, :show]
 
   post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 
   namespace :admin do
-    resources :users do
-      member do
-        get :change_password
-      end
-    end
+    resources :users
     resources :accommodation_types do
       resources :tariffs
     end    
@@ -32,25 +27,20 @@ Rails.application.routes.draw do
   get '/afrikaans', to: 'users#to_afrikaans'
   get '/english', to: 'users#to_english'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  #root "/home"
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
   get "/signin",  to: "sessions#new"
-  # get "/change_password", to: "admin/users#change_password"
   match "/signout", to: "sessions#destroy", via: 'get'
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy"
+
+  get "change_password", to: "users#change_password"
+  get "password_reset", to: "users#password_reset"
+  get "forgot_password", to: "users#forgot_password"
+  post "allocate_password" => "users#allocate_password"
+  put "password_reset" => "users#new_password"
+
+  get "password_sent", to: "authentication#password_sent"
+
+  get "account_settings" => "users#account_settings"
+  put "account_settings" => "users#set_account_info"  
 
 end

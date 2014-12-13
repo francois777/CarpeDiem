@@ -27,9 +27,11 @@ af:
     signin: Teken in
     signout: Teken af
     change_password: Verander my wagwoord
+    forgot_password: Forgot Password
     my_settings: My details
     users: Verbruikers
     all_users: Alle verbruikers
+    account_settings: Rekening besonderhede
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -120,7 +122,9 @@ af:
     event_updated: Gebeurtenis verandering suksesvol
     profile_updated: Profiel is verander
     new_user_added: New user has been added
+    account_settings_have_changed: Account settings have been changed
   failure:
+    an_error_occurred: An error has occurred
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
     tariff_create_failed: Tarief kon nie bygevoeg word nie.
     tariff_not_found: Tarief nie gevind nie
@@ -131,4 +135,13 @@ af:
     event_update_failed: Gebeurtenis verandering het misluk
     event_not_found: Gebeurtenis kon nie gevind word nie
     only_admin_user_can_sign_in: Net administreerders mag inteken
+    password_is_incorrect: Wagwoord is foutief
+    new_password_required: Nuwe wagwoord is benodig
+    confirmation_required_same_as_new_pw: Bevestiging benodig wat dieselfde is as nuwe wagwoord
+    user_not_registered: "%{email} is is nie 'n geregistreerde verbruiker nie"
+    password_expired_request_reset: "Wagwoord het verval. Versoek asseblief 'n nuwe wagwoord."
+    you_have_not_requested_pw_reset: "Jy het nie 'n nuwe wagwoord versoek nie"
+    not_blank_and_match_pw_verification: Moet nie leeg wees nie en dieselde wees as die wagwoord bevestiging
+  info:
+    nothing_changed: Niks het verander nie  
     

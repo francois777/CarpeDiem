@@ -47,7 +47,7 @@ describe User do
   it "must validate the user's password" do
     @user.password = @user.password_confirmation = 'H' * 5
     expect(@user).not_to be_valid
-    @user.password = @user.password_confirmation = "A" * 21
+    @user.password = @user.password_confirmation = "A" * 26
     expect(@user).not_to be_valid
     @user.password = 'abcdef'
     @user.password_confirmation = 'abcdeF'

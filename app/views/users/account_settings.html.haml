@@ -1,0 +1,15 @@
+- provide(:title, t(".account_settings"))
+
+%section.user
+  %h1
+    = t(".account_settings")
+  .row
+    = form_for(@user, :url => account_settings_path, :method => :put, html: {class: "form-horizontal", role: "form"}) do |f|
+      = render 'fields', f: f
+      .centered
+        .button.btn
+          = f.submit t(".save_changes"), class: "btn btn-large btn-primary"
+
+    = gravatar_for(@user, { size: 150 })
+    %p
+      = link_to t(".change"), "http://gravatar.com/emails"

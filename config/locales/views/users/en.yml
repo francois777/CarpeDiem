@@ -1,0 +1,19 @@
+en:
+  users:
+    forgot_password:
+      request_new_password: Please reset my password
+    account_settings:
+      account_settings: Account Settings  
+      save_changes: Save Changes
+    password_reset:
+      requested_pw_reset_enter_pw: "%{user_name} has requested a password reset. Please enter your new password:" 
+      new_password: New password
+      password_confirmation: Password confirmation
+      update: Update
+    fields:
+      first_name: First name
+      last_name: Last name    
+      new_password: New password
+      new_password_confirmation: New password confirmation
+      email: Email
+      current_password: Current Password

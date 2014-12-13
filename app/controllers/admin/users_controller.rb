@@ -8,10 +8,6 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
-  def change_password
-    @user = current_user
-  end
-
   def new
     @user = User.new
   end
