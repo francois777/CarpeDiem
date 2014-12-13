@@ -4,7 +4,7 @@ development:
   database: carpediem_dev
   pool: 5
   username: carpediem
-  password: hekpCD472472
+  password: "<%= ENV['DATABASE_PASS'] %>"
   timeout: 5000
 
 test:
@@ -22,5 +22,5 @@ production:
   database: carpediem
   pool: 5
   username: carpediem
-  password: hekpCD472472
+  password: <%= ENV["CARPEDIEM_PASS"] %>
   timeout: 5000
