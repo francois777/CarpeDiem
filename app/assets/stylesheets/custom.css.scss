@@ -809,7 +809,8 @@ section.font-test {
   footer {
     height: 50px;
     width: 100%;
-    background-image: asset-data-url('bg-nav-dark.png');
+    //background-image: asset-data-url('bg-nav-dark.png');
+    background-image:url('bg-nav-dark.png');
     p {
       color: white;
       padding-top: 18px;
@@ -1070,7 +1071,8 @@ section.font-test {
 
     ul.nav.navbar-nav li {
       // background-color: $medium-brown;  
-      background-image: asset-data-url('bg-nav.png');
+      // background-image: asset-data-url('bg-nav.png');
+      background-image:url('bg-nav.png');
       z-index: 5;
     }
 
@@ -1234,7 +1236,7 @@ section.font-test {
       }
       tbody {
         color: $dark-brown;
-        tr:nth-child(odd) { background-image: asset-data-url('bg-texture-light.png'); }
+        tr:nth-child(odd) { background-image:url('bg-texture-light.png'); }
       }
       tr:first-child { 
         background: transparent; 
