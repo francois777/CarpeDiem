@@ -186,7 +186,7 @@ section.font-test {
   }
 
   .main-container {
-    background-image: image-url('bg-texture.png');
+    background-image: asset-data-url('bg-texture.png');
     // background-image: none;
     z-index: 1;
     // min-height: 500px;
@@ -244,7 +244,7 @@ section.font-test {
     }
 
     ul.nav.navbar-nav li {
-      background-image: image-url('bg-nav.png');
+      background-image: asset-data-url('bg-nav.png');
       z-index: 5;
       opacity: 0.9;
     }
@@ -256,7 +256,7 @@ section.font-test {
       > .open {
         a, a:hover, a:focus {
           color: white;
-          background-image: image-url('bg-nav.png');
+          background-image: asset-data-url('bg-nav.png');
         }
 
       }
@@ -306,7 +306,7 @@ section.font-test {
   header nav {
     height: 50px;
     width: 100%;
-    background-image: image-url('bg-nav.png');
+    background-image: asset-data-url('bg-nav.png');
   }
 
   img.logo {
@@ -394,7 +394,7 @@ section.font-test {
 
   // 320px+
   section.carpediem {
-    background-image: image-url('bg-texture-light.png');
+    background-image: asset-data-url('bg-texture-light.png');
     vertical-align: middle;
     padding: 20px;
     padding-bottom: 0;
@@ -402,7 +402,7 @@ section.font-test {
       text-align: right;
     }
     figure.logo {
-      background-image: image-url('bg-texture-light.png');
+      background-image: asset-data-url('bg-texture-light.png');
       figcaption {
         color: $golden-brown;
         display: block;
@@ -486,7 +486,7 @@ section.font-test {
       }
       tbody {
         color: $dark-brown;
-        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+        tr:nth-child(odd) { background-image: asset-data-url('bg-texture-light.png'); }
       }
       tr:first-child { 
         background: transparent; 
@@ -548,7 +548,7 @@ section.font-test {
       }
       tbody {
         color: $dark-brown;
-        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+        tr:nth-child(odd) { background-image: asset-data-url('bg-texture-light.png'); }
       }
       tr:first-child { 
         background: transparent; 
@@ -639,7 +639,7 @@ section.font-test {
     margin-bottom: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
-    background-image: image-url('bg-texture-light.png');
+    background-image: asset-data-url('bg-texture-light.png');
 
     h1 {
       margin-top: 0.5em;
@@ -738,7 +738,7 @@ section.font-test {
           }
         }
         td.notmonth {
-          background-image: image-url('bg-texture2.png');
+          background-image: asset-data-url('bg-texture2.png');
         }
       }
     }
@@ -809,7 +809,7 @@ section.font-test {
   footer {
     height: 50px;
     width: 100%;
-    background-image: image-url('bg-nav-dark.png');
+    background-image: asset-data-url('bg-nav-dark.png');
     p {
       color: white;
       padding-top: 18px;
@@ -1070,7 +1070,7 @@ section.font-test {
 
     ul.nav.navbar-nav li {
       // background-color: $medium-brown;  
-      background-image: image-url('bg-nav.png');
+      background-image: asset-data-url('bg-nav.png');
       z-index: 5;
     }
 
@@ -1234,7 +1234,7 @@ section.font-test {
       }
       tbody {
         color: $dark-brown;
-        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+        tr:nth-child(odd) { background-image: asset-data-url('bg-texture-light.png'); }
       }
       tr:first-child { 
         background: transparent; 
