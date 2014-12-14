@@ -9,7 +9,7 @@ gem 'haml-rails'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~>3.2.0'
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org' 
+gem 'rails-assets-bootstrap'
 gem 'rails-assets-leaflet'
 gem 'sass', '~>3.2.0'
 #  The gem 'sass' was added as a solution for these errors
