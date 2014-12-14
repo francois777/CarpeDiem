@@ -217,7 +217,8 @@ class TariffsController < ApplicationController
   end
 
   def show_king_and_warrior_camps?
-    @accTypes[@accNames[:king_and_warrior_camps]]['show'] == true
+    @accTypes[@accNames[:king_and_warrior_camps]] &&
+      @accTypes[@accNames[:king_and_warrior_camps]]['show'] == true
   end
 
   def show_day_visitors?
