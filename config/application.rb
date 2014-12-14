@@ -34,5 +34,6 @@ module Carpediem
     config.i18n.default_locale = :en
     config.assets.paths << Rails.root.join("app", "assets")
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "images")
   end
 end
