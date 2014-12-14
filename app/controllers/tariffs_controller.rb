@@ -25,14 +25,14 @@ class TariffsController < ApplicationController
     if show_tent_sites_without_power?
       accID = @accNames[:tent_site_without_power]
       accType = AccommodationType.where('accom_type=?',accID).first
-      tariff_record = accType.tariffs.normal_tariff.first
+      tariff_record = accType.tariffs.normal_price.first
       @dtl_lines = site_tariffs(tariff_record, {type: :tent} )
       @no_power_dtl_lines.push(@dtl_lines) 
     end   
     if show_caravan_sites_without_power?
       accID = @accNames[:caravan_site_without_power]
       accType = AccommodationType.where('accom_type=?',accID).first
-      tariff_record = accType.tariffs.normal_tariff.first     
+      tariff_record = accType.tariffs.normal_price.first     
       @dtl_lines = site_tariffs(tariff_record, {type: :caravan} )
       @no_power_dtl_lines.push(@dtl_lines) 
     end   
@@ -50,14 +50,14 @@ class TariffsController < ApplicationController
     if show_tent_sites_with_power?
       accID = @accNames[:tent_site_with_power]
       accType = AccommodationType.where('accom_type=?',accID).first
-      tariff_record = accType.tariffs.normal_tariff.first
+      tariff_record = accType.tariffs.normal_price.first
       @dtl_lines = site_tariffs(tariff_record, {type: :tent} )
       @power_dtl_lines.push(@dtl_lines) 
     end   
     if show_caravan_sites_with_power?
       accID = @accNames[:caravan_site_with_power]
       accType = AccommodationType.where('accom_type=?',accID).first
-      tariff_record = accType.tariffs.normal_tariff.first     
+      tariff_record = accType.tariffs.normal_price.first     
       @dtl_lines = site_tariffs(tariff_record, {type: :caravan} )
       @power_dtl_lines.push(@dtl_lines) 
     end   
@@ -117,7 +117,7 @@ class TariffsController < ApplicationController
   def detail_lines(accID, accType)
     lines = []
     tariffs = accType.tariffs
-    lines.push(accType.tariffs.normal_tariff) if options(accID)[:normal_prices]
+    lines.push(accType.tariffs.normal_price) if options(accID)[:normal_prices]
   end
 
   def site_tariffs(tariff, options = {})
