@@ -201,19 +201,23 @@ class TariffsController < ApplicationController
   end
 
   def show_tent_sites_without_power?
-    @accTypes[@accNames[:tent_site_without_power]]['show'] == true
+    @accTypes[@accNames[:tent_site_without_power]] && 
+      @accTypes[@accNames[:tent_site_without_power]]['show'] == true
   end
 
   def show_tent_sites_with_power?
-    @accTypes[@accNames[:tent_site_with_power]]['show'] == true
+    @accTypes[@accNames[:tent_site_with_power]] &&
+      @accTypes[@accNames[:tent_site_with_power]]['show'] == true
   end
 
   def show_caravan_sites_without_power?
-    @accTypes[@accNames[:caravan_site_without_power]]['show'] == true
+    @accTypes[@accNames[:caravan_site_without_power]] &&
+      @accTypes[@accNames[:caravan_site_without_power]]['show'] == true
   end
 
   def show_caravan_sites_with_power?
-    @accTypes[@accNames[:caravan_site_with_power]]['show'] == true
+    @accTypes[@accNames[:caravan_site_with_power]] &&
+      @accTypes[@accNames[:caravan_site_with_power]]['show'] == true
   end
 
   def show_king_and_warrior_camps?
@@ -222,23 +226,28 @@ class TariffsController < ApplicationController
   end
 
   def show_day_visitors?
-    @accTypes[@accNames[:day_visitor]]['show'] == true
+    @accTypes[@accNames[:day_visitor]] &&
+      @accTypes[@accNames[:day_visitor]]['show'] == true
   end
 
   def show_basic_chalets?
-    @accTypes[@accNames[:chalet_basic]]['show'] == true
+    @accTypes[@accNames[:chalet_basic]] &&
+      @accTypes[@accNames[:chalet_basic]]['show'] == true
   end
 
   def show_standard_chalets?
-    @accTypes[@accNames[:chalet_standard]]['show'] == true
+    @accTypes[@accNames[:chalet_standard]] &&
+      @accTypes[@accNames[:chalet_standard]]['show'] == true
   end
 
   def show_group_tariffs_budget?
-    @accTypes[@accNames[:group_tariff_budget]]['show'] == true
+    @accTypes[@accNames[:group_tariff_budget]] &&
+      @accTypes[@accNames[:group_tariff_budget]]['show'] == true
   end
 
   def show_group_tariffs_meals_included?
-    @accTypes[@accNames[:group_tariff_with_meals]]['show'] == true
+    @accTypes[@accNames[:group_tariff_with_meals]] &&
+      @accTypes[@accNames[:group_tariff_with_meals]]['show'] == true
   end
 
   private 
