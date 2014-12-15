@@ -6,7 +6,7 @@ feature "Event pages" do
   include ApplicationHelper
   include SessionsHelper
 
-  context "Admin user create new event" do
+  context "Admin user create events" do
 
     before do
       @admin = create(:admin)
@@ -51,8 +51,19 @@ feature "Event pages" do
       expect(page).to have_title('Event Details')
       expect(page).to have_selector('h1', text: "Event Details")
     end
+  end
 
-    scenario "View event (as administrator)" do
+  context "Admin user views events" do
+
+    before do
+      @admin = create(:admin)
+      @event = create(:event)
+      login(@admin)
+    end
+
+    subject { page }
+
+    scenario "Admin user view single event (as administrator)" do
       @event.start_date = Date.new(2015, 3, 31)
       @event.end_date = Date.new(2015, 4, 1)
       @event.save
@@ -86,6 +97,29 @@ feature "Event pages" do
       expect(page).to have_selector(:button, 'Edit Event')
     end
 
+    scenario "Admin user looks at month calender" do
+      title = @event.title
+      diary_day = @event.diary_days.first
+      puts diary_day.inspect
+      current_month = Date.today.strftime("%B")
+      visit events_path
+      expect(page).to have_title('Events')
+      expect(page).to have_selector('h2', text: current_month)
+      expect(page).to have_selector(:button, 'Add Event')
+      #expect( find(:css, "a[data-event-id='#{@event.id.to_s}']").first.text ).to eq(title)
+
+    end
+
+  end
+
+  context "Admin user updates an event" do
+
+    before do
+      @admin = create(:admin)
+      @event = create(:event)
+      login(@admin)
+    end
+
     scenario "Update an event (as administrator)" do
       visit event_path(@event)
       expect(page).to have_selector(:button, 'Edit Event')
@@ -104,14 +138,6 @@ feature "Event pages" do
       expect(page).to have_text('Meals required?')
       expect(page).to have_text('Estimated cost quoted')
       expect(page).to have_selector(:button, 'Update Event')
-    end
-
-    scenario "Admin user looks at month calender" do
-      current_month = Date.today.strftime("%B")
-      visit events_path
-      expect(page).to have_title('Events')
-      expect(page).to have_selector('h2', text: current_month)
-      expect(page).to have_selector(:button, 'Add Event')
     end
   end
 

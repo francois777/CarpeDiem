@@ -85,6 +85,7 @@ describe Event do
   end
 
   it "must know about its diarisable children" do
+    puts "Scenario 1 - creating an event"
     @event.save
     expect(@event.diary_days.count).to eq(1)
   end
@@ -92,6 +93,48 @@ describe Event do
   it "must not exceed the maximum duration" do
     @event.end_date = @event.start_date.to_datetime + 14
     expect(@event).not_to be_valid
+  end
+
+  it "must ensure that the correct amount of diary day children are maintained" do
+    start_date1 = Date.today + 10
+    start_date2 = Date.today + 8
+    end_date1 = Date.today + 14
+    end_date2 = Date.today + 15
+    end_date3 = Date.today + 10
+    ev1 = create(:event, title: 'Event Number 1', start_date: start_date1, end_date: end_date1)
+    ev1.save!
+    expect(ev1.diary_days.count).to eq(end_date1 - start_date1 + 1)
+    day1 = DiaryDay.where(day: start_date1, diarisable: ev1).take
+    day2 = DiaryDay.where(day: end_date1, diarisable: ev1).take
+    expect(day1).to be_valid
+    expect(day2).to be_valid
+
+    # Change the event to start on an earlier date
+    ev1.start_date = start_date2.to_datetime
+    ev1.save!
+    expect(ev1.diary_days.count).to eq(ev1.end_date.to_datetime - ev1.start_date.to_datetime + 1)
+    day1 = DiaryDay.where(day: start_date2, diarisable: ev1).take
+    day2 = DiaryDay.where(day: end_date1, diarisable: ev1).take
+    expect(day1).to be_valid
+    expect(day2).to be_valid
+
+    # Change the event to end at a later date
+    ev1.end_date = end_date2
+    ev1.save!
+    expect(ev1.diary_days.count).to eq(ev1.end_date.to_datetime - ev1.start_date.to_datetime + 1)
+    day1 = DiaryDay.where(day: start_date2, diarisable: ev1).take
+    day2 = DiaryDay.where(day: end_date2, diarisable: ev1).take
+    expect(day1).to be_valid
+    expect(day2).to be_valid
+
+    # Change the event to end at an earlier date
+    ev1.end_date = end_date3
+    ev1.save!
+    expect(ev1.diary_days.count).to eq(ev1.end_date.to_datetime - ev1.start_date.to_datetime + 1)
+    day1 = DiaryDay.where(day: start_date2, diarisable: ev1).take
+    day2 = DiaryDay.where(day: end_date3, diarisable: ev1).take
+    expect(day1).to be_valid
+    expect(day2).to be_valid
   end
 
 end

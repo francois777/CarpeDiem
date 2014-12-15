@@ -630,8 +630,11 @@ section.font-test {
   }
 
   section.tariffs {
-    h3 {
+    header {
       margin-bottom: 0.5em;
+      h3 {
+        margin-bottom: 0.5em;
+      }
     }
   }
 

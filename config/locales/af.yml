@@ -124,6 +124,7 @@ af:
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
   failure:
+    unauthorised_access: Onvoldoende magtiging om hierdie bladsy te versoek
     an_error_occurred: An error has occurred
     invalid_email_password: Ongeldige email/wagwoord kombinasie.
     tariff_create_failed: Tarief kon nie bygevoeg word nie.

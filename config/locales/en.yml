@@ -124,6 +124,7 @@ en:
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
   failure:
+    unauthorised_access: You are not authorised to request this page
     an_error_occurred: An error has occurred
     invalid_email_password: Invalid email/password combination.
     tariff_create_failed: Tariff create was not successful

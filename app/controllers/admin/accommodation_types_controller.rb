@@ -3,7 +3,7 @@ class Admin::AccommodationTypesController < ApplicationController
   include ApplicationHelper
 
   before_action :set_accommodation_type, only: [:show, :edit, :update]
-  before_action :redirect_unless_signed_in
+  before_action :redirect_unless_admin_user
 
   def index
     @accommodation_types = AccommodationType.all
@@ -76,8 +76,11 @@ class Admin::AccommodationTypesController < ApplicationController
       params.require(:accommodation_type).permit(:accom_type, :description, :show, :show_normal_price, :show_in_season_price, :show_promotion)
     end
 
-    def redirect_unless_signed_in
-      redirect_to root_path unless current_user 
+    def redirect_unless_admin_user
+      unless current_user && current_user.admin?
+        flash[:alert] = t(:unauthorised_access, scope: [:failure])
+        redirect_to root_path
+      end
     end
 
 end

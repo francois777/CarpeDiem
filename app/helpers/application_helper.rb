@@ -21,7 +21,7 @@ module ApplicationHelper
       s =
         <<-EOHTML
            <div id="error_message">
-             #{model.errors[field][0]}
+             #{field}: #{model.errors[field][0]}
            </div>
         EOHTML
     end

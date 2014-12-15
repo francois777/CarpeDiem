@@ -14,8 +14,9 @@ class Event < ActiveRecord::Base
   validate :validate_end_date_before_start_date
   validate :validate_event_duration
 
-  after_save :remove_existing_diary_dates, :add_diary_dates
-
+  after_create :add_diary_dates 
+  before_update :remove_existing_diary_dates
+  before_update :add_diary_dates 
 
   private
 
@@ -46,9 +47,8 @@ class Event < ActiveRecord::Base
     end
 
     def remove_existing_diary_dates
-      diary_days.each do |date|
-        date.delete
-      end  
+      sqlstr = "DELETE FROM diary_days WHERE diarisable_id = #{id}"
+      ActiveRecord::Base.connection.execute(sqlstr)
     end
 
 end

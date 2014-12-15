@@ -1,13 +1,15 @@
-= render 'shared/error_messages', object: f.object
-
 .form-group
   = f.label :accom_type, t(".accom_type"), class: "col-sm-5 control-label"
   .col-sm-7
     = f.text_field :accom_type, class: "form-control", required: true
+  .col-sm-7.col-sm-offset-5
+    = show_field_error(@accommodation_type, :accom_type)  
 .form-group
   = f.label :description, t(".description"), class: "col-sm-5 control-label"
   .col-sm-7
     = f.text_field :description, class: "form-control", required: true
+  .col-sm-7.col-sm-offset-5
+    = show_field_error(@accommodation_type, :description)  
 .form-group
   = f.label :show, t(".show"), class: "col-sm-5 control-label"
   .col-sm-5
