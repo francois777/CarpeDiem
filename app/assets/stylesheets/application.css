@@ -13,8 +13,6 @@
  *= require bootstrap-datepicker3
  *= require_self
  *= require bootstrap
- *= require bootstrap-theme
- *= require bootstrap.css.map
  *= require leaflet
  *= require_tree .
  */
