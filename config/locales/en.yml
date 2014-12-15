@@ -135,6 +135,7 @@ en:
     event_create_failed: Event create was not successful
     event_update_failed: Event update was not successful
     event_not_found: Event not found
+    tariff_update_failed: Tariff Update failed
     only_admin_user_can_sign_in: Only an administrator may sign in
     password_is_incorrect: Password is incorrect
     new_password_required: New password is required

@@ -107,9 +107,7 @@ feature "Event pages" do
       expect(page).to have_selector('h2', text: current_month)
       expect(page).to have_selector(:button, 'Add Event')
       #expect( find(:css, "a[data-event-id='#{@event.id.to_s}']").first.text ).to eq(title)
-
     end
-
   end
 
   context "Admin user updates an event" do
@@ -138,6 +136,39 @@ feature "Event pages" do
       expect(page).to have_text('Meals required?')
       expect(page).to have_text('Estimated cost quoted')
       expect(page).to have_selector(:button, 'Update Event')
+    end
+  end
+
+  context "Admin user uses invalid details" do
+    before do
+      @admin = create(:admin)
+      @event = create(:event)
+      login(@admin)
+    end
+  end
+
+  context "A non-admin user attempts to access events" do
+
+    scenario "Non-admin user views list of events" do
+      visit new_admin_event_path
+      expect(page).to have_text('You are not authorised to request this page')
+      uri = URI.parse(current_url)
+      expect(uri.path).to eq(root_path)
+    end
+
+    scenario "Non-admin user attempts to edit an event" do
+      event = create(:event)
+      visit edit_admin_event_path(event)
+      expect(page).to have_text('You are not authorised to request this page')
+      uri = URI.parse(current_url)
+      expect(uri.path).to eq(root_path)
+    end
+
+    scenario "Non-admin user attempts to create an event" do
+      visit new_admin_event_path
+      expect(page).to have_text('You are not authorised to request this page')
+      uri = URI.parse(current_url)
+      expect(uri.path).to eq(root_path)
     end
   end
 

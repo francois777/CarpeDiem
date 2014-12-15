@@ -135,6 +135,7 @@ af:
     event_create_failed: Gebeurtenis bygevoeging het misluk
     event_update_failed: Gebeurtenis verandering het misluk
     event_not_found: Gebeurtenis kon nie gevind word nie
+    tariff_update_failed: Tarief verandering het misluk
     only_admin_user_can_sign_in: Net administreerders mag inteken
     password_is_incorrect: Wagwoord is foutief
     new_password_required: Nuwe wagwoord is benodig

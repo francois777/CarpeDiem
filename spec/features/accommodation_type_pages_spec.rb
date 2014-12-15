@@ -171,7 +171,7 @@ feature "AccommodationType pages" do
     end
   end
 
-  context "A non-admin user attempts to view accommodation types" do
+  context "A non-admin user attempts to access accommodation types" do
 
     scenario "Non-admin user views list of accommodation types" do
       visit new_admin_accommodation_type_path

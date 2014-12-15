@@ -1,18 +1,24 @@
-= render 'shared/error_messages', object: f.object
-
 .form-group
   = f.label :tariff_category, t(".tariff_category"), class: "col-sm-3 control-label"
   .col-sm-9
     = f.select :tariff_category, tariff_categories_for_select, {}, class: "form-control", required: true
+  .col-sm-9.col-sm-offset-3
+    = show_field_error(@tariff, :tariff_category)
 .form-group
   = f.label :tariff, t(".tariff"), class: "col-sm-3 control-label"
   .col-sm-9
     = f.text_field :tariff, value: to_local_amount(@tariff.tariff), class: "form-control", required: true
+  .col-sm-9.col-sm-offset-3
+    = show_field_error(@tariff, :tariff)
 .form-group
   = f.label :effective_date, t(".effective_date"), class: "col-sm-3 control-label"
   .col-sm-9
     = f.date_field :effective_date, class: "form-control", required: true
+  .col-sm-9.col-sm-offset-3
+    = show_field_error(@tariff, :effective_date)
 .form-group
   = f.label :end_date, t(".end_date"), class: "col-sm-3 control-label"
   .col-sm-9
     = f.date_field :end_date, class: "form-control"
+  .col-sm-9.col-sm-offset-3
+    = show_field_error(@tariff, :end_date)

@@ -3,7 +3,7 @@ class Admin::EventsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_event, only: [:edit, :update, :destroy]
-  before_action :redirect_unless_signed_in
+  before_action :redirect_unless_admin_user
 
   def new
     if params[:event]
@@ -72,8 +72,11 @@ class Admin::EventsController < ApplicationController
       view_context.link_to link, undo_path(@event.next, redo: !params[:redo]), method: :post
     end
 
-    def redirect_unless_signed_in
-      redirect_to root_path unless current_user
+    def redirect_unless_admin_user
+      unless current_user && current_user.admin?
+        flash[:alert] = t(:unauthorised_access, scope: [:failure])
+        redirect_to root_path
+      end
     end
 
 end
