@@ -11,7 +11,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~>3.2.0'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-leaflet'
-gem 'sass', '~>3.2.0'
+gem 'bootstrap-datepicker-rails'
+gem 'sass', '3.4.7'  #, '~>3.2.0'
 #  The gem 'sass' was added as a solution for these errors
 #  Preparing app for Rails asset pipeline
 #       Running: rake assets:precompile
@@ -22,7 +23,7 @@ gem 'sass', '~>3.2.0'
 #       Asset precompilation completed (4.66s)
 # http://stackoverflow.com/questions/22276991/heroku-error-encountered-while-saving-cache
 
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'    #, '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -47,7 +48,7 @@ group :development do
   gem 'rails_12factor'
   #  Use this gem to overcome problem: Error encountered 
   #  while saving cache , can't dump anonymous class
-  # gem 'sass-rails-source-maps'
+  gem 'sass-rails-source-maps'
 end
 gem 'rake', '~> 10.3.2'
 gem 'paper_trail', '~> 3.0.6'

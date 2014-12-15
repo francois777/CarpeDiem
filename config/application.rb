@@ -24,7 +24,7 @@ module Carpediem
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
     
-    config.assets.initialize_on_precompile = true
+    # config.assets.initialize_on_precompile = true
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # load the subfolders in the locales
@@ -32,8 +32,8 @@ module Carpediem
     config.i18n.enforce_available_locales = false
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :en
-    config.assets.paths << Rails.root.join("app", "assets")
+    # config.assets.paths << Rails.root.join("app", "assets")
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    config.assets.paths << Rails.root.join("app", "assets", "images")
+    # config.assets.paths << Rails.root.join("app", "assets", "images")
   end
 end
