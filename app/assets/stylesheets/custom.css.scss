@@ -172,7 +172,6 @@ section.font-test {
 @media only screen and (min-width : 320px) {
 
   section.test {
-    background: transparent;
     background-color: khaki;
   }
 
@@ -188,9 +187,7 @@ section.font-test {
   .main-container {
     background-color: #F4F5DB;
     background-image: image-url('bg-texture.png');
-    // background-image: none;
     z-index: 1;
-    // min-height: 500px;
     width: 100%;
     min-height: 100%;
     height: auto !important;
@@ -449,7 +446,6 @@ section.font-test {
       display: block;
       clear: left;
       font-size: 1em;
-      // font-family: SofiaProLight;
     }
   }
 
@@ -463,9 +459,6 @@ section.font-test {
         margin: 0.5em 0.2em;
         font-size: 2em;
       }
-      h3 {
-         
-      }
     }
     form {
       font-size: 0.9em;
@@ -474,8 +467,6 @@ section.font-test {
       }
     }
     table {
-      // width: 100%;
-
       th, td {
         font-family: arial;
         font-size: 0.6em;
@@ -490,7 +481,7 @@ section.font-test {
         tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
       }
       tr:first-child { 
-        background: transparent; 
+        background-color: transparent; 
       }
     }
   }
@@ -552,7 +543,7 @@ section.font-test {
         tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
       }
       tr:first-child { 
-        background: transparent; 
+        background-color: transparent; 
       }
     }
   }
@@ -593,7 +584,6 @@ section.font-test {
       margin-top: 1.2em;
       btn { 
         margin-top: 0.5em;
-        // padding: 0.8em 1.5em; 
         display: inline-block;
         a { color: white; }
       }
@@ -620,11 +610,11 @@ section.font-test {
       th:nth-child(4), td:nth-child(4) { width: 35%; } 
       tbody {
         color: white;
-        tr:nth-child(odd) { background: $darker-brown; }
-        tr:nth-child(even)  { background: $lighter-brown; }
+        tr:nth-child(odd) { background-color: $darker-brown; }
+        tr:nth-child(even)  { background-color: $lighter-brown; }
       }
       tr:first-child { 
-        background: transparent; 
+        background-color: transparent; 
       }
     }
   }
@@ -658,7 +648,6 @@ section.font-test {
       p {
         margin: 0.5em 1em;
         font-family: 'Fertigo_PRO';
-        // background-color: #F5E6B5;
       }
     }
 
@@ -687,7 +676,6 @@ section.font-test {
     }
     .terms {
       margin: 0.5em;
-      // margin-top: 0.5em;
       p {
         font-family: 'Times New Roman';
       }
@@ -720,7 +708,6 @@ section.font-test {
         height: 3em;
       }
       tbody tr {
-        // background-color: #3e3e3e;
         th {
           color: $golden-brown;
           vertical-align: middle;
@@ -808,12 +795,11 @@ section.font-test {
   footer {
     height: 50px;
     width: 100%;
-    //background-image: asset-data-url('bg-nav-dark.png');
     background-image: image-url('bg-nav-dark.png');
     p {
       color: white;
       padding-top: 18px;
-      font: 0.8em 'Times New Roman', Georgia, Serif
+      font: 0.8em 'Times New Roman', Georgia, Serif;
     }
   }
 
@@ -842,8 +828,6 @@ section.font-test {
     }
     p.navbar-text {
       float: right;
-      // padding: 0;
-      // padding-top: 0.7em;
       padding: 0.8em;
       margin: 0;
       font-family: Arial, sans-serif;
@@ -899,7 +883,6 @@ section.font-test {
       display: table-cell;
       vertical-align: middle;
       width: 199px;
-      // height: 199px;    
     }
     .thumb-wrap>li .wring {
       display: table-cell;
@@ -924,13 +907,13 @@ section.font-test {
       }
       .caption {
         display: block;
-        padding: .3em 5px;
-        font-size: .9em;
+        padding: 0.3em 5px;
+        font-size: 0.9em;
         line-height: 1.1;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #CCC;
         text-align: center;
         .title {
-          color: #fff;
+          color: #FFF;
         }
       }
     }
@@ -965,14 +948,7 @@ section.font-test {
     }
   }  
 
-  header.top-banner .preference {
-    // z-index: 5;
-    // top: 60px;
-    // right: 20px;
-  }
-
   section.test {
-    background: transparent;
     background-color: darkseagreen;
   }
 
@@ -983,12 +959,8 @@ section.font-test {
       padding-bottom: 5px;
       figcaption {
         header {
-          h2 {
-            padding-bottom: 20px;
-          }
-          p {
-            font-size: 0.9em;
-          }
+          h2 { padding-bottom: 20px; }
+          p {  font-size: 0.9em; }
         }
       }
     }
@@ -1029,18 +1001,6 @@ section.font-test {
     }
     margin: 0;
     table.users {
-      // thead {
-      //   th:nth-child(1) { width: 20%; }
-      //   th:nth-child(2) { width: 40%; }
-      //   th:nth-child(3) { 
-      //     width: 40%; 
-      //     display: table-cell;
-      //   }
-      //   th:nth-child(4) { 
-      //     width: 0%; 
-      //     display: none;
-      //   }
-      // }
       tbody tr {
         vertical-align: middle;
         td:nth-child(1) {
@@ -1065,12 +1025,9 @@ section.font-test {
     ul.visible li {
       opacity: 0.8;
       z-index: 5;
-      // background-color: $medium-brown;  
     }
 
     ul.nav.navbar-nav li {
-      // background-color: $medium-brown;  
-      // background-image: asset-data-url('bg-nav.png');
       background-image:  image-url('bg-nav.png');
       z-index: 5;
     }
@@ -1078,8 +1035,6 @@ section.font-test {
     .navbar-inverse .navbar-nav,
     .navbar-default .navbar-nav {
       > li > a {
-        // color: #543F20;
-        // color: lighten($dark-brown, 10%);
         color: $dark-brown;
       }
       > .open {
@@ -1087,20 +1042,18 @@ section.font-test {
           color: white;
           background-color: $medium-brown;
         }
-
       }
 
       .open .dropdown-menu > li {
         > a {
-        background-color: $medium-brown;
-        z-index: 5;
-        color: darken($dark-brown, 10%);
+            background-color: $medium-brown;
+            z-index: 5;
+            color: darken($dark-brown, 10%);
         }
         > a:hover, > a:focus {
           color: white;
         }
       }
-
     }
 
     ul.dropdown-menu {
@@ -1110,9 +1063,7 @@ section.font-test {
       li {
         background-color: rgb(206,185,136);
         z-index: 5;
-        a :hover {
-          font: white;
-        }
+        a :hover { font: white; }
       }
     }
   }
@@ -1120,7 +1071,6 @@ section.font-test {
   // 768px+
   section.carpediem {
     margin: 20px auto;
-    // float: right;
     padding: 20px;
     padding-bottom: 0;
     h2 {
@@ -1158,7 +1108,6 @@ section.font-test {
     }
     p {
       font-size: 1em;
-      // font-family: SofiaProLight;
     }
   }
 
@@ -1167,18 +1116,13 @@ section.font-test {
     padding-bottom: 1.6em;
 
     .topic {
-      p {
-        // margin: 0.5em 1em;
-        font-size: 1em;
-      }
+      p { font-size: 1em; }
     }
 
     .announcement {
       margin-top: 0.6em;
       margin-bottom: 1.6em;
-      // padding: 0.2em;
       span {
-        // padding: 1em;
         font-size: 0.8em;
       }
     }
@@ -1238,7 +1182,7 @@ section.font-test {
         tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
       }
       tr:first-child { 
-        background: transparent; 
+        background-color: transparent; 
       }
     }
   }
@@ -1291,7 +1235,6 @@ section.font-test {
     }
     p {
       font-size: 1em;
-      // font-family: SofiaProLight;
     }
   }
 
@@ -1303,7 +1246,6 @@ section.font-test {
     }
     .topic {
       p {
-        // margin: 0.5em 1em;
         font-size: 1.2em;
       }
     }
