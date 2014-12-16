@@ -11,7 +11,6 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~>3.2.0'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-leaflet'
-gem 'bootstrap-datepicker-rails'
 gem 'sass', '3.4.7'  #, '~>3.2.0'
 #  The gem 'sass' was added as a solution for these errors
 #  Preparing app for Rails asset pipeline
@@ -33,7 +32,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 2.3.0'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 4.2.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -14,9 +14,23 @@ class Admin::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.quoted_cost = to_base_amount(params[:event][:quoted_cost].to_i)
+    puts "Params: #{params.inspect}"
+    puts "event_params: #{event_params.inspect}"
+    new_params = event_params
+    puts "new_params: #{new_params.inspect}"
+    puts "event_params[:quoted_cost]: #{event_params[:quoted_cost].inspect}"
+    quoted_cost = to_base_amount(params[:event][:quoted_cost].to_i)
+    puts "quoted_cost: #{quoted_cost.inspect}"
+
+    puts "new_params[:title]: #{new_params[:title]}"
+    puts "new_params[:start_date]: #{new_params[:start_date].inspect}"
+    puts "new_params[:quoted_cost]: #{new_params[:quoted_cost].inspect}"
+
+    # new_params[:quoted_cost] = event_params[:event][:quoted_cost]
+    @event = Event.new(new_params)
+    # @event.quoted_cost = to_base_amount(params[:event][:quoted_cost].to_i)
     @event.end_date = @event.start_date if @event.end_date.nil?
+    puts "@event errors: #{@event.errors.inspect}"
     if @event.save
       flash[:success] = "#{t(:event_created, scope: [:success])}"
       redirect_to @event
