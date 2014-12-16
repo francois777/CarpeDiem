@@ -52,6 +52,14 @@ FactoryGirl.define do
     comments 'Will confirm in two weeks'
   end  
 
+  factory :chalet do
+    name 'Gideon'
+    location_code 'A12'
+    style_class 1
+    reservable true
+    inauguration_date (Date.today + 45)
+    name_definition 1
+  end
 
 end
 

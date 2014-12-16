@@ -64,6 +64,23 @@ af:
     october: Oktober
     november: November
     december: Desember    
+  style_classes:
+    basic: Basies
+    standard: Standaard
+    luxury: Luuks
+  chalet_names:
+    reuben: Reuben
+    simeon: Simeon
+    levi: Levi
+    judah: Judah
+    zebulun: Zebulun
+    issachar: Issachar
+    dan: Dan
+    gad: Gad
+    asher: Asher
+    naphtali: Naphtali
+    joseph: Joseph
+    benjamin: Benjamin 
   accommodation:
     accommodation: akkommodasie
     no_alcohol: geen alkohol
@@ -146,4 +163,5 @@ af:
     not_blank_and_match_pw_verification: Moet nie leeg wees nie en dieselde wees as die wagwoord bevestiging
   info:
     nothing_changed: Niks het verander nie  
+    requested_pw_reset_enter_pw: "Jy het 'n nuwe wagwoord aangevra. Verskaf asseblief jou nuwe wagwoord."  
     

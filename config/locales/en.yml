@@ -64,6 +64,23 @@ en:
     october: October
     november: November
     december: December    
+  style_classes:
+    basic: Basic
+    standard: Standard
+    luxury: Luxury
+  chalet_names:
+    reuben: Reuben
+    simeon: Simeon
+    levi: Levi
+    judah: Judah
+    zebulun: Zebulun
+    issachar: Issachar
+    dan: Dan
+    gad: Gad
+    asher: Asher
+    naphtali: Naphtali
+    joseph: Joseph
+    benjamin: Benjamin 
   accommodation:
     accommodation: accommodation
     no_alcohol: no alcohol
@@ -146,3 +163,4 @@ en:
     not_blank_and_match_pw_verification: Cannot be blank and must match the password verification
   info:
     nothing_changed: Nothing has changed  
+    requested_pw_reset_enter_pw: You have requested a password reset. Please enter your new password.    

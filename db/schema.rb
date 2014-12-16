@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212051602) do
+ActiveRecord::Schema.define(version: 20141216011051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20141212051602) do
   end
 
   add_index "accommodation_types", ["accom_type"], name: "index_on_accom_type", unique: true, using: :btree
+
+  create_table "chalets", force: true do |t|
+    t.string   "name"
+    t.string   "location_code"
+    t.integer  "style_class"
+    t.boolean  "reservable"
+    t.datetime "inauguration_date"
+    t.integer  "name_definition"
+  end
+
+  add_index "chalets", ["location_code"], name: "index_chalets_on_location_code", unique: true, using: :btree
 
   create_table "diary_days", force: true do |t|
     t.datetime "day"
