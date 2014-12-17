@@ -1,0 +1,31 @@
+en:
+  admin:
+    chalets:
+      new:
+        create_chalet: Create Chalet
+        new_chalet: New Chalet
+      show:  
+        chalet_details: Chalet Details
+        name: Name
+        location_code: Location
+        style_class: Style Class
+        reservable: Reservable?
+        inauguration_date: Inauguration Date
+        name_definition: Name Definition
+        return_to_chalet_list: Return to Chalet List
+      fields:  
+        name: Name
+        location_code: Location
+        style_class: Style Class
+        reservable: Reservable?
+        inauguration_date: Inauguration Date
+        name_definition: Name Definition
+      index:
+        chalet_list: Chalet List
+        name: Name
+        location_code: Location
+        style_class: Style Class
+        reservable: Reservable?
+        add_chalet: Add Chalet
+      edit:
+        update_chalet: Update Chalet  

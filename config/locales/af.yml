@@ -32,6 +32,7 @@ af:
     users: Verbruikers
     all_users: Alle verbruikers
     account_settings: Rekening besonderhede
+    chalets: Chalets
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -81,6 +82,19 @@ af:
     naphtali: Naphtali
     joseph: Joseph
     benjamin: Benjamin 
+  tribe_name_definitions:  
+    reuben: Die betekenis van die naam Reuben
+    simeon: Die betekenis van die naam Simeon
+    levi: Die betekenis van die naam Levi
+    judah: Die betekenis van die naam Judah
+    zebulun: Die betekenis van die naam Zebulun
+    issachar: Die betekenis van die naam Issachar
+    dan: Die betekenis van die naam Dan
+    gad: Die betekenis van die naam Gad
+    asher: Die betekenis van die naam Asher
+    naphtali: Die betekenis van die naam Naphtali
+    joseph: Die betekenis van die naam Joseph
+    benjamin: Die betekenis van die naam Benjamin 
   accommodation:
     accommodation: akkommodasie
     no_alcohol: geen alkohol
@@ -137,6 +151,8 @@ af:
     accommodation_type_updated: Akkommodasie Tipe suksesvol verander
     event_created: Gebeurtenis suksesvol bygevoeg
     event_updated: Gebeurtenis verandering suksesvol
+    chalet_created: Chalet suksesvol bygevoeg
+    chalet_updated: Chalet verandering suksesvol
     profile_updated: Profiel is verander
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
@@ -152,6 +168,9 @@ af:
     event_create_failed: Gebeurtenis bygevoeging het misluk
     event_update_failed: Gebeurtenis verandering het misluk
     event_not_found: Gebeurtenis kon nie gevind word nie
+    chalet_create_failed: Chalet bygevoeging het misluk
+    chalet_update_failed: Chalet verandering het misluk
+    chalet_not_found: Chalet kon nie gevind word nie
     tariff_update_failed: Tarief verandering het misluk
     only_admin_user_can_sign_in: Net administreerders mag inteken
     password_is_incorrect: Wagwoord is foutief

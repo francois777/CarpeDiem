@@ -1,0 +1,31 @@
+af:
+  admin:
+    chalets:
+      new:
+        create_chalet: Voeg nuwe chalet by
+        new_chalet: Nuwe Chalet
+      show:  
+        chalet_details: Chalet Besonderhede
+        name: Naam
+        location_code: Plot kode
+        style_class: Styl Klas
+        reservable: Reserveerbaar?
+        inauguration_date: Inhuldigingsdatum
+        name_definition: Naam Definisie
+        return_to_chalet_list: Keer terug na Chalet lys
+      fields:  
+        name: Naam
+        location_code: Plot kode
+        style_class: Styl Klas
+        reservable: Reserveerbaar?
+        inauguration_date: Inhuldigingsdatum
+        name_definition: Naam Definisie
+      index:
+        chalet_list: Chalet Lys
+        name: Naam
+        location_code: Plot kode
+        style_class: Styl Klas
+        reservable: Reserveerbaar?
+        add_chalet: Voeg Chalet by
+      edit:
+        update_chalet: Verander Chalet  

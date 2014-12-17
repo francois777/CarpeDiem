@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :tariffs
     end    
     resources :events, only: [:new, :create, :edit, :update, :destroy]
+    resources :chalets
   end
 
   root 'static_pages#home'

@@ -1,0 +1,31 @@
+.form-group
+  = f.label :name, t(".name"), class: "col-sm-4 control-label"
+  .col-sm-5
+    - selected_name = @chalet.name ? @chalet_indexes[@chalet.name] : 0
+    = f.select :name, options_for_select(@chalet_names, selected: selected_name), {}, { class: "form-control"}
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@chalet, :name)
+.form-group
+  = f.label :location_code, t(".location_code"), class: "col-sm-4 control-label"
+  .col-sm-5
+    = f.text_field :location_code, class: "form-control", required: true
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@chalet, :location_code)
+.form-group
+  = f.label :style_class, t(".style_class"), class: "col-sm-4 control-label"
+  .col-sm-5
+    = f.select :style_class, options_for_select(@style_classes, selected: @chalet.style_class), {}, { class: 'form-control' }
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@chalet, :style_class)
+.form-group
+  = f.label :reservable, t(".reservable"), class: "col-sm-4 control-label"
+  .col-sm-5
+    = f.check_box :reservable
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@chalet, :reservable)
+.form-group
+  = f.label :inauguration_date, t(".inauguration_date"), class: "col-sm-4 control-label"
+  .col-sm-5
+    =f.text_field :inauguration_date, class: "form-control datepicker", data: {provide: "datepicker", date: {format: "dd/mm/yyyy"}}, required: true    
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@chalet, :inauguration_date)

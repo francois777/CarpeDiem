@@ -1,0 +1,30 @@
+- provide(:title, t(".chalet_list"))
+.row
+  .col-xs-8.col-md-8.col-xs-offset-2.col-md-offset-2
+    %section.chalets.clearfix
+      %h1
+        = t(".chalet_list")
+      .table-responsive
+        %table.table.chalets
+          %thead
+            %tr
+              %td
+                %b
+                  = t(".name")
+              %td
+                %b
+                  = t(".location_code")
+              %td
+                %b
+                  = t(".style_class")
+              %td
+                %b
+                  = t(".reservable")
+          %tbody
+            = render @chalets || t(".no_chalets_found")
+      .row
+        .actions
+          -if current_user && current_user.admin?
+            %button.btn.btn-info
+              = link_to t(".add_chalet"), new_admin_chalet_path
+

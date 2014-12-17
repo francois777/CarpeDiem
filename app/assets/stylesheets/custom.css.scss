@@ -187,7 +187,7 @@ section.font-test {
 
   nav.navbar.navbar-default.navbar-inverse.main-nav {
     margin: 0;
-    background-image: image-url('bg-nav-dark.png');
+    background-image: image-url('bg-nav.png');
   }
 
   .navbar-collapse {
@@ -754,7 +754,45 @@ section.font-test {
       margin-bottom: 0.5em;
       font-size: 2em;      
     }
+  }
 
+  section.chalets {
+    margin: 0.2em;
+    .row { margin: 0; }
+    h1 {
+      margin: 0.5em 0.2em;
+      font-size: 2em;
+    }
+    form {
+      font-size: 0.9em;
+      select {
+        font-size: 1em;
+      }
+    }
+    table {
+      width: 100%;
+
+      th, td {
+        font-family: arial;
+        font-size: 1em;
+      }
+
+      td { font-family: arial; }
+
+      th:nth-child(1) td:nth-child(1) {
+        with: 40%;
+      }
+      th:nth-child(2) td:nth-child(2), th:nth-child(3) td:nth-child(3), th:nth-child(4) td:nth-child(4) {
+        with: 20%;
+      }
+      tbody {
+        color: $dark-brown;
+        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+      }
+      tr:first-child { 
+        background-color: transparent; 
+      }
+    }
   }
 
   // 320px+

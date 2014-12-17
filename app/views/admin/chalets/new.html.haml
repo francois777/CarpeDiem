@@ -1,0 +1,13 @@
+- provide(:title, t(".new_chalet"))
+.row
+  %section.chalets.clearfix
+    %header
+      %h1
+        = t(".new_chalet")
+    .row
+      .col-xs-8.col-xs-offset-2.col-md-8.col-md-offset-2
+        = form_for([:admin, @chalet], html: {class: "form-horizontal", role: "form"}) do |f|
+          = render 'fields', f: f
+          .centered
+            .button.btn
+              = f.submit t(".create_chalet"), class: "btn btn-large btn-primary"  

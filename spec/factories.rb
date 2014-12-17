@@ -53,7 +53,7 @@ FactoryGirl.define do
   end  
 
   factory :chalet do
-    name 'Gideon'
+    name 'Simeon'
     location_code 'A12'
     style_class 1
     reservable true

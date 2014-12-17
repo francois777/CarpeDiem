@@ -27,7 +27,7 @@ describe Chalet do
   it "must have a valid factory" do
     chalet_factory = build(:chalet)
     expect(chalet_factory).to be_valid
-    expect(chalet_factory.name).to eq('Gideon')
+    expect(chalet_factory.name).to eq('Simeon')
     expect(chalet_factory.location_code).to eq('A12')
     expect(chalet_factory.style_class).to eq('standard')
     expect(chalet_factory.reservable).to eq(true)

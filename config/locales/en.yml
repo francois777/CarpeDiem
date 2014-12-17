@@ -32,6 +32,7 @@ en:
     users: Users
     all_users: All users
     account_settings: Account Settings
+    chalets: Chalets
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -81,6 +82,19 @@ en:
     naphtali: Naphtali
     joseph: Joseph
     benjamin: Benjamin 
+  tribe_name_definitions:  
+    reuben: The definition of the name of Reuben
+    simeon: The definition of the name of Simeon
+    levi: The definition of the name of Levi
+    judah: The definition of the name of Judah
+    zebulun: The definition of the name of Zebulun
+    issachar: The definition of the name of Issachar
+    dan: The definition of the name of Dan
+    gad: The definition of the name of Gad
+    asher: The definition of the name of Asher
+    naphtali: The definition of the name of Naphtali
+    joseph: The definition of the name of Joseph
+    benjamin: The definition of the name of Benjamin 
   accommodation:
     accommodation: accommodation
     no_alcohol: no alcohol
@@ -137,6 +151,8 @@ en:
     accommodation_type_updated: Accommodation Type updated successfully
     event_created: Event created successfully
     event_updated: Event updated successfully
+    chalet_created: Chalet created successfully
+    chalet_updated: Chalet updated successfully
     profile_updated: Profile updated
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
@@ -152,6 +168,9 @@ en:
     event_create_failed: Event create was not successful
     event_update_failed: Event update was not successful
     event_not_found: Event not found
+    chalet_create_failed: Chalet create was not successful
+    chalet_update_failed: Chalet update was not successful
+    chalet_not_found: Chalet not found
     tariff_update_failed: Tariff Update failed
     only_admin_user_can_sign_in: Only an administrator may sign in
     password_is_incorrect: Password is incorrect

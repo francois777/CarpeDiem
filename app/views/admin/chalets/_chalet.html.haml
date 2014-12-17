@@ -1,0 +1,9 @@
+%tr
+  %td
+    = link_to chalet.name, [:admin, chalet]
+  %td
+    = chalet.location_code
+  %td
+    = t("#{chalet.style_class}", scope: [:style_classes]) 
+  %td
+    = chalet.reservable ? 'Yes' : 'No' 

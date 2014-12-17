@@ -1,0 +1,40 @@
+- provide(:title, t(".chalet_details"))
+
+.row
+  %section.chalets.clearfix
+    %h1
+      = t(".chalet_details")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for([:admin, @chalet], html: {class: "form-horizontal", role: "form"}) do |f|
+          .form-group
+            = f.label :name, t(".name"), class: "col-sm-3 control-label"
+            .col-sm-4
+              = f.text_field :name, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :location_code, t(".location_code"), class: "col-sm-3 control-label"
+            .col-sm-4
+              = f.text_field :location_code, readonly: "", class: 'form-control'
+          .form-group
+            = f.label :style_class, t(".style_class"), class: "col-sm-3 control-label"
+            .col-sm-4
+              = f.text_field :style_class, readonly: "", value: t("#{@chalet.style_class}", scope: [:style_classes]), class: 'form-control'
+          .form-group
+            = f.label :reservable, t(".reservable"), class: "col-sm-3 control-label"
+            .col-sm-1
+              = f.check_box :reservable, readonly: "", class: "form-control"
+          .form-group
+            = f.label :inauguration_date, t(".inauguration_date"), class: "col-sm-3 control-label"
+            .col-sm-4
+              = f.text_field :inauguration_date, readonly: "", value: display_date(@chalet.inauguration_date), class: "form-control"
+          .form-group
+            = f.label :name_definition, t(".name_definition"), class: "col-sm-3 control-label"
+            .col-sm-8
+              = f.text_area :name_definition, readonly: "", value: t("#{@chalet.name.downcase}", scope: [:tribe_name_definitions]), class: 'form-control', rows: 5
+    .row
+      .actions
+        -if current_user && current_user.admin?
+          %button.btn.btn-info
+            = link_to t(".return_to_chalet_list"), admin_chalets_path
+          %button.btn.btn-info
+            = link_to t(".edit"), edit_admin_chalet_path(@chalet)
