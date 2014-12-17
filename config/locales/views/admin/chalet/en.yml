@@ -27,5 +27,6 @@ en:
         style_class: Style Class
         reservable: Reservable?
         add_chalet: Add Chalet
+        no_chalets_found: No chalets found
       edit:
         update_chalet: Update Chalet  

@@ -27,5 +27,6 @@ af:
         style_class: Styl Klas
         reservable: Reserveerbaar?
         add_chalet: Voeg Chalet by
+        no_chalets_found: No chalets found
       edit:
         update_chalet: Verander Chalet  

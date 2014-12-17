@@ -14,7 +14,7 @@ class Admin::ChaletsController < ApplicationController
   end
 
   def index
-    @chalets = Chalet.all
+    @chalets = [] #Chalet.all
   end
 
   def new
