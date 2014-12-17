@@ -6,11 +6,10 @@ class Admin::EventsController < ApplicationController
   before_action :redirect_unless_admin_user
 
   def new
-    if params[:event]
-      @event = params[:event]
-    else
-      @event = Event.new
-    end
+    @event = Event.new
+    @event = params[:event] if params[:event]
+    @event.start_date = Date.today
+    @event.end_date = Date.today   
   end
 
   def create
@@ -32,6 +31,8 @@ class Admin::EventsController < ApplicationController
       flash[:alert] = t(:update_not_allowed, scope: [:failure])
       redirect_to root_path
     end
+    @event.start_date = @event.start_date.to_date
+    @event.end_date = @event.end_date.to_date
   end
 
   def update

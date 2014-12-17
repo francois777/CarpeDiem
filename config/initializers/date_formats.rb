@@ -1,1 +1,1 @@
-Date::DATE_FORMATS[:default] = "%y-%m-%d"
+Date::DATE_FORMATS[:default] = "%d-%m-%Y"
