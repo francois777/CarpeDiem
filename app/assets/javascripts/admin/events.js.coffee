@@ -1,5 +1,5 @@
 jQuery ->
   $('#event_start_date').datepicker
-    dateFormat: "dd-mm-yy"
+    dateFormat: "dd M yy"
   $('#event_end_date').datepicker
-    dateFormat: "dd-mm-yy"
+    dateFormat: "dd M yy"

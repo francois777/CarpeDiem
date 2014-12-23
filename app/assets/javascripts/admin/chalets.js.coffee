@@ -1,2 +1,2 @@
 jQuery ->
-  $('#chalet_inauguration_date').datepicker( dateFormat: "dd-mm-yy" )
+  $('#chalet_inauguration_date').datepicker( dateFormat: "dd M yy" )

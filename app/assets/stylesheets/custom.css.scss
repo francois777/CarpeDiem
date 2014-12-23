@@ -137,6 +137,11 @@ p {
   margin-bottom: 1em;
 }
 
+.info-button {
+  background-color: cyan;
+  padding: 0.3em;
+}
+
 section.test {
   padding: 0.5em;
   width: 100%;
@@ -771,10 +776,10 @@ section.font-test {
     }
     table {
       width: 100%;
-
+      margin: 0.5em 1em;
       th, td {
         font-family: arial;
-        font-size: 1em;
+        font-size: 0.8em;
       }
 
       td { font-family: arial; }
@@ -789,8 +794,8 @@ section.font-test {
         color: $dark-brown;
         tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
       }
-      tr:first-child { 
-        background-color: transparent; 
+      thead > tr { 
+        font-weight: bold; 
       }
     }
   }
@@ -890,9 +895,12 @@ section.font-test {
   .actions {
     padding-top: 10px;
     text-align: center;
+    margin-bottom: 1em;
     a {
       color: white;
       font-size: 1.1em;
+      background-color: #3682D1;
+      padding: 0.3em;
     }
   }
 
@@ -905,6 +913,10 @@ section.font-test {
       padding: 1em;
       width: 90%;
     }  
+    // .actions button a {
+    //   pointer-events: none;
+    //   cursor: default;
+    // }
   }
 
   section.memories {
@@ -1259,6 +1271,16 @@ section.font-test {
       }
     }
   }  
+
+  section.chalets {
+    table {
+      margin: 0.5em 1em;
+      th, td {
+        font-size: 0.9em;
+      }
+    }
+  }
+
 }
 
 /* Media Devices, Desktops */

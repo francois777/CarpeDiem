@@ -46,6 +46,7 @@ class Admin::ChaletsController < ApplicationController
       redirect_to root_path
     end
     @chalet_indexes = index_for_names
+    @chalet.inauguration_date = @chalet.inauguration_date.to_date
   end
 
   def update

@@ -105,7 +105,8 @@ feature "Event pages" do
       visit events_path
       expect(page).to have_title('Events')
       expect(page).to have_selector('h2', text: current_month)
-      expect(page).to have_selector(:button, 'Add Event')
+      # expect(page).to have_selector(:button, 'Add Event')
+      expect(page).to have_link('Add Event')
       #expect( find(:css, "a[data-event-id='#{@event.id.to_s}']").first.text ).to eq(title)
     end
   end

@@ -19,13 +19,13 @@
 .form-group
   = f.label :start_date, t(".start_date"), class: "col-sm-4 control-label"
   .col-sm-3
-    =f.text_field :start_date, class: "form-control datepicker", data: {provide: "datepicker", date: {format: "dd/mm/yyyy"}}, required: true    
+    =f.text_field :start_date, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true    
   .col-sm-8.col-sm-offset-4
     = show_field_error(@event, :start_date)
 .form-group
   = f.label :end_date, t(".end_date"), class: "col-sm-4 control-label"
   .col-sm-3
-    =f.text_field :end_date, class: "form-control datepicker", data: {provide: "datepicker", date: {format: "dd/mm/yyyy"}}, required: true    
+    =f.text_field :end_date, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd-mm-yyyy"}, required: true    
   .col-sm-8.col-sm-offset-4
     = show_field_error(@event, :end_date)
 .form-group
@@ -50,8 +50,8 @@
     = f.check_box :meals_required, {}, checked_value = "1", unchecked_value = "0"
 .form-group
   = f.label :quoted_cost, t(".quoted_cost"), class: "col-sm-4 control-label"
-  .col-sm-8
+  .col-sm-3
     = f.text_field :quoted_cost, value: to_local_amount(@event.quoted_cost), class: "form-control"
-  .col-sm-8.col-sm-offset-4
+  .col-sm-3.col-sm-offset-4
     = show_field_error(@event, :quoted_cost)
 
