@@ -26,6 +26,6 @@
 .form-group
   = f.label :inauguration_date, t(".inauguration_date"), class: "col-sm-4 control-label"
   .col-sm-5
-    =f.text_field :inauguration_date, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true    
+    =f.text_field :inauguration_date, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"} 
   .col-sm-5.col-sm-offset-4
     = show_field_error(@chalet, :inauguration_date)

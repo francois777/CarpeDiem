@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216011051) do
+ActiveRecord::Schema.define(version: 20141224110433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20141216011051) do
   end
 
   add_index "accommodation_types", ["accom_type"], name: "index_on_accom_type", unique: true, using: :btree
+
+  create_table "camping_sites", force: true do |t|
+    t.string  "location_code"
+    t.string  "camping_type",  default: "T"
+    t.boolean "powered",       default: false
+    t.boolean "reservable",    default: false
+  end
+
+  add_index "camping_sites", ["location_code"], name: "index_camping_sites_on_location_code", unique: true, using: :btree
 
   create_table "chalets", force: true do |t|
     t.string   "name"
@@ -64,6 +73,68 @@ ActiveRecord::Schema.define(version: 20141216011051) do
     t.integer  "quoted_cost",                default: 0
     t.string   "comments",                   default: ""
   end
+
+  create_table "payment_receipts", force: true do |t|
+    t.integer "received_payment_id", null: false
+    t.integer "reservation_id",      null: false
+  end
+
+  add_index "payment_receipts", ["received_payment_id"], name: "index_paym_receipts_on_paym_id", unique: true, using: :btree
+
+  create_table "received_payments", force: true do |t|
+    t.integer  "reservation_id",              null: false
+    t.integer  "income_category", default: 0
+    t.integer  "received_amount", default: 0
+    t.integer  "payment_method",  default: 0
+    t.string   "receipt_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "received_payments", ["receipt_number"], name: "index_received_payments_on_receipt_number", using: :btree
+  add_index "received_payments", ["reservation_id"], name: "index_received_payments_on_reservation_id", using: :btree
+
+  create_table "rented_facilities", force: true do |t|
+    t.integer  "rentable_id"
+    t.string   "rentable_type"
+    t.integer  "reservation_id",               null: false
+    t.datetime "start_date",                   null: false
+    t.datetime "end_date",                     null: false
+    t.integer  "adult_count",      default: 0
+    t.integer  "child_6_12_count", default: 0
+    t.integer  "child_0_5_count",  default: 0
+  end
+
+  add_index "rented_facilities", ["reservation_id"], name: "index_rented_facilities_on_reservation_id", using: :btree
+
+  create_table "reservation_references", force: true do |t|
+    t.integer "refid",          null: false
+    t.integer "reservation_id", null: false
+  end
+
+  add_index "reservation_references", ["refid"], name: "index_reservation_refs_on_refid", unique: true, using: :btree
+
+  create_table "reservations", force: true do |t|
+    t.datetime "start_date",                                   null: false
+    t.datetime "end_date",                                     null: false
+    t.string   "reserved_for_name",                            null: false
+    t.datetime "reserved_datetime"
+    t.string   "telephone",                    default: ""
+    t.string   "mobile",                       default: ""
+    t.string   "email",                        default: ""
+    t.string   "town",                         default: ""
+    t.boolean  "meals_required",               default: false
+    t.integer  "invoiced_amount",              default: 0
+    t.boolean  "key_deposit_received",         default: false
+    t.integer  "reservation_reference_id"
+    t.string   "vehicle_registration_numbers", default: ""
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["reserved_for_name"], name: "index_reservations_on_name", using: :btree
+  add_index "reservations", ["start_date"], name: "index_reservations_on_start_date", using: :btree
 
   create_table "tariffs", force: true do |t|
     t.string   "tariff_category"

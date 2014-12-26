@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end    
     resources :events, only: [:new, :create, :edit, :update, :destroy]
     resources :chalets
+    resources :camping_sites
   end
 
   root 'static_pages#home'

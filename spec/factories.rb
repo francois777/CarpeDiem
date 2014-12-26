@@ -61,6 +61,37 @@ FactoryGirl.define do
     name_definition 1
   end
 
+  factory :camping_site do
+    location_code 'B15'
+    camping_type 'C'
+    powered true
+    reservable true
+  end
+
+  factory :reservation do
+    start_date (Date.today + 30)
+    end_date (Date.today + 34)
+    reserved_for_name 'Alistair Alkmaar'
+    telephone '123456789'
+    mobile '123456789'
+    email 'alistair.alkmaar@westgate.com.za'
+    town 'Kimberley'
+    meals_required true
+    invoiced_amount 24555
+    key_deposit_received true
+    vehicle_registration_numbers 'JHB223388' 
+    comments 'prefer to be far from bathrooms'
+  end
+
+  factory :rented_facility do
+    rentable :camping_site
+    reservation :reservation 
+    start_date (Date.today + 30)
+    end_date (Date.today + 34)
+    adult_count 3
+    child_6_12_count 2
+    child_0_5_count 1
+  end
 end
 
 

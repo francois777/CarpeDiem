@@ -1,0 +1,13 @@
+af:
+  activerecord:
+    errors:
+      models:
+        rented_facility:
+          attributes:
+            end_date:
+              end_date_before_start_date: Eind datum is voor begin datum
+              reservation_exceeds_max_duration: Bespreking oorskry maksimum tydperk
+            adult_count:  
+              exceeds_max_occupants_per_camping_site: Maksimum besoekers per kampeerplek oorskry  
+              no_occupants_for_reservation: Die bespreking het geen inwoners nie
+              adult_is_required: Minstens een volwassene word benodig

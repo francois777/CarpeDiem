@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    errors:
+      models:
+        rented_facility:
+          attributes:
+            end_date:
+              end_date_before_start_date: End date is before start date
+              reservation_exceeds_max_duration: Reservation exceeds maximum duration
+            adult_count:  
+              exceeds_max_occupants_per_camping_site: Exceeded maximum occupants per camping site
+              no_occupants_for_reservation: There are no occupants for this reservation
+              adult_is_required: At least one adult is required

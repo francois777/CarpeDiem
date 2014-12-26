@@ -76,7 +76,6 @@ feature "Chalet pages" do
       expect( find(:css, "input#chalet_reservable").checked?).to eq(nil)
       expect( find(:css, "input#chalet_inauguration_date").value).to eq(display_date(Date.new(2015,1,31)))
       expect( find(:css, "textarea#chalet_name_definition").value).to eq('The definition of the name of Benjamin')
-
     end
 
   end
