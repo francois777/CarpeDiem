@@ -1,0 +1,27 @@
+- provide(:title, t(:reservation_request, scope: [:menu]))
+
+%section.reservation-request
+  %h1 
+    = t(:reservation_request, scope: [:menu])
+  .row
+    .col-xs-8.col-md-8
+      = form_for([@reservation_request], html: {class: "form-horizontal", role: "form"}) do |f|
+        = render 'applicant_details', f: f
+        .form-group
+          = label :facility_1, t(".provide_details_for_each_facility"), class: "control-label heading"
+        = render 'fields1', f: f
+        .form-group
+          = label :facility_2, "Second facility required?", class: "control-label heading"
+          = check_box_tag 'Second facility required?'
+        = render 'fields2', f: f
+        .form-group
+          = label :facility_3, "Third facility required?", class: "control-label heading"
+          = check_box_tag 'Third facility required?'
+        = render 'fields3', f: f
+        .centered
+          .button.btn
+            = f.submit t(".update_and_review"), class: "btn btn-large btn-primary"  
+            = f.submit t(".submit"), class: "btn btn-large btn-success"  
+    .col-xs-4.col-md-4
+      %p
+        More details to come

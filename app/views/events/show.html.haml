@@ -54,8 +54,8 @@
                 = f.text_field :quoted_cost, readonly: "", value: to_local_currency(@event.quoted_cost), class: "form-control"
     .row
       .actions
-        %button.btn.btn-info
+        .button.btn
           = link_to t(".return_to_event_list"), events_path
         -if current_user && current_user.admin?
-          %button.btn.btn-info
+          .button.btn
             = link_to t(".edit_event"), edit_admin_event_path

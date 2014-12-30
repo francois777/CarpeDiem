@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224110433) do
+ActiveRecord::Schema.define(version: 20141226101019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,47 @@ ActiveRecord::Schema.define(version: 20141224110433) do
   end
 
   add_index "reservation_references", ["refid"], name: "index_reservation_refs_on_refid", unique: true, using: :btree
+
+  create_table "reservation_requests", force: true do |t|
+    t.string   "applicant_name",               default: ""
+    t.string   "applicant_telephone",          default: ""
+    t.string   "applicant_mobile",             default: ""
+    t.string   "applicant_email",              default: ""
+    t.string   "applicant_town",               default: ""
+    t.integer  "facility_type_1",              default: 0
+    t.datetime "start_date_1"
+    t.datetime "end_date_1"
+    t.integer  "adults_18_plus_count_1",       default: 0
+    t.integer  "teenagers_count_1",            default: 0
+    t.integer  "children_6_12_count_1",        default: 0
+    t.integer  "infants_count_1",              default: 0
+    t.boolean  "power_point_required_1",       default: false
+    t.integer  "facility_type_2",              default: 0
+    t.datetime "start_date_2"
+    t.datetime "end_date_2"
+    t.integer  "adults_18_plus_count_2",       default: 0
+    t.integer  "teenagers_count_2",            default: 0
+    t.integer  "children_6_12_count_2",        default: 0
+    t.integer  "infants_count_2",              default: 0
+    t.boolean  "power_point_required_2",       default: false
+    t.integer  "facility_type_3",              default: 0
+    t.datetime "start_date_3"
+    t.datetime "end_date_3"
+    t.integer  "adults_18_plus_count_3",       default: 0
+    t.integer  "teenagers_count_3",            default: 0
+    t.integer  "children_6_12_count_3",        default: 0
+    t.integer  "infants_count_3",              default: 0
+    t.boolean  "power_point_required_3",       default: false
+    t.integer  "meals_required_count",         default: 0
+    t.string   "vehicle_registration_numbers"
+    t.integer  "payable_amount",               default: 0
+    t.integer  "key_deposit_amount",           default: 0
+    t.datetime "estimated_arrival_time"
+    t.integer  "reservation_reference_id"
+    t.text     "special_requests",             default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reservations", force: true do |t|
     t.datetime "start_date",                                   null: false

@@ -80,7 +80,7 @@ feature "Event pages" do
       expect(page).to have_text('Power required?')
       expect(page).to have_text('Meals required?')
       expect(page).to have_text('Estimated cost quoted')
-      expect(page).to have_selector(:button, 'Edit Event')
+      expect(page).to have_link('Edit Event')
 
       expect( find(:css, "input#event_title").value).to eq('Annual Staff Reunion')
       expect( find(:css, "input#event_organiser_name").value).to eq('Victor Korestensky')
@@ -93,8 +93,8 @@ feature "Event pages" do
       expect( find(:css, "input#event_power_required").value).to eq "Yes"
       expect( find(:css, "input#event_meals_required").value).to eq "Yes"
       expect( find(:css, "input#event_quoted_cost").value).to eq "R 350.00"
-      expect(page).to have_selector(:button, 'Return to calendar')
-      expect(page).to have_selector(:button, 'Edit Event')
+      expect(page).to have_link('Return to calendar')
+      expect(page).to have_link('Edit Event')
     end
 
     scenario "Admin user looks at month calender" do
@@ -121,7 +121,7 @@ feature "Event pages" do
 
     scenario "Update an event (as administrator)" do
       visit event_path(@event)
-      expect(page).to have_selector(:button, 'Edit Event')
+      expect(page).to have_link('Edit Event')
       visit edit_admin_event_path(@event)
       expect(page).to have_title('Update Event')
       expect(page).to have_selector('h1', text: "Update Event")

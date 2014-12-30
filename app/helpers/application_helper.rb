@@ -28,6 +28,16 @@ module ApplicationHelper
     s.html_safe
   end
 
+  def show_logic_error(message)
+    s =
+      <<-EOHTML
+         <div id="error_message">
+           #{message}
+         </div>
+      EOHTML
+    s.html_safe  
+  end
+
   def admin_only(&block)
     block.call if current_user.try(:admin?)
   end

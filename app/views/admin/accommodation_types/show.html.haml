@@ -1,40 +1,40 @@
 - provide(:title, t(".accommodation_type_details"))
 
 .row
-  %section.tariffs.clearfix
+  %section.accommodation_types.clearfix
     %h1
       = t(".accommodation_type_details")
     .row
       .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
         = form_for([:admin, @accommodation_type], html: {class: "form-horizontal", role: "form"}) do |f|
           .form-group
-            = f.label :accom_type, t(".accom_type"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :accom_type, t(".accom_type"), class: "col-sm-5 control-label"
+            .col-sm-6
               = f.text_field :accom_type, readonly: "", class: 'form-control'
           .form-group
-            = f.label :description, t(".description"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :description, t(".description"), class: "col-sm-5 control-label"
+            .col-sm-6
               = f.text_field :description, readonly: "", class: "form-control"
           .form-group
-            = f.label :show, t(".show"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :show, t(".show"), class: "col-sm-5 control-label"
+            .col-sm-1
               = f.check_box :show, readonly: "", class: "form-control"
           .form-group
-            = f.label :show_normal_price, t(".show_normal_price"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :show_normal_price, t(".show_normal_price"), class: "col-sm-5 control-label"
+            .col-sm-1
               = f.check_box :show_normal_price, readonly: "", class: "form-control"
           .form-group
-            = f.label :show_in_season_price, t(".show_in_season_price"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :show_in_season_price, t(".show_in_season_price"), class: "col-sm-5 control-label"
+            .col-sm-1
               = f.check_box :show_in_season_price, readonly: "", class: "form-control"
           .form-group
-            = f.label :show_promotion, t(".show_promotion"), class: "col-sm-3 control-label"
-            .col-sm-9
+            = f.label :show_promotion, t(".show_promotion"), class: "col-sm-5 control-label"
+            .col-sm-1
               = f.check_box :show_promotion, readonly: "", class: "form-control"
     .row
       .actions
         -if current_user && current_user.admin?
-          %button.btn.btn-info
+          .button.btn
             = link_to t(".return_to_accommodation_type_list"), admin_accommodation_types_path
-          %button.btn.btn-info
+          .button.btn
             = link_to t(".edit"), edit_admin_accommodation_type_path(@accommodation_type)

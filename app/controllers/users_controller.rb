@@ -88,8 +88,12 @@ class UsersController < ApplicationController
     else
       @user = User.new
       # put the previous value back.
-      @user.email = params[:user][:email]
-      flash[:alert] = t(:user_not_registered, scope: [:errors], email: @user.email)
+      if params[:user][:email].empty?
+        flash[:alert] = t(:email_missing, scope: [:failure], email: @user.email)
+      else
+        @user.email = params[:user][:email]
+        flash[:alert] = t(:user_not_registered, scope: [:failure], email: @user.email)
+      end
       render :action => "forgot_password"
     end    
   end

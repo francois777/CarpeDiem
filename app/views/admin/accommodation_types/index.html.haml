@@ -32,5 +32,6 @@
       .row
         .actions
           -if current_user && current_user.admin?
-            %button.btn.btn-info
+            .button.btn
               = link_to t(".add_accommodation_type"), new_admin_accommodation_type_path
+

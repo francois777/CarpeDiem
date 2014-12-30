@@ -68,6 +68,44 @@ FactoryGirl.define do
     reservable true
   end
 
+  factory :reservation_request do
+    applicant_name 'Daphne Norman' 
+    applicant_telephone '223344889'
+    applicant_mobile '343434349'
+    applicant_email 'daphne.norman@gmail.com'
+    applicant_town 'Harrismith'
+    facility_type_1        2
+    start_date_1 (Date.today + 10)
+    end_date_1   (Date.today + 12)
+    adults_18_plus_count_1 3
+    teenagers_count_1      1
+    children_6_12_count_1  2
+    infants_count_1        2
+    power_point_required_1 false
+    facility_type_2        1
+    start_date_2 (Date.today + 10)
+    end_date_2   (Date.today + 12)
+    adults_18_plus_count_2 1
+    teenagers_count_2      2
+    children_6_12_count_2  3
+    infants_count_2        0
+    power_point_required_2 true
+    facility_type_3        0
+    start_date_3 (Date.today + 10)
+    end_date_3   (Date.today + 12)
+    adults_18_plus_count_3 0
+    teenagers_count_3      4
+    children_6_12_count_3  2
+    infants_count_3        0
+    power_point_required_3 false
+    meals_required_count   0
+    vehicle_registration_numbers 'RHC 12 12 10, UX 15 38 48'
+    payable_amount 0
+    key_deposit_amount 0 
+    estimated_arrival_time nil
+    special_requests  'Please puts us all close to each other'
+  end
+
   factory :reservation do
     start_date (Date.today + 30)
     end_date (Date.today + 34)

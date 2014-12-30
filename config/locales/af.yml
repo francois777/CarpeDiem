@@ -27,12 +27,13 @@ af:
     signin: Teken in
     signout: Teken af
     change_password: Verander my wagwoord
-    forgot_password: Forgot Password
+    forgot_password: Wagwoord vergeet
     my_settings: My details
     users: Verbruikers
     all_users: Alle verbruikers
     account_settings: Rekening besonderhede
     chalets: Chalets
+    reservation_request: Bespreking Aanvraag
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -65,6 +66,10 @@ af:
     october: Oktober
     november: November
     december: Desember    
+  facility_types:
+    tent: Tent
+    caravan: Karavaan
+    chalet: Chalet  
   style_classes:
     basic: Basies
     standard: Standaard
@@ -156,6 +161,7 @@ af:
     profile_updated: Profiel is verander
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
+    reservation_request_created: Bespreking Aanvraag gestoor. Hersien and Stuur versoek.
   failure:
     unauthorised_access: Onvoldoende magtiging om hierdie bladsy te versoek
     an_error_occurred: An error has occurred
@@ -180,6 +186,9 @@ af:
     password_expired_request_reset: "Wagwoord het verval. Versoek asseblief 'n nuwe wagwoord."
     you_have_not_requested_pw_reset: "Jy het nie 'n nuwe wagwoord versoek nie"
     not_blank_and_match_pw_verification: Moet nie leeg wees nie en dieselde wees as die wagwoord bevestiging
+    email_missing: EPos nie verskaf nie
+    reservation_request_create_failed: Bespreking Aanvraag bevat foute
+    some_facilities_fully_booked: Sommige fasiliteite is reeds vol bespreek gedurende die aangegewe periode.
   info:
     nothing_changed: Niks het verander nie  
     requested_pw_reset_enter_pw: "Jy het 'n nuwe wagwoord aangevra. Verskaf asseblief jou nuwe wagwoord."  

@@ -33,12 +33,13 @@ en:
     all_users: All users
     account_settings: Account Settings
     chalets: Chalets
+    reservation_request: Reservation Request
   references:
     ps_118v24: Ps 118:24
   articles:  
     carpediem: |-    
       Carpe Diem Camping grounds is in Hekpoort, between the Magalies mountains
-      and  the Water mountains. The Hekpoort creek flows in the valley through
+      and the Water mountains. The Hekpoort creek flows in the valley through
       the beautiful 14 hectar bushfarm. This was a popular 4x4 track previously.
       The  stream is full of fish, frogs and crab and you may also encounter
       Hekpoort's  baboon family. In addition, you may also see meerkats,
@@ -65,6 +66,10 @@ en:
     october: October
     november: November
     december: December    
+  facility_types:
+    tent: Tent
+    caravan: Caravan
+    chalet: Chalet  
   style_classes:
     basic: Basic
     standard: Standard
@@ -156,6 +161,7 @@ en:
     profile_updated: Profile updated
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
+    reservation_request_created: Reservation Request Saved. Review and Submit.
   failure:
     unauthorised_access: You are not authorised to request this page
     an_error_occurred: An error has occurred
@@ -180,6 +186,9 @@ en:
     password_expired_request_reset: Password reset has expired. Please request a new password reset.
     you_have_not_requested_pw_reset: You have not requested a password reset
     not_blank_and_match_pw_verification: Cannot be blank and must match the password verification
+    email_missing: Email not provided
+    reservation_request_create_failed: Reservation request contains errors
+    some_facilities_fully_booked: Some facilities are already fully booked during the period you specified.
   info:
     nothing_changed: Nothing has changed  
     requested_pw_reset_enter_pw: You have requested a password reset. Please enter your new password.    

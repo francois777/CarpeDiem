@@ -1,0 +1,49 @@
+%div#third-facility
+  %h4
+    = t(".reservation_for_facility_3")
+  .form-group
+    = f.label :facility_type_3, t(".facility_type_3"), class: "col-sm-6 control-label"
+    .col-sm-6
+      = f.select :facility_type_3, options_for_select(@facility_types)
+    .col-sm-6.col-sm-offset-6
+      = show_field_error(@reservation_request, :applicant_town)
+  .form-group
+    = f.label :start_date_3, t(".start_date_3"), class: "col-sm-6 control-label"
+    .col-sm-3
+      =f.text_field :start_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}    
+    .col-sm-3.col-sm-offset-6
+      = show_field_error(@reservation_request, :start_date_3)
+  .form-group
+    = f.label :end_date_3, t(".end_date_3"), class: "col-sm-6 control-label"
+    .col-sm-3
+      =f.text_field :end_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}    
+    .col-sm-3.col-sm-offset-6
+      = show_field_error(@reservation_request, :end_date_3)
+  .form-group
+    = f.label :adults_18_plus_count_3, t(".adults_18_plus_count_3"), class: "col-sm-6 control-label"
+    .col-sm-2
+      = f.number_field :adults_18_plus_count_3, class: "form-control"
+    .col-sm-2.col-sm-offset-6
+      = show_field_error(@reservation_request, :adults_18_plus_count_3)
+  .form-group
+    = f.label :teenagers_count_3, t(".teenagers_count_3"), class: "col-sm-6 control-label"
+    .col-sm-2
+      = f.number_field :teenagers_count_3, class: "form-control"
+    .col-sm-2.col-sm-offset-6
+      = show_field_error(@reservation_request, :teenagers_count_3)
+  .form-group
+    = f.label :children_6_12_count_3, t(".children_6_12_count_3"), class: "col-sm-6 control-label"
+    .col-sm-2
+      = f.number_field :children_6_12_count_3, class: "form-control"
+    .col-sm-2.col-sm-offset-6
+      = show_field_error(@reservation_request, :children_6_12_count_3)
+  .form-group
+    = f.label :infants_count_3, t(".infants_count_3"), class: "col-sm-6 control-label"
+    .col-sm-2
+      = f.number_field :infants_count_3, class: "form-control"
+    .col-sm-2.col-sm-offset-6
+      = show_field_error(@reservation_request, :infants_count_3)
+  .form-group
+    = f.label :power_point_required_3, t(".power_point_required_3"), class: "col-sm-6 control-label checkbox"
+    .col-sm-2
+      = f.check_box :power_point_required_3, {}, checked_value = "1", unchecked_value = "0"

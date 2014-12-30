@@ -25,6 +25,6 @@
       .row
         .actions
           -if current_user && current_user.admin?
-            %button.btn.btn-info
+            .button.btn
               = link_to t(".add_chalet"), new_admin_chalet_path
 

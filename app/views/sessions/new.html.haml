@@ -16,6 +16,5 @@
           = f.password_field :password, class: "form-control"
       .actions    
         .button.btn
-          = f.submit t(:signin, scope: [:menu]), class: "btn btn-large btn-primary"
-      %p.actions
-        = link_to t(".forgot_my_password"), forgot_password_url  
+          = f.submit t(:signin, scope: [:menu]), class: "btn btn-large btn-primary"  
+          = link_to t(".forgot_my_password"), forgot_password_url  

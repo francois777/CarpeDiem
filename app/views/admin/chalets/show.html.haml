@@ -34,7 +34,7 @@
     .row
       .actions
         -if current_user && current_user.admin?
-          %button.btn.btn-info
+          .button.btn
             = link_to t(".return_to_chalet_list"), admin_chalets_path
-          %button.btn.btn-info
+          .button.btn
             = link_to t(".edit"), edit_admin_chalet_path(@chalet)

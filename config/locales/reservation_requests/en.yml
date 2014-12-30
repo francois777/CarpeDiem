@@ -1,0 +1,42 @@
+en:
+  activerecord:
+    errors:
+      models:
+        reservation_request:
+          attributes:
+            applicant_telephone:
+              no_contact_numbers: At least one contact number is required
+            facility_type_1:
+              invalid_facility_type: Invalid facility type
+            start_date_1:
+              invalid_start_date: Invalid start date
+            end_date_1:
+              invalid_end_date: Invalid end date
+              end_date_missing: End date is required
+            adults_18_plus_count_1:
+              exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
+              adult_required_for_infants: An adult is required to care for infants
+              no_people_specified: Number of people is not provided
+            facility_type_2:
+              invalid_facility_type: Invalid facility type
+            start_date_2:
+              invalid_start_date: Invalid start date
+            end_date_2:
+              invalid_end_date: Invalid end date
+              end_date_missing: End date is required
+            adults_18_plus_count_2:
+              exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
+              adult_required_for_infants: An adult is required to care for infants
+              no_people_specified: Number of people is not provided
+            facility_type_3:
+              invalid_facility_type: Invalid facility type
+            start_date_3:
+              invalid_start_date: Invalid start date
+            end_date_3:
+              invalid_end_date: Invalid end date
+              end_date_missing: End date is required
+            adults_18_plus_count_3:
+              exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
+              adult_required_for_infants: An adult is required to care for infants
+              no_people_specified: Number of people is not provided
+                

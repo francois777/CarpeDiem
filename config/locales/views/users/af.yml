@@ -5,6 +5,7 @@ af:
     account_settings:
       account_settings: Rekening besonderhede  
       save_changes: Stoor veranderings
+      change: Change
     password_reset:
       requested_pw_reset_enter_pw: "%{user_name} het 'n nuwe wagwoord versoek. Verskaf asseblief jou nuwe wagwoord:" 
       new_password: Nuwe wagwoord

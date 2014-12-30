@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :events, only: [:index, :show]
+  resources :reservation_requests, only: [:new, :create, :edit, :update] do
+    member do
+      post :submit
+    end
+  end
 
   post "admin/versions/:id/revert" => "admin/versions#revert", :as => "revert_version"
 

@@ -5,6 +5,7 @@ en:
     account_settings:
       account_settings: Account Settings  
       save_changes: Save Changes
+      change: Change
     password_reset:
       requested_pw_reset_enter_pw: "%{user_name} has requested a password reset. Please enter your new password:" 
       new_password: New password

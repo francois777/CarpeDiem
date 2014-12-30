@@ -106,12 +106,12 @@ feature "Chalet pages" do
       expect( find(:css, "input#chalet_reservable").value).to eq('1')
       expect( find(:css, "input#chalet_inauguration_date").value).to eq(display_date(chalet.inauguration_date))
       expect( find(:css, "textarea#chalet_name_definition").value).to eq('The definition of the name of Simeon')
-      expect(page).to have_selector(:button, 'Edit')
-      click_button "Edit" 
+      expect(page).to have_link('Edit')
+      click_link "Edit" 
 
-      expect(page).to have_text('Chalet Details')
-      expect(page).to have_title('Chalet Details')
-      expect(page).to have_selector('h1', text: "Chalet Details")
+      expect(page).to have_text('Update Chalet')
+      expect(page).to have_title('Update Chalet')
+      expect(page).to have_selector('h1', text: "Update Chalet")
 
     end
 
@@ -139,7 +139,7 @@ feature "Chalet pages" do
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(2)", text: 'A3')
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(3)", text: 'Luxury')
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(4)", text: 'Yes')
-      expect(page).to have_selector(:button, 'Add Chalet')
+      expect(page).to have_link('Add Chalet')
 
     end
 

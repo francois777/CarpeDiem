@@ -70,4 +70,46 @@ describe Chalet do
     expect {@chalet.style_class = :invalid }.to raise_error
   end
 
+  it "must tell if a chalet is available between two dates" do
+    date_1 = Date.new(2015,06,29)
+    date_2 = Date.new(2015,07,01)
+    site = create(:chalet)
+    reservation = create(:reservation, start_date: date_1, end_date: date_2)
+    rented_facility = create(:rented_facility, 
+                              rentable: site, 
+                              reservation: reservation,
+                              start_date: date_1,
+                              end_date: date_2)
+
+    # Enquire availability for later period
+    request_from = Date.new(2015,07,02)
+    request_until = Date.new(2015,07,03)
+    expect(site.available_between?(request_from, request_until)).to be(true)
+
+    # Enquire availability for adjacent later period
+    request_from = Date.new(2015,07,01)
+    request_until = Date.new(2015,07,03)
+    expect(site.available_between?(request_from, request_until)).to be(true)
+
+    # Enquire availability for earlier period
+    request_from = Date.new(2015,06,20)
+    request_until = Date.new(2015,06,28)
+    expect(site.available_between?(request_from, request_until)).to be(true)
+
+    # Enquire availability for adjacent earlier period
+    request_from = Date.new(2015,06,25)
+    request_until = Date.new(2015,06,29)
+    expect(site.available_between?(request_from, request_until)).to be(true)
+
+    # Enquire availability for overlapping period - scenario 1
+    request_from = Date.new(2015,06,25)
+    request_until = Date.new(2015,06,30)
+    expect(site.available_between?(request_from, request_until)).to be(false)
+
+    # Enquire availability for overlapping period - scenario 2
+    request_from = Date.new(2015,06,30)
+    request_until = Date.new(2015,07,01)
+    expect(site.available_between?(request_from, request_until)).to be(false)
+  end
+
 end

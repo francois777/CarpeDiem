@@ -137,6 +137,10 @@ p {
   margin-bottom: 1em;
 }
 
+input[type="checkbox"] {
+  margin: 8px 0px 0px;
+}
+
 .info-button {
   background-color: cyan;
   padding: 0.3em;
@@ -466,48 +470,47 @@ section.font-test {
   }
 
   // 320px+
-  section.accom-tariffs {
-    margin: 0.2em;
-    .row { margin: 0; }
-    header {
-      margin-bottom: 1em;
-      h1 {
-        margin: 0.5em 0.2em;
-        font-size: 2em;
-      }
-    }
-    form {
-      font-size: 0.9em;
-      select {
-        font-size: 0.6em;
-      }
-    }
-    table {
-      th, td {
-        font-family: arial;
-        font-size: 0.6em;
-      }
-      td { font-family: arial; }
-      tr {
-        width: 100%;
-        line-height: 1.2em;
-      }
-      tbody {
-        color: $dark-brown;
-        tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
-      }
-      tr:first-child { 
-        background-color: transparent; 
-      }
-    }
-  }
+  // section.accom-tariffs {
+  //   margin: 0.2em;
+  //   .row { margin: 0; }
+  //   header {
+  //     margin-bottom: 1em;
+  //     h1 {
+  //       margin: 0.5em 0.2em;
+  //       font-size: 2em;
+  //     }
+  //   }
+  //   form {
+  //     font-size: 0.9em;
+  //     select {
+  //       font-size: 0.6em;
+  //     }
+  //   }
+  //   table {
+  //     th, td {
+  //       font-family: arial;
+  //       font-size: 0.6em;
+  //     }
+  //     td { font-family: arial; }
+  //     tr {
+  //       width: 100%;
+  //       line-height: 1.2em;
+  //     }
+  //     tbody {
+  //       color: $dark-brown;
+  //       tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
+  //     }
+  //     tr:first-child { 
+  //       background-color: transparent; 
+  //     }
+  //   }
+  // }
 
   section.accommodation_types {
 
     input#accommodation_type_show {
       display: block;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 0;
       width: 50px;
 
       label {
@@ -516,6 +519,9 @@ section.font-test {
         font-weight: normal;
         cursor: pointer;
       }
+    }
+    input[type="checkbox"] {
+      margin: 0;
     }
 
     margin: 0.2em;
@@ -699,6 +705,48 @@ section.font-test {
   }
 
   // 320px+
+  section.reservation-request {
+    margin-bottom: 1em;
+    margin-left: 1em;
+    h1 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
+    }
+    form {
+      .events { color: red }
+      h4 {
+        text-align: left;
+        margin-top: 0.8em;
+        margin-bottom: 1em;
+      }
+      .form-group {
+        margin-bottom: 5px;
+        label {
+          padding-top: 2px;
+        }
+        label.checkbox {
+          padding-top: 6px;
+        }
+        input {
+          padding-top: 2px;
+          padding-bottom: 2px;
+          height: 22px;
+        }
+        span {
+          color: red;
+          display: block;
+        }
+      }
+    }
+    p, label.heading {
+      color: #F50;
+      font-family: SofiaProLight;
+      margin-top: 1em;
+      margin-left: 1em;
+    }
+  }
+
   section.accommodation {
     margin-bottom: 1em;
 
@@ -716,7 +764,7 @@ section.font-test {
     }
     table {
       padding: 1em;
-      margin: 0 auto;
+      margin: 0 auto 1em auto;
       width: 100%;
       th, td {
         border: 1px solid white;
@@ -893,14 +941,19 @@ section.font-test {
   }
 
   .actions {
-    padding-top: 10px;
     text-align: center;
     margin-bottom: 1em;
     a {
       color: white;
-      font-size: 1.1em;
-      background-color: #3682D1;
-      padding: 0.3em;
+      font-family: SofiaProLight;
+      font-size: 1em;
+      line-height: 1.42857;
+      text-decoration: none;
+      background-color: #337AB7;
+      border: 1px solid #2E6DA4;
+      border-radius: 4px;
+      padding: 6px 12px;
+      vertical-align: middle;
     }
   }
 

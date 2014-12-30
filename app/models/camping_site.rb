@@ -7,6 +7,14 @@ class CampingSite < ActiveRecord::Base
 
   validates :camping_type, inclusion: { in: ['C', 'T'] }
 
+  def self.available_tents_between(start_date, end_date)
+    site_count = 0 
+    CampingSite.all.each do |site|
+      site_count += 1 if site.available_between?(start_date, end_date)
+    end
+    site_count
+  end
+
   def available_between?(start_date, end_date)
     return true if start_date > end_date
     day_first = start_date.to_datetime

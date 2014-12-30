@@ -1,0 +1,32 @@
+%h4 
+  = t(".applicant_details")
+.form-group
+  = f.label :applicant_name, t(".applicant_name"), class: "col-sm-5 control-label"
+  .col-sm-6
+    = f.text_field :applicant_name, class: "form-control", required: true
+  .col-sm-11
+    = show_field_error(@reservation_request, :applicant_name)
+.form-group
+  = f.label :applicant_telephone, t(".applicant_telephone"), class: "col-sm-5 control-label"
+  .col-sm-3
+    = f.text_field :applicant_telephone, class: "form-control", required: true
+  .col-sm-11
+    = show_field_error(@reservation_request, :applicant_telephone)
+.form-group
+  = f.label :applicant_mobile, t(".applicant_mobile"), class: "col-sm-5 control-label"
+  .col-sm-3
+    = f.text_field :applicant_mobile, class: "form-control", required: true
+  .col-sm-11
+    = show_field_error(@reservation_request, :applicant_mobile)
+.form-group
+  = f.label :applicant_email, t(".applicant_email"), class: "col-sm-5 control-label"
+  .col-sm-6
+    = f.text_field :applicant_email, class: "form-control", required: true
+  .col-sm-11
+    = show_field_error(@reservation_request, :applicant_email)
+.form-group
+  = f.label :applicant_town, t(".applicant_town"), class: "col-sm-5 control-label"
+  .col-sm-6
+    = f.text_field :applicant_town, class: "form-control", required: true
+  .col-sm-11
+    = show_field_error(@reservation_request, :applicant_town)
