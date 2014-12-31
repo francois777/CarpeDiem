@@ -69,7 +69,9 @@ en:
   facility_types:
     tent: Tent
     caravan: Caravan
-    chalet: Chalet  
+    chalet_small: Small Chalet (4 people)
+    chalet_medium: Medium Chalet (8 people)
+    chalet_large: Large Chalet (14 people)
   style_classes:
     small: Small
     medium: Medium

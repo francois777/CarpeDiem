@@ -6,7 +6,8 @@ class AppConfig
               :day_visitor_in_time, :day_visitor_out_time, :chalet_in_time, :chalet_out_time,
               :tents_and_caravans_checkin_time, :tents_and_caravans_checkout_time,
               :remain_on_premises_time, :longest_event_duration, :longest_reservation,
-              :max_occupants_per_camping_site, :max_occupants_per_chalet
+              :max_occupants_per_camping_site, :max_occupants_per_small_chalet,
+              :max_occupants_per_medium_chalet, :max_occupants_per_large_chalet
   attr_accessor :language
 
   def initialize
@@ -26,6 +27,8 @@ class AppConfig
     @longest_event_duration = 14
     @longest_reservation = 14
     @max_occupants_per_camping_site = 6
-    @max_occupants_per_chalet = 8
+    @max_occupants_per_small_chalet = 4
+    @max_occupants_per_medium_chalet = 8
+    @max_occupants_per_large_chalet = 14
   end
 end

@@ -74,7 +74,7 @@ FactoryGirl.define do
     applicant_mobile '343434349'
     applicant_email 'daphne.norman@gmail.com'
     applicant_town 'Harrismith'
-    facility_type_1        2
+    facility_type_1        3
     start_date_1 (Date.today + 10)
     end_date_1   (Date.today + 12)
     adults_18_plus_count_1 3

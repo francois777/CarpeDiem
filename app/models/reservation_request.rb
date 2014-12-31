@@ -1,7 +1,7 @@
 class ReservationRequest < ActiveRecord::Base
 
   FACILITY_TYPES = I18n.t(:facility_types).each_with_index.map { |iType, inx| [iType[0], inx] }
-  FTYPES = { :tent => 0, :caravan => 1, :chalet => 2 }
+  FTYPES = { :tent => 0, :caravan => 1, :chalet_small => 2, :chalet_medium => 3, :chalet_large => 4 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   # enum facility_types: I18n.t(:facility_types).each_with_index.map { |iType| iType[1] }
@@ -66,18 +66,23 @@ class ReservationRequest < ActiveRecord::Base
 
     def validate_facility_details
       # Facility 1
-      unless (0..2).include? facility_type_1
+      unless (0..4).include? facility_type_1
         errors.add(facility_type_1, :invalid_facility_type) 
         return
       end
       total_occupants = adults_18_plus_count_1 + teenagers_count_1 + children_6_12_count_1 + infants_count_1
       errors.add(:adults_18_plus_count_1, :no_people_specified) if total_occupants == 0
-      if facility_type_1 == FTYPES[:chalet] 
-        if total_occupants > AppConfig.instance.max_occupants_per_chalet
+      case facility_type_1 
+      when FTYPES[:chalet_small] 
+        if total_occupants > AppConfig.instance.max_occupants_per_small_chalet
           errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)
         end
-      else  
-        if total_occupants > AppConfig.instance.max_occupants_per_camping_site
+      when FTYPES[:chalet_medium]  
+        if total_occupants > AppConfig.instance.max_occupants_per_medium_chalet
+          errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)
+        end
+      when FTYPES[:chalet_large]  
+        if total_occupants > AppConfig.instance.max_occupants_per_large_chalet
           errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)
         end
       end
@@ -89,16 +94,21 @@ class ReservationRequest < ActiveRecord::Base
       total_occupants = adults_18_plus_count_2 + teenagers_count_2 + children_6_12_count_2 + infants_count_2
       errors.add(:adults_18_plus_count_2, :no_people_specified) if total_occupants == 0 && !start_date_2.nil?
       if total_occupants > 0
-        unless (0..2).include? facility_type_2
+        unless (0..4).include? facility_type_2
           errors.add(facility_type_2, :invalid_facility_type) 
           return
         end
-        if facility_type_2 == FTYPES[:chalet] 
-          if total_occupants > AppConfig.instance.max_occupants_per_chalet
+        case facility_type_2 
+        when FTYPES[:chalet_small] 
+          if total_occupants > AppConfig.instance.max_occupants_per_small_chalet
             errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)
           end
-        else  
-          if total_occupants > AppConfig.instance.max_occupants_per_camping_site
+        when FTYPES[:chalet_medium]  
+          if total_occupants > AppConfig.instance.max_occupants_per_medium_chalet
+            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)
+          end
+        when FTYPES[:chalet_large]  
+          if total_occupants > AppConfig.instance.max_occupants_per_large_chalet
             errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)
           end
         end
@@ -111,16 +121,21 @@ class ReservationRequest < ActiveRecord::Base
       total_occupants = adults_18_plus_count_3 + teenagers_count_3 + children_6_12_count_3 + infants_count_3
       errors.add(:adults_18_plus_count_3, :no_people_specified) if total_occupants == 0 && !start_date_3.nil?
       if total_occupants > 0
-        unless (0..2).include? facility_type_3
+        unless (0..4).include? facility_type_3
           errors.add(facility_type_3, :invalid_facility_type) 
           return
         end
-        if facility_type_3 == FTYPES[:chalet] 
-          if total_occupants > AppConfig.instance.max_occupants_per_chalet
+        case facility_type_3
+        when FTYPES[:chalet_small] 
+          if total_occupants > AppConfig.instance.max_occupants_per_small_chalet
             errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)
           end
-        else  
-          if total_occupants > AppConfig.instance.max_occupants_per_camping_site
+        when FTYPES[:chalet_medium]  
+          if total_occupants > AppConfig.instance.max_occupants_per_medium_chalet
+            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)
+          end
+        when FTYPES[:chalet_large]  
+          if total_occupants > AppConfig.instance.max_occupants_per_large_chalet
             errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)
           end
         end

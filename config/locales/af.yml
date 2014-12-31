@@ -69,7 +69,9 @@ af:
   facility_types:
     tent: Tent
     caravan: Karavaan
-    chalet: Chalet  
+    chalet_small: Klein Chalet (4 persone)
+    chalet_medium: Medium Chalet (8 persone)
+    chalet_large: Groot Chalet (14 persone)
   style_classes:
     small: Klein
     medium: Medium

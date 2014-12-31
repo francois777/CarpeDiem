@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-31T09:47:49+02:00">2014-12-31T09:47:49+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-31T10:33:09+02:00">2014-12-31T10:33:09+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">87.3%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.7%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.96
+         2.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>2094</b> relevant lines. 
-    <span class="green"><b>1828</b> lines covered</span> and
-    <span class="red"><b>266</b> lines missed </span>
+    <b>2090</b> relevant lines. 
+    <span class="green"><b>1812</b> lines covered</span> and
+    <span class="red"><b>278</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -183,9 +183,9 @@
       <tr>
         <td class="strong"><a href="#fadb5284568674846086e1ba2cd73151ba937854" class="src_link" title="app/models/app_config.rb">app/models/app_config.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>31</td>
-        <td>23</td>
-        <td>23</td>
+        <td>34</td>
+        <td>25</td>
+        <td>25</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -262,12 +262,12 @@
       
       <tr>
         <td class="strong"><a href="#89c2ba8bc97f63813f83e664c3979e8e3f0636f5" class="src_link" title="app/models/reservation_request.rb">app/models/reservation_request.rb</a></td>
-        <td class="yellow strong">83.54 %</td>
-        <td>132</td>
-        <td>79</td>
-        <td>66</td>
-        <td>13</td>
-        <td>16.7</td>
+        <td class="red strong">70.59 %</td>
+        <td>147</td>
+        <td>85</td>
+        <td>60</td>
+        <td>25</td>
+        <td>14.4</td>
       </tr>
       
       <tr>
@@ -482,10 +482,10 @@
       
       <tr>
         <td class="strong"><a href="#d4c242028648ed5889f4eab649b13c4ae7a590a6" class="src_link" title="spec/models/reservation_request_spec.rb">spec/models/reservation_request_spec.rb</a></td>
-        <td class="green strong">98.86 %</td>
-        <td>287</td>
-        <td>176</td>
-        <td>174</td>
+        <td class="green strong">98.78 %</td>
+        <td>269</td>
+        <td>164</td>
+        <td>162</td>
         <td>2</td>
         <td>2.0</td>
       </tr>
@@ -4408,8 +4408,8 @@
           <code class="ruby">    def set_types</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="99">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="99">
+          <span class="hits">6</span>
           
           <code class="ruby">      @facility_types = I18n.t(:facility_types).each_with_index.map { |fType, inx| [fType[1].to_s, inx] }</code>
         </li>
@@ -6241,8 +6241,8 @@
     <h3>app/models/app_config.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
+      <b>25</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6301,136 +6301,154 @@
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">              :max_occupants_per_camping_site, :max_occupants_per_chalet</code>
+          <code class="ruby">              :max_occupants_per_camping_site, :max_occupants_per_small_chalet,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">              :max_occupants_per_medium_chalet, :max_occupants_per_large_chalet</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  attr_accessor :language</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    @version = &#39;1.0.0&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    @designer = &#39;Francois van der Hoven&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    @designer_email = &#39;francoisvanderhoven@gmail.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">    @child_discount_percentage = 0.3</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">    @child_age_range = (6..12)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    @day_visitor_in_time = &#39;08H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">    @day_visitor_out_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    @chalet_in_time = &#39;11H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">    @chalet_out_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    @tents_and_caravans_checkin_time = &#39;11H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">    @tents_and_caravans_checkout_time = &#39;17H00&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">    @remain_on_premises_time = &#39;17H30&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    @language = &#39;en&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">    @longest_event_duration = 14</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">    @longest_reservation = 14</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">    @max_occupants_per_camping_site = 6</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">    @max_occupants_per_chalet = 8</code>
+          <code class="ruby">    @max_occupants_per_small_chalet = 4</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @max_occupants_per_medium_chalet = 8</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @max_occupants_per_large_chalet = 14</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
@@ -8321,11 +8339,11 @@
         <div class="source_table" id="89c2ba8bc97f63813f83e664c3979e8e3f0636f5">
   <div class="header">
     <h3>app/models/reservation_request.rb</h3>
-    <h4><span class="yellow">83.54 %</span> covered</h4>
+    <h4><span class="red">70.59 %</span> covered</h4>
     <div>
-      <b>79</b> relevant lines. 
-      <span class="green"><b>66</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <b>85</b> relevant lines. 
+      <span class="green"><b>60</b> lines covered</span> and
+      <span class="red"><b>25</b> lines missed.</span>
     </div>
   </div>
   
@@ -8344,8 +8362,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="3">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="3">
+          <span class="hits">6</span>
           
           <code class="ruby">  FACILITY_TYPES = I18n.t(:facility_types).each_with_index.map { |iType, inx| [iType[0], inx] }</code>
         </li>
@@ -8353,7 +8371,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  FTYPES = { :tent =&gt; 0, :caravan =&gt; 1, :chalet =&gt; 2 }</code>
+          <code class="ruby">  FTYPES = { :tent =&gt; 0, :caravan =&gt; 1, :chalet_small =&gt; 2, :chalet_medium =&gt; 3, :chalet_large =&gt; 4 }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -8398,8 +8416,8 @@
           <code class="ruby">  validates :applicant_telephone, </code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="12">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="12">
+          <span class="hits">43</span>
           
           <code class="ruby">                    length: { minimum: 9, maximum: 20 }, unless: -&gt;{ self.applicant_telephone.empty? }</code>
         </li>
@@ -8410,8 +8428,8 @@
           <code class="ruby">  validates :applicant_mobile, </code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="14">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="14">
+          <span class="hits">43</span>
           
           <code class="ruby">                    length: { minimum: 9, maximum: 20 }, unless: -&gt;{ self.applicant_mobile.empty? }</code>
         </li>
@@ -8440,8 +8458,8 @@
           <code class="ruby">                    length: { maximum: 50 }</code>
         </li>
       
-        <li class="covered" data-hits="47" data-linenumber="19">
-          <span class="hits">47</span>
+        <li class="covered" data-hits="44" data-linenumber="19">
+          <span class="hits">44</span>
           
           <code class="ruby">  validates :applicant_town,  length: { minimum: 2, maximum: 40 }, unless: -&gt;{ self.applicant_town.empty? }</code>
         </li>
@@ -8512,8 +8530,8 @@
           <code class="ruby">    def one_contact_number_required</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="31">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="31">
+          <span class="hits">43</span>
           
           <code class="ruby">      if applicant_telephone == &quot;&quot; &amp;&amp; applicant_mobile == &quot;&quot;</code>
         </li>
@@ -8548,8 +8566,8 @@
           <code class="ruby">    def validate_start_dates</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="37">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="37">
+          <span class="hits">43</span>
           
           <code class="ruby">      if start_date_1 &amp;&amp; start_date_1 &lt; Date.today</code>
         </li>
@@ -8566,8 +8584,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="40">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="40">
+          <span class="hits">43</span>
           
           <code class="ruby">      if start_date_2 &amp;&amp; start_date_2 &lt; Date.today</code>
         </li>
@@ -8584,8 +8602,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="43">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="43">
+          <span class="hits">43</span>
           
           <code class="ruby">      if start_date_3 &amp;&amp; start_date_3 &lt; Date.today</code>
         </li>
@@ -8620,14 +8638,14 @@
           <code class="ruby">    def validate_end_dates</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="49">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="49">
+          <span class="hits">43</span>
           
           <code class="ruby">      return if start_date_1.nil? || end_date_1.nil?</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="50">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="41" data-linenumber="50">
+          <span class="hits">41</span>
           
           <code class="ruby">      unless end_date_1 &gt; start_date_1</code>
         </li>
@@ -8644,8 +8662,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="53">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="41" data-linenumber="53">
+          <span class="hits">41</span>
           
           <code class="ruby">      if start_date_2 &amp;&amp; !end_date_2</code>
         </li>
@@ -8662,8 +8680,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="56">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="41" data-linenumber="56">
+          <span class="hits">41</span>
           
           <code class="ruby">      if end_date_2 &amp;&amp; end_date_2 &lt;= start_date_2</code>
         </li>
@@ -8680,8 +8698,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="59">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="41" data-linenumber="59">
+          <span class="hits">41</span>
           
           <code class="ruby">      if start_date_3 &amp;&amp; !end_date_3</code>
         </li>
@@ -8698,8 +8716,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="62">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="41" data-linenumber="62">
+          <span class="hits">41</span>
           
           <code class="ruby">      if end_date_3 &amp;&amp; end_date_3 &lt;= start_date_3</code>
         </li>
@@ -8740,10 +8758,10 @@
           <code class="ruby">      # Facility 1</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="69">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="69">
+          <span class="hits">43</span>
           
-          <code class="ruby">      unless (0..2).include? facility_type_1</code>
+          <code class="ruby">      unless (0..4).include? facility_type_1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="70">
@@ -8764,268 +8782,268 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="73">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="73">
+          <span class="hits">43</span>
           
           <code class="ruby">      total_occupants = adults_18_plus_count_1 + teenagers_count_1 + children_6_12_count_1 + infants_count_1</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="74">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="74">
+          <span class="hits">43</span>
           
           <code class="ruby">      errors.add(:adults_18_plus_count_1, :no_people_specified) if total_occupants == 0</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="75">
-          <span class="hits">46</span>
-          
-          <code class="ruby">      if facility_type_1 == FTYPES[:chalet] </code>
-        </li>
-      
-        <li class="covered" data-hits="43" data-linenumber="76">
+        <li class="covered" data-hits="43" data-linenumber="75">
           <span class="hits">43</span>
           
-          <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_chalet</code>
+          <code class="ruby">      case facility_type_1 </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">      when FTYPES[:chalet_small] </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="77">
           
           
-          <code class="ruby">          errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)</code>
+          <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_small_chalet</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">      else  </code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="80">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="80">
           
-          <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_camping_site</code>
+          
+          <code class="ruby">      when FTYPES[:chalet_medium]  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="41" data-linenumber="81">
+          <span class="hits">41</span>
+          
+          <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_medium_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="82">
+          
           
           <code class="ruby">          errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="84">
-          <span class="hits">46</span>
+        <li class="never" data-hits="" data-linenumber="84">
           
-          <code class="ruby">      if infants_count_1 &gt; 0 and adults_18_plus_count_1 == 0</code>
+          
+          <code class="ruby">      when FTYPES[:chalet_large]  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="85">
           
-          <code class="ruby">        errors.add(:adults_18_plus_count_1, :adult_required_for_infants)</code>
+          
+          <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_large_chalet</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">          errors.add(:adults_18_plus_count_1, :exceeded_facility_max_capacity)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">      # Facility 2</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="89">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="89">
+          <span class="hits">43</span>
           
-          <code class="ruby">      total_occupants = adults_18_plus_count_2 + teenagers_count_2 + children_6_12_count_2 + infants_count_2</code>
+          <code class="ruby">      if infants_count_1 &gt; 0 and adults_18_plus_count_1 == 0</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="90">
-          <span class="hits">46</span>
-          
-          <code class="ruby">      errors.add(:adults_18_plus_count_2, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_2.nil?</code>
-        </li>
-      
-        <li class="covered" data-hits="46" data-linenumber="91">
-          <span class="hits">46</span>
-          
-          <code class="ruby">      if total_occupants &gt; 0</code>
-        </li>
-      
-        <li class="covered" data-hits="18" data-linenumber="92">
-          <span class="hits">18</span>
-          
-          <code class="ruby">        unless (0..2).include? facility_type_2</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">          errors.add(facility_type_2, :invalid_facility_type) </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="94">
-          
-          
-          <code class="ruby">          return</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="covered" data-hits="18" data-linenumber="96">
-          <span class="hits">18</span>
-          
-          <code class="ruby">        if facility_type_2 == FTYPES[:chalet] </code>
-        </li>
-      
-        <li class="covered" data-hits="14" data-linenumber="97">
-          <span class="hits">14</span>
-          
-          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_chalet</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">        else  </code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="101">
-          <span class="hits">4</span>
-          
-          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_camping_site</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="102">
+        <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
-          <code class="ruby">            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)</code>
+          <code class="ruby">        errors.add(:adults_18_plus_count_1, :adult_required_for_infants)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="covered" data-hits="18" data-linenumber="105">
-          <span class="hits">18</span>
-          
-          <code class="ruby">        if infants_count_2 &gt; 0 and adults_18_plus_count_2 == 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="106">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          errors.add(:adults_18_plus_count_2, :adult_required_for_infants)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">      # Facility 3</code>
+          <code class="ruby">      # Facility 2</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="111">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="94">
+          <span class="hits">43</span>
           
-          <code class="ruby">      total_occupants = adults_18_plus_count_3 + teenagers_count_3 + children_6_12_count_3 + infants_count_3</code>
+          <code class="ruby">      total_occupants = adults_18_plus_count_2 + teenagers_count_2 + children_6_12_count_2 + infants_count_2</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="112">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="95">
+          <span class="hits">43</span>
           
-          <code class="ruby">      errors.add(:adults_18_plus_count_3, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_3.nil?</code>
+          <code class="ruby">      errors.add(:adults_18_plus_count_2, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_2.nil?</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="113">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="43" data-linenumber="96">
+          <span class="hits">43</span>
           
           <code class="ruby">      if total_occupants &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="114">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="16" data-linenumber="97">
+          <span class="hits">16</span>
           
-          <code class="ruby">        unless (0..2).include? facility_type_3</code>
+          <code class="ruby">        unless (0..4).include? facility_type_2</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="115">
+        <li class="missed" data-hits="0" data-linenumber="98">
           
           
-          <code class="ruby">          errors.add(facility_type_3, :invalid_facility_type) </code>
+          <code class="ruby">          errors.add(facility_type_2, :invalid_facility_type) </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="116">
+        <li class="missed" data-hits="0" data-linenumber="99">
           
           
           <code class="ruby">          return</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="101">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        case facility_type_2 </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_small] </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="103">
+          
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_small_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="104">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_medium]  </code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="107">
+          <span class="hits">13</span>
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_medium_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="108">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_large]  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="111">
+          
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_large_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="112">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_2, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="115">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        if infants_count_2 &gt; 0 and adults_18_plus_count_2 == 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="116">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          errors.add(:adults_18_plus_count_2, :adult_required_for_infants)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="117">
@@ -9034,91 +9052,181 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="118">
-          <span class="hits">18</span>
-          
-          <code class="ruby">        if facility_type_3 == FTYPES[:chalet] </code>
-        </li>
-      
-        <li class="covered" data-hits="14" data-linenumber="119">
-          <span class="hits">14</span>
-          
-          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_chalet</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="120">
-          
-          
-          <code class="ruby">            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="121">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="122">
-          
-          
-          <code class="ruby">        else  </code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="123">
-          <span class="hits">4</span>
-          
-          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_camping_site</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="124">
-          <span class="hits">1</span>
-          
-          <code class="ruby">            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="125">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="126">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="covered" data-hits="18" data-linenumber="127">
-          <span class="hits">18</span>
-          
-          <code class="ruby">        if infants_count_3 &gt; 0 and adults_18_plus_count_3 == 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="128">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          errors.add(:adults_18_plus_count_3, :adult_required_for_infants)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="129">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby">      # Facility 3</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="121">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      total_occupants = adults_18_plus_count_3 + teenagers_count_3 + children_6_12_count_3 + infants_count_3</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="122">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      errors.add(:adults_18_plus_count_3, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_3.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="123">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      if total_occupants &gt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="124">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        unless (0..4).include? facility_type_3</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="125">
+          
+          
+          <code class="ruby">          errors.add(facility_type_3, :invalid_facility_type) </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="126">
+          
+          
+          <code class="ruby">          return</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="128">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        case facility_type_3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_small] </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="130">
+          
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_small_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="131">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_medium]  </code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="134">
+          <span class="hits">13</span>
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_medium_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="135">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
+          
+          
+          <code class="ruby">        when FTYPES[:chalet_large]  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="138">
+          
+          
+          <code class="ruby">          if total_occupants &gt; AppConfig.instance.max_occupants_per_large_chalet</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="139">
+          
+          
+          <code class="ruby">            errors.add(:adults_18_plus_count_3, :exceeded_facility_max_capacity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="141">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="142">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        if infants_count_3 &gt; 0 and adults_18_plus_count_3 == 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="143">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          errors.add(:adults_18_plus_count_3, :adult_required_for_infants)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="144">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="145">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="146">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="132">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby">end</code>
@@ -18737,10 +18845,10 @@
         <div class="source_table" id="d4c242028648ed5889f4eab649b13c4ae7a590a6">
   <div class="header">
     <h3>spec/models/reservation_request_spec.rb</h3>
-    <h4><span class="green">98.86 %</span> covered</h4>
+    <h4><span class="green">98.78 %</span> covered</h4>
     <div>
-      <b>176</b> relevant lines. 
-      <span class="green"><b>174</b> lines covered</span> and
+      <b>164</b> relevant lines. 
+      <span class="green"><b>162</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -18790,8 +18898,8 @@
           <code class="ruby">  before do</code>
         </li>
       
-        <li class="covered" data-hits="55" data-linenumber="8">
-          <span class="hits">55</span>
+        <li class="covered" data-hits="52" data-linenumber="8">
+          <span class="hits">52</span>
           
           <code class="ruby">    @reservation_request = ReservationRequest.new(</code>
         </li>
@@ -18829,7 +18937,7 @@
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">      facility_type_1: 2,</code>
+          <code class="ruby">      facility_type_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -18886,8 +18994,8 @@
           <code class="ruby">      )</code>
         </li>
       
-        <li class="covered" data-hits="55" data-linenumber="24">
-          <span class="hits">55</span>
+        <li class="covered" data-hits="52" data-linenumber="24">
+          <span class="hits">52</span>
           
           <code class="ruby">    @reservation_request2 = ReservationRequest.new(</code>
         </li>
@@ -18925,7 +19033,7 @@
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">      facility_type_1: 2,</code>
+          <code class="ruby">      facility_type_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
@@ -18967,7 +19075,7 @@
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">      facility_type_2: 2,</code>
+          <code class="ruby">      facility_type_2: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -19009,7 +19117,7 @@
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">      facility_type_3: 2,</code>
+          <code class="ruby">      facility_type_3: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
@@ -19831,271 +19939,271 @@
         <li class="covered" data-hits="1" data-linenumber="181">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (1) does not exceed capacity&quot; do</code>
+          <code class="ruby">  it &quot;must ensure that caravan facility (1) has an adult when there are infants&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.infants_count_1 = 2</code>
+          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="183">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
+          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="184">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.infants_count_1 = 1    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="covered" data-hits="1" data-linenumber="185">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end    </code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="186">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="187">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="187">
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (1) has an adult when there are infants&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="188">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
+          <code class="ruby">  it &quot;must allow a caravan facility (1) to have no adults when no infants are present&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="189">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="190">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.infants_count_1 = 1    </code>
+          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="191">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="192">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="193">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="194">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;must allow a caravan facility (1) to have no adults when no infants are present&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="195">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="196">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="197">
-          <span class="hits">1</span>
-          
           <code class="ruby">    @reservation_request.infants_count_1 = 0 </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="198">
+        <li class="covered" data-hits="1" data-linenumber="192">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="never" data-hits="" data-linenumber="193">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="194">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="201">
+        <li class="covered" data-hits="1" data-linenumber="195">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure start date (2) requires an end date&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="202">
+        <li class="covered" data-hits="1" data-linenumber="196">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.start_date_2 = Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="203">
+        <li class="covered" data-hits="1" data-linenumber="197">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_2 = Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="204">
+        <li class="covered" data-hits="1" data-linenumber="198">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="205">
+        <li class="covered" data-hits="1" data-linenumber="199">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_2 = Date.today + 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="206">
+        <li class="covered" data-hits="1" data-linenumber="200">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="207">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="208">
+        <li class="never" data-hits="" data-linenumber="202">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="209">
+        <li class="covered" data-hits="1" data-linenumber="203">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure end date (2) is valid&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="210">
+        <li class="covered" data-hits="1" data-linenumber="204">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="211">
+        <li class="covered" data-hits="1" data-linenumber="205">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="212">
+        <li class="covered" data-hits="1" data-linenumber="206">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2.to_datetime - 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="213">
+        <li class="covered" data-hits="1" data-linenumber="207">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="214">
+        <li class="never" data-hits="" data-linenumber="208">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="215">
+        <li class="never" data-hits="" data-linenumber="209">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="216">
+        <li class="covered" data-hits="1" data-linenumber="210">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure that facility (2) has at least one person is specified&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="217">
+        <li class="covered" data-hits="1" data-linenumber="211">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="218">
+        <li class="covered" data-hits="1" data-linenumber="212">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.teenagers_count_2 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="219">
+        <li class="covered" data-hits="1" data-linenumber="213">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.children_6_12_count_2 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="220">
+        <li class="covered" data-hits="1" data-linenumber="214">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.infants_count_2 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="221">
+        <li class="covered" data-hits="1" data-linenumber="215">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="222">
+        <li class="never" data-hits="" data-linenumber="216">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="223">
+        <li class="never" data-hits="" data-linenumber="217">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="224">
+        <li class="covered" data-hits="1" data-linenumber="218">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (2) does not exceed capacity&quot; do</code>
+          <code class="ruby">  it &quot;must ensure that caravan facility (2) has an adult when there are infants&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="219">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="220">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="221">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @reservation_request2.infants_count_2 = 1    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="222">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="223">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="225">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_2 = 2</code>
+          <code class="ruby">  it &quot;must allow a caravan facility (2) to have no adults when no infants are present&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="226">
@@ -20107,364 +20215,256 @@
         <li class="covered" data-hits="1" data-linenumber="227">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="228">
-          
-          
-          <code class="ruby">  end    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="229">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="230">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;must ensure that caravan facility (2) has an adult when there are infants&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="231">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="232">
-          <span class="hits">1</span>
-          
           <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="233">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.infants_count_2 = 1    </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="234">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="235">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="236">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="237">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;must allow a caravan facility (2) to have no adults when no infants are present&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="238">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="239">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="240">
+        <li class="covered" data-hits="1" data-linenumber="228">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.infants_count_2 = 0 </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="241">
+        <li class="covered" data-hits="1" data-linenumber="229">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="242">
+        <li class="never" data-hits="" data-linenumber="230">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="243">
+        <li class="never" data-hits="" data-linenumber="231">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="244">
+        <li class="covered" data-hits="1" data-linenumber="232">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure start date (3) requires an end date&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="245">
+        <li class="covered" data-hits="1" data-linenumber="233">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.start_date_3 = Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="246">
+        <li class="covered" data-hits="1" data-linenumber="234">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_3 = Date.today</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="247">
+        <li class="covered" data-hits="1" data-linenumber="235">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="248">
+        <li class="covered" data-hits="1" data-linenumber="236">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_3 = Date.today + 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="249">
+        <li class="covered" data-hits="1" data-linenumber="237">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="250">
+        <li class="never" data-hits="" data-linenumber="238">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="251">
+        <li class="never" data-hits="" data-linenumber="239">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="252">
+        <li class="covered" data-hits="1" data-linenumber="240">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure end date (3) is valid&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="253">
+        <li class="covered" data-hits="1" data-linenumber="241">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="254">
+        <li class="covered" data-hits="1" data-linenumber="242">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="255">
+        <li class="covered" data-hits="1" data-linenumber="243">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3.to_datetime - 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="256">
+        <li class="covered" data-hits="1" data-linenumber="244">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="257">
+        <li class="never" data-hits="" data-linenumber="245">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="258">
+        <li class="never" data-hits="" data-linenumber="246">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="259">
+        <li class="covered" data-hits="1" data-linenumber="247">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure that facility (3) has at least one person is specified&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="260">
+        <li class="covered" data-hits="1" data-linenumber="248">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="261">
+        <li class="covered" data-hits="1" data-linenumber="249">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.teenagers_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="262">
+        <li class="covered" data-hits="1" data-linenumber="250">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.children_6_12_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="263">
+        <li class="covered" data-hits="1" data-linenumber="251">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.infants_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="264">
+        <li class="covered" data-hits="1" data-linenumber="252">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="265">
+        <li class="never" data-hits="" data-linenumber="253">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="266">
+        <li class="never" data-hits="" data-linenumber="254">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="267">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;must ensure that caravan facility (3) does not exceed capacity&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="268">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.infants_count_3 = 2</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="269">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="270">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="271">
-          
-          
-          <code class="ruby">  end    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="272">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="273">
+        <li class="covered" data-hits="1" data-linenumber="255">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must ensure that caravan facility (3) has an adult when there are infants&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="274">
+        <li class="covered" data-hits="1" data-linenumber="256">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="275">
+        <li class="covered" data-hits="1" data-linenumber="257">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="276">
+        <li class="covered" data-hits="1" data-linenumber="258">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.infants_count_3 = 1    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="277">
+        <li class="covered" data-hits="1" data-linenumber="259">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="278">
+        <li class="never" data-hits="" data-linenumber="260">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="279">
+        <li class="never" data-hits="" data-linenumber="261">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="280">
+        <li class="covered" data-hits="1" data-linenumber="262">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;must allow a caravan facility (3) to have no adults when no infants are present&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="281">
+        <li class="covered" data-hits="1" data-linenumber="263">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="282">
+        <li class="covered" data-hits="1" data-linenumber="264">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="283">
+        <li class="covered" data-hits="1" data-linenumber="265">
           <span class="hits">1</span>
           
           <code class="ruby">    @reservation_request2.infants_count_3 = 0 </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="284">
+        <li class="covered" data-hits="1" data-linenumber="266">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="285">
+        <li class="never" data-hits="" data-linenumber="267">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="286">
+        <li class="never" data-hits="" data-linenumber="268">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="287">
+        <li class="never" data-hits="" data-linenumber="269">
           
           
           <code class="ruby">end</code>

@@ -11,7 +11,7 @@ describe ReservationRequest do
       applicant_mobile: '987654321',
       applicant_email: 'williewolvaart@myhome.co.za',
       applicant_town: 'Wolmaransstad',
-      facility_type_1: 2,
+      facility_type_1: 3,
       start_date_1: Date.new(2015, 7, 25),
       end_date_1: Date.new(2015, 8, 2),
       adults_18_plus_count_1: 2,
@@ -27,21 +27,21 @@ describe ReservationRequest do
       applicant_mobile: '987654321',
       applicant_email: 'williewolvaart@myhome.co.za',
       applicant_town: 'Wolmaransstad',
-      facility_type_1: 2,
+      facility_type_1: 3,
       start_date_1: Date.new(2015, 7, 25),
       end_date_1: Date.new(2015, 8, 2),
       adults_18_plus_count_1: 2,
       teenagers_count_1: 2,
       children_6_12_count_1: 1,
       infants_count_1: 3,
-      facility_type_2: 2,
+      facility_type_2: 3,
       start_date_2: Date.new(2015, 7, 25),
       end_date_2: Date.new(2015, 8, 2),
       adults_18_plus_count_2: 2,
       teenagers_count_2: 2,
       children_6_12_count_2: 1,
       infants_count_2: 3,
-      facility_type_3: 2,
+      facility_type_3: 3,
       start_date_3: Date.new(2015, 7, 25),
       end_date_3: Date.new(2015, 8, 2),
       adults_18_plus_count_3: 2,
@@ -178,12 +178,6 @@ describe ReservationRequest do
     expect(@reservation_request).not_to be_valid
   end
 
-  it "must ensure that caravan facility (1) does not exceed capacity" do
-    @reservation_request.infants_count_1 = 2
-    @reservation_request.facility_type_1 = 1
-    expect(@reservation_request).not_to be_valid
-  end    
-
   it "must ensure that caravan facility (1) has an adult when there are infants" do
     @reservation_request.facility_type_1 = 1
     @reservation_request.adults_18_plus_count_1 = 0
@@ -221,12 +215,6 @@ describe ReservationRequest do
     expect(@reservation_request2).not_to be_valid
   end
 
-  it "must ensure that caravan facility (2) does not exceed capacity" do
-    @reservation_request2.infants_count_2 = 2
-    @reservation_request2.facility_type_2 = 1
-    expect(@reservation_request2).not_to be_valid
-  end    
-
   it "must ensure that caravan facility (2) has an adult when there are infants" do
     @reservation_request2.facility_type_2 = 1
     @reservation_request2.adults_18_plus_count_2 = 0
@@ -263,12 +251,6 @@ describe ReservationRequest do
     @reservation_request2.infants_count_3 = 0
     expect(@reservation_request2).not_to be_valid
   end
-
-  it "must ensure that caravan facility (3) does not exceed capacity" do
-    @reservation_request2.infants_count_3 = 2
-    @reservation_request2.facility_type_3 = 1
-    expect(@reservation_request2).not_to be_valid
-  end    
 
   it "must ensure that caravan facility (3) has an adult when there are infants" do
     @reservation_request2.facility_type_3 = 1
