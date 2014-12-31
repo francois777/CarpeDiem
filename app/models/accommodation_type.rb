@@ -9,9 +9,9 @@ class AccommodationType < ActiveRecord::Base
                           caravan_site_without_power: 'C',
                           caravan_site_with_power: 'D',
                           day_visitor: 'E',
-                          chalet_basic: 'F',
-                          chalet_standard: 'G',
-                          chalet_luxury: 'H',
+                          chalet_small: 'F',
+                          chalet_medium: 'G',
+                          chalet_large: 'H',
                           king_and_warrior_camps: 'I',
                           group_tariff_budget: 'J',
                           group_tariff_with_meals: 'K'

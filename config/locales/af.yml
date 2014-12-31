@@ -71,9 +71,9 @@ af:
     caravan: Karavaan
     chalet: Chalet  
   style_classes:
-    basic: Basies
-    standard: Standaard
-    luxury: Luuks
+    small: Klein
+    medium: Medium
+    large: Groot
   chalet_names:
     reuben: Reuben
     simeon: Simeon
@@ -102,7 +102,7 @@ af:
     benjamin: Die betekenis van die naam Benjamin 
   accommodation:
     accommodation: akkommodasie
-    no_alcohol: geen alkohol
+    no_alcohol: geen alkohol of harde musiek
     with_meals_see_menu: (met etes - sien spyskaart)
     selfsorg: (selfsorg)
     book_in_times: 'karavane en tente: inboek tye: 11H00,  uitboek tye: 17H30' 
@@ -125,8 +125,9 @@ af:
       tent_sites: tent staanplekke
       caravan_sites: karavaan staanplekke
       warrior_camps: koning en kryger kampe
-      chalet_a: chalet a 
-      chalet_b: chalet b
+      chalet_small: klein chalet
+      chalet_medium: medium chalet
+      chalet_large: groot chalet
       group_reservations_budget: groep besprekings (eie kos)
       group_reservations_meals: groep besprekings (met etes)
     tariff_1_columns:  
@@ -136,7 +137,7 @@ af:
     tariff_2_columns:
       site_person_tariff: "R %{adult_tariff} (kinders %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
       site_weekend_tariff: "R %{amount} per persoon vir naweek"
-      chalet_tariff: "R %{amount} (MAKSIMUM 8 PERSONE)"
+      chalet_tariff: "R %{amount} (MAKSIMUM %{capacity} PERSONE)"
       group_reservations: "R %{amount} VIR NAWEEK"
     restriction_columns:  
       site_limit: Maksimum 6 persone per staanplek

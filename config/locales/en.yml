@@ -71,9 +71,9 @@ en:
     caravan: Caravan
     chalet: Chalet  
   style_classes:
-    basic: Basic
-    standard: Standard
-    luxury: Luxury
+    small: Small
+    medium: Medium
+    large: Large
   chalet_names:
     reuben: Reuben
     simeon: Simeon
@@ -102,7 +102,7 @@ en:
     benjamin: The definition of the name of Benjamin 
   accommodation:
     accommodation: accommodation
-    no_alcohol: no alcohol
+    no_alcohol: no alcohol or loud music
     with_meals_see_menu: (incl. meals - see menu)
     selfsorg: (own food)
     book_in_times: 'caravans and tents: check in from: 11H00, check out before: 17H30'
@@ -125,8 +125,9 @@ en:
       tent_sites: tent sites
       caravan_sites: caravan sites
       warrior_camps: king and warrior camps
-      chalet_a: chalet a 
-      chalet_b: chalet b
+      chalet_small: small chalet
+      chalet_medium: medium chalet
+      chalet_large: large chalet
       group_reservations_budget: group reservations (own food)
       group_reservations_meals: group reservations (with meals)
     tariff_1_columns:  
@@ -136,7 +137,7 @@ en:
     tariff_2_columns:
       site_person_tariff: "R %{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
       site_weekend_tariff: "R %{amount} per person for weekend"
-      chalet_tariff: "R %{amount} (MAXIMUM 8 PERSONS)"
+      chalet_tariff: "R %{amount} (MAXIMUM %{capacity} PERSONS)"
       group_reservations: "R %{amount} FOR WEEKEND"
     restriction_columns:  
       site_limit: Maximum 6 persons per site

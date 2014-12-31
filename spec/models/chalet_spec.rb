@@ -29,7 +29,7 @@ describe Chalet do
     expect(chalet_factory).to be_valid
     expect(chalet_factory.name).to eq('Simeon')
     expect(chalet_factory.location_code).to eq('A12')
-    expect(chalet_factory.style_class).to eq('standard')
+    expect(chalet_factory.style_class).to eq('medium')
     expect(chalet_factory.reservable).to eq(true)
     expect(chalet_factory.inauguration_date).to eq(Date.today + 45)
     expect(chalet_factory.name_definition).to eq(1)

@@ -270,6 +270,7 @@ section.font-test {
     .navbar-default .navbar-nav {
       > li > a {
         color: $dark-brown;
+        font-size: 0.9em;
       }
       > .open {
         a, a:hover, a:focus {
@@ -281,7 +282,7 @@ section.font-test {
       .open .dropdown-menu > li {
         > a {
           font-family: Arial;
-          font-size: 1.1em;
+          font-size: 1em;
           background-color: $medium-brown;
           z-index: 5;
           color: darken($dark-brown, 10%);
@@ -646,6 +647,12 @@ section.font-test {
       margin-bottom: 0.5em;
       h3 {
         margin-bottom: 0.5em;
+      }
+    }
+    table {
+      font-size: 0.9em;
+      thead {
+        font-weight: bold;
       }
     }
   }

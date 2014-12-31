@@ -29,7 +29,7 @@ feature "Chalet pages" do
       visit new_admin_chalet_path
       select  "Asher", from: "Name"
       fill_in "Location", with: "A07"
-      select  "Luxury", from: "Style Class"
+      select  "Large", from: "Style Class"
       find(:css, "#chalet_reservable").set(true)
       fill_in "Inauguration Date", with: "31/03/2015"
       click_button "Create Chalet" 
@@ -61,7 +61,7 @@ feature "Chalet pages" do
 
       select  "Benjamin", from: "Name"
       fill_in "Location", with: "A12"
-      select  "Basic", from: "Style Class"
+      select  "Small", from: "Style Class"
       find(:css, "#chalet_reservable").set(false)
       fill_in "Inauguration Date", with: "31/01/2015"
       click_button "Update Chalet" 
@@ -72,7 +72,7 @@ feature "Chalet pages" do
 
       expect( find(:css, "input#chalet_name").value).to eq('Benjamin')
       expect( find(:css, "input#chalet_location_code").value).to eq('A12')
-      expect( find(:css, "input#chalet_style_class").value).to eq('Basic')
+      expect( find(:css, "input#chalet_style_class").value).to eq('Small')
       expect( find(:css, "input#chalet_reservable").checked?).to eq(nil)
       expect( find(:css, "input#chalet_inauguration_date").value).to eq(display_date(Date.new(2015,1,31)))
       expect( find(:css, "textarea#chalet_name_definition").value).to eq('The definition of the name of Benjamin')
@@ -102,7 +102,7 @@ feature "Chalet pages" do
 
       expect( find(:css, "input#chalet_name").value).to eq('Simeon')
       expect( find(:css, "input#chalet_location_code").value).to eq('A12')
-      expect( find(:css, "input#chalet_style_class").value).to eq('Standard')
+      expect( find(:css, "input#chalet_style_class").value).to eq('Medium')
       expect( find(:css, "input#chalet_reservable").value).to eq('1')
       expect( find(:css, "input#chalet_inauguration_date").value).to eq(display_date(chalet.inauguration_date))
       expect( find(:css, "textarea#chalet_name_definition").value).to eq('The definition of the name of Simeon')
@@ -129,15 +129,15 @@ feature "Chalet pages" do
 
       expect(page).to have_selector("table tbody tr:nth-of-type(1) td:nth-of-type(1)", text: 'Judah')
       expect(page).to have_selector("table tbody tr:nth-of-type(1) td:nth-of-type(2)", text: 'A1')
-      expect(page).to have_selector("table tbody tr:nth-of-type(1) td:nth-of-type(3)", text: 'Luxury')
+      expect(page).to have_selector("table tbody tr:nth-of-type(1) td:nth-of-type(3)", text: 'Large')
       expect(page).to have_selector("table tbody tr:nth-of-type(1) td:nth-of-type(4)", text: 'Yes')
       expect(page).to have_selector("table tbody tr:nth-of-type(2) td:nth-of-type(1)", text: 'Dan')
       expect(page).to have_selector("table tbody tr:nth-of-type(2) td:nth-of-type(2)", text: 'A2')
-      expect(page).to have_selector("table tbody tr:nth-of-type(2) td:nth-of-type(3)", text: 'Standard')
+      expect(page).to have_selector("table tbody tr:nth-of-type(2) td:nth-of-type(3)", text: 'Medium')
       expect(page).to have_selector("table tbody tr:nth-of-type(2) td:nth-of-type(4)", text: 'Yes')
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(1)", text: 'Joseph')
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(2)", text: 'A3')
-      expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(3)", text: 'Luxury')
+      expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(3)", text: 'Large')
       expect(page).to have_selector("table tbody tr:nth-of-type(3) td:nth-of-type(4)", text: 'Yes')
       expect(page).to have_link('Add Chalet')
 

@@ -18,15 +18,15 @@ af:
           e1: Dag besoeker per persoon, Buite Seisoen
           e2: Dag besoeker per persoon, In Seisoen
           e3: Dag besoeker per persoon, Promosie
-          f1: Chalet Basies, Buite Seisoen
-          f2: Chalet Basies, In Seisoen
-          f3: Chalet Basies, Promosie
-          g1: Chalet Standard, Buite Seisoen
-          g2: Chalet Standard, In Seisoen
-          g3: Chalet Standard, Promosie
-          h1: Chalet Luxury, Buite Seisoen
-          h2: Chalet Luxury, In Seisoen
-          h3: Chalet Luxury, Promosie
+          f1: Chalet Klein, Buite Seisoen
+          f2: Chalet Klein, In Seisoen
+          f3: Chalet Klein, Promosie
+          g1: Chalet Medium, Buite Seisoen
+          g2: Chalet Medium, In Seisoen
+          g3: Chalet Medium, Promosie
+          h1: Chalet Groot, Buite Seisoen
+          h2: Chalet Groot, In Seisoen
+          h3: Chalet Groot, Promosie
           i1: Koning en Kryger Kampe, per persoon, per naweek
           i2: Groep Tarief Besparing, per persoon, per naweek
           i3: Groep Tarief etes ingesluit, per persoon, per naweek

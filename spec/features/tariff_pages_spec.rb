@@ -29,7 +29,7 @@ feature "Tariff pages" do
       expect(page).to have_text('End Date')
       expect(page).to have_selector(:button, 'Create Tariff')
 
-      select "Chalet Luxury, Promotion", from: "Tariff Category"
+      select "Chalet Large, Promotion", from: "Tariff Category"
       fill_in "Tariff", with: "55.9"
       fill_in "Effective Date", with: "31/07/2015"
       fill_in "End Date", with: "01/03/2016"
@@ -38,7 +38,7 @@ feature "Tariff pages" do
       expect(page).to have_text('Tariff created successfully')
       expect(page).to have_title('Tariff Details')
       expect(page).to have_selector('h1', text: "Tariff Details")
-      expect( find(:css, "input#tariff_tariff_category").value ).to eq('Chalet Luxury, Promotion')
+      expect( find(:css, "input#tariff_tariff_category").value ).to eq('Chalet Large, Promotion')
       expect( find(:css, "input#tariff_tariff").value ).to eq('R 55.90')
       expect( find(:css, "input#tariff_effective_date").value ).to eq('31 July 2015')
       expect( find(:css, "input#tariff_end_date").value ).to eq('01 March 2016')

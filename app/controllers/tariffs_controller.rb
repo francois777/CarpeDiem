@@ -76,18 +76,25 @@ class TariffsController < ApplicationController
 
     @chalet_header = header_line(:chalet_tariff)
     @chalet_dtl_lines = []
-    if show_basic_chalets?
-      accID = @accNames[:chalet_basic]
+    if show_small_chalets?
+      accID = @accNames[:chalet_small]
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first     
-      @dtl_lines = chalet_tariffs(tariff_record, {type: :basic})
+      @dtl_lines = chalet_tariffs(tariff_record, {type: :small})
       @chalet_dtl_lines.push(@dtl_lines) 
     end
-    if show_standard_chalets?
-      accID = @accNames[:chalet_standard]
+    if show_medium_chalets?
+      accID = @accNames[:chalet_medium]
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first     
-      @dtl_lines = chalet_tariffs(tariff_record, {type: :standard})
+      @dtl_lines = chalet_tariffs(tariff_record, {type: :medium})
+      @chalet_dtl_lines.push(@dtl_lines) 
+    end
+    if show_large_chalets?
+      accID = @accNames[:chalet_large]
+      accType = AccommodationType.where('accom_type=?',accID).first
+      tariff_record = accType.tariffs.first     
+      @dtl_lines = chalet_tariffs(tariff_record, {type: :large})
       @chalet_dtl_lines.push(@dtl_lines) 
     end
 
@@ -100,7 +107,7 @@ class TariffsController < ApplicationController
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first
       puts "tariff_record: #{tariff_record.inspect}"
-      @dtl_lines = group_tariffs(tariff_record, {type: :basic})
+      @dtl_lines = group_tariffs(tariff_record, {type: :small})
       @group_dtl_lines.push(@dtl_lines) 
     end
     @groups_dtl_lines = []
@@ -109,7 +116,7 @@ class TariffsController < ApplicationController
       accID = @accNames[:group_tariff_with_meals]
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first     
-      @dtl_lines = group_tariffs(tariff_record, {type: :standard})
+      @dtl_lines = group_tariffs(tariff_record, {type: :medium})
       @group_dtl_lines.push(@dtl_lines) 
     end
   end
@@ -167,13 +174,18 @@ class TariffsController < ApplicationController
 
   def chalet_tariffs(tariff, options = {})
     tariff_local_amount = to_local_amount(tariff.tariff)
-    if options[:type] == :basic
-      col1 = t(:chalet_a, scope: [:accommodation, :title_columns]).upcase
-    else  
-      col1 = t(:chalet_b, scope: [:accommodation, :title_columns]).upcase
+    case options[:type]
+    when :small
+      col1 = t(:chalet_small, scope: [:accommodation, :title_columns]).upcase
+      col3 = t(:chalet_tariff, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount, capacity: '4')
+    when :medium  
+      col1 = t(:chalet_medium, scope: [:accommodation, :title_columns]).upcase
+      col3 = t(:chalet_tariff, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount, capacity: '8')
+    when :large
+      col1 = t(:chalet_large, scope: [:accommodation, :title_columns]).upcase
+      col3 = t(:chalet_tariff, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount, capacity: '14')
     end
     col2 = ""
-    col3 = t(:chalet_tariff, scope: [:accommodation, :tariff_2_columns], amount: tariff_local_amount)
     col4 = t(:chalet_times, scope: [:accommodation, :restriction_columns], 
                in_time: @settings.day_visitor_in_time,
                out_time: @settings.day_visitor_out_time,
@@ -186,7 +198,7 @@ class TariffsController < ApplicationController
     puts "TariffsController#group_tariffs"
     puts "tariff: #{tariff.inspect}"
     tariff_local_amount = to_local_amount(tariff.tariff)
-    if options[:type] == :basic
+    if options[:type] == :small
       col1 = t(:group_reservations_budget, scope: [:accommodation, :title_columns]).upcase
     else  
       col1 = t(:group_reservations_meals, scope: [:accommodation, :title_columns]).upcase
@@ -230,14 +242,19 @@ class TariffsController < ApplicationController
       @accTypes[@accNames[:day_visitor]]['show'] == true
   end
 
-  def show_basic_chalets?
-    @accTypes[@accNames[:chalet_basic]] &&
-      @accTypes[@accNames[:chalet_basic]]['show'] == true
+  def show_small_chalets?
+    @accTypes[@accNames[:chalet_small]] &&
+      @accTypes[@accNames[:chalet_small]]['show'] == true
   end
 
-  def show_standard_chalets?
-    @accTypes[@accNames[:chalet_standard]] &&
-      @accTypes[@accNames[:chalet_standard]]['show'] == true
+  def show_medium_chalets?
+    @accTypes[@accNames[:chalet_medium]] &&
+      @accTypes[@accNames[:chalet_medium]]['show'] == true
+  end
+
+  def show_large_chalets?
+    @accTypes[@accNames[:chalet_large]] &&
+      @accTypes[@accNames[:chalet_large]]['show'] == true
   end
 
   def show_group_tariffs_budget?
@@ -271,7 +288,7 @@ class TariffsController < ApplicationController
       when :day_visitor
         [ "", "", t(:per_person, scope: [:accommodation]).upcase, ""]
       when :chalet_tariff
-        [ t(:with_power_points, scope: [:accommodation]).upcase,
+        [ "",
           "",
           t(:per_night_for_chalet, scope: [:accommodation]).upcase,
           ""
