@@ -4,7 +4,6 @@ class ReservationRequestsController < ApplicationController
   before_action :set_types, only: [:new, :edit]
 
   def new
-    puts "ReservationRequestsController#new"
     @reservation_request = ReservationRequest.new
     @unavailable_facilities = []
   end
@@ -15,27 +14,19 @@ class ReservationRequestsController < ApplicationController
     if @reservation_request.valid?
       @unavailable_facilities = find_unavailable_facilities
       if @unavailable_facilities.empty?
-        puts "About to save a reservation_request"
         if @reservation_request.save
-          puts "Save succeeded"
           flash[:success] = t(:reservation_request_created, scope: [:success])
           redirect_to edit_reservation_request_path(@reservation_request)
         else
-          puts "Save was not successful"
           flash[:alert] = t(:reservation_request_create_failed, scope: [:failure])
         end
       else
-        puts "Unavailable facilities alert"
         flash[:alert] = t(:some_facilities_fully_booked, scope: [:failure])
       end  
     else
-      puts "Reservation Request not valid"
       flash[:alert] = t(:reservation_request_create_failed, scope: [:failure])
     end
     set_types
-    puts "Rendering 'new' template"
-    puts "\nErrors:"
-    puts @reservation_request.errors.inspect
     render :new
   end
 
@@ -48,7 +39,6 @@ class ReservationRequestsController < ApplicationController
   private
 
     def find_unavailable_facilities
-      puts "\nFinding unavailable facilities"
       facilities = []
       unless is_available?(@reservation_request.facility_type_1, 
                                           @reservation_request.start_date_1, 

@@ -101,18 +101,14 @@ class TariffsController < ApplicationController
     @groups_header = header_line(:group_tariff)
     @group_dtl_lines = []
     if show_group_tariffs_budget?
-      puts "Showing group_tariffs_budget"
       accID = @accNames[:group_tariff_budget]
-      puts "accID: #{accID}"
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first
-      puts "tariff_record: #{tariff_record.inspect}"
       @dtl_lines = group_tariffs(tariff_record, {type: :small})
       @group_dtl_lines.push(@dtl_lines) 
     end
     @groups_dtl_lines = []
     if show_group_tariffs_meals_included?
-      puts "Showing group_tariffs_meals_included"
       accID = @accNames[:group_tariff_with_meals]
       accType = AccommodationType.where('accom_type=?',accID).first
       tariff_record = accType.tariffs.first     
@@ -195,8 +191,6 @@ class TariffsController < ApplicationController
   end
 
   def group_tariffs(tariff, options = {})
-    puts "TariffsController#group_tariffs"
-    puts "tariff: #{tariff.inspect}"
     tariff_local_amount = to_local_amount(tariff.tariff)
     if options[:type] == :small
       col1 = t(:group_reservations_budget, scope: [:accommodation, :title_columns]).upcase

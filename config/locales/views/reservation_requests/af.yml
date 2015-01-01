@@ -37,7 +37,7 @@ af:
       teenagers_count_3: Kinders (13 tot 17 jaar)
       children_6_12_count_3: Kinders (6 tot 12 jaar)
       infants_count_3: Kleuters (0 tot 5 jaar)
-      power_point_required_3: Kragpunt benodigê
+      power_point_required_3: Kragpunt benodig?
       meals_required_count: Aantal maaltye per dag
       vehicle_registration_numbers: Voertuig registrasie nommers
       special_requests: Spesiale versoeke
@@ -46,6 +46,9 @@ af:
     new:  
       provide_details_for_each_facility: Verskaf besonderhede vir elke woonplek wat u benodig
       update_and_review: Bêre en Hersien
+      second_facility_required: Tweede woonplek benodig?
+      third_facility_required: Derde woonplek benodig?
+      agree_to_abide_by_rules: Ek aanvaar en onderwerp my aan die reels van Carpediem Kampeergronde
     edit:  
       provide_details_for_each_facility: Verskaf besonderhede vir elke woonplek wat u benodig
       update_and_review: Bêre en Hersien

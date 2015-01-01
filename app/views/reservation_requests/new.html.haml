@@ -12,12 +12,15 @@
         = render 'fields1', f: f
         .form-group
           = label :facility_2, "Second facility required?", class: "control-label heading"
-          = check_box_tag 'Second facility required?'
+          = check_box_tag t(".second_facility_required")
         = render 'fields2', f: f
         .form-group
           = label :facility_3, "Third facility required?", class: "control-label heading"
-          = check_box_tag 'Third facility required?'
+          = check_box_tag t(".third_facility_required")
         = render 'fields3', f: f
+        .rules
+          %p 
+            = t(".agree_to_abide_by_rules")
         .centered
           .button.btn
             = f.submit t(".update_and_review"), class: "btn btn-large btn-primary"  

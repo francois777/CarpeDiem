@@ -87,16 +87,10 @@ describe ReservationRequest do
   it { should respond_to(:special_requests) }
 
   it "must be a valid object is one facility is being booked" do
-    unless @reservation_request.valid?
-      puts @reservation_request.errors.inspect
-    end
     expect(@reservation_request).to be_valid
   end
 
   it "must be a valid object is three facilities are being booked" do
-    unless @reservation_request2.valid?
-      puts @reservation_request2.errors.inspect
-    end
     expect(@reservation_request2).to be_valid
   end
 

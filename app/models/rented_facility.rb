@@ -7,7 +7,6 @@ class RentedFacility < ActiveRecord::Base
   validates :start_date, presence:true
   validate :validate_end_date_before_start_date
   validate :validate_reservation_duration
-  validate :validate_max_occupants
   validate :validate_min_occupants
   validate :validate_infant_requires_adult
 
@@ -18,12 +17,6 @@ class RentedFacility < ActiveRecord::Base
   default_scope { order('start_date DESC') }
 
   private
-
-    def validate_max_occupants
-      if adult_count + child_6_12_count + child_0_5_count > AppConfig.instance.max_occupants_per_camping_site
-        errors.add(:adult_count, :exceeds_max_occupants_per_camping_site)
-      end
-    end
 
     def validate_min_occupants
       unless adult_count + child_6_12_count + child_0_5_count > 0

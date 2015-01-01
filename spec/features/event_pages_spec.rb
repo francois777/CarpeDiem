@@ -100,7 +100,6 @@ feature "Event pages" do
     scenario "Admin user looks at month calender" do
       title = @event.title
       diary_day = @event.diary_days.first
-      puts diary_day.inspect
       current_month = Date.today.strftime("%B")
       visit events_path
       expect(page).to have_title('Events')
