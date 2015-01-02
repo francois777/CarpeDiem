@@ -33,6 +33,7 @@ en:
     all_users: All users
     account_settings: Account Settings
     chalets: Chalets
+    camping_sites: Camping Sites
     reservation_request: Reservation Request
   references:
     ps_118v24: Ps 118:24
@@ -161,6 +162,8 @@ en:
     event_updated: Event updated successfully
     chalet_created: Chalet created successfully
     chalet_updated: Chalet updated successfully
+    camping_site_created: Camping Site created successfully
+    camping_site_updated: Camping Site updated successfully
     profile_updated: Profile updated
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
@@ -180,6 +183,9 @@ en:
     chalet_create_failed: Chalet create was not successful
     chalet_update_failed: Chalet update was not successful
     chalet_not_found: Chalet not found
+    camping_site_create_failed: Camping Site create was not successful
+    camping_site_update_failed: Camping Site update was not successful
+    camping_site_not_found: Camping Site not found
     tariff_update_failed: Tariff Update failed
     only_admin_user_can_sign_in: Only an administrator may sign in
     password_is_incorrect: Password is incorrect

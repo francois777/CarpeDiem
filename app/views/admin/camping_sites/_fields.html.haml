@@ -1,0 +1,26 @@
+.form-group
+  = f.label :camping_type, t(".camping_type"), class: "col-sm-4 col-xs-4 control-label"
+  .col-sm-3.col-xs-4
+    = radio_button_tag(:camping_type, "C")
+    = label_tag(:camping_type_C, "Caravan")
+  .col-sm-3.col-xs-4
+    = radio_button_tag(:camping_type, "T")
+    = label_tag(:camping_type_T, "Tent")
+.form-group
+  = f.label :location_code, t(".location_code"), class: "col-sm-4 col-xs-4 control-label"
+  .col-sm-2.col-xs-3
+    = f.text_field :location_code, class: "form-control", required: true
+  .col-sm-2.col-sm-offset-4.col-xs-3.col-xs-offset-4
+    = show_field_error(@camping_site, :location_code)
+.form-group
+  = f.label :powered, t(".powered"), class: "col-sm-4 control-label"
+  .col-sm-5
+    = f.check_box :powered
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@camping_site, :powered)
+.form-group
+  = f.label :reservable, t(".reservable"), class: "col-sm-4 control-label"
+  .col-sm-5
+    = f.check_box :reservable
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@camping_site, :reservable)

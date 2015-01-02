@@ -1,0 +1,9 @@
+%tr
+  %td
+    = camping_site.camping_type == 'T' ? 'Tent' : 'Caravan' 
+  %td
+    = link_to camping_site.location_code, [:admin, camping_site]
+  %td
+    = camping_site.powered ? 'Yes' : 'No' 
+  %td
+    = camping_site.reservable ? 'Yes' : 'No' 

@@ -1,0 +1,28 @@
+af:
+  admin:
+    camping_sites:
+      new:
+        create_camping_site: Skep Nuwe Kampeerplek
+        new_camping_site: Nuwe Kampeerplek
+      edit:
+        update_camping_site: Update Camping Site
+      show:
+        camping_site_details: Kampeerplek besonderhede  
+        camping_type: Tipe Kampeerplek
+        powered: Kragpunte ingesluit?
+        reservable: Mag bespreek word?
+        location_code: Plot
+        return_to_camping_site_list: Keer terug na kampeerplek lys
+        edit: Wysig
+      index:
+        camping_site_list: Kampeerplek Lys  
+        camping_type: Tipe
+        powered: Kragpunte?
+        reservable: Mag bespreek word?
+        location_code: Plot
+        add_camping_site: Voeg Kampeerplek By
+      fields:
+        camping_type: Tipe Kampeerplek
+        powered: Kragpunte ingesluit?
+        reservable: Mag bespreek word?
+        location_code: Plot kode

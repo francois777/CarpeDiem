@@ -1,0 +1,29 @@
+- provide(:title, t(".camping_site_list"))
+.row
+  .col-xs-12.cols-xs-offset-0.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+    %section.camping-sites.clearfix
+      %h1
+        = t(".camping_site_list")
+      .table-responsive
+        %table.table.camping-sites
+          %thead
+            %tr
+              %td
+                %b
+                  = t(".camping_type")
+              %td
+                %b
+                  = t(".location_code")
+              %td
+                %b
+                  = t(".powered")
+              %td
+                %b
+                  = t(".reservable")
+          %tbody
+            = render @camping_sites || t(".no_camping_sites_found")
+      .row
+        .actions
+          -if current_user && current_user.admin?
+            .button.btn
+              = link_to t(".add_camping_site"), new_admin_camping_site_path

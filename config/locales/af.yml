@@ -33,6 +33,7 @@ af:
     all_users: Alle verbruikers
     account_settings: Rekening besonderhede
     chalets: Chalets
+    camping_sites: Kampeerplekke
     reservation_request: Bespreking Aanvraag
   references:
     ps_118v24: Ps 118:24
@@ -161,6 +162,8 @@ af:
     event_updated: Gebeurtenis verandering suksesvol
     chalet_created: Chalet suksesvol bygevoeg
     chalet_updated: Chalet verandering suksesvol
+    camping_site_created: Kampeerplek suksesvol bygevoeg
+    camping_site_updated: Kampeerplek verandering suksesvol
     profile_updated: Profiel is verander
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
@@ -172,7 +175,7 @@ af:
     tariff_create_failed: Tarief kon nie bygevoeg word nie.
     tariff_not_found: Tarief nie gevind nie
     accommodation_type_create_failed: Akkommodasie Tipe bygevoeging het misluk
-    accommodation_type_update_failed: Accommodation Type update was not successful
+    accommodation_type_update_failed: Akkommodasie Tipe verandering het misluk
     accommodation_type_not_found: Akkommodasie Tipe kon nie gevind word nie
     event_create_failed: Gebeurtenis bygevoeging het misluk
     event_update_failed: Gebeurtenis verandering het misluk
@@ -180,6 +183,9 @@ af:
     chalet_create_failed: Chalet bygevoeging het misluk
     chalet_update_failed: Chalet verandering het misluk
     chalet_not_found: Chalet kon nie gevind word nie
+    camping_site_create_failed: Kampeerplek bygevoeging het misluk
+    camping_site_update_failed: Kampeerplek verandering het misluk
+    camping_site_not_found: Kampeerplek kon nie gevind word nie
     tariff_update_failed: Tarief verandering het misluk
     only_admin_user_can_sign_in: Net administreerders mag inteken
     password_is_incorrect: Wagwoord is foutief

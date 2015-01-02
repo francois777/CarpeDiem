@@ -1,0 +1,29 @@
+en:
+  admin:
+    camping_sites:
+      new:
+        create_camping_site: Create Camping Site
+        new_camping_site: New Camping Site
+      edit:
+        update_camping_site: Update Camping Site
+      show:
+        camping_site_details: Camping Site Details  
+        camping_type: Camping Type
+        powered: Power Points Included?
+        reservable: May be reserved?
+        location_code: Location
+        return_to_camping_site_list: Return to Camping Site List
+        edit: Edit
+      index:
+        camping_site_list: Camping Site List  
+        camping_type: Type
+        powered: Power Points?
+        reservable: May be reserved?
+        location_code: Location
+        add_camping_site: Add Camping Site
+      fields:
+        camping_type: Camping Type
+        powered: Power Points Included?
+        reservable: May be reserved?
+        location_code: Location
+

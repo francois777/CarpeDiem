@@ -1,0 +1,13 @@
+- provide(:title, t(".update_camping_site"))
+.row
+  %section.camping-sites.clearfix
+    %header
+      %h1
+        = t(".update_camping_site")
+    .row
+      .col-xs-9.col-xs-offset-1.col-md-8.col-md-offset-2
+        = form_for([:admin, @camping_site], html: {class: "form-horizontal", role: "form"}) do |f|
+          = render 'fields', f: f
+          .centered
+            .button.btn
+              = f.submit t(".update_camping_site"), class: "btn btn-large btn-primary"  
