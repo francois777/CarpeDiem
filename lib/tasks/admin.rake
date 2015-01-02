@@ -22,4 +22,18 @@ namespace :admin do
     end
   end
 
+  task load_tents: :environment do
+    if CampingSite.tents.count > 0
+      puts "Tents found - more tents not created"
+      # CampingSite.tents.delete_all
+    else  
+      puts "Loading Tents.."
+
+      (1..20).each do |n|
+        CampingSite.create(camping_type: 'T', location_code: "T#{n.to_s}", powered: true, reservable: true)
+      end
+      puts "20 tents have been loaded"
+    end
+  end
+
 end

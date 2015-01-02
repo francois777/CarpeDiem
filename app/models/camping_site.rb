@@ -7,6 +7,11 @@ class CampingSite < ActiveRecord::Base
 
   validates :camping_type, inclusion: { in: ['C', 'T'] }
 
+  default_scope { order('camping_type, location_code') }
+  scope :reservable, -> { where('reservable = ?', true) }
+  scope :tents, -> { where('camping_type = ?', 'T') }
+  scope :caravans, -> { where('camping_type = ?', 'C') }
+
   def self.available_tents_between(start_date, end_date)
     site_count = 0 
     CampingSite.all.each do |site|

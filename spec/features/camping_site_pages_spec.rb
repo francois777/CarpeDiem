@@ -26,7 +26,7 @@ feature "CampingSite pages" do
 
     scenario "Create new camping site" do
       visit new_admin_camping_site_path
-      choose "Tent"
+      find(:css, "#camping_site_camping_type_t").set(true)
       fill_in "Location", with: "T27"
       find(:css, "#camping_site_powered").set(true)
       find(:css, "#camping_site_reservable").set(true)
@@ -56,7 +56,7 @@ feature "CampingSite pages" do
       expect(page).to have_text('May be reserved?')
       expect(page).to have_selector(:button, 'Update Camping Site')
 
-      choose "Tent"
+      find(:css, "#camping_site_camping_type_t").set(true)
       fill_in "Location", with: "T100"
       find(:css, "#camping_site_powered").set(false)
       find(:css, "#camping_site_reservable").set(false)
@@ -65,7 +65,7 @@ feature "CampingSite pages" do
       expect(page).to have_text('Camping Site updated successfully')
       expect(page).to have_title('Camping Site Details')
       expect(page).to have_selector('h1', text: "Camping Site Details")
-      # expect( find(:css, "input#camping_site_camping_type").value).to eq('Tent')
+      expect( find(:css, "input#camping_site_camping_type").value).to eq('Tent')
       expect( find(:css, "input#camping_site_location_code").value).to eq('T100')
       expect( find(:css, "input#camping_site_powered").checked?).to eq(nil)
       expect( find(:css, "input#camping_site_reservable").checked?).to eq(nil)

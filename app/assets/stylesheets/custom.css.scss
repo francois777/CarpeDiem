@@ -861,6 +861,20 @@ section.font-test {
       margin: 0.5em 0.2em;
       font-size: 2em;
     }
+    table {
+      width: 100%;
+      margin: 0.5em 1em;
+      th, td {
+        font-family: arial;
+        font-size: 0.8em;
+      }
+      thead > tr { 
+        font-weight: bold; 
+      }
+
+      td { font-family: arial; }
+      th, td { width: 25%; }
+    }
   }
 
   // 320px+

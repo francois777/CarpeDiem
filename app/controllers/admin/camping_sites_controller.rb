@@ -44,6 +44,8 @@ class Admin::CampingSitesController < ApplicationController
   end
 
   def update
+    puts "CampingSite params:"
+    puts camping_site_params.inspect
     if @camping_site.update_attributes(camping_site_params)
       flash[:success] = "#{t(:camping_site_updated, scope: [:success])}"
       redirect_to [:admin, @camping_site]
