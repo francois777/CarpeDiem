@@ -107,6 +107,8 @@
                     = link_to t('accommodation_types', scope: ['menu']), admin_accommodation_types_path
                   %li 
                     = link_to t('chalets', scope: ['menu']), admin_chalets_path
+                  %li 
+                    = link_to t('camping_sites', scope: ['menu']), admin_camping_sites_path
           - if signed_in?
             %li
               = link_to t(:signout, scope: [:menu]), signout_path, method: "delete"

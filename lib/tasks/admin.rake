@@ -36,4 +36,19 @@ namespace :admin do
     end
   end
 
+  task load_caravans: :environment do
+    if CampingSite.caravans.count > 0
+      puts "Caravans found - more caravans not created"
+      # CampingSite.tents.delete_all
+    else  
+      puts "Loading Caravans.."
+
+      (1..20).each do |n|
+        CampingSite.create(camping_type: 'C', location_code: "C#{n.to_s}", powered: true, reservable: true)
+      end
+      puts "20 caravans have been loaded"
+    end
+  end
+
+
 end
