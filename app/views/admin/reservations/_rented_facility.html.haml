@@ -1,0 +1,34 @@
+.row
+  .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+    -# @reservation.rented_facilities.each do |rf|
+    %h3 
+      = "Facility rented"
+
+    .form-group
+      = rf.label :start_date, t(".start_date"), class: "col-sm-5 control-label"
+      .col-sm-4
+        = rf.text_field :start_date, readonly: "", class: "form-control"
+    .form-group
+      = rf.label :end_date, t(".end_date"), class: "col-sm-5 control-label"
+      .col-sm-4
+        = rf.text_field :end_date, readonly: "",  class: "form-control"
+    .form-group
+      = rf.label :adult_count, t(".adult_count"), class: "col-sm-5 control-label"
+      .col-sm-2
+        = rf.number_field :adult_count, readonly: "", class: "form-control"
+    .form-group
+      = rf.label :child_6_12_count, t(".child_6_12_count"), class: "col-sm-5 control-label"
+      .col-sm-2
+        = rf.number_field :child_6_12_count, readonly: "", class: "form-control"
+    .form-group
+      = rf.label :child_6_12_count, t(".child_6_12_count"), class: "col-sm-5 control-label"
+      .col-sm-2
+        = rf.number_field :child_6_12_count, readonly: "", class: "form-control"
+    .form-group
+      = rf.label :child_0_5_count, t(".child_0_5_count"), class: "col-sm-5 control-label"
+      .col-sm-2
+        = rf.number_field :child_0_5_count, readonly: "", class: "form-control"
+ 
+-# debug rf.start_date
+
+-# value: display_date(rf.end_date), 

@@ -1,0 +1,22 @@
+af:
+  admin:
+    reservations:
+      show: 
+        reference_no: Verwysingsnommer
+        reservation_details: Bespreking Besonderhede
+        start_date: Begin datum
+        end_date: Eind datum
+        reserved_for_name: Naam
+        reserved_datetime: Bespreking gemaak
+        telephone: Telefoon
+        mobile: Selfoon
+        town: Woonagtig in
+        meals_required: Maaltye verlang
+        invoiced_amount: Bedrag verskuldig
+        key_deposit_received: Sleutel deposito ontvang
+        reference_number: Verwysingsnommer
+        vehicle_registration_numbers: Voertuig registrasie nommers
+        comments: Notas
+      rented_facility:
+        start_date: Begin datum
+                  

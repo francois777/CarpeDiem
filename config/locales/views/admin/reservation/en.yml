@@ -1,0 +1,21 @@
+en:
+  admin:
+    reservations:
+      show: 
+        reference_no: Reference Number
+        reservation_details: Reservation Details
+        start_date: Start date
+        end_date: End date
+        reserved_for_name: Name
+        reserved_datetime: Reserved at
+        telephone: Telephone
+        mobile: Mobile
+        town: Town
+        meals_required: Meals required
+        invoiced_amount: Invoiced amount
+        key_deposit_received: Key deposit received
+        reference_number: Reference number
+        vehicle_registration_numbers: Vehicle Registration Numbers
+        comments: Comments
+      rented_facility:
+        start_date: Start date  

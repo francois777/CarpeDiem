@@ -1,9 +1,10 @@
 class Reservation < ActiveRecord::Base
 
-  has_many :rented_facilities, as: :rentable
+  has_many :rented_facilities
   has_many :received_payments
   has_many :diary_days, as: :diarisable
   has_one :reservation_reference
+  accepts_nested_attributes_for :rented_facilities
 
   validates :start_date, presence:true
   validate :validate_end_date_before_start_date
@@ -24,6 +25,10 @@ class Reservation < ActiveRecord::Base
   before_update :add_diary_dates 
   before_create :assign_reserved_datetime
   after_create :assign_reference_number
+
+  def reference_no
+    reservation_reference.refid
+  end
 
   private
 

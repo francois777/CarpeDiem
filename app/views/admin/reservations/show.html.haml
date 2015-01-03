@@ -1,0 +1,65 @@
+- provide(:title, t(".reservation_details"))
+
+.row
+  %section.reservations.clearfix
+    %h1
+      = t(".reservation_details")
+    .row
+      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+        = form_for([:admin, @reservation], html: {class: "form-horizontal", role: "form"}) do |f|
+          .form-group
+            = f.label :start_date, t(".start_date"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :start_date, readonly: "", value: display_date(@reservation.start_date), class: "form-control"
+          .form-group
+            = f.label :end_date, t(".end_date"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :end_date, readonly: "", value: display_date(@reservation.end_date), class: "form-control"
+          .form-group
+            = f.label :reserved_for_name, t(".reserved_for_name"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :reserved_for_name, readonly: "", class: "form-control", required: true
+          .form-group    
+            = f.label :reserved_datetime, t(".reserved_datetime"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :reserved_datetime, readonly: "", value: display_date(@reservation.reserved_datetime), class: "form-control"
+          .form-group
+            = f.label :telephone, t(".telephone"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :telephone, readonly: "", class: "form-control", required: true
+          .form-group
+            = f.label :mobile, t(".mobile"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :mobile, readonly: "", class: "form-control", required: true
+          .form-group
+            = f.label :town, t(".town"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :town, readonly: "", class: "form-control", required: true
+          .form-group
+            = f.label :meals_required, t(".meals_required"), class: "col-sm-5 control-label"
+            .col-sm-2
+              = f.text_field :meals_required, readonly: "", value: @reservation.meals_required ? 'Yes' : 'No', class: 'form-control'
+          .form-group
+            = f.label :invoiced_amount, t(".invoiced_amount"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :invoiced_amount, readonly: "", value: to_local_currency(@reservation.invoiced_amount), class: "form-control"
+          .form-group
+            = f.label :key_deposit_received, t(".key_deposit_received"), class: "col-sm-5 control-label"
+            .col-sm-2
+              = f.text_field :key_deposit_received, readonly: "", value: @reservation.key_deposit_received ? 'Yes' : 'No', class: 'form-control'
+          .form-group
+            = f.label :reference_no, t(".reference_no"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :reference_no, readonly: "", class: "form-control", value: @reservation.reference_no
+          .form-group
+            = f.label :vehicle_registration_numbers, t(".vehicle_registration_numbers"), class: "col-sm-5 control-label"
+            .col-sm-4
+              = f.text_field :vehicle_registration_numbers, readonly: "", class: "form-control", required: true
+          .form-group
+            = f.label :comments, t(".comments"), class: "col-sm-5 control-label"
+            .col-sm-7
+              = f.text_area :comments, readonly: "", class: 'form-control', rows: 5
+          = f.fields_for :rented_facilities do |rf|
+            = render 'rented_facility', rf: rf
+
+-# debug @reservation.rented_facilities

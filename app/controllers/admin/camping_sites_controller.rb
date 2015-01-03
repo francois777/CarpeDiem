@@ -11,6 +11,28 @@ class Admin::CampingSitesController < ApplicationController
       flash[:alert] =  t(:camping_site_not_found, scope: [:failure]) 
       redirect_to admin_camping_sites_path  
     end
+    @cal_day_groups = []
+    rented_facilities = @camping_site.rented_facilities
+    rented_facilities.each do |rf|
+      @cal_day_groups << rf.diary_days
+    end
+    result = {}
+
+    @cal_day_groups.each do |group|
+      group.each do |diary_day|
+        formatted_dte = diary_day.day.strftime("%d-%m-%y")
+        if result[formatted_dte].nil?
+          result[formatted_dte] = [diary_day]
+        else
+          unless result[formatted_dte].include?(diary_day)
+            result[formatted_dte].push(diary_day)
+          end  
+        end  
+      end
+    end
+    @grouped_cal_days = result
+    temp_date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @date = Date.new(temp_date.year, temp_date.month, temp_date.day)
   end
 
   def index

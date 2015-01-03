@@ -30,3 +30,21 @@
         -if current_user && current_user.admin?
           .button.btn
             = link_to t(".edit"), edit_admin_camping_site_path
+
+#events
+  %h2{ id: 'month' }
+    = link_to "<", date: @date.prev_month.strftime("%y-%m-%d")
+    = display_date(@date, {format: :month})
+    = link_to ">", date: @date.next_month.strftime("%y-%m-%d")
+  .row
+    .col-sm-10.col-sm-offset-1
+      = calendar do |date| 
+        = date.day
+        - dte2 = date.strftime("%d-%m-%y")
+        - if @grouped_cal_days[dte2]
+          %ul
+            - @grouped_cal_days[dte2].each do |calday|
+              %li
+                %span.title
+                  = link_to calday.diarisable.reservation.reserved_for_name, admin_reservation_path(calday.diarisable.reservation), :data => { reservation_id: calday.diarisable.reservation.id }
+
