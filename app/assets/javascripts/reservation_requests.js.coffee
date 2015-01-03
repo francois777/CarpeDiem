@@ -12,27 +12,33 @@ $("section.reservation-request").ready ->
     dateFormat: "dd M yy"
   $('#reservation_request_end_date_3').datepicker
     dateFormat: "dd M yy"
-  selectFacility2 = (e) ->
-    $("#Second_facility_required_").checked = yes
-    $("#second-facility").show()
-  deselectFacility2 = (e) ->
-    $("#Second_facility_required_").checked = no
-    $("#second-facility").hide()
+
   $("#second-facility").hide()
   $("#third-facility").hide()
+  
   toggleFacility2 = (e) ->
-    # e.preventDefault()
-    alert "toggle detected!"
-    if $("#Second_facility_required_").checked is true
-      alert "At last! Deselecting"
-      deselectFacility2()
-    else  
-      alert "Selecting!"
-      selectFacility2()
+    checkbox = $("#Second_facility_required_")
+    checked = checkbox.is(":checked")
+    if checked
+      # alert "The checkbox is checked"
+      $("#second-facility").show()
+    else
+      # alert "The checkbox is unchecked"
+      $("#second-facility").hide()
+    end
+
+  toggleFacility3 = (e) ->
+    checkbox = $("#Third_facility_required_")
+    checked = checkbox.is(":checked")
+    if checked
+      # alert "The checkbox is checked"
+      $("#third-facility").show()
+    else
+      # alert "The checkbox is unchecked"
+      $("#third-facility").hide()
+    end
 
   $('#Second_facility_required_').click(toggleFacility2)
-  toggleFacility3 = (e) ->
-    $("#third-facility").show()
   $('#Third_facility_required_').click(toggleFacility3)
 
 
@@ -40,4 +46,5 @@ $("section.reservation-request").ready ->
 http://stackoverflow.com/questions/17600093/rails-javascript-not-loading-after-clicking-through-link-to-helper
 http://brandonhilkert.com/blog/page-specific-javascript-in-rails/
 http://theflyingdeveloper.com/controller-specific-assets-with-rails-4/
+
 ###
