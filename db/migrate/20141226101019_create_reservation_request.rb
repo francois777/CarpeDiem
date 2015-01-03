@@ -36,6 +36,7 @@ class CreateReservationRequest < ActiveRecord::Migration
       t.integer :key_deposit_amount, default: 0
       t.datetime :estimated_arrival_time
       t.integer :reservation_reference_id
+      t.string :status
       t.text :special_requests, default: ""
       t.timestamps
     end

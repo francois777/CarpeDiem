@@ -18,9 +18,12 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create, :edit, :update, :destroy]
     resources :chalets
     resources :camping_sites
+    resources :tents, controller: 'camping_sites', type: 'Tent'
+    resources :caravans, controller: 'camping_sites', type: 'Caravan'
   end
 
   root 'static_pages#home'
+  match '/admin/camping_sites/gettents', to: 'admin/camping_sites#gettents', via: 'get'
   get '/home', to: 'static_pages#home'
   get '/facilities', to: 'static_pages#facilities'
   get '/tariffs', to: 'tariffs#summary'

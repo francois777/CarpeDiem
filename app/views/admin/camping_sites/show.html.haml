@@ -8,10 +8,9 @@
       .col-xs-6.col-xs-offset-3.col-md-4.col-md-offset-4
         = form_for([:admin, @camping_site], html: {class: "form-horizontal", role: "form"}) do |f|
           .form-group
-            = f.label :camping_type, t(".camping_type"), class: "col-sm-6 control-label"
+            = f.label :type, t(".camping_type"), class: "col-sm-6 control-label"
             .col-sm-6
-              - display_type = @camping_site.camping_type == 'T' ? 'Tent' : 'Caravan'
-              = f.text_field :camping_type, readonly: "", value: display_type, class: 'form-control'
+              = f.text_field :type, readonly: "", class: 'form-control'
           .form-group
             = f.label :location_code, t(".location_code"), class: "col-sm-6 control-label"
             .col-sm-6

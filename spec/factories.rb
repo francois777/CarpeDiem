@@ -61,9 +61,14 @@ FactoryGirl.define do
     name_definition 1
   end
 
-  factory :camping_site do
+  factory :caravan do
     location_code 'B15'
-    camping_type 'C'
+    powered true
+    reservable true
+  end
+
+  factory :tent do
+    location_code 'T09'
     powered true
     reservable true
   end

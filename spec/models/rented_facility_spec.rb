@@ -7,7 +7,7 @@ describe RentedFacility do
   before do
     @reservation_start = Date.today + 14
     @reservation_end = Date.today + 17
-    @camping_site = create(:camping_site)
+    @caravan = create(:caravan)
     @chalet = create(:chalet)
     @reservation = create(:reservation, 
       start_date: @reservation_start, 
@@ -16,7 +16,7 @@ describe RentedFacility do
     @rented_facility = RentedFacility.new(
       start_date: @reservation_start,
       end_date: @reservation_end,
-      rentable: @camping_site,
+      rentable: @caravan,
       reservation: @reservation,
       adult_count: 3,
       child_6_12_count: 2,
@@ -40,7 +40,7 @@ describe RentedFacility do
   end
 
   it "must have a valid factory" do
-    site = create(:camping_site, location_code: 'C12')
+    site = create(:caravan, location_code: 'C12')
     reservation = create(:reservation)
     rented_facility_factory = create(:rented_facility, rentable: site, reservation: reservation)
     expect(rented_facility_factory).to be_valid
@@ -74,7 +74,7 @@ describe RentedFacility do
   end
 
   it "must be able to reference the associated camping_site" do
-    expect(@rented_facility.rentable).to eq(@camping_site)
+    expect(@rented_facility.rentable).to eq(@caravan)
   end
 
   it "must be able to reference the associated chalet" do

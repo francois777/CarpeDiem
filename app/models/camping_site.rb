@@ -5,12 +5,16 @@ class CampingSite < ActiveRecord::Base
                     length: { minimum: 2, maximum: 5 }
   validates_uniqueness_of :location_code
 
-  validates :camping_type, inclusion: { in: ['C', 'T'] }
+  # validates :camping_type, inclusion: { in: ['C', 'T'] }
 
-  default_scope { order('camping_type, location_code') }
+  default_scope { order('location_code') }
   scope :reservable, -> { where('reservable = ?', true) }
-  scope :tents, -> { where('camping_type = ?', 'T') }
-  scope :caravans, -> { where('camping_type = ?', 'C') }
+  scope :tents, -> { where(type: 'Tent') }
+  scope :caravans, -> { where(type: 'Caravan') }
+
+  def self.types
+    %w(Caravan Tent)
+  end
 
   def self.available_tents_between(start_date, end_date)
     site_count = 0 

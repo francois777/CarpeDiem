@@ -4,6 +4,9 @@
     %section.camping-sites.clearfix
       %h1
         = t(".camping_site_list")
+
+      = select :tents, 'Tents', options_for_select({'Tents' => 0, 'Caravans' => 1, 'Tents and Caravans' => 2 }), data: { remote: true, url: admin_camping_sites_gettents_path, type: 'json'} 
+
       .table-responsive
         %table.table.camping-sites
           %thead
@@ -20,8 +23,20 @@
               %td
                 %b
                   = t(".reservable")
+              %td    
           %tbody
-            = render @camping_sites || t(".no_camping_sites_found")
+            - @camping_sites.each do |site|
+              %tr
+                %td
+                  = site.type
+                %td
+                  = link_to site.location_code, sti_camping_site_path(site.type, site)
+                %td
+                  = site.powered ? 'Yes' : 'No' 
+                %td
+                  = site.reservable ? 'Yes' : 'No' 
+                %td
+                  = link_to 'Edit', "#{sti_camping_site_path(site.type, site)}/edit"
       .row
         .actions
           -if current_user && current_user.admin?

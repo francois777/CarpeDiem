@@ -14,6 +14,10 @@ class Chalet < ActiveRecord::Base
 
   enum style_class: STYLE_CLASSES
 
+  def camping_type
+    'L'
+  end
+
   def available_between?(start_date, end_date)
     return true if start_date > end_date
     day_first = start_date.to_datetime

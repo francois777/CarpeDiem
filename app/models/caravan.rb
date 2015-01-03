@@ -1,0 +1,3 @@
+class Caravan < CampingSite
+
+end

@@ -1,9 +1,12 @@
 %tr
   %td
-    = camping_site.camping_type == 'T' ? 'Tent' : 'Caravan' 
+    = camping_site.type
   %td
-    = link_to camping_site.location_code, [:admin, camping_site]
+    = link_to camping_site.location_code, sti_camping_site_path(camping_site.type, camping_site)
+/ camping_site.location_code, [:admin, camping_site]
   %td
     = camping_site.powered ? 'Yes' : 'No' 
   %td
     = camping_site.reservable ? 'Yes' : 'No' 
+  %td
+    = link_to 'Edit', ""

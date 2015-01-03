@@ -1,16 +1,16 @@
 .form-group
-  = f.label :camping_type, t(".camping_type"), class: "col-sm-4 col-xs-4 control-label"
+  = f.label :type, t(".type"), class: "col-sm-4 col-xs-4 control-label"
   .col-sm-3.col-xs-4
-    = f.radio_button(:camping_type, "C", selected: @camping_site.camping_type == 'C')
-    = f.label(:camping_type_C, "Caravan")
+    = f.radio_button(:type, "Caravan", selected: @camping_site.type)
+    = f.label(:type, "Caravan")
   .col-sm-3.col-xs-4
-    = f.radio_button(:camping_type, "T", selected: @camping_site.camping_type == 'T')
-    = f.label(:camping_type_T, "Tent")
+    = f.radio_button(:type, "Tent", selected: @camping_site.type)
+    = f.label(:type, "Tent")
 .form-group
   = f.label :location_code, t(".location_code"), class: "col-sm-4 col-xs-4 control-label"
   .col-sm-2.col-xs-3
     = f.text_field :location_code, class: "form-control", required: true
-  .col-sm-2.col-sm-offset-4.col-xs-3.col-xs-offset-4
+  .col-sm-8.col-xs-8
     = show_field_error(@camping_site, :location_code)
 .form-group
   = f.label :powered, t(".powered"), class: "col-sm-4 control-label"

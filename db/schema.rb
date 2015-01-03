@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141226101019) do
 
   create_table "camping_sites", force: true do |t|
     t.string  "location_code"
-    t.string  "camping_type",  default: "T"
+    t.string  "type"
     t.boolean "powered",       default: false
     t.boolean "reservable",    default: false
   end
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20141226101019) do
     t.integer  "key_deposit_amount",           default: 0
     t.datetime "estimated_arrival_time"
     t.integer  "reservation_reference_id"
+    t.string   "status"
     t.text     "special_requests",             default: ""
     t.datetime "created_at"
     t.datetime "updated_at"

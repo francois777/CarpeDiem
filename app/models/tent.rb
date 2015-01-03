@@ -1,0 +1,3 @@
+class Tent < CampingSite
+
+end

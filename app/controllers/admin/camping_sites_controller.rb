@@ -2,6 +2,7 @@ class Admin::CampingSitesController < ApplicationController
 
   include ApplicationHelper
 
+  before_action :set_type
   before_action :set_camping_site, only: [:show, :edit, :update, :destroy]
   before_action :redirect_unless_admin_user
 
@@ -13,7 +14,13 @@ class Admin::CampingSitesController < ApplicationController
   end
 
   def index
-    @camping_sites = CampingSite.all
+    @camping_sites = type.constantize.all
+  end
+
+  def gettents
+    puts "Admin::CampingSitesController#gettents"
+    @camping_sites = CampingSite.tents
+    render :json => @camping_sites
   end
 
   def new
@@ -29,7 +36,8 @@ class Admin::CampingSitesController < ApplicationController
     @camping_site = CampingSite.new(new_params)
     if @camping_site.save
       flash[:success] = "#{t(:camping_site_created, scope: [:success])}"
-      redirect_to [:admin, @camping_site]
+      # redirect_to [:admin, @camping_site]
+      redirect_to "/admin/camping_sites/#{@camping_site.id}"
     else
       flash[:alert] = t(:camping_site_create_failed, scope: [:failure])
       render :new
@@ -44,11 +52,13 @@ class Admin::CampingSitesController < ApplicationController
   end
 
   def update
-    puts "CampingSite params:"
-    puts camping_site_params.inspect
-    if @camping_site.update_attributes(camping_site_params)
+    # puts "CampingSite#update, params:"
+    # puts params.inspect
+    type = params['caravan'].any? ? :caravan : :tent
+    if @camping_site.update_attributes(camping_site_params(type))
       flash[:success] = "#{t(:camping_site_updated, scope: [:success])}"
-      redirect_to [:admin, @camping_site]
+      # redirect_to [:admin, @camping_site]
+      redirect_to "/admin/camping_sites/#{@camping_site.id}"
     else
       flash[:alert] = t(:camping_site_update_failed, scope: [:failure])
       render :edit
@@ -57,12 +67,20 @@ class Admin::CampingSitesController < ApplicationController
 
   private
 
+    def set_type
+      @type = type
+    end
+
+    def type
+      CampingSite.types.include?(params[:type]) ? params[:type] : "CampingSite"
+    end
+
     def set_camping_site
       @camping_site = CampingSite.find(params[:id].to_i)
     end
 
-    def camping_site_params
-      params.require(:camping_site).permit(:location_code, :camping_type, :powered, :reservable)
+    def camping_site_params(type = :camping_site)
+      params.require(type).permit(:location_code, :type, :powered, :reservable)
     end
 
     def redirect_unless_admin_user

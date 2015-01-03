@@ -2,7 +2,7 @@ class CreateCampingSite < ActiveRecord::Migration
   def change
     create_table :camping_sites do |t|
       t.string :location_code
-      t.string :camping_type, default: 'T'
+      t.string :type
       t.boolean :powered, default: false
       t.boolean :reservable, default: false
     end

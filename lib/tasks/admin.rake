@@ -28,12 +28,70 @@ namespace :admin do
       # CampingSite.tents.delete_all
     else  
       puts "Loading Tents.."
+      tent = nil
 
       (1..20).each do |n|
-        CampingSite.create(camping_type: 'T', location_code: "T#{n.to_s}", powered: true, reservable: true)
+        tent = CampingSite.create(camping_type: 'T', location_code: "T#{n.to_s}", powered: true, reservable: true)
       end
-      puts "20 tents have been loaded"
+
+      puts "20 tents have been loaded."
     end
+  end
+
+  task load_reservations: :environment do
+
+    date_range_A = [ { start: Date.today + 20, end: Date.today + 24 }, 
+                     { start: Date.today + 24, end: Date.today + 28 },
+                     { start: Date.today + 28, end: Date.today + 38 },
+                     { start: Date.today + 51, end: Date.today + 54 },
+                     { start: Date.today + 54, end: Date.today + 55 }]
+    date_range_B = [ { start: Date.today + 21, end: Date.today + 23 }, 
+                     { start: Date.today + 24, end: Date.today + 26 },
+                     { start: Date.today + 27, end: Date.today + 32 },
+                     { start: Date.today + 32, end: Date.today + 40 },
+                     { start: Date.today + 50, end: Date.today + 60 }]
+    date_range_C = [ { start: Date.today + 21, end: Date.today + 26 }, 
+                     { start: Date.today + 26, end: Date.today + 30 },
+                     { start: Date.today + 30, end: Date.today + 31 },
+                     { start: Date.today + 37, end: Date.today + 44 },
+                     { start: Date.today + 49, end: Date.today + 52 }]
+
+    reservation = nil
+    booking_cnt = 0
+    site1 = CampingSite.all[0]
+    date_range_A.each do |r|
+      booking_cnt += 1
+      email = "Jonathan#{booking_cnt.to_s}.brooke@letussing.com"
+      reservation = Reservation.create(start_date: r[:start], end_date: r[:end], reserved_for_name:
+      "#{'Jonathan'}#{booking_cnt.to_s}", telephone: '123456789', mobile: '123456789', email: email, town: 'Lelierivier')
+      if reservation.valid?
+        reservation.save
+      else
+        puts "Reservation is not valid" 
+        puts reservation.errors.inspect
+      end 
+      rf = RentedFacility.create(rentable: site1, reservation: reservation, start_date: r[:start], end_date: r[:end], adult_count: 4)
+      puts "RentedFacility: #{rf.inspect}"
+    end
+
+    site2 = CampingSite.all[1]
+    date_range_B.each do |r|
+      booking_cnt += 1
+      email = "Jenny#{booking_cnt.to_s}.fredericks@letussing.com"
+      reservation = Reservation.create(start_date: r[:start], end_date: r[:end], reserved_for_name:
+      "#{'Jenny'}#{booking_cnt.to_s}", telephone: '123222789', mobile: '123456789', email: email, town: 'DangerCliff')
+      RentedFacility.create(rentable: site2, reservation: reservation, start_date: r[:start], end_date: r[:end], adult_count: 4)
+    end
+
+    site3 = CampingSite.all[2]
+    date_range_C.each do |r|
+      booking_cnt += 1
+      email = "Hans#{booking_cnt.to_s}.goosen@letussing.com"
+      reservation = Reservation.create(start_date: r[:start], end_date: r[:end], reserved_for_name:
+      "#{'Hans'}#{booking_cnt.to_s}", telephone: '123222789', mobile: '123456789', email: email, town: 'Roseparadise')
+      RentedFacility.create(rentable: site3, reservation: reservation, start_date: r[:start], end_date: r[:end], adult_count: 4)
+    end
+    puts "#{booking_cnt.to_s} reservations have been made."
   end
 
   task load_caravans: :environment do
@@ -49,6 +107,5 @@ namespace :admin do
       puts "20 caravans have been loaded"
     end
   end
-
 
 end
