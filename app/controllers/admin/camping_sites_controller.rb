@@ -36,7 +36,17 @@ class Admin::CampingSitesController < ApplicationController
   end
 
   def index
-    @camping_sites = type.constantize.all
+    @camping_sites = CampingSite.all
+    @tents, @caravans = [], []
+    @camping_sites.each do |site|
+      @tents << site if site.type == 'Tent'
+      @caravans << site if site.type == 'Caravan' 
+    end
+
+    respond_to do |format|
+      format.html.haml
+      format.json { render json: @camping_sites }
+    end
   end
 
   def gettents

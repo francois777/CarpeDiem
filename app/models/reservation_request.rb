@@ -27,6 +27,23 @@ class ReservationRequest < ActiveRecord::Base
 
   private  
 
+    def self.index_to_name(inx)
+      case inx
+      when 0
+        Tent
+      when 1
+        Caravan
+      when 2
+        Chalet_Small
+      when 3
+        Chalet_Medium
+      when 4 
+        Chalet_Large
+      else
+        nil
+      end  
+    end
+
     def one_contact_number_required
       if applicant_telephone == "" && applicant_mobile == ""
         errors.add(:applicant_telephone, :no_contact_numbers)

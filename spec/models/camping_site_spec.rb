@@ -78,4 +78,57 @@ describe CampingSite do
     request_until = Date.new(2015,07,01)
     expect(site.available_between?(request_from, request_until)).to be(false)
   end
+
+  describe "When no caravans have been booked" do
+
+    before do
+      @caravan1 = create(:caravan, location_code: 'C101')
+      @caravan2 = create(:caravan, location_code: 'C102')
+      @date_1 = Date.new(2015,06,29)
+      @date_2 = Date.new(2015,07,01)
+    end
+
+    it "must tell that all caravans are available between a specified period" do
+      count = Caravan.available_count_between(@date_1, @date_2)
+      expect(count).to eq(Caravan.all.count)
+    end
+
+    it "must only count caravans that are reservable" do
+      @caravan1.reservable = false
+      @caravan1.save
+      count = Caravan.available_count_between(@date_1, @date_2)
+      expect(count).to eq(Caravan.all.count - 1)
+    end
+  end
+
+  describe "When there are some reservations" do
+    before do
+      @caravan1 = create(:caravan, location_code: 'C101')
+      @caravan2 = create(:caravan, location_code: 'C102')
+      @caravan3 = create(:caravan, location_code: 'C103')
+      @date_1 = Date.new(2015,06,29)
+      @date_2 = Date.new(2015,07,03)
+      @reservation1 = create(:reservation, start_date: @date_1, end_date: @date_2)
+      @rented_facility1 = create(:rented_facility, rentable: @caravan1, reservation: @reservation1, start_date: @date_1, end_date: @date_2)
+    end
+
+    it "must not count a caravan while it is reserved" do
+      count = Caravan.available_count_between(@date_1 + 1, @date_2 - 1)
+      expect(count).to eq(Caravan.all.count - 1)
+    end
+
+    it "must not count a second caravan that is also reserved" do
+      rented_facility2 = create(:rented_facility, rentable: @caravan2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)
+      count = Caravan.available_count_between(@date_1 - 1, @date_2 + 1)
+      expect(count).to eq(Caravan.all.count - 2)
+    end
+
+    it "must not count any caravans that are reserved or not reservable" do
+      rented_facility2 = create(:rented_facility, rentable: @caravan2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)
+      @caravan3.reservable = false
+      @caravan3.save
+      count = Caravan.available_count_between(@date_1, @date_2 - 2)
+      expect(count).to eq(Caravan.all.count - 3)
+    end
+  end
 end

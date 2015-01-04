@@ -14,6 +14,10 @@ class ReservationRequestsController < ApplicationController
     if @reservation_request.valid?
       @unavailable_facilities = find_unavailable_facilities
       if @unavailable_facilities.empty?
+        @reservation_request.status = 'Pending'
+        #  Fill in missing reservation fields 
+        #  Build submit and edit methods
+        #  Build development seeds
         if @reservation_request.save
           flash[:success] = t(:reservation_request_created, scope: [:success])
           redirect_to edit_reservation_request_path(@reservation_request)
@@ -30,7 +34,14 @@ class ReservationRequestsController < ApplicationController
     render :new
   end
 
+  def submit
+  end
+
+  def show
+  end
+
   def edit
+    puts "ReservationRequestsController#edit"
   end
 
   def update
@@ -62,7 +73,24 @@ class ReservationRequestsController < ApplicationController
       facilities
     end
 
-    def is_available?(facility_type, start_date, end_date)
+    def is_available?(facility_type_inx, start_date, end_date)
+      # puts "ReservationRequestsController#is_available"
+      # facility_type = ReservationRequest.index_to_name(facility_type_inx)
+      # count = case facility_type
+      # when 'Tent'
+      #   Tent.available_count_between(start_date, end_date)
+      # when 'Caravan'
+      #   Caravan.available_count_between(start_date, end_date)
+      # when 'Chalet_Small'
+      #   0
+      # when 'Chalet_Medium'
+      #   0
+      # when 'Chalet_Large'
+      #   0
+      # else
+      #   0
+      # end
+      # count > 0
       false
     end
 

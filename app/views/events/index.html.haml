@@ -15,7 +15,7 @@
             - @grouped_cal_days[dte2].each do |calday|
               %li
                 %span.title
-                  = link_to calday.diarisable.title, calday.diarisable, :data => { event_id: calday.diarisable.id }
+                  = link_to calday.diarisable.title, event_path(calday.diarisable), :data => { event_id: calday.diarisable.id }
   .row
     .actions
       -if current_user && current_user.admin?

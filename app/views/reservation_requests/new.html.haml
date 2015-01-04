@@ -1,8 +1,8 @@
-- provide(:title, t(:reservation_request, scope: [:menu]))
+- provide(:title, t(".reservation_request"))
 
 %section.reservation-request
   %h1 
-    = t(:reservation_request, scope: [:menu])
+    = t(".reservation_request")
   .row
     .col-xs-8.col-md-8
       = form_for([@reservation_request], html: {class: "form-horizontal", role: "form"}) do |f|

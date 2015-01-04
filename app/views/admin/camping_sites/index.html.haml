@@ -5,7 +5,8 @@
       %h1
         = t(".camping_site_list")
 
-      = select :tents, 'Tents', options_for_select({'Tents' => 0, 'Caravans' => 1, 'Tents and Caravans' => 2 }), data: { remote: true, url: admin_camping_sites_gettents_path, type: 'json'} 
+      = select_tag :camping_sites, options_for_select({'Tents' => @tents, 'Caravans' => @caravans, 'Tents and Caravans' => @camping_sites}), { class: "filter" }
+      -# = f.select :tariff_category, tariff_categories_for_select, {}, class: "form-control"
 
       .table-responsive
         %table.table.camping-sites
@@ -24,7 +25,7 @@
                 %b
                   = t(".reservable")
               %td    
-          %tbody
+          %tbody#site_list
             - @camping_sites.each do |site|
               %tr
                 %td
@@ -42,3 +43,4 @@
           -if current_user && current_user.admin?
             .button.btn
               = link_to t(".add_camping_site"), new_admin_camping_site_path
+           
