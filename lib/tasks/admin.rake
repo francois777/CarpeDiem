@@ -38,6 +38,20 @@ namespace :admin do
     end
   end
 
+  task load_caravans: :environment do
+    if CampingSite.caravans.count > 0
+      puts "Caravans found - more caravans not created"
+      # CampingSite.tents.delete_all
+    else  
+      puts "Loading Caravans.."
+
+      ('01'..'20').each do |n|
+        Caravan.create(location_code: "C#{n.to_s}", powered: true, reservable: true)
+      end
+      puts "20 caravans have been loaded"
+    end
+  end
+
   task load_reservations: :environment do
     DiaryDay.delete_all
     RentedFacility.delete_all
@@ -96,20 +110,6 @@ namespace :admin do
       reservation.rented_facilities.create(rentable: site3, reservation: reservation, start_date: r[:start], end_date: r[:end], adult_count: 4)
     end
     puts "#{booking_cnt.to_s} reservations have been made."
-  end
-
-  task load_caravans: :environment do
-    if CampingSite.caravans.count > 0
-      puts "Caravans found - more caravans not created"
-      # CampingSite.tents.delete_all
-    else  
-      puts "Loading Caravans.."
-
-      ('01'..'20').each do |n|
-        Caravan.create(location_code: "C#{n.to_s}", powered: true, reservable: true)
-      end
-      puts "20 caravans have been loaded"
-    end
   end
 
 end

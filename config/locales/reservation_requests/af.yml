@@ -4,6 +4,8 @@ af:
       models:
         reservation_request:
           attributes:
+            applicant_email:
+              taken: EPos is reeds geneem
             applicant_telephone:
               no_contact_numbers: Minstens een kontak nommer word benodig
             facility_type_1:

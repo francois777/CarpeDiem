@@ -14,7 +14,6 @@ class ReservationRequest < ActiveRecord::Base
                     length: { minimum: 9, maximum: 20 }, unless: ->{ self.applicant_mobile.empty? }
   validates :applicant_email, 
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false },
                     length: { maximum: 50 }
   validates :applicant_town,  length: { minimum: 2, maximum: 40 }, unless: ->{ self.applicant_town.empty? }
 
@@ -28,20 +27,22 @@ class ReservationRequest < ActiveRecord::Base
   private  
 
     def self.index_to_name(inx)
-      case inx
+      #puts "ReservationRequest#self.index_to_name(inx)"
+      name = case inx
       when 0
-        Tent
+        'Tent'
       when 1
-        Caravan
+        'Caravan'
       when 2
-        Chalet_Small
+        'Chalet_Small'
       when 3
-        Chalet_Medium
+        'Chalet_Medium'
       when 4 
-        Chalet_Large
+        'Chalet_Large'
       else
         nil
       end  
+      name
     end
 
     def one_contact_number_required

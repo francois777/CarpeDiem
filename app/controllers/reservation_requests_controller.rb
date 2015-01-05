@@ -12,7 +12,8 @@ class ReservationRequestsController < ApplicationController
     @reservation_request = ReservationRequest.new(request_params)
     @unavailable_facilities = []
     if @reservation_request.valid?
-      @unavailable_facilities = find_unavailable_facilities
+      @unavailable_facilities = list_unavailable_facility_types
+      puts "Unavailable facilities: #{@unavailable_facilities.to_s}"
       if @unavailable_facilities.empty?
         @reservation_request.status = 'Pending'
         #  Fill in missing reservation fields 
@@ -21,6 +22,7 @@ class ReservationRequestsController < ApplicationController
         if @reservation_request.save
           flash[:success] = t(:reservation_request_created, scope: [:success])
           redirect_to edit_reservation_request_path(@reservation_request)
+          return
         else
           flash[:alert] = t(:reservation_request_create_failed, scope: [:failure])
         end
@@ -42,6 +44,8 @@ class ReservationRequestsController < ApplicationController
 
   def edit
     puts "ReservationRequestsController#edit"
+    # Calculate prices
+    @unavailable_facilities = []
   end
 
   def update
@@ -49,49 +53,59 @@ class ReservationRequestsController < ApplicationController
 
   private
 
-    def find_unavailable_facilities
-      facilities = []
-      unless is_available?(@reservation_request.facility_type_1, 
-                                          @reservation_request.start_date_1, 
-                                          @reservation_request.end_date_1)
-        facilities << 1
+    def list_unavailable_facility_types
+      facility_types = []
+      facility_type = ReservationRequest.index_to_name(@reservation_request.facility_type_1)
+      facility_types << facility_type
+      unavailable_facilities = []
+      unless is_available?(facility_type, 
+                           @reservation_request.start_date_1, 
+                           @reservation_request.end_date_1)
+        puts "#{facility_type} is not available between #{@reservation_request.start_date_1.to_s} and #{@reservation_request.end_date_1.to_s}"
+        unavailable_facilities << facility_type
       end  
       if @reservation_request.start_date_2.is_a?(Date)
-        unless is_available?(@reservation_request.facility_type_2, 
-                                            @reservation_request.start_date_2, 
-                                            @reservation_request.end_date_2)
-          facilities << 2
-        end
+        facility_type = ReservationRequest.index_to_name(@reservation_request.facility_type_2)
+        unless facility_types.include? facility_type
+          unless is_available?(@reservation_request.facility_type_2, 
+                                              @reservation_request.start_date_2, 
+                                              @reservation_request.end_date_2)
+            puts "#{facility_type} is not available between #{@reservation_request.start_date_2.to_s} and #{@reservation_request.end_date_2.to_s}"
+            unavailable_facilities << facility_type
+          end
+        end  
       end  
       if @reservation_request.start_date_3.is_a?(Date)
-        unless is_available?(@reservation_request.facility_type_3, 
-                                            @reservation_request.start_date_3, 
-                                            @reservation_request.end_date_3)
-          facilities << 3
+        facility_type = ReservationRequest.index_to_name(@reservation_request.facility_type_3)
+        unless facility_types.include? facility_type
+          unless is_available?(@reservation_request.facility_type_3, 
+                                              @reservation_request.start_date_3, 
+                                              @reservation_request.end_date_3)
+            puts "#{facility_type} is not available between #{@reservation_request.start_date_3.to_s} and #{@reservation_request.end_date_3.to_s}"
+            unavailable_facilities << facility_type
+          end
         end
       end
-      facilities
+      unavailable_facilities
     end
 
-    def is_available?(facility_type_inx, start_date, end_date)
+    def is_available?(facility_type, start_date, end_date)
       # puts "ReservationRequestsController#is_available"
-      # facility_type = ReservationRequest.index_to_name(facility_type_inx)
-      # count = case facility_type
-      # when 'Tent'
-      #   Tent.available_count_between(start_date, end_date)
-      # when 'Caravan'
-      #   Caravan.available_count_between(start_date, end_date)
-      # when 'Chalet_Small'
-      #   0
-      # when 'Chalet_Medium'
-      #   0
-      # when 'Chalet_Large'
-      #   0
-      # else
-      #   0
-      # end
-      # count > 0
-      false
+      count = case facility_type
+      when 'Tent'
+        Tent.available_count_between(start_date, end_date)
+      when 'Caravan'
+        Caravan.available_count_between(start_date, end_date)
+      when 'Chalet_Small'
+        0
+      when 'Chalet_Medium'
+        0
+      when 'Chalet_Large'
+        0
+      else
+        0
+      end
+      count > 0
     end
 
     def request_params

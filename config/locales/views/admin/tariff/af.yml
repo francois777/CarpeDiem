@@ -8,7 +8,7 @@ af:
         create_tariff: Skep Tarief
       index:
         tariff_list: Tarief Lys
-        add_tariff: Voef Tarief By
+        add_tariff: Voeg Tarief By
         no_tariffs_found: Geen tariewe gevind nie  
         tariff_category: Tarief Kategorie 
         tariff: Tarief

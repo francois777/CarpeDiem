@@ -18,7 +18,6 @@ class Admin::TariffsController < ApplicationController
     # @test = site_tariffs_without_power(@accommodation_type.tariffs.no_power.first)
   end
 
-
   def new
     if params[:tariff]
       @tariff = params[:tariff]
@@ -30,13 +29,35 @@ class Admin::TariffsController < ApplicationController
   def create
     @tariff = @accommodation_type.tariffs.new(tariff_params)
     @tariff.tariff = to_base_amount(params[:tariff][:tariff])
-    if @tariff.save
-      flash[:success] = "#{t(:tariff_created, scope: [:success])} (#{undo_link})"
-      redirect_to [:admin, @accommodation_type, @tariff]
+    # If the new tariff is valid and
+    @tariff.price_class = tariff_params[:price_class].to_sym
+    # puts "@tariff: #{@tariff.inspect}"
+    if @tariff.valid?
+      #   if tariffs for this category already exists ...
+      old_tariffs = Tariff.where('accommodation_type_id = ? AND price_class = ?', @tariff.accommodation_type, Tariff.price_classes[@tariff.price_class])
+      # puts "Old tariffs: #{old_tariffs.inspect}"
+      unless old_tariffs.nil?
+        #     ensure that the new tariff effective date is not in the past
+        #     find the tariff with no end-date and terminate this tariff
+        old_tariffs.each do |old_tariff|
+          if old_tariff.end_date.nil?
+            old_tariff.end_date = @tariff.effective_date.to_datetime - 1
+            # puts "Modified old_tariff: #{old_tariff.inspect}"
+            old_tariff.save!
+          end  
+        end
+      end
+      if @tariff.save
+        flash[:success] = "#{t(:tariff_created, scope: [:success])} (#{undo_link})"
+        redirect_to [:admin, @accommodation_type, @tariff]
+        return
+      else
+        flash[:alert] = t(:tariff_create_failed, scope: [:failure])
+      end  
     else
       flash[:alert] = t(:tariff_create_failed, scope: [:failure])
-      render :new
-    end  
+    end
+    render :new      
   end
 
   def update
@@ -95,7 +116,7 @@ class Admin::TariffsController < ApplicationController
     end
 
     def tariff_params
-      params.require(:tariff).permit(:tariff_category, :tariff, :effective_date, :end_date)
+      params.require(:tariff).permit(:tariff_category, :price_class, :tariff, :effective_date, :end_date)
     end
 
     def redirect_unless_signed_in

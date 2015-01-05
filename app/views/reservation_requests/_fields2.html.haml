@@ -10,13 +10,16 @@
   .form-group
     = f.label :start_date_2, t(".start_date_2"), class: "col-sm-6 control-label"
     .col-sm-3
-      =f.text_field :start_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}    
+      =f.text_field :start_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.start_date_2)
+  - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_2)
+    %span
+      = "* #{t('.fully_booked')}"
     .col-sm-3.col-sm-offset-6
       = show_field_error(@reservation_request, :start_date_2)
   .form-group
     = f.label :end_date_2, t(".end_date_2"), class: "col-sm-6 control-label"
     .col-sm-3
-      =f.text_field :end_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}    
+      =f.text_field :end_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.end_date_2)
     .col-sm-3.col-sm-offset-6
       = show_field_error(@reservation_request, :end_date_2)
   .form-group

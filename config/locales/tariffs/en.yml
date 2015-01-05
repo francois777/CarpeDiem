@@ -30,3 +30,7 @@ en:
           i1: King and Warrior Camps, per person, per weekend
           i2: Group Tariff Budget, per person, per weekend
           i3: Group Tariff Meals Included, per person, per weekend
+        price_classes:
+          normal_price: Normal price
+          in_season_price: In-season price
+          special_price: Special price

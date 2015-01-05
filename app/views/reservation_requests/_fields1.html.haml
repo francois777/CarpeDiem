@@ -8,19 +8,17 @@
     = show_field_error(@reservation_request, :facility_type_1)
 .form-group
   = f.label :start_date_1, t(".start_date_1"), class: "col-sm-6 control-label"
-  .col-sm-3
-    = f.text_field :start_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true    
-  - if @unavailable_facilities.include?(1)
+  .col-sm-4
+    = f.text_field :start_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true, value: display_date(@reservation_request.start_date_1)
+  - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_1)
     %span
       = "* #{t('.fully_booked')}"
   .col-sm-10.col-sm-offset-1
     = show_field_error(@reservation_request, :start_date_1)
-/ .events
-/   Do you know about our events during this period?   
 .form-group
   = f.label :end_date_1, t(".end_date_1"), class: "col-sm-6 control-label"
-  .col-sm-3
-    =f.text_field :end_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true    
+  .col-sm-4
+    =f.text_field :end_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, required: true, value: display_date(@reservation_request.end_date_1) 
   .col-sm-11
     = show_field_error(@reservation_request, :end_date_1)
 .form-group

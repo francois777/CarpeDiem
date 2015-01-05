@@ -4,6 +4,8 @@ en:
       models:
         reservation_request:
           attributes:
+            applicant_email:
+              taken: Email has already been taken
             applicant_telephone:
               no_contact_numbers: At least one contact number is required
             facility_type_1:

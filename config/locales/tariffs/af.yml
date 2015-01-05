@@ -30,3 +30,7 @@ af:
           i1: Koning en Kryger Kampe, per persoon, per naweek
           i2: Groep Tarief Besparing, per persoon, per naweek
           i3: Groep Tarief etes ingesluit, per persoon, per naweek
+        price_classes:
+          normal_price: Gewone prys
+          in_season_price: In-seisoen prys
+          special_price: Spesiale prys

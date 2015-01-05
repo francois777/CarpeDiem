@@ -4,6 +4,7 @@ class Tariff < ActiveRecord::Base
 
   VALID_TARIFF_CATEGORY = /\A[A-J][1-3]\z/
   TARIFF_CATEGORIES = I18n.t(:tariff_categories, scope: [:activerecord, :attributes, :tariff])
+  PRICE_CLASSES = I18n.t(:price_classes, scope: [:activerecord, :attributes, :tariff])
 
   belongs_to :accommodation_type
 

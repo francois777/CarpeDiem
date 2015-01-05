@@ -45,12 +45,16 @@ af:
       fully_booked: Vol bespreek
     new:  
       provide_details_for_each_facility: Verskaf besonderhede vir elke woonplek wat u benodig
-      update_and_review: Bêre en Hersien
+      update_and_review: Stoor en Hersien
       second_facility_required: Tweede woonplek benodig?
       third_facility_required: Derde woonplek benodig?
-      agree_to_abide_by_rules: Ek aanvaar en onderwerp my aan die reels van Carpediem Kampeergronde
+      agree_to_abide_by_rules: Ek aanvaar en onderwerp my aan die reels van Carpe Diem Kampeergronde
       reservation_request: Bespreking Versoek
     edit:  
       provide_details_for_each_facility: Verskaf besonderhede vir elke woonplek wat u benodig
-      update_and_review: Bêre en Hersien
+      update_and_review: Stoor en Hersien
+      submit: Doen Bespreking
+      update_reservation_request: Verander Bespreking
+      second_facility_required: Tweede woonplek benodig?
+      third_facility_required: Derde woonplek benodig?
       
