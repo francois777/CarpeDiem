@@ -1,0 +1,24 @@
+- provide(:title, t(".reservation_request_list"))
+.row
+  .col-xs-12.cols-xs-offset-0.col-md-8.col-md-offset-2
+    %section.reservation-request.clearfix
+      %h1
+        = t(".reservation_request_list")
+      .table-responsive
+        %table.table
+          %thead
+            %tr
+              %td
+                %b
+                  = t(".applicant")
+              %td
+                %b
+                  = t(".facility")
+              %td
+                %b
+                  = t(".start_date")
+              %td
+                %b
+                  = t(".status")
+          %tbody
+            = render @reservation_requests || t(".no_reservation_requests_found")

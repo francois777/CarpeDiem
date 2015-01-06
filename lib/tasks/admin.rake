@@ -22,6 +22,9 @@ namespace :admin do
     end
   end
 
+  task load_tariffs: :environment do
+  end
+
   task load_tents: :environment do
     if CampingSite.tents.count > 0
       puts "Tents found - more tents not created"

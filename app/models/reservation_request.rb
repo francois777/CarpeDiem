@@ -5,6 +5,7 @@ class ReservationRequest < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   # enum facility_types: I18n.t(:facility_types).each_with_index.map { |iType| iType[1] }
+  enum facility_types: [:tent, :caravan, :chalet_small, :chalet_medium, :chalet_large]
 
   validates :applicant_name, presence: true, 
                     length: { minimum: 5, maximum: 40 }

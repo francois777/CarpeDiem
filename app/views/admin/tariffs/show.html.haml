@@ -32,5 +32,3 @@
         -if current_user && current_user.admin?
           .button.btn
             = link_to t(".return_to_tariff_list"), admin_accommodation_type_tariffs_path(@accommodation_type)
-          .button.btn
-            = link_to t(".edit"), edit_admin_accommodation_type_tariff_path(@accommodation_type, @tariff)

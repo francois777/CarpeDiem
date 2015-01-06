@@ -35,6 +35,7 @@ af:
     chalets: Chalets
     camping_sites: Kampeerplekke
     reservation_request: Bespreking Aanvraag
+    reservation_requests: Bespreking Aanvrae    
   references:
     ps_118v24: Ps 118:24
   articles:

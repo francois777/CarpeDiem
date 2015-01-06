@@ -35,6 +35,7 @@ en:
     chalets: Chalets
     camping_sites: Camping Sites
     reservation_request: Reservation Request
+    reservation_requests: Reservation Requests    
   references:
     ps_118v24: Ps 118:24
   articles:  

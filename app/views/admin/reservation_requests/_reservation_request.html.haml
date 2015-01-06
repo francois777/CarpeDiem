@@ -1,0 +1,9 @@
+%tr
+  %td
+    = link_to reservation_request.applicant_name, admin_reservation_request_path(reservation_request)
+  %td
+    = ReservationRequest.index_to_name(reservation_request.facility_type_1)
+  %td
+    = display_date(reservation_request.start_date_1, {format: :short})
+  %td
+    = reservation_request.status

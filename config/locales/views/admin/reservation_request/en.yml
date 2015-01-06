@@ -1,0 +1,47 @@
+en:
+  admin:
+    reservation_requests:
+      index: 
+        reservation_request_list: Reservation Request List
+        applicant: Applicant
+        facility: Accommodation
+        start_date: Start date
+        status: Status
+      show:
+        applicant_details: Applicant details
+        applicant_name: Name and Surname
+        applicant_telephone: Telephone number
+        applicant_mobile: Mobile number
+        applicant_email: Email
+        applicant_town: Home town
+        facility_type_1: Type of accommodation
+        start_date_1: Arrival date
+        end_date_1: Departure date
+        adults_18_plus_count_1: Adults (18 years and older)
+        teenagers_count_1: Children (13 to 17 years)
+        children_6_12_count_1: Children (6 to 12 years)
+        infants_count_1: Todlers (0 to 5 years)
+        power_point_required_1: Power point required?
+        reservation_for_facility_1: First Reservation
+        fully_booked: Fully booked
+        facility_type_2: Type of accommodation
+        start_date_2: Arrival date
+        end_date_2: Departure date
+        adults_18_plus_count_2: Adults (18 years and older)
+        teenagers_count_2: Children (13 to 17 years)
+        children_6_12_count_2: Children (6 to 12 years)
+        infants_count_2: Todlers (0 to 5 years)
+        power_point_required_2: Power point required?
+        reservation_for_facility_2: Second Reservation
+        facility_type_3: Type of accommodation
+        start_date_3: Arrival date
+        end_date_3: Departure date
+        adults_18_plus_count_3: Adults (18 years and older)
+        teenagers_count_3: Children (13 to 17 years)
+        children_6_12_count_3: Children (6 to 12 years)
+        infants_count_3: Todlers (0 to 5 years)
+        power_point_required_3: Power point required?
+        meals_required_count: Number of meals required per day
+        vehicle_registration_numbers: Vehicle registration numbers
+        special_requests: Special requests
+        reservation_for_facility_3: Third Reservation

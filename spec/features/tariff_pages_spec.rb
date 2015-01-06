@@ -89,33 +89,7 @@ feature "Tariff pages" do
       expect(page).to have_text('Caravan Site per Person, Without Power Points, Out of Season')
       expect(page).to have_text('R 65.00')
       expect(page).to have_text('15/08/2015')
-
-
     end  
-
-    # scenario "Update existing tariff" do
-    #   cat_e1 = create(:tariff, tariff_category: 'E1', 
-    #                            tariff: 9999, 
-    #                            effective_date: Date.new(2015,02,28),
-    #                            end_date: Date.new(2015,12,31),
-    #                            accommodation_type: @accommodation_type)
-    #   visit edit_admin_accommodation_type_tariff_path(@accommodation_type, cat_e1)
-    #   expect(page).to have_title('Update Tariff')
-    #   expect(page).to have_selector('h1', text: "Update Tariff")
-    #   expect(page).to have_text('Tariff Category')
-    #   expect(page).to have_text('Tariff')
-    #   expect(page).to have_text('Effective Date')
-    #   expect(page).to have_text('End Date')
-    #   expect( find(:css, "input#tariff_tariff").value ).to eq('99.99')
-    #   expect( find(:css, "input#tariff_effective_date").value ).to eq(String.new('2015-02-28'))
-    #   expect( find(:css, "input#tariff_end_date").value ).to eq(String.new('2015-12-31'))
-    #   expect(page).to have_selector('select#tariff_tariff_category') do |content|
-    #     expect(content).to have_selector(:option, value = 'C1')
-    #   end
-    #   expect(page).to have_selector(:link_or_button, 'Update Tariff')
-
-    #   click_button 'Update Tariff'
-    # end
 
     scenario "Ensure currency conversions are correct" do
       expect(to_base_amount(90.50)).to eq(9050)
