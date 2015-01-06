@@ -23,21 +23,35 @@ class Tariff < ActiveRecord::Base
 
   enum price_class: [:normal_price, :in_season_price, :special_price]
 
-  def self.find_period_prices(accom_type ,eff_date, end_date)
-    # if period overlaps two or more tariffs, the price must
-    # be determined for each portion
-    # Scenario 1:
-    #     stored tariff end_date < requested start_start (don't include, next)
-    #        - look for a later start_date
-    #     stored tariff start_date > requested end_date (don't include)
-    #        - stop looking for more tariffs
-    #     requested start_date > stored tariff start_date and store end_date = nil (include)
-    #        - stop looking got more tariffs
-    #     requested start_date > stored tariff start_date and store end_date 
-    #       OR
-    #     requested end_date > stored tariff end_date
-    #        - include and continue looking
-    tariffs = Tariff.where('accommodation_type_id = ? AND (effective_date < ? OR end_date < ?)', accom_type.id, eff_date, end_date) 
+  def self.adult_price(facility_type, power_point_included, requested_from, requested_until)
+    # find accommodation type
+    # get applicable tariffs
+    # apply tariffs to requested period
+    # return price
+    
+  end
+
+
+  def self.find_prices(accom_type, requested_from, requested_until)
+    results = []
+    price_periods = find_period_prices(accom_type, requested_from, requested_until)
+    # puts "Periods pulled from DB: #{price_periods.inspect}"
+
+    price_periods.each do |period|
+      period_start = period.effective_date
+      period_end = period.end_date || Date.today + 1000
+      if period.end_date.nil? 
+        next if period.effective_date > requested_until
+        results << { date_from: period_start, date_until: period_end, tariff: period.tariff }
+        break if period.effective_date <= requested_from
+        next  
+      end
+      next if period.effective_date >= requested_until
+      results << { date_from: period_start, date_until: period_end, tariff: period.tariff }
+      break if period.effective_date <= requested_from
+      break if period.end_date < requested_from
+    end
+    results
   end
 
   def self.find_current_tariff(tariff_category, price_class)
@@ -53,5 +67,12 @@ class Tariff < ActiveRecord::Base
   def tariff_cannot_be_zero
     errors.add(:tariff, "Tariff must be greater than zero") unless tariff && tariff > 0
   end
+
+  private
+
+    def self.find_period_prices(accom_type ,requested_from, requested_until)
+      tariffs = Tariff.where('accommodation_type_id = ?', accom_type.id) 
+    end
+
 
 end

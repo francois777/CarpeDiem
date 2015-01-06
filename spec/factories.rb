@@ -31,7 +31,7 @@ FactoryGirl.define do
     tariff 9000
     with_power_points true
     effective_date Date.today - 300
-    end_date Date.today + 300
+    end_date nil
     price_class 0
     association :accommodation_type
   end
