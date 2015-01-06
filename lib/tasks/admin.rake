@@ -23,6 +23,9 @@ namespace :admin do
   end
 
   task load_tariffs: :environment do
+    Tariff.delete_all
+    puts "Existing tariffs deleted; loading new tariffs"
+    
   end
 
   task load_tents: :environment do

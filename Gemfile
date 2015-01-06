@@ -37,7 +37,7 @@ gem 'jquery-ui-rails', '~> 4.2.1'
 #gem 'turbolinks'
 # Using jquery-turbolinks to load javascript on first arrival 
 # reservation_request/new now working correctly
-gem 'jquery-turbolinks', source: 'https://rubygems.org/'
+gem 'jquery-turbolinks'  #, source: 'https://rubygems.org/'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
