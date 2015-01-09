@@ -30,6 +30,7 @@ class Admin::TariffsController < ApplicationController
     @tariff = @accommodation_type.tariffs.new(tariff_params)
     @tariff.tariff = to_base_amount(params[:tariff][:tariff])
     @tariff.price_class = tariff_params[:price_class].to_sym
+    @tariff.facility_category = tariff_params[:facility_category].to_sym
     if @tariff.valid?
       old_tariffs = Tariff.where('accommodation_type_id = ? AND price_class = ?', @tariff.accommodation_type, Tariff.price_classes[@tariff.price_class])
       unless old_tariffs.nil?
@@ -109,7 +110,7 @@ class Admin::TariffsController < ApplicationController
     end
 
     def tariff_params
-      params.require(:tariff).permit(:tariff_category, :price_class, :tariff, :effective_date, :end_date)
+      params.require(:tariff).permit(:tariff_category, :facility_category, :price_class, :with_power_points, :tariff, :effective_date, :end_date)
     end
 
     def redirect_unless_signed_in

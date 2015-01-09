@@ -1,4 +1,4 @@
-class CampingSite < ActiveRecord::Base
+ class CampingSite < ActiveRecord::Base
 
   has_many :rented_facilities, as: :rentable
   validates :location_code, presence: true, 

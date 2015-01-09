@@ -5,6 +5,7 @@ class Tariff < ActiveRecord::Base
   VALID_TARIFF_CATEGORY = /\A[A-J][1-3]\z/
   TARIFF_CATEGORIES = I18n.t(:tariff_categories, scope: [:activerecord, :attributes, :tariff])
   PRICE_CLASSES = I18n.t(:price_classes, scope: [:activerecord, :attributes, :tariff])
+  FACILITY_CATEGORIES = I18n.t(:facility_categories, scope: [:activerecord, :attributes, :tariff])
 
   belongs_to :accommodation_type
 
@@ -22,17 +23,38 @@ class Tariff < ActiveRecord::Base
   scope :no_power, -> { where('with_power_points = ?', false) }  
 
   enum price_class: [:normal_price, :in_season_price, :special_price]
+  enum facility_category: [:tent, :caravan, :chalet_small, :chalet_medium, :chalet_large, :ox_wagon, :day_visitor, :warrior_camp, :large_group]
 
-  def self.adult_price(facility_type, power_point_included, requested_from, requested_until)
-    # find accommodation type
-    # get applicable tariffs
-    # apply tariffs to requested period
-    # return price
-    
+  def self.adult_tariff(facility_cat, requested_from, requested_until, power_point_included = false)
+    puts "Tariff#adult_tariff"
+    # puts "facility_cat: #{facility_cat}"
+    cat = facility_cat.downcase.to_sym
+    cat_inx = Tariff.facility_categories[cat]
+    pri_inx = Tariff.price_classes[:normal_price]
+    desired_tariffs = nil
+    # puts "Facility category: #{facility_cat.inspect} - #{cat_inx.inspect}"
+    case cat
+    when :tent, :caravan
+      # puts "Parameters for desired_tariffs:"
+      # puts "facility_category: #{cat_inx}"
+      # puts "with_power_points: #{power_point_included.to_s}"
+      # puts "effective_date: #{requested_from.to_s}"
+      # puts "price_class: #{pri_inx}"
+      desired_tariffs = Tariff.where('facility_category = ? AND with_power_points = ? AND effective_date <= ? AND price_class = ?', 
+        cat_inx, power_point_included, requested_from, pri_inx)
+      # puts "Tariff found: #{Tariff.first.inspect}"
+      # puts "Desired tariffs: #{desired_tariffs.inspect}"
+    when :chalet_small, :chalet_medium, :chalet_large  
+      desired_tariffs = Tariff.where('facility_category = ? AND effective_date >= ? AND price_class = ?', 
+        cat_inx, requested_from, pri_inx)
+    else
+      nil  
+    end  
+    desired_tariffs[0].tariff
   end
 
-
   def self.find_prices(accom_type, requested_from, requested_until)
+    # puts "Tariff.find_prices"
     results = []
     price_periods = find_period_prices(accom_type, requested_from, requested_until)
     # puts "Periods pulled from DB: #{price_periods.inspect}"

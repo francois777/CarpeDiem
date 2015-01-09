@@ -1,4 +1,8 @@
 en:
+  admin:
+    reservation_requests:
+      show:
+        reservation_request_details: Reservation Request Details
   reservation_requests:
     applicant_details:
       applicant_details: Applicant details
@@ -49,11 +53,11 @@ en:
       second_facility_required: Second facility required?
       third_facility_required: Third facility required?
       agree_to_abide_by_rules: I have read and I accept the rules of Carpe Diem Camping Grounds
-      reservation_request: Reservation Request
+      reservation_request: Accommodation Enquiry
     edit:  
       provide_details_for_each_facility: Provide details for each facility you are requesting
       update_and_review: Save and Review
-      submit: Make Reservation
+      submit: Submit Request
       update_reservation_request: Update Reservation
       second_facility_required: Second facility required?
       third_facility_required: Third facility required?

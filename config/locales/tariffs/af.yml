@@ -34,3 +34,13 @@ af:
           normal_price: Gewone prys
           in_season_price: In-seisoen prys
           special_price: Spesiale prys
+        facility_categories:
+          tent: Tent
+          caravan: Karavaan
+          chalet_small: Klein Chalet
+          chalet_medium: Medium Chalet
+          chalet_large: Groot Chalet
+          ox_wagon: Ossewa
+          day_visitor: Dagbesoeker
+          warrior_camp: Krygerskamp
+          large_group: Groot Groep

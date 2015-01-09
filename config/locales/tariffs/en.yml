@@ -34,3 +34,13 @@ en:
           normal_price: Normal price
           in_season_price: In-season price
           special_price: Special price
+        facility_categories:
+          tent: Tent
+          caravan: Caravan
+          chalet_small: Small Chalet
+          chalet_medium: Medium Chalet
+          chalet_large: Large Chalet
+          ox_wagon: Ox wagon
+          day_visitor: Day Visitor
+          warrior_camp: Warrior Camp
+          large_group: Large Group

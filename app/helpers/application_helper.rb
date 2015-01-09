@@ -65,8 +65,8 @@ module ApplicationHelper
 
   def to_whole(an_amount)
     raise ArgumentError, "an_amount must not be nil" if an_amount.nil?
-    return an_amount.to_f / 100 if an_amount.is_a?(Integer)
-    return an_amount
+    return an_amount if an_amount == 0
+    return an_amount.to_i.to_f / 100
   end
 
 

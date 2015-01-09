@@ -7,7 +7,8 @@ class AppConfig
               :tents_and_caravans_checkin_time, :tents_and_caravans_checkout_time,
               :remain_on_premises_time, :longest_event_duration, :longest_reservation,
               :max_occupants_per_camping_site, :max_occupants_per_small_chalet,
-              :max_occupants_per_medium_chalet, :max_occupants_per_large_chalet
+              :max_occupants_per_medium_chalet, :max_occupants_per_large_chalet,
+              :in_season_periods, :promotion_periods
   attr_accessor :language
 
   def initialize
@@ -30,5 +31,8 @@ class AppConfig
     @max_occupants_per_small_chalet = 4
     @max_occupants_per_medium_chalet = 8
     @max_occupants_per_large_chalet = 14
+    @in_season_periods = [ { period_start_month: 12, period_start_day: 1, duration_days: 40 },
+                           { period_start_month: 3, period_start_day: 20, duration_days: 15 } ]
+    @promotion_periods = [ { period_start_month: 2, period_start_day: 1, duration_days: 28 } ]
   end
 end

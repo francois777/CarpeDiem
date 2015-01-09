@@ -10,16 +10,15 @@ class Reservation < ActiveRecord::Base
   validate :validate_end_date_before_start_date
   validates :reserved_for_name, presence: true, 
                     length: { minimum: 5, maximum: 40 }
-  validates :telephone, presence: true, 
-                    length: { minimum: 9, maximum: 20 }
-  validates :mobile, presence: true, 
-                    length: { minimum: 9, maximum: 20 }
+  validates :telephone, length: { minimum: 9, maximum: 20 }
+  validates :mobile, length: { minimum: 9, maximum: 20 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, 
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false },
                     length: { maximum: 50 }
   validates :town,  length: { minimum: 2, maximum: 40 }
+  validate :one_contact_number_required
 
   before_update :remove_existing_diary_dates
   before_update :add_diary_dates 
@@ -43,6 +42,12 @@ class Reservation < ActiveRecord::Base
     def validate_end_date_before_start_date
       if start_date && end_date
         errors.add(:end_date, :end_date_before_start_date) if end_date < start_date
+      end
+    end
+
+    def one_contact_number_required
+      if telephone == "" && mobile == ""
+        errors.add(:telephone, :no_contact_numbers)
       end
     end
 

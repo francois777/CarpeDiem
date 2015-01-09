@@ -25,7 +25,6 @@ $("section.reservation-request").ready ->
     else
       # alert "The checkbox is unchecked"
       $("#second-facility").hide()
-    end
 
   toggleFacility3 = (e) ->
     checkbox = $("#Third_facility_required_")
@@ -36,10 +35,25 @@ $("section.reservation-request").ready ->
     else
       # alert "The checkbox is unchecked"
       $("#third-facility").hide()
-    end
+
+  displayFacility2 = (e) ->
+    dte = $('#reservation_request_start_date_2')
+    if (typeof dte is "object")
+      checkbox = $("#Second_facility_required_")
+      checked = checkbox.is(":checked")
+      $("#second-facility").show()
+
+  displayFacility3 = (e) ->
+    dte = $('#reservation_request_start_date_3')
+    if typeof dte is "object"
+      checkbox = $("#Third_facility_required_")
+      checked = checkbox.is(":checked")
+      $("#third-facility").show()
 
   $('#Second_facility_required_').click(toggleFacility2)
   $('#Third_facility_required_').click(toggleFacility3)
+  displayFacility2()
+  displayFacility3()
 
 
 ###

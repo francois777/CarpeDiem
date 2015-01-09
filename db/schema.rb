@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226101019) do
+ActiveRecord::Schema.define(version: 20150106125611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,10 +173,13 @@ ActiveRecord::Schema.define(version: 20141226101019) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status",                       default: ""
   end
 
+  add_index "reservations", ["email"], name: "index_reservations_on_email", using: :btree
   add_index "reservations", ["reserved_for_name"], name: "index_reservations_on_name", using: :btree
   add_index "reservations", ["start_date"], name: "index_reservations_on_start_date", using: :btree
+  add_index "reservations", ["status"], name: "index_reservations_on_status", using: :btree
 
   create_table "tariffs", force: true do |t|
     t.string   "tariff_category"
@@ -186,6 +189,7 @@ ActiveRecord::Schema.define(version: 20141226101019) do
     t.integer  "accommodation_type_id"
     t.boolean  "with_power_points",     default: false
     t.integer  "price_class",           default: 0
+    t.integer  "facility_category",     default: 0
   end
 
   add_index "tariffs", ["tariff_category", "effective_date"], name: "index_tariffs_cat_effdate", unique: true, using: :btree

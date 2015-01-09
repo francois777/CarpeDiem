@@ -24,6 +24,7 @@ class ReservationRequest < ActiveRecord::Base
   validate :validate_end_dates
   validate :validate_facility_details
   validate :one_contact_number_required
+  validate :both_name_and_surname_required
 
   private  
 
@@ -44,6 +45,10 @@ class ReservationRequest < ActiveRecord::Base
         nil
       end  
       name
+    end
+
+    def both_name_and_surname_required
+      applicant_name.split.count > 1
     end
 
     def one_contact_number_required

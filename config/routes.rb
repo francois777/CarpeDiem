@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :events, only: [:index, :show]
-  resources :reservation_requests, only: [:new, :create, :edit, :update] do
+  resources :reservation_requests, only: [:new, :create, :edit, :update, :show] do
     member do
       post :submit
     end

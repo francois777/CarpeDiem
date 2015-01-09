@@ -5,11 +5,23 @@
   .col-sm-9.col-sm-offset-3
     = show_field_error(@tariff, :tariff_category)
 .form-group
+  = f.label :facility_category, t(".facility_category"), class: "col-sm-3 control-label"
+  .col-sm-4
+    = f.select :facility_category, facility_categories_for_select, {}, class: "form-control", required: true
+  .col-sm-4.col-sm-offset-3
+    = show_field_error(@tariff, :facility_category) 
+.form-group
   = f.label :price_class, t(".price_class"), class: "col-sm-3 control-label"
   .col-sm-4
     = f.select :price_class, price_classes_for_select, {}, class: "form-control", required: true
   .col-sm-9.col-sm-offset-3
     = show_field_error(@tariff, :price_class)
+.form-group
+  = f.label :with_power_points, t(".with_power_points"), class: "col-sm-3 control-label"
+  .col-sm-4
+    = f.check_box :with_power_points
+  .col-sm-5.col-sm-offset-4
+    = show_field_error(@tariff, :with_power_points)
 .form-group
   = f.label :tariff, t(".tariff"), class: "col-sm-3 control-label"
   .col-sm-4

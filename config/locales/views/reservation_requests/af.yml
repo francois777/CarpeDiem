@@ -1,4 +1,8 @@
 af:
+  admin:
+    reservation_requests:
+      show:
+        reservation_request_details: Besprekings besonderhede
   reservation_requests:
     applicant_details:
       applicant_details: Besonderhede van aansoeker
@@ -49,11 +53,11 @@ af:
       second_facility_required: Tweede woonplek benodig?
       third_facility_required: Derde woonplek benodig?
       agree_to_abide_by_rules: Ek aanvaar en onderwerp my aan die reels van Carpe Diem Kampeergronde
-      reservation_request: Bespreking Versoek
+      reservation_request: Bespreking Aansoek
     edit:  
       provide_details_for_each_facility: Verskaf besonderhede vir elke woonplek wat u benodig
       update_and_review: Stoor en Hersien
-      submit: Doen Bespreking
+      submit: Stuur Aansoek
       update_reservation_request: Verander Bespreking
       second_facility_required: Tweede woonplek benodig?
       third_facility_required: Derde woonplek benodig?

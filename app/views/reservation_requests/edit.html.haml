@@ -20,8 +20,8 @@
         = render 'fields3', f: f
         .centered
           .button.btn
-            = f.submit t(".update_and_review"), class: "btn btn-large btn-primary"  
-            = f.submit t(".submit"), class: "btn btn-large btn-success"  
+            = f.submit t(".update_and_review"), class: "btn btn-large btn-primary", id:"request-update", name: "update"
+            = f.submit t(".submit"), class: "btn btn-large btn-success", id: "request-submit", name: "update"
     .col-xs-4.col-md-4
       %p
         More details to come

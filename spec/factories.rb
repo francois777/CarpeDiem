@@ -33,6 +33,7 @@ FactoryGirl.define do
     effective_date Date.today - 300
     end_date nil
     price_class 0
+    facility_category 0
     association :accommodation_type
   end
 

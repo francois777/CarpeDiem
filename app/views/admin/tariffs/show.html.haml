@@ -12,9 +12,17 @@
             .col-sm-9
               = f.text_field :tariff_category, readonly: "", value: Tariff::TARIFF_CATEGORIES[@tariff.tariff_category.downcase.to_sym], class: 'form-control'
           .form-group
+            = f.label :facility_category, t(".facility_category"),  class: "col-sm-3 control-label"
+            .col-sm-4
+              = f.text_field :facility_category, readonly: "", value: Tariff::FACILITY_CATEGORIES[@tariff.facility_category.downcase.to_sym], class: "form-control"
+          .form-group
             = f.label :price_class, t(".price_class"),  class: "col-sm-3 control-label"
             .col-sm-4
               = f.text_field :price_class, readonly: "", value: Tariff::PRICE_CLASSES[@tariff.price_class.downcase.to_sym], class: "form-control"
+          .form-group
+            = f.label :with_power_points, t(".with_power_points"), class: "col-sm-3 control-label"
+            .col-sm-1
+              = f.check_box :with_power_points, readonly: "", class: "form-control"
           .form-group
             = f.label :tariff, t(".tariff"), class: "col-sm-3 control-label"
             .col-sm-4

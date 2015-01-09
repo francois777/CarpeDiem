@@ -1,6 +1,8 @@
 module ReservationRequestsHelper
 
   def list_unavailable_facility_types
+    # puts "ReservationRequestsHelper#list_unavailable_facility_types"
+    # puts "Facility type 1: #{@reservation_request.facility_type_1}"
     facility_types = []
     facility_type = ReservationRequest.index_to_name(@reservation_request.facility_type_1)
     facility_types << facility_type
@@ -52,7 +54,7 @@ module ReservationRequestsHelper
     else
       0
     end
-    count > 0
+    count > 0 
   end
   
 end

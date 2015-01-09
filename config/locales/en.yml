@@ -34,8 +34,8 @@ en:
     account_settings: Account Settings
     chalets: Chalets
     camping_sites: Camping Sites
-    reservation_request: Reservation Request
-    reservation_requests: Reservation Requests    
+    reservation_request: Reservation Enquiry
+    reservation_requests: Reservation Enquiries    
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -169,6 +169,7 @@ en:
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
     reservation_request_created: Reservation Request Saved. Review and Submit.
+    reservation_request_updated: Reservation Request Saved. Review and Submit.
   failure:
     unauthorised_access: You are not authorised to request this page
     an_error_occurred: An error has occurred
@@ -198,6 +199,7 @@ en:
     not_blank_and_match_pw_verification: Cannot be blank and must match the password verification
     email_missing: Email not provided
     reservation_request_create_failed: Reservation request contains errors
+    reservation_request_update_failed: Reservation request contains errors
     some_facilities_fully_booked: Some facilities are already fully booked during the period you specified.
   info:
     nothing_changed: Nothing has changed  

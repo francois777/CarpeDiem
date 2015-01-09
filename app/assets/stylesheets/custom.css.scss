@@ -743,6 +743,16 @@ section.font-test {
         span {
           color: red;
           display: block;
+          text-align: right;
+        }
+        span.age-group-amount {
+          color: #29F;
+        }
+        span.total-amount {
+          color: #48F;
+          font-weight: bold;
+          border-top: 1px solid #29F;
+          padding-top: 2px;
         }
       }
     }

@@ -34,8 +34,8 @@ af:
     account_settings: Rekening besonderhede
     chalets: Chalets
     camping_sites: Kampeerplekke
-    reservation_request: Bespreking Aanvraag
-    reservation_requests: Bespreking Aanvrae    
+    reservation_request: Bespreking Navraag
+    reservation_requests: Bespreking Navrae    
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -169,6 +169,7 @@ af:
     new_user_added: New user has been added
     account_settings_have_changed: Account settings have been changed
     reservation_request_created: Bespreking Aanvraag gestoor. Hersien and Stuur versoek.
+    reservation_request_updated: Bespreking Aanvraag gestoor. Hersien and Stuur versoek.
   failure:
     unauthorised_access: Onvoldoende magtiging om hierdie bladsy te versoek
     an_error_occurred: An error has occurred
@@ -198,6 +199,7 @@ af:
     not_blank_and_match_pw_verification: Moet nie leeg wees nie en dieselde wees as die wagwoord bevestiging
     email_missing: EPos nie verskaf nie
     reservation_request_create_failed: Bespreking Aanvraag bevat foute
+    reservation_request_update_failed: Bespreking Aanvraag bevat foute
     some_facilities_fully_booked: Sommige fasiliteite is reeds vol bespreek gedurende die aangegewe periode.
   info:
     nothing_changed: Niks het verander nie  

@@ -14,4 +14,10 @@ module Admin::TariffsHelper
     price_classes    
   end
 
+  def facility_categories_for_select
+    facility_categories = {}
+    fcs = I18n.t(:facility_categories, scope: [:activerecord, :attributes, :tariff])
+    fcs.each { |k,v| facility_categories[v] = k.to_sym }
+    facility_categories    
+  end
 end
