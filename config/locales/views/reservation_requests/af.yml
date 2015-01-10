@@ -3,6 +3,8 @@ af:
     reservation_requests:
       show:
         reservation_request_details: Besprekings besonderhede
+        decline_request: Weier versoek
+        accept_request: Aanvaar versoek
   reservation_requests:
     applicant_details:
       applicant_details: Besonderhede van aansoeker
@@ -12,7 +14,7 @@ af:
       applicant_email: Epos
       applicant_town: Tuisdorp
     fields1:
-      facility_type_1: Tipe verblyf
+      facility_type_1: Verblyf
       start_date_1: Aankoms datum
       end_date_1: Vertrek datum
       adults_18_plus_count_1: Volwassenes (18 jaar en ouer)
@@ -23,7 +25,7 @@ af:
       reservation_for_facility_1: Eerste Bespreking
       fully_booked: Vol bespreek
     fields2:  
-      facility_type_2: Tipe verblyf
+      facility_type_2: Verblyf
       start_date_2: Aankoms datum
       end_date_2: Vertrek datum
       adults_18_plus_count_2: Volwassenes (18 jaar en ouer)
@@ -34,7 +36,7 @@ af:
       reservation_for_facility_2: Tweede Bespreking
       fully_booked: Vol bespreek
     fields3:  
-      facility_type_3: Tipe verblyf
+      facility_type_3: Verblyf
       start_date_3: Aankoms datum
       end_date_3: Vertrek datum
       adults_18_plus_count_3: Volwassenes (18 jaar en ouer)

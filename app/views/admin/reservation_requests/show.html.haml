@@ -32,18 +32,15 @@
           .form-group
             = f.label :facility_type_1, t(".facility_type_1"), readonly: "", class: "col-sm-4 control-label"
             .col-sm-3
-              = f.select :facility_type_1, options_for_select(@facility_types)
+              = f.text_field :facility_type_1, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_1)
           .form-group
             = f.label :start_date_1, t(".start_date_1"), class: "col-sm-4 control-label"
             .col-sm-3
-              = f.text_field :start_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, readonly: "", value: display_date(@reservation_request.start_date_1)
-            - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_1)
-              %span
-                = "* #{t('.fully_booked')}"
+              = f.text_field :start_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_1)
           .form-group
             = f.label :end_date_1, t(".end_date_1"), class: "col-sm-4 control-label"
             .col-sm-3
-              =f.text_field :end_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, readonly: "", value: display_date(@reservation_request.end_date_1) 
+              =f.text_field :end_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_1) 
           .form-group
             = f.label :adults_18_plus_count_1, t(".adults_18_plus_count_1"), class: "col-sm-4 control-label"
             .col-sm-2
@@ -68,19 +65,16 @@
             = t(".reservation_for_facility_2")
           .form-group
             = f.label :facility_type_2, t(".facility_type_2"), class: "col-sm-4 control-label"
-            .col-sm-6
-              = f.select :facility_type_2, options_for_select(@facility_types), readonly: ""
+            .col-sm-3
+              = f.text_field :facility_type_2, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_2)
           .form-group
             = f.label :start_date_2, t(".start_date_2"), class: "col-sm-4 control-label"
             .col-sm-3
-              =f.text_field :start_date_2, class: "form-control datepicker", readonly: "", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.start_date_2)
-          - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_2)
-            %span
-              = "* #{t('.fully_booked')}"
+              =f.text_field :start_date_2, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_2)
           .form-group
             = f.label :end_date_2, t(".end_date_2"), class: "col-sm-4 control-label"
             .col-sm-3
-              =f.text_field :end_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, readonly: "", value: display_date(@reservation_request.end_date_2)
+              =f.text_field :end_date_2, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_2)
           .form-group
             = f.label :adults_18_plus_count_2, t(".adults_18_plus_count_2"), class: "col-sm-4 control-label"
             .col-sm-2
@@ -106,19 +100,16 @@
             = t(".reservation_for_facility_3")
           .form-group
             = f.label :facility_type_3, t(".facility_type_3"), class: "col-sm-4 control-label"
-            .col-sm-6
-              = f.select :facility_type_3, options_for_select(@facility_types), readonly: ""
+            .col-sm-3
+              = f.text_field :facility_type_3, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_3)
           .form-group
             = f.label :start_date_3, t(".start_date_3"), class: "col-sm-4 control-label"
             .col-sm-3
-              =f.text_field :start_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, readonly: "", value: display_date(@reservation_request.start_date_3)
-          - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_3)
-            %span
-              = "* #{t('.fully_booked')}"
+              =f.text_field :start_date_3, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_3)
           .form-group
             = f.label :end_date_3, t(".end_date_3"), class: "col-sm-4 control-label"
             .col-sm-3
-              =f.text_field :end_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, readonly: "", value: display_date(@reservation_request.end_date_3)
+              =f.text_field :end_date_3, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_3)
           .form-group
             = f.label :adults_18_plus_count_3, t(".adults_18_plus_count_3"), class: "col-sm-4 control-label"
             .col-sm-2
@@ -139,4 +130,11 @@
             = f.label :power_point_required_3, t(".power_point_required_3"), class: "col-sm-4 control-label checkbox"
             .col-sm-2
               = f.check_box :power_point_required_3, {}, checked_value = "1", unchecked_value = "0"
-            
+
+    .row
+      .actions
+        .button.btn
+          = link_to t(".decline_request"), decline_admin_reservation_request_path(@reservation_request)
+        .button.btn
+          = link_to t(".accept_request"), accept_admin_reservation_request_path(@reservation_request)
+          

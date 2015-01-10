@@ -52,8 +52,8 @@ $("section.reservation-request").ready ->
 
   $('#Second_facility_required_').click(toggleFacility2)
   $('#Third_facility_required_').click(toggleFacility3)
-  displayFacility2()
-  displayFacility3()
+  # displayFacility2()
+  # displayFacility3()
 
 
 ###

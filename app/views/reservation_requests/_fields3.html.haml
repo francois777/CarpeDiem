@@ -9,7 +9,7 @@
       = show_field_error(@reservation_request, :applicant_town)
   .form-group
     = f.label :start_date_3, t(".start_date_3"), class: "col-sm-6 control-label"
-    .col-sm-3
+    .col-sm-4
       =f.text_field :start_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.start_date_3)
   - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_3)
     %span
@@ -18,7 +18,7 @@
       = show_field_error(@reservation_request, :start_date_3)
   .form-group
     = f.label :end_date_3, t(".end_date_3"), class: "col-sm-6 control-label"
-    .col-sm-3
+    .col-sm-4
       =f.text_field :end_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.end_date_3)
     .col-sm-3.col-sm-offset-6
       = show_field_error(@reservation_request, :end_date_3)
@@ -27,9 +27,9 @@
     .col-sm-6
       .col-sm-4
         = f.number_field :adults_18_plus_count_3, class: "form-control"
-      .col-sm-4.col-sm-offset-2
-        %span
-          = to_local_currency(@adults_18_plus_count_3)
+      .col-sm-5.col-sm-offset-2
+        %span.age-group-amount
+          = to_local_amount(@adults_18_plus_count_3)
     .col-sm-2.col-sm-offset-6
       = show_field_error(@reservation_request, :adults_18_plus_count_3)
   .form-group
@@ -37,9 +37,9 @@
     .col-sm-6
       .col-sm-4
         = f.number_field :teenagers_count_3, class: "form-control"
-      .col-sm-4.col-sm-offset-2
-        %span
-          = to_local_currency(@teenagers_count_3)
+      .col-sm-5.col-sm-offset-2
+        %span.age-group-amount
+          = to_local_amount(@teenagers_count_3)
     .col-sm-2.col-sm-offset-6
       = show_field_error(@reservation_request, :teenagers_count_3)
   .form-group
@@ -47,9 +47,9 @@
     .col-sm-6
       .col-sm-4
         = f.number_field :children_6_12_count_3, class: "form-control"
-      .col-sm-4.col-sm-offset-2
-        %span
-          = to_local_currency(@children_6_12_count_3)
+      .col-sm-5.col-sm-offset-2
+        %span.age-group-amount
+          = to_local_amount(@children_6_12_count_3)
     .col-sm-2.col-sm-offset-6
       = show_field_error(@reservation_request, :children_6_12_count_3)
   .form-group
@@ -57,11 +57,17 @@
     .col-sm-6
       .col-sm-4
         = f.number_field :infants_count_3, class: "form-control"
-      .col-sm-4.col-sm-offset-2  
-        %span
+      .col-sm-5.col-sm-offset-2  
+        %span.age-group-amount
           = to_local_currency(0)
     .col-sm-2.col-sm-offset-6
       = show_field_error(@reservation_request, :infants_count_3)
+  .form-group
+    = label :total_amount_3, "Total amount", class: "col-sm-6 control-label"
+    .col-sm-6
+      .col-sm-5.col-sm-offset-6
+        %span.total-amount
+          = to_local_currency(@total_amount_3)
   .form-group
     = f.label :power_point_required_3, t(".power_point_required_3"), class: "col-sm-6 control-label checkbox"
     .col-sm-2

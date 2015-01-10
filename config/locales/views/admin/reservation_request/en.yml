@@ -45,3 +45,7 @@ en:
         vehicle_registration_numbers: Vehicle registration numbers
         special_requests: Special requests
         reservation_for_facility_3: Third Reservation
+      decline:  
+        decline_request: Decline Request
+      accept:  
+        allocate_facilities: Allocate Facilities

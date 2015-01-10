@@ -45,7 +45,7 @@ feature "ReservationRequest pages" do
       expect(page).to have_text('Email')
       expect(page).to have_text('Home town')
       expect(page).to have_text('First Reservation')
-      expect(page).to have_text('Type of accommodation')
+      expect(page).to have_text('Facility')
       expect(page).to have_text('Arrival date')
       expect(page).to have_text('Adults (18 years and older)')
       expect(page).to have_text('Children (13 to 17 years)')
@@ -72,7 +72,7 @@ feature "ReservationRequest pages" do
 
       fill_in_applicant_details
       within(:css, "#first-facility") do
-        select  "Caravan", from: "Type of accommodation"
+        select  "Caravan", from: "Facility"
       end
       verify_applicant_details_are_correct
       fill_in_facility_1
@@ -92,14 +92,14 @@ feature "ReservationRequest pages" do
       visit new_reservation_request_path
       fill_in_applicant_details
       within(:css, "#first-facility") do
-        select  "Caravan", from: "Type of accommodation"
+        select  "Caravan", from: "Facility"
       end
       fill_in_facility_1
       verify_facility_1_details_are_correct
 
       find(:css, "#Second_facility_required_").set(true)
       within(:css, "#second-facility") do
-        select  "Tent", from: "Type of accommodation"
+        select  "Tent", from: "Facility"
       end
       fill_in_facility_2
       verify_facility_2_details_are_correct

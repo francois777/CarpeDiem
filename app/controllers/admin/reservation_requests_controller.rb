@@ -4,7 +4,7 @@ class Admin::ReservationRequestsController < ApplicationController
   include ReservationRequestsHelper
 
   before_action :redirect_unless_admin_user
-  before_action :set_reservation_request, only: [:show]
+  before_action :set_reservation_request, only: [:show, :accept, :decline, :accept]
   before_action :set_types, only: [:show]
 
   def index
@@ -13,6 +13,14 @@ class Admin::ReservationRequestsController < ApplicationController
 
   def show
     @unavailable_facilities = list_unavailable_facility_types
+  end
+
+  def decline
+    puts "Admin::ReservationRequestsController#decline"
+  end
+
+  def accept
+    puts "Admin::ReservationRequestsController#accept"
   end
 
   private

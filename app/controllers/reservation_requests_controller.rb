@@ -8,6 +8,7 @@ class ReservationRequestsController < ApplicationController
   def new
     @reservation_request = ReservationRequest.new
     @unavailable_facilities = []
+    initialise_counters
   end
 
   def create
@@ -20,8 +21,19 @@ class ReservationRequestsController < ApplicationController
       if @unavailable_facilities.empty?
         @reservation_request.status = 'Pending'
         if @reservation_request.save
+          initialise_counters
+          calculate_cost_for_facility_1
+          calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
+          calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
           flash[:success] = t(:reservation_request_created, scope: [:success])
-          redirect_to edit_reservation_request_path(@reservation_request)
+          redirect_to edit_reservation_request_path(@reservation_request, 
+            adult_amount_1: @adult_amount_1, teenagers_amount_1: @teenagers_amount_1,
+            children_amount_1: @children_amount_1, total1: @total_amount_1,
+            adult_amount_2: @adult_amount_2, teenagers_amount_2: @teenagers_amount_2,
+            children_amount_2: @children_amount_2, total2: @total_amount_2,
+            adult_amount_3: @adult_amount_3, teenagers_amount_3: @teenagers_amount_3,
+            children_amount_3: @children_amount_3, total3: @total_amount_3,
+            )
           return
         else
           flash[:alert] = t(:reservation_request_create_failed, scope: [:failure])
@@ -45,9 +57,21 @@ class ReservationRequestsController < ApplicationController
       @unavailable_facilities = list_unavailable_facility_types
       if @unavailable_facilities.empty?
         if @reservation_request.update_attributes(request_params)
+          initialise_counters
+          calculate_cost_for_facility_1
+          calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
+          calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
+          puts "Total amount calculated: #{@total_amount_1.to_s}"
           if params['update'] == 'Save and Review'
             flash[:success] = t(:reservation_request_updated, scope: [:success])
-            redirect_to edit_reservation_request_path(@reservation_request)
+            redirect_to edit_reservation_request_path(@reservation_request, 
+              adult_amount_1: @adult_amount_1, teenagers_amount_1: @teenagers_amount_1,
+              children_amount_1: @children_amount_1, total1: @total_amount_1,
+              adult_amount_2: @adult_amount_2, teenagers_amount_2: @teenagers_amount_2,
+              children_amount_2: @children_amount_2, total2: @total_amount_2,
+              adult_amount_3: @adult_amount_3, teenagers_amount_3: @teenagers_amount_3,
+              children_amount_3: @children_amount_3, total3: @total_amount_3,
+              )
             return
           else
             puts "\nReservation must now be created"
@@ -85,20 +109,21 @@ class ReservationRequestsController < ApplicationController
 
   def edit
     puts "ReservationRequestsController#edit"
-    fac_cat_inx = @reservation_request.facility_type_1
-    fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
-    dte_from = @reservation_request.start_date_1
-    dte_until = @reservation_request.end_date_1
-    powered = @reservation_request.power_point_required_1
-    adult_tariff = Tariff.adult_tariff(fac_cat_name, dte_from, dte_until, powered)
-    @adult_amount_1 = @reservation_request.adults_18_plus_count_1 * adult_tariff
-    @teenagers_amount_1 = @reservation_request.teenagers_count_1 * adult_tariff
-    @children_amount_1 = (@reservation_request.children_6_12_count_1 * adult_tariff * (1 - @settings.child_discount_percentage)).round
-    @total_amount_1 = @adult_amount_1 + @teenagers_amount_1 + @children_amount_1
+    puts "Params: #{params.inspect}"
+    @adult_amount_1 = params['adult_amount_1'].to_i
+    @teenagers_amount_1 = params['teenagers_amount_1'].to_i
+    @children_amount_1 = params['children_amount_1'].to_i
+    @total_amount_1 = params['total1'].to_i
+    @adult_amount_2 = params['adult_amount_2'].to_i
+    @teenagers_amount_2 = params['teenagers_amount_2'].to_i
+    @children_amount_2 = params['children_amount_2'].to_i
+    @total_amount_2 = params['total2'].to_i
+    @adult_amount_3 = params['adult_amount_3'].to_i
+    @teenagers_amount_3 = params['teenagers_amount_3'].to_i
+    @children_amount_3 = params['children_amount_3'].to_i
+    @total_amount_3 = params['total3'].to_i
     @unavailable_facilities = []
-    set_counters
-    calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
-    calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
+    # set_counters
   end
 
   private
@@ -124,6 +149,20 @@ class ReservationRequestsController < ApplicationController
 
     def set_types
       @facility_types = I18n.t(:facility_types).each_with_index.map { |fType, inx| [fType[1].to_s, inx] }
+    end
+
+    def calculate_cost_for_facility_1
+      puts "ReservationRequestsController#calculate_cost_for_facility_1"
+      fac_cat_inx = @reservation_request.facility_type_1
+      fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
+      dte_from = @reservation_request.start_date_1
+      dte_until = @reservation_request.end_date_1
+      powered = @reservation_request.power_point_required_1
+      adult_tariff = Tariff.adult_tariff(fac_cat_name, dte_from, dte_until, powered)
+      @adult_amount_1 = @reservation_request.adults_18_plus_count_1 * adult_tariff
+      @teenagers_amount_1 = @reservation_request.teenagers_count_1 * adult_tariff
+      @children_amount_1 = (@reservation_request.children_6_12_count_1 * adult_tariff * (1 - @settings.child_discount_percentage)).round
+      @total_amount_1 = @adult_amount_1 + @teenagers_amount_1 + @children_amount_1
     end
 
     def calculate_cost_for_facility_2
@@ -153,7 +192,11 @@ class ReservationRequestsController < ApplicationController
       @total_amount_3 = @adult_amount_3 + @teenagers_amount_3 + @children_amount_3
     end
 
-    def set_counters
+    def initialise_counters
+      @adult_amount_1 = 0
+      @teenagers_amount_1 = 0
+      @children_amount_1 = 0
+      @total_amount_1 = 0
       @adult_amount_2 = 0
       @teenagers_amount_2 = 0
       @children_amount_2 = 0

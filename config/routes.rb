@@ -21,7 +21,12 @@ Rails.application.routes.draw do
     resources :tents, controller: 'camping_sites', type: 'Tent'
     resources :caravans, controller: 'camping_sites', type: 'Caravan'
     resources :reservations, only: [:show]
-    resources :reservation_requests, only: [:index, :show]
+    resources :reservation_requests, only: [:index, :show] do
+      member do
+        get :decline
+        get :accept
+      end
+    end
   end
 
   root 'static_pages#home'

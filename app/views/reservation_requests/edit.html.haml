@@ -4,7 +4,7 @@
   %h1 
     = t(:reservation_request, scope: [:menu])
   .row
-    .col-xs-8.col-md-8
+    .col-md-7.col-sm-7
       = form_for([@reservation_request], html: {class: "form-horizontal", role: "form"}) do |f|
         = render 'applicant_details', f: f
         .form-group
@@ -22,6 +22,11 @@
           .button.btn
             = f.submit t(".update_and_review"), class: "btn btn-large btn-primary", id:"request-update", name: "update"
             = f.submit t(".submit"), class: "btn btn-large btn-success", id: "request-submit", name: "update"
-    .col-xs-4.col-md-4
+    .col-md-5.col-sm-5
       %p
         More details to come
+
+= debug "Adult amount: #{@adult_amount_1}"
+= debug "Teenager amount: #{@teenagers_amount_1}"
+= debug "Children amount: #{@children_amount_1}"
+= debug "Total amount: #{@total_amount_1}"

@@ -722,6 +722,7 @@ section.font-test {
     }
     form {
       .events { color: red }
+      font-size: 0.9em;
       h4 {
         text-align: left;
         margin-top: 0.8em;
@@ -739,6 +740,7 @@ section.font-test {
           padding-top: 2px;
           padding-bottom: 2px;
           height: 22px;
+          font-size: 0.9em;
         }
         span {
           color: red;
@@ -751,7 +753,7 @@ section.font-test {
         span.total-amount {
           color: #48F;
           font-weight: bold;
-          border-top: 1px solid #29F;
+          // border-top: 1px solid #29F;
           padding-top: 2px;
         }
       }

@@ -45,4 +45,8 @@ af:
         vehicle_registration_numbers: Voertuig registrasie nommers
         special_requests: Spesiale versoeke
         reservation_for_facility_3: Derde Bespreking
+      decline:  
+        decline_request: Weier versoek
+      accept:  
+        allocate_facilities: Allokeer Fasiliteit
         

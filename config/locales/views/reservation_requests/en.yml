@@ -3,6 +3,8 @@ en:
     reservation_requests:
       show:
         reservation_request_details: Reservation Request Details
+        decline_request: Decline request
+        accept_request: Accept request
   reservation_requests:
     applicant_details:
       applicant_details: Applicant details
@@ -12,7 +14,7 @@ en:
       applicant_email: Email
       applicant_town: Home town
     fields1:
-      facility_type_1: Type of accommodation
+      facility_type_1: Facility
       start_date_1: Arrival date
       end_date_1: Departure date
       adults_18_plus_count_1: Adults (18 years and older)
@@ -23,7 +25,7 @@ en:
       reservation_for_facility_1: First Reservation
       fully_booked: Fully booked
     fields2:  
-      facility_type_2: Type of accommodation
+      facility_type_2: Facility
       start_date_2: Arrival date
       end_date_2: Departure date
       adults_18_plus_count_2: Adults (18 years and older)
@@ -34,7 +36,7 @@ en:
       reservation_for_facility_2: Second Reservation
       fully_booked: Fully booked
     fields3:  
-      facility_type_3: Type of accommodation
+      facility_type_3: Facility
       start_date_3: Arrival date
       end_date_3: Departure date
       adults_18_plus_count_3: Adults (18 years and older)
