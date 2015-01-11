@@ -8,12 +8,15 @@ en:
         start_date: Start date
         status: Status
       show:
+        fully_booked: Fully booked
+      applicant_details:  
         applicant_details: Applicant details
         applicant_name: Name and Surname
         applicant_telephone: Telephone number
         applicant_mobile: Mobile number
         applicant_email: Email
         applicant_town: Home town
+      facility1:  
         facility_type_1: Type of accommodation
         start_date_1: Arrival date
         end_date_1: Departure date
@@ -23,7 +26,7 @@ en:
         infants_count_1: Todlers (0 to 5 years)
         power_point_required_1: Power point required?
         reservation_for_facility_1: First Reservation
-        fully_booked: Fully booked
+      facility2:  
         facility_type_2: Type of accommodation
         start_date_2: Arrival date
         end_date_2: Departure date
@@ -33,6 +36,7 @@ en:
         infants_count_2: Todlers (0 to 5 years)
         power_point_required_2: Power point required?
         reservation_for_facility_2: Second Reservation
+      facility3:  
         facility_type_3: Type of accommodation
         start_date_3: Arrival date
         end_date_3: Departure date

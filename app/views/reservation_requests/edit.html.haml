@@ -12,11 +12,11 @@
         = render 'fields1', f: f
         .form-group
           = label :facility_2, t(".second_facility_required"), class: "control-label heading"
-          = check_box_tag 'Second facility required?'
+          = check_box_tag t(".second_facility_required")
         = render 'fields2', f: f
         .form-group
           = label :facility_3, t(".third_facility_required"), class: "control-label heading"
-          = check_box_tag 'Third facility required?'
+          = check_box_tag t(".third_facility_required")
         = render 'fields3', f: f
         .centered
           .button.btn
@@ -26,7 +26,3 @@
       %p
         More details to come
 
-= debug "Adult amount: #{@adult_amount_1}"
-= debug "Teenager amount: #{@teenagers_amount_1}"
-= debug "Children amount: #{@children_amount_1}"
-= debug "Total amount: #{@total_amount_1}"

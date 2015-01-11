@@ -41,3 +41,7 @@ af:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry
               adult_required_for_infants: Volwassene is benodig om vir kleuter te sorg
               no_people_specified: Die aantal persone is nie verskaf nie
+        reservation:
+          attributes:
+            telephone: 
+              too_short: Telefoon nommer ongeldig - te kort        

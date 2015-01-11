@@ -8,12 +8,15 @@ af:
         start_date: Vanaf
         status: Status
       show:
+        fully_booked: Vol bespreek
+      applicant_details:
         applicant_details: Besonderhede van aansoeker
         applicant_name: Naam en Van
         applicant_telephone: Telefoon nommer
         applicant_mobile: Selfoon nommer
         applicant_email: Epos
         applicant_town: Tuisdorp
+      facility1:
         facility_type_1: Tipe verblyf
         start_date_1: Aankoms datum
         end_date_1: Vertrek datum
@@ -23,7 +26,7 @@ af:
         infants_count_1: Kleuters (0 tot 5 jaar)
         power_point_required_1: Kragpunt benodig?
         reservation_for_facility_1: Eerste Bespreking
-        fully_booked: Vol bespreek
+      facility2:
         facility_type_2: Tipe verblyf
         start_date_2: Aankoms datum
         end_date_2: Vertrek datum
@@ -33,6 +36,7 @@ af:
         infants_count_2: Kleuters (0 tot 5 jaar)
         power_point_required_2: Kragpunt benodig?
         reservation_for_facility_2: Tweede Bespreking
+      facility3:  
         facility_type_3: Tipe verblyf
         start_date_3: Aankoms datum
         end_date_3: Vertrek datum

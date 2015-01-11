@@ -10,12 +10,11 @@ class Reservation < ActiveRecord::Base
   validate :validate_end_date_before_start_date
   validates :reserved_for_name, presence: true, 
                     length: { minimum: 5, maximum: 40 }
-  validates :telephone, length: { minimum: 9, maximum: 20 }
-  validates :mobile, length: { minimum: 9, maximum: 20 }
+  validates :telephone, length: { minimum: 9, maximum: 20 }, unless: "telephone == ''"
+  validates :mobile, length: { minimum: 9, maximum: 20 }, unless: "mobile == ''"
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, 
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false },
                     length: { maximum: 50 }
   validates :town,  length: { minimum: 2, maximum: 40 }
   validate :one_contact_number_required

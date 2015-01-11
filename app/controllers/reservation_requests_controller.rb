@@ -13,7 +13,9 @@ class ReservationRequestsController < ApplicationController
 
   def create
     @reservation_request = ReservationRequest.new(request_params)
-
+    # @reservation_request.start_date_1 = @reservation_request.start_date_1.to_datetime
+    # @reservation_request.end_date_1 = @reservation_request.end_date_1.to_datetime
+    initialise_counters
     @unavailable_facilities = []
     if @reservation_request.valid?
       @unavailable_facilities = list_unavailable_facility_types
@@ -22,18 +24,9 @@ class ReservationRequestsController < ApplicationController
         @reservation_request.status = 'Pending'
         if @reservation_request.save
           initialise_counters
-          calculate_cost_for_facility_1
-          calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
-          calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
+          calculate_facility_costs
           flash[:success] = t(:reservation_request_created, scope: [:success])
-          redirect_to edit_reservation_request_path(@reservation_request, 
-            adult_amount_1: @adult_amount_1, teenagers_amount_1: @teenagers_amount_1,
-            children_amount_1: @children_amount_1, total1: @total_amount_1,
-            adult_amount_2: @adult_amount_2, teenagers_amount_2: @teenagers_amount_2,
-            children_amount_2: @children_amount_2, total2: @total_amount_2,
-            adult_amount_3: @adult_amount_3, teenagers_amount_3: @teenagers_amount_3,
-            children_amount_3: @children_amount_3, total3: @total_amount_3,
-            )
+          redirect_to edit_reservation_request_path(@reservation_request, amount_params)
           return
         else
           flash[:alert] = t(:reservation_request_create_failed, scope: [:failure])
@@ -58,26 +51,27 @@ class ReservationRequestsController < ApplicationController
       if @unavailable_facilities.empty?
         if @reservation_request.update_attributes(request_params)
           initialise_counters
-          calculate_cost_for_facility_1
-          calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
-          calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
-          puts "Total amount calculated: #{@total_amount_1.to_s}"
+          calculate_facility_costs
           if params['update'] == 'Save and Review'
             flash[:success] = t(:reservation_request_updated, scope: [:success])
-            redirect_to edit_reservation_request_path(@reservation_request, 
-              adult_amount_1: @adult_amount_1, teenagers_amount_1: @teenagers_amount_1,
-              children_amount_1: @children_amount_1, total1: @total_amount_1,
-              adult_amount_2: @adult_amount_2, teenagers_amount_2: @teenagers_amount_2,
-              children_amount_2: @children_amount_2, total2: @total_amount_2,
-              adult_amount_3: @adult_amount_3, teenagers_amount_3: @teenagers_amount_3,
-              children_amount_3: @children_amount_3, total3: @total_amount_3,
-              )
+            redirect_to edit_reservation_request_path(@reservation_request, amount_params)
             return
-          else
-            puts "\nReservation must now be created"
-            puts "create_request_notification"
-            render :show
-            return
+          end
+          if params['update'] == 'Submit Request'  
+            if @reservation_request.reservation_reference_id.nil? 
+              reservation = Reservation.new( new_reservation_params )
+              unless reservation.valid?
+                flash[:alert] = t(:reservation_request_update_failed, scope: [:failure])
+                redirect_to edit_reservation_request_path(@reservation_request, amount_params)
+                return
+              end
+              reservation.save
+              @reservation_request.reservation_reference_id = reservation.reload.reservation_reference.refid
+              @reservation_request.save
+              redirect_to admin_reservation_request_path(@reservation_request, amount_params,
+                request_number: reservation.reservation_reference.refid )
+              return
+            end
           end
         else
           flash[:alert] = t(:reservation_request_update_failed, scope: [:failure])
@@ -109,7 +103,7 @@ class ReservationRequestsController < ApplicationController
 
   def edit
     puts "ReservationRequestsController#edit"
-    puts "Params: #{params.inspect}"
+    # puts "Params: #{params.inspect}"
     @adult_amount_1 = params['adult_amount_1'].to_i
     @teenagers_amount_1 = params['teenagers_amount_1'].to_i
     @children_amount_1 = params['children_amount_1'].to_i
@@ -127,6 +121,32 @@ class ReservationRequestsController < ApplicationController
   end
 
   private
+
+    def amount_params
+      { adult_amount_1: @adult_amount_1, teenagers_amount_1: @teenagers_amount_1,
+        children_amount_1: @children_amount_1, total1: @total_amount_1,
+        adult_amount_2: @adult_amount_2, teenagers_amount_2: @teenagers_amount_2,
+        children_amount_2: @children_amount_2, total2: @total_amount_2,
+        adult_amount_3: @adult_amount_3, teenagers_amount_3: @teenagers_amount_3,
+        children_amount_3: @children_amount_3, total3: @total_amount_3 }
+    end
+
+    def new_reservation_params
+      { start_date: @reservation_request.start_date_1,
+        end_date: @reservation_request.end_date_1,
+        reserved_for_name: @reservation_request.applicant_name,
+        reserved_datetime: Time.now,
+        telephone: @reservation_request.applicant_telephone,
+        mobile: @reservation_request.applicant_mobile,
+        email: @reservation_request.applicant_email,
+        town: @reservation_request.applicant_town,
+        meals_required: false,
+        invoiced_amount: @total_amount_1 + @total_amount_2 + @total_amount_3,
+        key_deposit_received: 0,
+        vehicle_registration_numbers: @reservation_request.vehicle_registration_numbers,
+        comments: @reservation_request.special_requests,
+        status: 'Pending' }
+    end
 
     def request_params
       params.require(:reservation_request).permit(:applicant_name, :applicant_telephone,
@@ -151,8 +171,14 @@ class ReservationRequestsController < ApplicationController
       @facility_types = I18n.t(:facility_types).each_with_index.map { |fType, inx| [fType[1].to_s, inx] }
     end
 
+    def calculate_facility_costs
+      calculate_cost_for_facility_1
+      calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
+      calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
+    end
+
     def calculate_cost_for_facility_1
-      puts "ReservationRequestsController#calculate_cost_for_facility_1"
+      # puts "ReservationRequestsController#calculate_cost_for_facility_1"
       fac_cat_inx = @reservation_request.facility_type_1
       fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
       dte_from = @reservation_request.start_date_1

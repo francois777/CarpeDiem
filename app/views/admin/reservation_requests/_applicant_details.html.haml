@@ -1,0 +1,20 @@
+.form-group
+  = f.label :applicant_name, t(".applicant_name"), class: "col-sm-4 control-label"
+  .col-sm-4
+    = f.text_field :applicant_name, readonly: "", class: 'form-control'
+.form-group
+  = f.label :applicant_telephone, t(".applicant_telephone"), class: "col-sm-4 control-label"
+  .col-sm-4
+    = f.text_field :applicant_telephone, readonly: "", class: "form-control"
+.form-group
+  = f.label :applicant_mobile, t(".applicant_mobile"), class: "col-sm-4 control-label"
+  .col-sm-4
+    = f.text_field :applicant_mobile, readonly: "", class: "form-control"
+.form-group
+  = f.label :applicant_email, t(".applicant_email"), class: "col-sm-4 control-label"
+  .col-sm-6
+    = f.text_field :applicant_email, readonly: "", class: "form-control"
+.form-group
+  = f.label :applicant_town, t(".applicant_town"), class: "col-sm-4 control-label"
+  .col-sm-6
+    = f.text_field :applicant_town, readonly: "", class: "form-control"

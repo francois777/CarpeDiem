@@ -81,7 +81,7 @@ describe Reservation do
   end
 
   it "must ensure the telephone has a valid format" do
-    tels = ["", "8 lettrs", "T" * 21]
+    tels = ["8 lettrs", "T" * 21]
     tels.each do |tel|
       @reservation.telephone = tel
       expect(@reservation).not_to be_valid
@@ -89,7 +89,7 @@ describe Reservation do
   end
 
   it "must ensure the mobile has a valid format" do
-    tels = ["", "8 lettrs", "T" * 21]
+    tels = ["8 lettrs", "T" * 21]
     tels.each do |tel|
       @reservation.mobile = tel
       expect(@reservation).not_to be_valid
@@ -103,10 +103,6 @@ describe Reservation do
     expect(@reservation).not_to be_valid
     @reservation.email = 'jacktheripperswife@thebigbrownfox.thefoxcompany.com'
     expect(@reservation).not_to be_valid
-    @reservation.email = 'sue.scott@abc.com.za'
-    @reservation.save!
-    reservation2 = @reservation.dup
-    expect(reservation2).not_to be_valid
   end
 
   it "must ensure the town has a valid format" do

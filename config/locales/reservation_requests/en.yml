@@ -41,4 +41,7 @@ en:
               exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
               adult_required_for_infants: An adult is required to care for infants
               no_people_specified: Number of people is not provided
-                
+        reservation:
+          attributes:
+            telephone: 
+              too_short: Telephone number invalid - too short        

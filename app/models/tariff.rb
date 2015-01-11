@@ -26,7 +26,7 @@ class Tariff < ActiveRecord::Base
   enum facility_category: [:tent, :caravan, :chalet_small, :chalet_medium, :chalet_large, :ox_wagon, :day_visitor, :warrior_camp, :large_group]
 
   def self.adult_tariff(facility_cat, requested_from, requested_until, power_point_included = false)
-    puts "Tariff#adult_tariff"
+    # puts "Tariff#adult_tariff"
     # puts "facility_cat: #{facility_cat}"
     cat = facility_cat.downcase.to_sym
     cat_inx = Tariff.facility_categories[cat]

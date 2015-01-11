@@ -34,7 +34,7 @@ feature "ReservationRequest pages" do
       @reservation_request = create(:reservation_request, start_date_1: Date.new(2015, 8, 2), end_date_1: Date.new(2015, 8, 5))
     end
 
-    scenario "Visit new reservation request page" do
+    scenario "New Accommodation Enquiry must display all necessary fields" do
       visit new_reservation_request_path
       expect(page).to have_title('Accommodation Enquiry')
       expect(page).to have_selector('h1', text: "Accommodation Enquiry")
@@ -62,35 +62,38 @@ feature "ReservationRequest pages" do
       # Show the third facility
       find(:css, "#Third_facility_required_").set(true)
       expect(page).to have_text('Third Reservation')
-    end
-
-    scenario "Book one facility" do
-
-      # puts "Number of tents: #{Tent.all.count}"
-      # puts "Number of caravans: #{Caravan.all.count}"
-      visit new_reservation_request_path
-
-      fill_in_applicant_details
-      within(:css, "#first-facility") do
-        select  "Caravan", from: "Facility"
-      end
-      verify_applicant_details_are_correct
-      fill_in_facility_1
-      verify_facility_1_details_are_correct
-      click_button "Save and Review"
-
-      expect(page).to have_text("Reservation Request Saved. Review and Submit.")
       expect(page).to have_button('Save and Review')
-      expect(page).to have_button('Submit Request')
-
-      click_button "Save and Review"
     end
+
+    # scenario "After saving an accommodation enquiry, review the saved fields" do
+    #   visit new_reservation_request_path
+
+    #   fill_in_applicant_details
+    #   verify_applicant_details_are_correct
+    #   within(:css, "#first-facility") do
+    #     select  "Caravan", from: "Facility"
+    #   end
+    #   fill_in_facility_1
+    #   verify_facility_1_details_are_correct
+
+    #   click_button "Save and Review"
+    #   expect(page).to have_title('Update Reservation')
+    #   verify_applicant_details_are_correct
+    #   verify_facility_1_details_are_correct
+
+    #   expect(page).to have_text("Reservation Request Saved. Review and Submit.")
+    #   expect(page).to have_button('Save and Review')
+    #   expect(page).to have_button('Submit Request')
+
+    #   click_button "Save and Review"
+    # end
 
     scenario "Book two facilities" do
       create(:tent, location_code: 'B1')
       create(:caravan, location_code: 'C2')
       visit new_reservation_request_path
       fill_in_applicant_details
+      verify_applicant_details_are_correct
       within(:css, "#first-facility") do
         select  "Caravan", from: "Facility"
       end
@@ -103,13 +106,16 @@ feature "ReservationRequest pages" do
       end
       fill_in_facility_2
       verify_facility_2_details_are_correct
+      expect(page).to have_button('Save and Review')
+
+      click_button 'Save and Review'
+      expect(page).to have_title('Update Reservation')
+      verify_applicant_details_are_correct
+      verify_facility_1_details_are_correct
+      verify_facility_2_details_are_correct
 
       expect(page).to have_button('Save and Review')
-      click_button 'Save and Review'
-      # expect(page).to have_title('Reservation Enquiry')
-
       expect(page).to have_button('Submit Request')
-      # click_button 'Submit Request'
     end
 
   end
@@ -152,8 +158,8 @@ feature "ReservationRequest pages" do
 
   def verify_facility_1_details_are_correct
     # puts "Verifying facility 1 is correct"
-    expect( find(:css, "input#reservation_request_start_date_1").value).to eq('31 Mar 2015')
-    expect( find(:css, "input#reservation_request_end_date_1").value).to eq('10 Apr 2015')
+    expect( ['31 Mar 2015', '31 March 2015']).to include(find(:css, "input#reservation_request_start_date_1").value)
+    expect( ['10 Apr 2015', '10 April 2015']).to include(find(:css, "input#reservation_request_end_date_1").value)
     expect( find(:css, "input#reservation_request_adults_18_plus_count_1").value).to eq('2')
     expect( find(:css, "input#reservation_request_teenagers_count_1").value).to eq('2')
     expect( find(:css, "input#reservation_request_children_6_12_count_1").value).to eq('1')
@@ -165,8 +171,8 @@ feature "ReservationRequest pages" do
   def verify_facility_2_details_are_correct
     # puts "Verifying facility 2 is correct"
     expect( find(:css, "input#Second_facility_required_").value).to eq('1')
-    expect( find(:css, "input#reservation_request_start_date_2").value).to eq('10 Apr 2015')
-    expect( find(:css, "input#reservation_request_end_date_2").value).to eq('12 Apr 2015')
+    expect( ['10 Apr 2015', '10 April 2015']).to include(find(:css, "input#reservation_request_start_date_2").value)
+    expect( ['12 Apr 2015', '12 April 2015']).to include(find(:css, "input#reservation_request_end_date_2").value)
     expect( find(:css, "input#reservation_request_adults_18_plus_count_2").value).to eq('2')
     expect( find(:css, "input#reservation_request_teenagers_count_2").value).to eq('3')
     expect( find(:css, "input#reservation_request_children_6_12_count_2").value).to eq('1')

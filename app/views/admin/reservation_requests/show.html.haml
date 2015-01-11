@@ -7,129 +7,12 @@
     .row
       .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
         = form_for([:admin, @reservation_request], html: {class: "form-horizontal", role: "form"}) do |f|
-          .form-group
-            = f.label :applicant_name, t(".applicant_name"), class: "col-sm-4 control-label"
-            .col-sm-4
-              = f.text_field :applicant_name, readonly: "", class: 'form-control'
-          .form-group
-            = f.label :applicant_telephone, t(".applicant_telephone"), class: "col-sm-4 control-label"
-            .col-sm-4
-              = f.text_field :applicant_telephone, readonly: "", class: "form-control"
-          .form-group
-            = f.label :applicant_mobile, t(".applicant_mobile"), class: "col-sm-4 control-label"
-            .col-sm-4
-              = f.text_field :applicant_mobile, readonly: "", class: "form-control"
-          .form-group
-            = f.label :applicant_email, t(".applicant_email"), class: "col-sm-4 control-label"
-            .col-sm-6
-              = f.text_field :applicant_email, readonly: "", class: "form-control"
-          .form-group
-            = f.label :applicant_town, t(".applicant_town"), class: "col-sm-4 control-label"
-            .col-sm-6
-              = f.text_field :applicant_town, readonly: "", class: "form-control"
-          %h4 
-            = t(".reservation_for_facility_1")
-          .form-group
-            = f.label :facility_type_1, t(".facility_type_1"), readonly: "", class: "col-sm-4 control-label"
-            .col-sm-3
-              = f.text_field :facility_type_1, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_1)
-          .form-group
-            = f.label :start_date_1, t(".start_date_1"), class: "col-sm-4 control-label"
-            .col-sm-3
-              = f.text_field :start_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_1)
-          .form-group
-            = f.label :end_date_1, t(".end_date_1"), class: "col-sm-4 control-label"
-            .col-sm-3
-              =f.text_field :end_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_1) 
-          .form-group
-            = f.label :adults_18_plus_count_1, t(".adults_18_plus_count_1"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :adults_18_plus_count_1, readonly: "", class: "form-control"
-          .form-group
-            = f.label :teenagers_count_1, t(".teenagers_count_1"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :teenagers_count_1, readonly: "", class: "form-control"
-          .form-group
-            = f.label :children_6_12_count_1, t(".children_6_12_count_1"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :children_6_12_count_1, readonly: "", class: "form-control"
-          .form-group
-            = f.label :infants_count_1, t(".infants_count_1"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :infants_count_1, readonly: "", class: "form-control"
-          .form-group
-            = f.label :power_point_required_1, t(".power_point_required_1"), class: "col-sm-4 control-label checkbox"
-            .col-sm-2
-              = f.check_box :power_point_required_1, {}, checked_value = "1", unchecked_value = "0"
-          %h4
-            = t(".reservation_for_facility_2")
-          .form-group
-            = f.label :facility_type_2, t(".facility_type_2"), class: "col-sm-4 control-label"
-            .col-sm-3
-              = f.text_field :facility_type_2, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_2)
-          .form-group
-            = f.label :start_date_2, t(".start_date_2"), class: "col-sm-4 control-label"
-            .col-sm-3
-              =f.text_field :start_date_2, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_2)
-          .form-group
-            = f.label :end_date_2, t(".end_date_2"), class: "col-sm-4 control-label"
-            .col-sm-3
-              =f.text_field :end_date_2, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_2)
-          .form-group
-            = f.label :adults_18_plus_count_2, t(".adults_18_plus_count_2"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :adults_18_plus_count_2, readonly: "", class: "form-control"
-          .form-group
-            = f.label :teenagers_count_2, t(".teenagers_count_2"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :teenagers_count_2, readonly: "", class: "form-control"
-          .form-group
-            = f.label :children_6_12_count_2, t(".children_6_12_count_2"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :children_6_12_count_2, readonly: "", class: "form-control"
-          .form-group
-            = f.label :infants_count_2, t(".infants_count_2"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :infants_count_2, readonly: "", class: "form-control"
-          .form-group
-            = f.label :power_point_required_2, t(".power_point_required_2"), class: "col-sm-4 control-label checkbox"
-            .col-sm-2
-              = f.check_box :power_point_required_2, {}, checked_value = "1", unchecked_value = "0"
-
-          %h4
-            = t(".reservation_for_facility_3")
-          .form-group
-            = f.label :facility_type_3, t(".facility_type_3"), class: "col-sm-4 control-label"
-            .col-sm-3
-              = f.text_field :facility_type_3, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_3)
-          .form-group
-            = f.label :start_date_3, t(".start_date_3"), class: "col-sm-4 control-label"
-            .col-sm-3
-              =f.text_field :start_date_3, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_3)
-          .form-group
-            = f.label :end_date_3, t(".end_date_3"), class: "col-sm-4 control-label"
-            .col-sm-3
-              =f.text_field :end_date_3, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_3)
-          .form-group
-            = f.label :adults_18_plus_count_3, t(".adults_18_plus_count_3"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :adults_18_plus_count_3, readonly: "", class: "form-control"
-          .form-group
-            = f.label :teenagers_count_3, t(".teenagers_count_3"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :teenagers_count_3, readonly: "", class: "form-control"
-          .form-group
-            = f.label :children_6_12_count_3, t(".children_6_12_count_3"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :children_6_12_count_3, readonly: "", class: "form-control"
-          .form-group
-            = f.label :infants_count_3, t(".infants_count_3"), class: "col-sm-4 control-label"
-            .col-sm-2
-              = f.number_field :infants_count_3, readonly: "", class: "form-control"
-          .form-group
-            = f.label :power_point_required_3, t(".power_point_required_3"), class: "col-sm-4 control-label checkbox"
-            .col-sm-2
-              = f.check_box :power_point_required_3, {}, checked_value = "1", unchecked_value = "0"
+          = render 'applicant_details', f: f
+          = render 'facility1', f: f
+          - if @reservation_request.start_date_2.is_a? Time
+            = render 'facility2', f: f              
+          - if @reservation_request.start_date_3.is_a? Time
+            = render 'facility3', f: f              
 
     .row
       .actions
@@ -137,4 +20,11 @@
           = link_to t(".decline_request"), decline_admin_reservation_request_path(@reservation_request)
         .button.btn
           = link_to t(".accept_request"), accept_admin_reservation_request_path(@reservation_request)
-          
+
+- if defined? request_number
+  = debug request_number
+
+- if defined? @request_number
+  = debug @request_number
+
+= debug @reservation_request  

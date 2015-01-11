@@ -1,0 +1,34 @@
+%h4 
+  = t(".reservation_for_facility_1")
+.form-group
+  = f.label :facility_type_1, t(".facility_type_1"), readonly: "", class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.text_field :facility_type_1, readonly: "", class: "form-control", value: ReservationRequest.index_to_name(@reservation_request.facility_type_1)
+.form-group
+  = f.label :start_date_1, t(".start_date_1"), class: "col-sm-4 control-label"
+  .col-sm-3
+    = f.text_field :start_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.start_date_1)
+.form-group
+  = f.label :end_date_1, t(".end_date_1"), class: "col-sm-4 control-label"
+  .col-sm-3
+    =f.text_field :end_date_1, class: "form-control", readonly: "", value: display_date(@reservation_request.end_date_1) 
+.form-group
+  = f.label :adults_18_plus_count_1, t(".adults_18_plus_count_1"), class: "col-sm-4 control-label"
+  .col-sm-2
+    = f.number_field :adults_18_plus_count_1, readonly: "", class: "form-control"
+.form-group
+  = f.label :teenagers_count_1, t(".teenagers_count_1"), class: "col-sm-4 control-label"
+  .col-sm-2
+    = f.number_field :teenagers_count_1, readonly: "", class: "form-control"
+.form-group
+  = f.label :children_6_12_count_1, t(".children_6_12_count_1"), class: "col-sm-4 control-label"
+  .col-sm-2
+    = f.number_field :children_6_12_count_1, readonly: "", class: "form-control"
+.form-group
+  = f.label :infants_count_1, t(".infants_count_1"), class: "col-sm-4 control-label"
+  .col-sm-2
+    = f.number_field :infants_count_1, readonly: "", class: "form-control"
+.form-group
+  = f.label :power_point_required_1, t(".power_point_required_1"), class: "col-sm-4 control-label checkbox"
+  .col-sm-2
+    = f.check_box :power_point_required_1, {}, checked_value = "1", unchecked_value = "0"
