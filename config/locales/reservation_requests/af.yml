@@ -4,16 +4,20 @@ af:
       models:
         reservation_request:
           attributes:
+            applicant_name:
+              too_short: Verskaf asseblief u naam en van
             applicant_email:
               taken: EPos is reeds geneem
             applicant_telephone:
               no_contact_numbers: Minstens een kontak nommer word benodig
+            applicant_town:
+              too_short: Verskaf asseblief die naam van jou dorp of stad.
             facility_type_1:
               invalid_facility_type: Ongeldige fasiliteit tipe
             start_date_1:
-              invalid_start_date: Begindatum ongeldig
+              invalid_start_date: Aankomsdatum is ongeldig
             end_date_1:
-              invalid_end_date: Einddatum ongeldig
+              invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
               no_people_specified: Die aantal persone is nie verskaf nie
             adults_18_plus_count_1:
@@ -22,9 +26,9 @@ af:
             facility_type_2:
               invalid_facility_type: Ongeldige fasiliteit tipe
             start_date_2:
-              invalid_start_date: Begindatum ongeldig
+              invalid_start_date: Aankomsdatum is ongeldig
             end_date_2:
-              invalid_end_date: Einddatum ongeldig
+              invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
             adults_18_plus_count_2:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry
@@ -33,9 +37,9 @@ af:
             facility_type_3:
               invalid_facility_type: Ongeldige fasiliteit tipe
             start_date_3:
-              invalid_start_date: Begindatum ongeldig
+              invalid_start_date: Aankomsdatum is ongeldig
             end_date_3:
-              invalid_end_date: Einddatum ongeldig
+              invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
             adults_18_plus_count_3:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry

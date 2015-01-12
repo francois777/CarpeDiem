@@ -62,6 +62,15 @@ FactoryGirl.define do
     name_definition 1
   end
 
+  factory :small_chalet, class: Chalet do
+    name 'Benjamin'
+    location_code 'C05'
+    style_class 0
+    reservable true
+    inauguration_date (Date.today + 45)
+    name_definition 0
+  end
+
   factory :caravan do
     location_code 'B15'
     powered true

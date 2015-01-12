@@ -42,7 +42,7 @@ class ReservationRequestsController < ApplicationController
   end
 
   def update
-    puts "ReservationRequestsController#update"
+    #puts "ReservationRequestsController#update"
     #puts params['update']
 
     @unavailable_facilities = []
@@ -102,7 +102,7 @@ class ReservationRequestsController < ApplicationController
   end
 
   def edit
-    puts "ReservationRequestsController#edit"
+    #puts "ReservationRequestsController#edit"
     # puts "Params: #{params.inspect}"
     @adult_amount_1 = params['adult_amount_1'].to_i
     @teenagers_amount_1 = params['teenagers_amount_1'].to_i
@@ -192,7 +192,7 @@ class ReservationRequestsController < ApplicationController
     end
 
     def calculate_cost_for_facility_2
-      puts "ReservationRequestsController#calculate_cost_for_facility_2"
+      # puts "ReservationRequestsController#calculate_cost_for_facility_2"
       fac_cat_inx = @reservation_request.facility_type_2
       fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
       dte_from = @reservation_request.start_date_2

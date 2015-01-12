@@ -198,8 +198,8 @@ en:
     you_have_not_requested_pw_reset: You have not requested a password reset
     not_blank_and_match_pw_verification: Cannot be blank and must match the password verification
     email_missing: Email not provided
-    reservation_request_create_failed: Reservation request contains errors
-    reservation_request_update_failed: Reservation request contains errors
+    reservation_request_create_failed: Reservation Enquiry contains errors
+    reservation_request_update_failed: Reservation Enquiry contains errors
     some_facilities_fully_booked: Some facilities are already fully booked during the period you specified.
   info:
     nothing_changed: Nothing has changed  

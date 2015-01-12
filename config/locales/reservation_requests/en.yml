@@ -4,16 +4,20 @@ en:
       models:
         reservation_request:
           attributes:
+            applicant_name:
+              too_short: Please enter your name and surname
             applicant_email:
               taken: Email has already been taken
             applicant_telephone:
               no_contact_numbers: At least one contact number is required
+            applicant_town:
+              too_short: Please enter the name of your town or city.
             facility_type_1:
               invalid_facility_type: Invalid facility type
             start_date_1:
-              invalid_start_date: Invalid start date
+              invalid_start_date: Invalid arrival date
             end_date_1:
-              invalid_end_date: Invalid end date
+              invalid_end_date: Invalid departure date
               end_date_missing: End date is required
             adults_18_plus_count_1:
               exceeded_facility_max_capacity: Exceeded maximum number of persons for facility

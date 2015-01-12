@@ -198,8 +198,8 @@ af:
     you_have_not_requested_pw_reset: "Jy het nie 'n nuwe wagwoord versoek nie"
     not_blank_and_match_pw_verification: Moet nie leeg wees nie en dieselde wees as die wagwoord bevestiging
     email_missing: EPos nie verskaf nie
-    reservation_request_create_failed: Bespreking Aanvraag bevat foute
-    reservation_request_update_failed: Bespreking Aanvraag bevat foute
+    reservation_request_create_failed: Bespreking Navraag bevat foute
+    reservation_request_update_failed: Bespreking Navraag bevat foute
     some_facilities_fully_booked: Sommige fasiliteite is reeds vol bespreek gedurende die aangegewe periode.
   info:
     nothing_changed: Niks het verander nie  
