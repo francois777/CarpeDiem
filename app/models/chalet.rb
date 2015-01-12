@@ -12,14 +12,32 @@ class Chalet < ActiveRecord::Base
                     length: { minimum: 2, maximum: 5 }
   validates_uniqueness_of :location_code
 
-  enum style_class: STYLE_CLASSES
+  scope :small, -> { where('style_class = 0')}
+  scope :medium, -> { where('style_class = 1')}
+  scope :large, -> { where('style_class = 2')}
+
+  enum style_class: [:small, :medium, :large]
 
   def camping_type
     'L'
   end
 
+  def self.available_count_between(chalet_type, start_date, end_date)
+    # puts "Chalet#available_count_between"
+    site_count = 0 
+    chalet_type = chalet_type.downcase.to_sym
+
+    Chalet.all.each do |site|
+      if site.style_class.to_i == Chalet.style_classes[chalet_type]
+        next unless site.reservable?
+        site_count += 1 if site.available_between?(start_date, end_date)
+      end
+    end
+    site_count
+  end
+
   def available_between?(start_date, end_date)
-    return true if start_date > end_date
+    return false if start_date > end_date
     day_first = start_date.to_datetime
     day_last = end_date.to_datetime
     reserved = false

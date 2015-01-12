@@ -45,12 +45,8 @@ module ReservationRequestsHelper
       Tent.available_count_between(start_date, end_date)
     when 'Caravan'
       Caravan.available_count_between(start_date, end_date)
-    when 'Chalet_Small'
-      0
-    when 'Chalet_Medium'
-      0
-    when 'Chalet_Large'
-      0
+    when 'Chalet_Small', 'Chalet_Medium', 'Chalet_Large'
+      Chalet.available_count_between(facility_type, start_date, end_date)
     else
       0
     end
