@@ -6,18 +6,18 @@
   .row
     .col-xs-8.col-md-8
       = form_for([@reservation_request], html: {class: "form-horizontal", role: "form"}) do |f|
-        = render 'applicant_details', f: f
+        = render 'applicant_details', f: f, readonly: false
         .form-group
           = label :facility_1, t(".provide_details_for_each_facility"), class: "control-label heading"
-        = render 'fields1', f: f
+        = render 'fields1', f: f, readonly: false
         .form-group
           = label :facility_2, t(".second_facility_required"), class: "control-label heading"
           = check_box_tag t(".second_facility_required")
-        = render 'fields2', f: f
+        = render 'fields2', f: f, readonly: false
         .form-group
           = label :facility_3, t(".third_facility_required"), class: "control-label heading"
           = check_box_tag t(".third_facility_required")
-        = render 'fields3', f: f
+        = render 'fields3', f: f, readonly: false
         .rules
           %p 
             = t(".agree_to_abide_by_rules")

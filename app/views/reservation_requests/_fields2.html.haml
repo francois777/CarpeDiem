@@ -1,16 +1,22 @@
 %div#second-facility
   %h4
     = t(".reservation_for_facility_2")
-  .form-group
-    = f.label :facility_type_2, t(".facility_type_2"), class: "col-sm-6 control-label"
-    .col-sm-6
-      = f.select :facility_type_2, options_for_select(@facility_types, selected: @reservation_request.facility_type_2)
-    .col-sm-10.col-sm-offset-1
-      = show_field_error(@reservation_request, :applicant_town)
+  - if readonly
+    .form-group
+      = f.label :facility_type_2, t(".facility_type_2"), readonly: "", class: "col-md-4 col-sm-5 col-xs-5 control-label"
+      .col-md-4.col-sm-5.col-xs-6
+        = f.text_field :facility_type_1, readonly: "", class: "form-control", value: ReservationRequest::FACILITY_TYPES[@reservation_request.facility_type_2]
+  - else  
+    .form-group
+      = f.label :facility_type_2, t(".facility_type_2"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+      .col-md-3.col-sm-6.col-xs-6
+        = f.select :facility_type_2, options_for_select(@facility_types, selected: @reservation_request.facility_type_2), readonly: readonly
+      .col-sm-10.col-sm-offset-1
+        = show_field_error(@reservation_request, :facility_type_2)
   .form-group
     = f.label :start_date_2, t(".start_date_2"), class: "col-sm-6 control-label"
     .col-sm-4
-      = f.text_field :start_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, value: display_date(@reservation_request.start_date_2)
+      = f.text_field :start_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, value: display_date(@reservation_request.start_date_2), readonly: readonly
   - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_2)
     %span
       = "* #{t('.fully_booked')}"
@@ -19,14 +25,14 @@
   .form-group
     = f.label :end_date_2, t(".end_date_2"), class: "col-sm-6 control-label"
     .col-sm-4
-      = f.text_field :end_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, value: display_date(@reservation_request.end_date_2)
+      = f.text_field :end_date_2, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, value: display_date(@reservation_request.end_date_2), readonly: readonly
     .col-sm-10.col-sm-offset-1
       = show_field_error(@reservation_request, :end_date_2)
   .form-group
     = f.label :adults_18_plus_count_2, t(".adults_18_plus_count_2"), class: "col-sm-6 control-label"
     .col-sm-6
       .col-sm-4
-        = f.number_field :adults_18_plus_count_2, class: "form-control"
+        = f.number_field :adults_18_plus_count_2, class: "form-control", readonly: readonly
       .col-sm-5.col-sm-offset-2
         %span.age-group-amount
           = to_local_amount(@adult_amount_2)
@@ -36,7 +42,7 @@
     = f.label :teenagers_count_2, t(".teenagers_count_2"), class: "col-sm-6 control-label"
     .col-sm-6
       .col-sm-4
-        = f.number_field :teenagers_count_2, class: "form-control"
+        = f.number_field :teenagers_count_2, class: "form-control", readonly: readonly
       .col-sm-5.col-sm-offset-2
         %span.age-group-amount
           = to_local_amount(@teenagers_amount_2)
@@ -46,7 +52,7 @@
     = f.label :children_6_12_count_2, t(".children_6_12_count_2"), class: "col-sm-6 control-label"
     .col-sm-6
       .col-sm-4
-        = f.number_field :children_6_12_count_2, class: "form-control"
+        = f.number_field :children_6_12_count_2, class: "form-control", readonly: readonly
       .col-sm-5.col-sm-offset-2
         %span.age-group-amount
           = to_local_amount(@children_6_12_amount_2)
@@ -56,20 +62,21 @@
     = f.label :infants_count_2, t(".infants_count_2"), class: "col-sm-6 control-label"
     .col-sm-6
       .col-sm-4
-        = f.number_field :infants_count_2, class: "form-control"
+        = f.number_field :infants_count_2, class: "form-control", readonly: readonly
       .col-sm-5.col-sm-offset-2  
         %span.age-group-amount
           = to_local_amount(0)
     .col-sm-10.col-sm-offset-1
       = show_field_error(@reservation_request, :infants_count_2)
-  .form-group
-    = label :total_amount_2, "Total amount", class: "col-sm-6 control-label"
-    .col-sm-6
-      .col-sm-5.col-sm-offset-6
-        %span.total-amount
-          = to_local_currency(@total_amount_2)
+  - if @total_amount_2 > 0  
+    .form-group
+      = label :total_amount_2, "Total amount", class: "col-sm-6 control-label"
+      .col-sm-6
+        .col-sm-5.col-sm-offset-6
+          %span.total-amount
+            = to_local_currency(@total_amount_2)
   .form-group
     = f.label :power_point_required_2, t(".power_point_required_2"), class: "col-sm-6 control-label checkbox"
     .col-sm-2
-      = f.check_box :power_point_required_2, {}, checked_value = "1", unchecked_value = "0"
+      = f.check_box :power_point_required_2, {disabled: readonly}, checked_value = "1", unchecked_value = "0"
 

@@ -129,14 +129,14 @@ describe Chalet do
 
     it "must tell that all chalets are available between a specified period" do
       # puts "All chalets: #{Chalet.all.inspect}"
-      count = Chalet.available_count_between('Small', @date_1, @date_2)
+      count = Chalet.available_count_between('Chalet_Small', @date_1, @date_2)
       expect(count).to eq(Chalet.small.count)
     end
 
     it "must only count chalets that are reservable" do
       @chalet1.reservable = false
       @chalet1.save
-      count = Chalet.available_count_between('Small', @date_1, @date_2)
+      count = Chalet.available_count_between('Chalet_Small', @date_1, @date_2)
       expect(count).to eq(Chalet.small.count - 1)
     end
   end
@@ -153,13 +153,13 @@ describe Chalet do
     end
 
     it "must not count a chalet while it is reserved" do
-      count = Chalet.available_count_between('Small', @date_1 + 1, @date_2 - 1)
+      count = Chalet.available_count_between('Chalet_Small', @date_1 + 1, @date_2 - 1)
       expect(count).to eq(Chalet.all.count - 1)
     end
 
     it "must not count a second chalet that is also reserved" do
       rented_facility2 = create(:rented_facility, rentable: @chalet2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)
-      count = Chalet.available_count_between('Small', @date_1 - 1, @date_2 + 1)
+      count = Chalet.available_count_between('Chalet_Small', @date_1 - 1, @date_2 + 1)
       expect(count).to eq(Chalet.all.count - 2)
     end
 
@@ -167,7 +167,7 @@ describe Chalet do
       rented_facility2 = create(:rented_facility, rentable: @chalet2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)
       @chalet3.reservable = false
       @chalet3.save
-      count = Chalet.small.available_count_between('Small', @date_1, @date_2 - 2)
+      count = Chalet.small.available_count_between('Chalet_Small', @date_1, @date_2 - 2)
       expect(count).to eq(Chalet.all.count - 3)
     end
   end  

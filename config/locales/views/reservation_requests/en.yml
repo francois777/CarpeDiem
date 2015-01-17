@@ -13,11 +13,12 @@ en:
       applicant_mobile: Mobile number
       applicant_email: Email
       applicant_town: Home town
+      vehicle_registration_numbers: Vehicle Reg Nos
     fields1:
       facility_type_1: Facility
       start_date_1: Arrival date
       end_date_1: Departure date
-      adults_18_plus_count_1: Adults (18 years and older)
+      adults_18_plus_count_1: Adults (18+)
       teenagers_count_1: Children (13 to 17 years)
       children_6_12_count_1: Children (6 to 12 years)
       infants_count_1: Todlers (0 to 5 years)
@@ -28,7 +29,7 @@ en:
       facility_type_2: Facility
       start_date_2: Arrival date
       end_date_2: Departure date
-      adults_18_plus_count_2: Adults (18 years and older)
+      adults_18_plus_count_2: Adults (18+)
       teenagers_count_2: Children (13 to 17 years)
       children_6_12_count_2: Children (6 to 12 years)
       infants_count_2: Todlers (0 to 5 years)
@@ -39,7 +40,7 @@ en:
       facility_type_3: Facility
       start_date_3: Arrival date
       end_date_3: Departure date
-      adults_18_plus_count_3: Adults (18 years and older)
+      adults_18_plus_count_3: Adults (18+)
       teenagers_count_3: Children (13 to 17 years)
       children_6_12_count_3: Children (6 to 12 years)
       infants_count_3: Todlers (0 to 5 years)
@@ -63,3 +64,12 @@ en:
       update_reservation_request: Update Reservation
       second_facility_required: Second facility required?
       third_facility_required: Third facility required?
+    show:
+      applicant_details: Applicant details
+      applicant_name: Name and Surname
+      applicant_telephone: Telephone number
+      applicant_mobile: Mobile number
+      applicant_email: Email
+      applicant_town: Home town
+      vehicle_registration_numbers: Vehicle Reg Nos
+      

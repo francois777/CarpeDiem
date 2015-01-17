@@ -1,10 +1,9 @@
 class ReservationRequest < ActiveRecord::Base
 
-  FACILITY_TYPES = I18n.t(:facility_types).each_with_index.map { |iType, inx| [iType[0], inx] }
+  FACILITY_TYPES = I18n.t(:facility_types).each_with_index.map { |iType| iType[1] }
   FTYPES = { :tent => 0, :caravan => 1, :chalet_small => 2, :chalet_medium => 3, :chalet_large => 4 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-  # enum facility_types: I18n.t(:facility_types).each_with_index.map { |iType| iType[1] }
   enum facility_types: [:tent, :caravan, :chalet_small, :chalet_medium, :chalet_large]
 
   validates :applicant_name, presence: true, 
@@ -27,25 +26,6 @@ class ReservationRequest < ActiveRecord::Base
   validate :both_name_and_surname_required
 
   private  
-
-    def self.index_to_name(inx)
-      #puts "ReservationRequest#self.index_to_name(inx)"
-      name = case inx
-      when 0
-        'Tent'
-      when 1
-        'Caravan'
-      when 2
-        'Chalet_Small'
-      when 3
-        'Chalet_Medium'
-      when 4 
-        'Chalet_Large'
-      else
-        nil
-      end  
-      name
-    end
 
     def both_name_and_surname_required
       applicant_name.split.count > 1

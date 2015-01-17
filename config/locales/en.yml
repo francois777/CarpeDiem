@@ -14,7 +14,7 @@ en:
     bookings: Reservations
     contact_us: Contact us
     facilities: Facilities
-    home: Home
+    home: Carpe Diem Home
     make_reservation: Make reservation
     menu: Menu
     things_to_see: Things to see
@@ -35,7 +35,8 @@ en:
     chalets: Chalets
     camping_sites: Camping Sites
     reservation_request: Reservation Enquiry
-    reservation_requests: Reservation Enquiries    
+    reservation_requests: Reservation Enquiries   
+    reservation_request_details: Reservation Enquiry Details 
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -201,6 +202,7 @@ en:
     reservation_request_create_failed: Reservation Enquiry contains errors
     reservation_request_update_failed: Reservation Enquiry contains errors
     some_facilities_fully_booked: Some facilities are already fully booked during the period you specified.
+    unauthorised_action_update_not_allowed: Unauthorised action. Update not allowed.
   info:
     nothing_changed: Nothing has changed  
     requested_pw_reset_enter_pw: You have requested a password reset. Please enter your new password.    

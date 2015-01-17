@@ -19,7 +19,7 @@ class ReservationRequestsController < ApplicationController
     @unavailable_facilities = []
     if @reservation_request.valid?
       @unavailable_facilities = list_unavailable_facility_types
-      # puts "Unavailable facilities: #{@unavailable_facilities.to_s}"
+      puts "Unavailable facilities: #{@unavailable_facilities.to_s}"
       if @unavailable_facilities.empty?
         @reservation_request.status = 'Pending'
         if @reservation_request.save
@@ -43,7 +43,10 @@ class ReservationRequestsController < ApplicationController
 
   def update
     #puts "ReservationRequestsController#update"
-    #puts params['update']
+    unless @reservation_request.reservation_reference_id.nil?
+      flash[:alert] = t(:unauthorised_action_update_not_allowed)
+      redirect_to root_path
+    end  
 
     @unavailable_facilities = []
     if @reservation_request.valid?
@@ -67,8 +70,9 @@ class ReservationRequestsController < ApplicationController
               end
               reservation.save
               @reservation_request.reservation_reference_id = reservation.reload.reservation_reference.refid
+              @reservation_request.status = 'Submitted'
               @reservation_request.save
-              redirect_to admin_reservation_request_path(@reservation_request, amount_params,
+              redirect_to reservation_request_path(@reservation_request, amount_params,
                 request_number: reservation.reservation_reference.refid )
               return
             end
@@ -77,6 +81,7 @@ class ReservationRequestsController < ApplicationController
           flash[:alert] = t(:reservation_request_update_failed, scope: [:failure])
         end
       else
+        # Some requested facilities are unavailable
         flash[:alert] = t(:some_facilities_fully_booked, scope: [:failure])
       end  
     else
@@ -86,19 +91,14 @@ class ReservationRequestsController < ApplicationController
     render :edit
   end
 
-  def validate_request
-  end
-
-  def submit
-    puts "ReservationRequestsController#submit"
-    # Validate request
-    # Generate missing fields
-    # Save request
-    # Generate emails
-    # Display confirmation page with Reservation Number
-  end
-
   def show
+    if params.has_key?('request_number') && params['request_number'].to_i == @reservation_request.reservation_reference_id && @reservation_request.status == 'Submitted'
+      @unavailable_facilities = list_unavailable_facility_types
+      initialise_counters
+      calculate_facility_costs
+    else
+      redirect_to root_path
+    end  
   end
 
   def edit
@@ -178,13 +178,10 @@ class ReservationRequestsController < ApplicationController
     end
 
     def calculate_cost_for_facility_1
-      # puts "ReservationRequestsController#calculate_cost_for_facility_1"
-      fac_cat_inx = @reservation_request.facility_type_1
-      fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
       dte_from = @reservation_request.start_date_1
       dte_until = @reservation_request.end_date_1
       powered = @reservation_request.power_point_required_1
-      adult_tariff = Tariff.adult_tariff(fac_cat_name, dte_from, dte_until, powered)
+      adult_tariff = Tariff.adult_tariff(@reservation_request.facility_type_1, dte_from, dte_until, powered)
       @adult_amount_1 = @reservation_request.adults_18_plus_count_1 * adult_tariff
       @teenagers_amount_1 = @reservation_request.teenagers_count_1 * adult_tariff
       @children_amount_1 = (@reservation_request.children_6_12_count_1 * adult_tariff * (1 - @settings.child_discount_percentage)).round
@@ -192,13 +189,10 @@ class ReservationRequestsController < ApplicationController
     end
 
     def calculate_cost_for_facility_2
-      # puts "ReservationRequestsController#calculate_cost_for_facility_2"
-      fac_cat_inx = @reservation_request.facility_type_2
-      fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
       dte_from = @reservation_request.start_date_2
       dte_until = @reservation_request.end_date_2
       powered = @reservation_request.power_point_required_2
-      adult_tariff = Tariff.adult_tariff(fac_cat_name, dte_from, dte_until, powered)
+      adult_tariff = Tariff.adult_tariff(@reservation_request.facility_type_2, dte_from, dte_until, powered)
       @adult_amount_2 = @reservation_request.adults_18_plus_count_2 * adult_tariff
       @teenagers_amount_2 = @reservation_request.teenagers_count_2 * adult_tariff
       @children_amount_2 = (@reservation_request.children_6_12_count_2 * adult_tariff * (1 - @settings.child_discount_percentage)).round
@@ -206,12 +200,10 @@ class ReservationRequestsController < ApplicationController
     end
 
     def calculate_cost_for_facility_3
-      fac_cat_inx = @reservation_request.facility_type_3
-      fac_cat_name = ReservationRequest.index_to_name(fac_cat_inx)
       dte_from = @reservation_request.start_date_3
       dte_until = @reservation_request.end_date_3
       powered = @reservation_request.power_point_required_3
-      adult_tariff = Tariff.adult_tariff(fac_cat_name, dte_from, dte_until, powered)
+      adult_tariff = Tariff.adult_tariff(@reservation_request.facility_type_3, dte_from, dte_until, powered)
       @adult_amount_3 = @reservation_request.adults_18_plus_count_3 * adult_tariff
       @teenagers_amount_3 = @reservation_request.teenagers_count_3 * adult_tariff
       @children_amount_3 = (@reservation_request.children_6_12_count_3 * adult_tariff * (1 - @settings.child_discount_percentage)).round

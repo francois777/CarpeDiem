@@ -13,11 +13,12 @@ af:
       applicant_mobile: Selfoon nommer
       applicant_email: Epos
       applicant_town: Tuisdorp
+      vehicle_registration_numbers: Voertuig Reg Nrs
     fields1:
       facility_type_1: Verblyf
       start_date_1: Aankoms datum
       end_date_1: Vertrek datum
-      adults_18_plus_count_1: Volwassenes (18 jaar en ouer)
+      adults_18_plus_count_1: Volwassenes (18+)
       teenagers_count_1: Kinders (13 tot 17 jaar)
       children_6_12_count_1: Kinders (6 tot 12 jaar)
       infants_count_1: Kleuters (0 tot 5 jaar)
@@ -28,7 +29,7 @@ af:
       facility_type_2: Verblyf
       start_date_2: Aankoms datum
       end_date_2: Vertrek datum
-      adults_18_plus_count_2: Volwassenes (18 jaar en ouer)
+      adults_18_plus_count_2: Volwassenes (18+)
       teenagers_count_2: Kinders (13 tot 17 jaar)
       children_6_12_count_2: Kinders (6 tot 12 jaar)
       infants_count_2: Kleuters (0 tot 5 jaar)
@@ -39,7 +40,7 @@ af:
       facility_type_3: Verblyf
       start_date_3: Aankoms datum
       end_date_3: Vertrek datum
-      adults_18_plus_count_3: Volwassenes (18 jaar en ouer)
+      adults_18_plus_count_3: Volwassenes (18+)
       teenagers_count_3: Kinders (13 tot 17 jaar)
       children_6_12_count_3: Kinders (6 tot 12 jaar)
       infants_count_3: Kleuters (0 tot 5 jaar)
@@ -63,4 +64,12 @@ af:
       update_reservation_request: Verander Bespreking
       second_facility_required: Tweede woonplek benodig?
       third_facility_required: Derde woonplek benodig?
+    show:
+      applicant_details: Besonderhede van aansoeker
+      applicant_name: Naam en Van
+      applicant_telephone: Telefoon nommer
+      applicant_mobile: Selfoon nommer
+      applicant_email: Epos
+      applicant_town: Tuisdorp
+      vehicle_registration_numbers: Voertuig Reg Nrs
       

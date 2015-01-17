@@ -14,7 +14,7 @@
           .form-group
             = f.label :facility_category, t(".facility_category"),  class: "col-sm-3 control-label"
             .col-sm-4
-              = f.text_field :facility_category, readonly: "", value: Tariff::FACILITY_CATEGORIES[@tariff.facility_category.downcase.to_sym], class: "form-control"
+              = f.text_field :facility_category, readonly: "", value: I18n.t(".facility_types")[@tariff.facility_category.to_sym], class: "form-control"
           .form-group
             = f.label :price_class, t(".price_class"),  class: "col-sm-3 control-label"
             .col-sm-4
@@ -40,3 +40,4 @@
         -if current_user && current_user.admin?
           .button.btn
             = link_to t(".return_to_tariff_list"), admin_accommodation_type_tariffs_path(@accommodation_type)
+

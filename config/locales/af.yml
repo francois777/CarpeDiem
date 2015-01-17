@@ -14,7 +14,7 @@ af:
     bookings: Besprekings
     contact_us: Kontak ons
     facilities: Fasiliteite
-    home: Tuisblad
+    home: Carpe Diem Tuisblad
     make_reservation: Plaas bespreking
     menu: Spyskaart
     things_to_see: Dinge te sien
@@ -36,6 +36,7 @@ af:
     camping_sites: Kampeerplekke
     reservation_request: Bespreking Navraag
     reservation_requests: Bespreking Navrae    
+    reservation_request_details: Bespreking Navrae Besonderhede 
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -201,6 +202,7 @@ af:
     reservation_request_create_failed: Bespreking Navraag bevat foute
     reservation_request_update_failed: Bespreking Navraag bevat foute
     some_facilities_fully_booked: Sommige fasiliteite is reeds vol bespreek gedurende die aangegewe periode.
+    unauthorised_action_update_not_allowed: Unauthorised action. Update not allowed.
   info:
     nothing_changed: Niks het verander nie  
     requested_pw_reset_enter_pw: "Jy het 'n nuwe wagwoord aangevra. Verskaf asseblief jou nuwe wagwoord."  

@@ -12,7 +12,7 @@ feature "ReservationRequest pages" do
       create(:caravan)
       accom_type = create(:accommodation_type, accom_type: 'A')
       accom_type = create(:accommodation_type, accom_type: 'C')
-      create(:tariff,
+      tariff1 = create(:tariff,
           tariff_category: 'D3',
           tariff: 8000,
           effective_date: Date.new(2015, 2, 1),
@@ -21,7 +21,7 @@ feature "ReservationRequest pages" do
           with_power_points: true,
           facility_category: Tariff.facility_categories["caravan"],
           price_class: :normal_price)
-      create(:tariff,
+      tariff2 = create(:tariff,
           tariff_category: 'E3',
           tariff: 6000,
           effective_date: Date.new(2015, 2, 1),
@@ -47,7 +47,7 @@ feature "ReservationRequest pages" do
       expect(page).to have_text('First Reservation')
       expect(page).to have_text('Facility')
       expect(page).to have_text('Arrival date')
-      expect(page).to have_text('Adults (18 years and older)')
+      expect(page).to have_text('Adults (18+)')
       expect(page).to have_text('Children (13 to 17 years)')
       expect(page).to have_text('Children (6 to 12 years)')
       expect(page).to have_text('Todlers (0 to 5 years)')
