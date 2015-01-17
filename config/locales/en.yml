@@ -146,10 +146,10 @@ en:
       fully_equipped: fully equipped
       comment: See (1)
     tariff_2_columns:
-      site_person_tariff: "R %{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
-      site_weekend_tariff: "R %{amount} per person for weekend"
-      chalet_tariff: "R %{amount} (MAXIMUM %{capacity} PERSONS)"
-      group_reservations: "R %{amount} FOR WEEKEND"
+      site_person_tariff: "%{adult_tariff} (children %{child_age_from}-%{child_age_to}yr = %{child_tariff})"
+      site_weekend_tariff: "%{amount} per person for weekend"
+      chalet_tariff: "%{amount} (MAXIMUM %{capacity} PERSONS)"
+      group_reservations: "%{amount} FOR WEEKEND"
     restriction_columns:  
       site_limit: Maximum 6 persons per site
       friday_to_sunday: "In: Fridays: %{in_time},  Out: Sundays: %{out_time}"

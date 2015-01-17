@@ -146,10 +146,10 @@ af:
       fully_equipped: ten volle toegerus
       comment1: sien (1)
     tariff_2_columns:
-      site_person_tariff: "R %{adult_tariff} (kinders %{child_age_from}-%{child_age_to}yr = R %{child_tariff})"
-      site_weekend_tariff: "R %{amount} per persoon vir naweek"
-      chalet_tariff: "R %{amount} (MAKSIMUM %{capacity} PERSONE)"
-      group_reservations: "R %{amount} VIR NAWEEK"
+      site_person_tariff: "%{adult_tariff} (kinders %{child_age_from}-%{child_age_to}yr = %{child_tariff})"
+      site_weekend_tariff: "%{amount} per persoon vir naweek"
+      chalet_tariff: "%{amount} (MAKSIMUM %{capacity} PERSONE)"
+      group_reservations: "%{amount} VIR NAWEEK"
     restriction_columns:  
       site_limit: Maksimum 6 persone per staanplek
       friday_to_sunday: "In: Vrydae: %{in_time},  Uit: Sondae: %{out_time}"
