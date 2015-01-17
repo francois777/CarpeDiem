@@ -4,6 +4,8 @@
   %td
     = ReservationRequest::FACILITY_TYPES[reservation_request.facility_type_1]
   %td
+    = reservation_request.reservation_reference_id.to_s  
+  %td
     = display_date(reservation_request.start_date_1, {format: :short})
   %td
     = reservation_request.status

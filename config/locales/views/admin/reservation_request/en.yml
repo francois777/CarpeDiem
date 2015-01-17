@@ -7,6 +7,7 @@ en:
         facility: Accommodation
         start_date: Start date
         status: Status
+        reservation_reference: Enquiry Number
       show:
         fully_booked: Fully booked
       applicant_details:  

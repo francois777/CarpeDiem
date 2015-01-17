@@ -22,8 +22,9 @@ class Chalet < ActiveRecord::Base
     'L'
   end
 
-  def self.available_count_between(facility_type, start_date, end_date)
+  def self.available_count_between(facility_inx, start_date, end_date)
     # puts "Chalet#available_count_between"
+    facility_type = I18n.t(".facility_types").each_with_index.map { |iType| iType[0].to_s }[facility_inx]
     chalet_type = to_chalet_type(facility_type)
     site_count = 0 
     chalet_type = chalet_type.downcase.to_sym
@@ -39,11 +40,11 @@ class Chalet < ActiveRecord::Base
 
   def self.to_chalet_type(facility_type)
     return case facility_type
-    when "Chalet_Small"
+    when "chalet_small"
       'Small'
-    when "Chalet_Medium"
+    when "chalet_medium"
       'Medium'
-    when "Chalet_Large"
+    when "chalet_large"
       'Large'
     end
   end

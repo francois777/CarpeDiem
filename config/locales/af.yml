@@ -75,6 +75,12 @@ af:
     chalet_small: Klein Chalet (4 persone)
     chalet_medium: Medium Chalet (8 persone)
     chalet_large: Groot Chalet (14 persone)
+  facility_types_inx:
+    tent: 0
+    caravan: 1
+    chalet_small: 2
+    chalet_medium: 3
+    chalet_large: 4
   style_classes:
     small: Klein
     medium: Medium

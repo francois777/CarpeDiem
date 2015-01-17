@@ -7,6 +7,7 @@ af:
         facility: Woning
         start_date: Vanaf
         status: Status
+        reservation_reference: Navraag Nommer
       show:
         fully_booked: Vol bespreek
       applicant_details:

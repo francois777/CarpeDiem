@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-17T13:53:44+11:00">2015-01-17T13:53:44+11:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-17T15:45:25+11:00">2015-01-17T15:45:25+11:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">87.83%</span></span>
+    (<span class="covered_percent"><span class="yellow">87.85%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.34
+         3.33
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>2605</b> relevant lines. 
-    <span class="green"><b>2288</b> lines covered</span> and
+    <b>2610</b> relevant lines. 
+    <span class="green"><b>2293</b> lines covered</span> and
     <span class="red"><b>317</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -463,9 +463,9 @@
       <tr>
         <td class="strong"><a href="#ae581df75467e5ac3ef478351be9499f4bd0ee95" class="src_link" title="spec/models/chalet_spec.rb">spec/models/chalet_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>175</td>
-        <td>107</td>
-        <td>107</td>
+        <td>180</td>
+        <td>112</td>
+        <td>112</td>
         <td>0</td>
         <td>1.5</td>
       </tr>
@@ -20407,8 +20407,8 @@
     <h3>spec/models/chalet_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>107</b> relevant lines. 
-      <span class="green"><b>107</b> lines covered</span> and
+      <b>112</b> relevant lines. 
+      <span class="green"><b>112</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -21205,262 +21205,292 @@
         <li class="covered" data-hits="1" data-linenumber="132">
           <span class="hits">1</span>
           
-          <code class="ruby">      count = Chalet.available_count_between(&#39;Chalet_Small&#39;, @date_1, @date_2)</code>
+          <code class="ruby">      facility_inx = I18n.t(&quot;.facility_types_inx&quot;)[:chalet_small]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(count).to eq(Chalet.small.count)</code>
+          <code class="ruby">      count = Chalet.available_count_between(facility_inx, @date_1, @date_2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="134">
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(count).to eq(Chalet.small.count)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="135">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="136">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="136">
           
-          <code class="ruby">    it &quot;must only count chalets that are reservable&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="137">
           <span class="hits">1</span>
           
-          <code class="ruby">      @chalet1.reservable = false</code>
+          <code class="ruby">    it &quot;must only count chalets that are reservable&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="138">
           <span class="hits">1</span>
           
-          <code class="ruby">      @chalet1.save</code>
+          <code class="ruby">      @chalet1.reservable = false</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="139">
           <span class="hits">1</span>
           
-          <code class="ruby">      count = Chalet.available_count_between(&#39;Chalet_Small&#39;, @date_1, @date_2)</code>
+          <code class="ruby">      @chalet1.save</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="140">
           <span class="hits">1</span>
           
+          <code class="ruby">      facility_inx = I18n.t(&quot;.facility_types_inx&quot;)[:chalet_small]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="141">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      count = Chalet.available_count_between(facility_inx, @date_1, @date_2)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="142">
+          <span class="hits">1</span>
+          
           <code class="ruby">      expect(count).to eq(Chalet.small.count - 1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="141">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="142">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="143">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="144">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="145">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="144">
+        <li class="covered" data-hits="1" data-linenumber="146">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;Checking the availability when there are some reservations&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="145">
+        <li class="covered" data-hits="1" data-linenumber="147">
           <span class="hits">1</span>
           
           <code class="ruby">    before do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="146">
+        <li class="covered" data-hits="3" data-linenumber="148">
           <span class="hits">3</span>
           
           <code class="ruby">      @chalet1 = create(:small_chalet, name: &#39;Joseph&#39;, location_code: &#39;CL01&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="147">
+        <li class="covered" data-hits="3" data-linenumber="149">
           <span class="hits">3</span>
           
           <code class="ruby">      @chalet2 = create(:small_chalet, name: &#39;Naphtali&#39;, location_code: &#39;CL02&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="148">
+        <li class="covered" data-hits="3" data-linenumber="150">
           <span class="hits">3</span>
           
           <code class="ruby">      @chalet3 = create(:small_chalet, name: &#39;Benjamin&#39;, location_code: &#39;CL03&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="149">
+        <li class="covered" data-hits="3" data-linenumber="151">
           <span class="hits">3</span>
           
           <code class="ruby">      @date_1 = Date.new(2015,06,29)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="150">
+        <li class="covered" data-hits="3" data-linenumber="152">
           <span class="hits">3</span>
           
           <code class="ruby">      @date_2 = Date.new(2015,07,03)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="151">
+        <li class="covered" data-hits="3" data-linenumber="153">
           <span class="hits">3</span>
           
           <code class="ruby">      @reservation1 = create(:reservation, start_date: @date_1, end_date: @date_2)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="152">
+        <li class="covered" data-hits="3" data-linenumber="154">
           <span class="hits">3</span>
           
           <code class="ruby">      @rented_facility1 = create(:rented_facility, rentable: @chalet1, reservation: @reservation1, start_date: @date_1, end_date: @date_2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="153">
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="never" data-hits="" data-linenumber="156">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="155">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;must not count a chalet while it is reserved&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="156">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      count = Chalet.available_count_between(&#39;Chalet_Small&#39;, @date_1 + 1, @date_2 - 1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="157">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(count).to eq(Chalet.all.count - 1)</code>
+          <code class="ruby">    it &quot;must not count a chalet while it is reserved&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      facility_inx = I18n.t(&quot;.facility_types_inx&quot;)[:chalet_small]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      count = Chalet.available_count_between(facility_inx, @date_1 + 1, @date_2 - 1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="160">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;must not count a second chalet that is also reserved&quot; do</code>
+          <code class="ruby">      expect(count).to eq(Chalet.all.count - 1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="161">
           
-          <code class="ruby">      rented_facility2 = create(:rented_facility, rentable: @chalet2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="162">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="162">
           
-          <code class="ruby">      count = Chalet.available_count_between(&#39;Chalet_Small&#39;, @date_1 - 1, @date_2 + 1)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="163">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(count).to eq(Chalet.all.count - 2)</code>
+          <code class="ruby">    it &quot;must not count a second chalet that is also reserved&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="164">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="165">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="166">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;must not count any chalets that are reserved or not reservable&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="167">
+        <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
           <code class="ruby">      rented_facility2 = create(:rented_facility, rentable: @chalet2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="165">
           <span class="hits">1</span>
           
-          <code class="ruby">      @chalet3.reservable = false</code>
+          <code class="ruby">      facility_inx = I18n.t(&quot;.facility_types_inx&quot;)[:chalet_small]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="169">
+        <li class="covered" data-hits="1" data-linenumber="166">
           <span class="hits">1</span>
           
-          <code class="ruby">      @chalet3.save</code>
+          <code class="ruby">      count = Chalet.available_count_between(facility_inx, @date_1 - 1, @date_2 + 1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="170">
+        <li class="covered" data-hits="1" data-linenumber="167">
           <span class="hits">1</span>
           
-          <code class="ruby">      count = Chalet.small.available_count_between(&#39;Chalet_Small&#39;, @date_1, @date_2 - 2)</code>
+          <code class="ruby">      expect(count).to eq(Chalet.all.count - 2)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="171">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(count).to eq(Chalet.all.count - 3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="172">
+        <li class="never" data-hits="" data-linenumber="168">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
-          
-          
-          <code class="ruby">  end  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="169">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
+        <li class="covered" data-hits="1" data-linenumber="170">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;must not count any chalets that are reserved or not reservable&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="171">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      rented_facility2 = create(:rented_facility, rentable: @chalet2, reservation: @reservation1, start_date: @date_1, end_date: @date_2)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="172">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      facility_inx = I18n.t(&quot;.facility_types_inx&quot;)[:chalet_small]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="173">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @chalet3.reservable = false</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="174">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @chalet3.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="175">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      count = Chalet.small.available_count_between(facility_inx, @date_1, @date_2 - 2)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="176">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(count).to eq(Chalet.all.count - 3)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="177">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="178">
+          
+          
+          <code class="ruby">  end  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="179">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="180">
           
           
           <code class="ruby">end</code>
