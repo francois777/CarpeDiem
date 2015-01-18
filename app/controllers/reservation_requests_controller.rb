@@ -13,8 +13,6 @@ class ReservationRequestsController < ApplicationController
 
   def create
     @reservation_request = ReservationRequest.new(request_params)
-    # @reservation_request.start_date_1 = @reservation_request.start_date_1.to_datetime
-    # @reservation_request.end_date_1 = @reservation_request.end_date_1.to_datetime
     initialise_counters
     @unavailable_facilities = []
     if @reservation_request.valid?
@@ -102,8 +100,6 @@ class ReservationRequestsController < ApplicationController
   end
 
   def edit
-    #puts "ReservationRequestsController#edit"
-    # puts "Params: #{params.inspect}"
     @adult_amount_1 = params['adult_amount_1'].to_i
     @teenagers_amount_1 = params['teenagers_amount_1'].to_i
     @children_amount_1 = params['children_amount_1'].to_i
@@ -117,7 +113,6 @@ class ReservationRequestsController < ApplicationController
     @children_amount_3 = params['children_amount_3'].to_i
     @total_amount_3 = params['total3'].to_i
     @unavailable_facilities = []
-    # set_counters
   end
 
   private

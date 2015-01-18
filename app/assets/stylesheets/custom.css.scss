@@ -470,43 +470,6 @@ section.font-test {
     }
   }
 
-  // 320px+
-  // section.accom-tariffs {
-  //   margin: 0.2em;
-  //   .row { margin: 0; }
-  //   header {
-  //     margin-bottom: 1em;
-  //     h1 {
-  //       margin: 0.5em 0.2em;
-  //       font-size: 2em;
-  //     }
-  //   }
-  //   form {
-  //     font-size: 0.9em;
-  //     select {
-  //       font-size: 0.6em;
-  //     }
-  //   }
-  //   table {
-  //     th, td {
-  //       font-family: arial;
-  //       font-size: 0.6em;
-  //     }
-  //     td { font-family: arial; }
-  //     tr {
-  //       width: 100%;
-  //       line-height: 1.2em;
-  //     }
-  //     tbody {
-  //       color: $dark-brown;
-  //       tr:nth-child(odd) { background-image: image-url('bg-texture-light.png'); }
-  //     }
-  //     tr:first-child { 
-  //       background-color: transparent; 
-  //     }
-  //   }
-  // }
-
   section.accommodation_types {
 
     input#accommodation_type_show {
@@ -1032,10 +995,6 @@ section.font-test {
       padding: 1em;
       width: 90%;
     }  
-    // .actions button a {
-    //   pointer-events: none;
-    //   cursor: default;
-    // }
   }
 
   section.memories {
