@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-18T09:33:15+11:00">2015-01-18T09:33:15+11:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-19T04:27:53+11:00">2015-01-19T04:27:53+11:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.33
+         3.51
        </span>
     </span> hits/line)
   </h2>
@@ -277,7 +277,7 @@
         <td>89</td>
         <td>65</td>
         <td>24</td>
-        <td>19.0</td>
+        <td>24.0</td>
       </tr>
       
       <tr>
@@ -9982,8 +9982,8 @@
           <code class="ruby">  validates :applicant_telephone, </code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="12">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="12">
+          <span class="hits">77</span>
           
           <code class="ruby">                    length: { minimum: 9, maximum: 20 }, unless: -&gt;{ self.applicant_telephone.empty? }</code>
         </li>
@@ -9994,8 +9994,8 @@
           <code class="ruby">  validates :applicant_mobile, </code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="14">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="14">
+          <span class="hits">77</span>
           
           <code class="ruby">                    length: { minimum: 9, maximum: 20 }, unless: -&gt;{ self.applicant_mobile.empty? }</code>
         </li>
@@ -10018,8 +10018,8 @@
           <code class="ruby">                    length: { maximum: 50 }</code>
         </li>
       
-        <li class="covered" data-hits="60" data-linenumber="18">
-          <span class="hits">60</span>
+        <li class="covered" data-hits="78" data-linenumber="18">
+          <span class="hits">78</span>
           
           <code class="ruby">  validates :applicant_town,  length: { minimum: 2, maximum: 40 }, unless: -&gt;{ self.applicant_town.empty? }</code>
         </li>
@@ -10096,8 +10096,8 @@
           <code class="ruby">    def both_name_and_surname_required</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="31">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="31">
+          <span class="hits">77</span>
           
           <code class="ruby">      applicant_name.split.count &gt; 1</code>
         </li>
@@ -10120,14 +10120,14 @@
           <code class="ruby">    def one_contact_number_required</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="35">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="35">
+          <span class="hits">77</span>
           
           <code class="ruby">      if applicant_telephone == &quot;&quot; &amp;&amp; applicant_mobile == &quot;&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="36">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="8" data-linenumber="36">
+          <span class="hits">8</span>
           
           <code class="ruby">        errors.add(:applicant_telephone, :no_contact_numbers)</code>
         </li>
@@ -10156,14 +10156,14 @@
           <code class="ruby">    def validate_start_dates</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="41">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="41">
+          <span class="hits">77</span>
           
           <code class="ruby">      if start_date_1 &amp;&amp; start_date_1 &lt; Date.today</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="42">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="42">
+          <span class="hits">3</span>
           
           <code class="ruby">        errors.add(:start_date_1, :invalid_start_date)</code>
         </li>
@@ -10174,8 +10174,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="44">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="44">
+          <span class="hits">77</span>
           
           <code class="ruby">      if start_date_2 &amp;&amp; start_date_2 &lt; Date.today</code>
         </li>
@@ -10192,8 +10192,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="47">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="47">
+          <span class="hits">77</span>
           
           <code class="ruby">      if start_date_3 &amp;&amp; start_date_3 &lt; Date.today</code>
         </li>
@@ -10228,20 +10228,20 @@
           <code class="ruby">    def validate_end_dates</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="53">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="53">
+          <span class="hits">77</span>
           
           <code class="ruby">      return if start_date_1.nil? || end_date_1.nil?</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="54">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="70" data-linenumber="54">
+          <span class="hits">70</span>
           
           <code class="ruby">      unless end_date_1 &gt; start_date_1</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="55">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="8" data-linenumber="55">
+          <span class="hits">8</span>
           
           <code class="ruby">        errors.add(:end_date_1, :invalid_end_date)</code>
         </li>
@@ -10252,8 +10252,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="57">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="70" data-linenumber="57">
+          <span class="hits">70</span>
           
           <code class="ruby">      if start_date_2 &amp;&amp; !end_date_2</code>
         </li>
@@ -10270,8 +10270,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="60">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="70" data-linenumber="60">
+          <span class="hits">70</span>
           
           <code class="ruby">      if end_date_2 &amp;&amp; end_date_2 &lt;= start_date_2</code>
         </li>
@@ -10288,8 +10288,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="63">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="70" data-linenumber="63">
+          <span class="hits">70</span>
           
           <code class="ruby">      if start_date_3 &amp;&amp; !end_date_3</code>
         </li>
@@ -10306,8 +10306,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="57" data-linenumber="66">
-          <span class="hits">57</span>
+        <li class="covered" data-hits="70" data-linenumber="66">
+          <span class="hits">70</span>
           
           <code class="ruby">      if end_date_3 &amp;&amp; end_date_3 &lt;= start_date_3</code>
         </li>
@@ -10348,8 +10348,8 @@
           <code class="ruby">      # Facility 1</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="73">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="73">
+          <span class="hits">77</span>
           
           <code class="ruby">      unless (0..4).include? facility_type_1</code>
         </li>
@@ -10372,20 +10372,20 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="77">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="77">
+          <span class="hits">77</span>
           
           <code class="ruby">      total_occupants = adults_18_plus_count_1 + teenagers_count_1 + children_6_12_count_1 + infants_count_1</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="78">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="78">
+          <span class="hits">77</span>
           
           <code class="ruby">      errors.add(:adults_18_plus_count_1, :no_people_specified) if total_occupants == 0</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="79">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="79">
+          <span class="hits">77</span>
           
           <code class="ruby">      case facility_type_1 </code>
         </li>
@@ -10396,8 +10396,8 @@
           <code class="ruby">      when FTYPES[:chalet_small] </code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="81">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="8" data-linenumber="81">
+          <span class="hits">8</span>
           
           <code class="ruby">        if total_occupants &gt; AppConfig.instance.max_occupants_per_small_chalet</code>
         </li>
@@ -10468,14 +10468,14 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="93">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="93">
+          <span class="hits">77</span>
           
           <code class="ruby">      if infants_count_1 &gt; 0 and adults_18_plus_count_1 == 0</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="94">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="94">
+          <span class="hits">3</span>
           
           <code class="ruby">        errors.add(:adults_18_plus_count_1, :adult_required_for_infants)</code>
         </li>
@@ -10498,26 +10498,26 @@
           <code class="ruby">      # Facility 2</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="98">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="98">
+          <span class="hits">77</span>
           
           <code class="ruby">      total_occupants = adults_18_plus_count_2 + teenagers_count_2 + children_6_12_count_2 + infants_count_2</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="99">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="99">
+          <span class="hits">77</span>
           
           <code class="ruby">      errors.add(:adults_18_plus_count_2, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_2.nil?</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="100">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="100">
+          <span class="hits">77</span>
           
           <code class="ruby">      if total_occupants &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="101">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="101">
+          <span class="hits">20</span>
           
           <code class="ruby">        unless (0..4).include? facility_type_2</code>
         </li>
@@ -10540,8 +10540,8 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="105">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="105">
+          <span class="hits">20</span>
           
           <code class="ruby">        case facility_type_2 </code>
         </li>
@@ -10624,8 +10624,8 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="119">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="119">
+          <span class="hits">20</span>
           
           <code class="ruby">        if infants_count_2 &gt; 0 and adults_18_plus_count_2 == 0</code>
         </li>
@@ -10660,20 +10660,20 @@
           <code class="ruby">      # Facility 3</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="125">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="125">
+          <span class="hits">77</span>
           
           <code class="ruby">      total_occupants = adults_18_plus_count_3 + teenagers_count_3 + children_6_12_count_3 + infants_count_3</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="126">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="126">
+          <span class="hits">77</span>
           
           <code class="ruby">      errors.add(:adults_18_plus_count_3, :no_people_specified) if total_occupants == 0 &amp;&amp; !start_date_3.nil?</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="127">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="77" data-linenumber="127">
+          <span class="hits">77</span>
           
           <code class="ruby">      if total_occupants &gt; 0</code>
         </li>

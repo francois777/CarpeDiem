@@ -19,10 +19,11 @@ af:
             end_date_1:
               invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
-              no_people_specified: Die aantal persone is nie verskaf nie
+              end_date_invalid: End date is invalid
             adults_18_plus_count_1:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry
               adult_required_for_infants: Volwassene is benodig om vir kleuter te sorg
+              no_people_specified: Die aantal persone is nie verskaf nie
             facility_type_2:
               invalid_facility_type: Ongeldige fasiliteit tipe
             start_date_2:
@@ -30,6 +31,7 @@ af:
             end_date_2:
               invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
+              end_date_invalid: End date is invalid
             adults_18_plus_count_2:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry
               adult_required_for_infants: Volwassene is benodig om vir kleuter te sorg
@@ -41,6 +43,7 @@ af:
             end_date_3:
               invalid_end_date: Vertrekdatum is ongeldig
               end_date_missing: Einddatum word benodig
+              end_date_invalid: End date is invalid
             adults_18_plus_count_3:
               exceeded_facility_max_capacity: Maksimum getal persone vir fasiliteit is oorskry
               adult_required_for_infants: Volwassene is benodig om vir kleuter te sorg

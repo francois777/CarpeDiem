@@ -19,6 +19,7 @@ en:
             end_date_1:
               invalid_end_date: Invalid departure date
               end_date_missing: End date is required
+              end_date_invalid: End date is invalid
             adults_18_plus_count_1:
               exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
               adult_required_for_infants: An adult is required to care for infants
@@ -30,6 +31,7 @@ en:
             end_date_2:
               invalid_end_date: Invalid end date
               end_date_missing: End date is required
+              end_date_invalid: End date is invalid
             adults_18_plus_count_2:
               exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
               adult_required_for_infants: An adult is required to care for infants
@@ -41,6 +43,7 @@ en:
             end_date_3:
               invalid_end_date: Invalid end date
               end_date_missing: End date is required
+              end_date_invalid: End date is invalid
             adults_18_plus_count_3:
               exceeded_facility_max_capacity: Exceeded maximum number of persons for facility
               adult_required_for_infants: An adult is required to care for infants

@@ -17,9 +17,9 @@
     = f.label :start_date_3, t(".start_date_3"), class: "col-sm-6 control-label"
     .col-sm-4
       =f.text_field :start_date_3, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd/mm/yyyy"}, value: display_date(@reservation_request.start_date_3), readonly: readonly
-  - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_3)
-    %span
-      = "* #{t('.fully_booked')}"
+    - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_3)
+      %span
+        = "* #{t('.fully_booked')}"
     .col-sm-3.col-sm-offset-6
       = show_field_error(@reservation_request, :start_date_3)
   .form-group

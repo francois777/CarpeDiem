@@ -25,3 +25,7 @@
     .col-md-5.col-sm-5
       %p
         More details to come
+
+- unless @reservation_request.valid?
+  = debug @reservation_request.errors
+  

@@ -37,23 +37,23 @@ $("section.reservation-request").ready ->
       $("#third-facility").hide()
 
   displayFacility2 = (e) ->
-    dte = $('#reservation_request_start_date_2')
-    if (typeof dte is "object")
+    dte = $('#reservation_request_start_date_2')[0].value
+    if dte != ""
       checkbox = $("#Second_facility_required_")
-      checked = checkbox.is(":checked")
+      checkbox.checked = true
       $("#second-facility").show()
 
   displayFacility3 = (e) ->
-    dte = $('#reservation_request_start_date_3')
-    if typeof dte is "object"
+    dte = $('#reservation_request_start_date_3')[0].value
+    if dte != ""
       checkbox = $("#Third_facility_required_")
-      checked = checkbox.is(":checked")
+      checkbox.checked = true
       $("#third-facility").show()
 
   $('#Second_facility_required_').click(toggleFacility2)
   $('#Third_facility_required_').click(toggleFacility3)
-  # displayFacility2()
-  # displayFacility3()
+  displayFacility2()
+  displayFacility3()
 
 
 ###

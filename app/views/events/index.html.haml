@@ -20,5 +20,3 @@
     .actions
       -if current_user && current_user.admin?
         = link_to t(".add_event"), new_admin_event_path, html: {class: 'btn info-button'}
-
--#          %button.btn.btn-info{type: 'button'}
