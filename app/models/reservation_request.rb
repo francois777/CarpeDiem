@@ -69,11 +69,16 @@ class ReservationRequest < ActiveRecord::Base
     end
 
     def validate_facility_details
-      # Facility 1
       unless (0..4).include? facility_type_1
         errors.add(facility_type_1, :invalid_facility_type) 
         return
       end
+      validate_facility_1
+      validate_facility_2
+      validate_facility_3
+    end
+
+    def validate_facility_1
       total_occupants = adults_18_plus_count_1 + teenagers_count_1 + children_6_12_count_1 + infants_count_1
       errors.add(:adults_18_plus_count_1, :no_people_specified) if total_occupants == 0
       case facility_type_1 
@@ -93,8 +98,9 @@ class ReservationRequest < ActiveRecord::Base
       if infants_count_1 > 0 and adults_18_plus_count_1 == 0
         errors.add(:adults_18_plus_count_1, :adult_required_for_infants)
       end
+    end
 
-      # Facility 2
+    def validate_facility_2
       total_occupants = adults_18_plus_count_2 + teenagers_count_2 + children_6_12_count_2 + infants_count_2
       errors.add(:adults_18_plus_count_2, :no_people_specified) if total_occupants == 0 && !start_date_2.nil?
       if total_occupants > 0
@@ -120,8 +126,9 @@ class ReservationRequest < ActiveRecord::Base
           errors.add(:adults_18_plus_count_2, :adult_required_for_infants)
         end
       end
+    end
 
-      # Facility 3
+    def validate_facility_3
       total_occupants = adults_18_plus_count_3 + teenagers_count_3 + children_6_12_count_3 + infants_count_3
       errors.add(:adults_18_plus_count_3, :no_people_specified) if total_occupants == 0 && !start_date_3.nil?
       if total_occupants > 0

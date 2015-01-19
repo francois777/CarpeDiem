@@ -23,7 +23,6 @@ class Chalet < ActiveRecord::Base
   end
 
   def self.available_count_between(facility_inx, start_date, end_date)
-    # puts "Chalet#available_count_between"
     facility_type = I18n.t(".facility_types").each_with_index.map { |iType| iType[0].to_s }[facility_inx]
     chalet_type = to_chalet_type(facility_type)
     site_count = 0 

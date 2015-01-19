@@ -2,7 +2,6 @@ class Reservation < ActiveRecord::Base
 
   has_many :rented_facilities
   has_many :received_payments
-  has_many :diary_days, as: :diarisable
   has_one :reservation_reference
   accepts_nested_attributes_for :rented_facilities
 
@@ -19,8 +18,6 @@ class Reservation < ActiveRecord::Base
   validates :town,  length: { minimum: 2, maximum: 40 }
   validate :one_contact_number_required
 
-  before_update :remove_existing_diary_dates
-  before_update :add_diary_dates 
   before_create :assign_reserved_datetime
   after_create :assign_reference_number
 
@@ -50,22 +47,5 @@ class Reservation < ActiveRecord::Base
       end
     end
 
-    def add_diary_dates
-      dte1 = start_date.to_datetime
-      dte2 = end_date.to_datetime
-
-      while dte1 <= dte2 do
-        DiaryDay.create(
-            day: dte1,
-            diarisable: self
-          )
-        dte1 += 1
-      end
-    end
-
-    def remove_existing_diary_dates
-      sqlstr = "DELETE FROM diary_days WHERE diarisable_id = #{id}"
-      ActiveRecord::Base.connection.execute(sqlstr)
-    end
 end
 

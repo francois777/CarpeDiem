@@ -15,11 +15,6 @@ class RentedFacility < ActiveRecord::Base
   before_update :add_diary_dates 
 
   default_scope { order('start_date DESC') }
-  # scope :camping_sites, -> { where('rentable_type = ?', 'CampingSite') }
-
-  # def self.camping_sites
-  #   self.all.map { |site| site.rentable_type == 'CampingSite'}
-  # end
 
   private
 

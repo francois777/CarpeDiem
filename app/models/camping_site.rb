@@ -5,8 +5,6 @@
                     length: { minimum: 2, maximum: 5 }
   validates_uniqueness_of :location_code
 
-  # validates :camping_type, inclusion: { in: ['C', 'T'] }
-
   default_scope { order('location_code') }
   scope :reservable, -> { where('reservable = ?', true) }
   scope :tents, -> { where(type: 'Tent') }

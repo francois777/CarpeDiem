@@ -17,7 +17,7 @@ class ReservationRequestsController < ApplicationController
     @unavailable_facilities = []
     if @reservation_request.valid?
       @unavailable_facilities = list_unavailable_facility_types
-      puts "Unavailable facilities: #{@unavailable_facilities.to_s}"
+      # puts "Unavailable facilities: #{@unavailable_facilities.to_s}"
       if @unavailable_facilities.empty?
         @reservation_request.status = 'Pending'
         if @reservation_request.save
@@ -40,7 +40,6 @@ class ReservationRequestsController < ApplicationController
   end
 
   def update
-    #puts "ReservationRequestsController#update"
     unless @reservation_request.reservation_reference_id.nil?
       flash[:alert] = t(:unauthorised_action_update_not_allowed)
       redirect_to root_path
