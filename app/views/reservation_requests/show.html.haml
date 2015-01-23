@@ -5,9 +5,11 @@
     %h1
       = t(".reservation_request_details")
     .row
-      .col-xs-10.col-xs-offset-1.col-md-10.col-md-offset-1
+      .col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1
         %p
-          = "Your enquiry reference number is #{@reservation_request.reservation_reference_id}"
+          Your enquiry reference number is 
+          %span
+            = "#{@reservation_request.reservation_reference_id}"
         = form_for(@reservation_request, html: {class: "form-horizontal", role: "form"}) do |f|
           = render 'applicant_details', f: f, readonly: true
           = render 'fields1', f: f, readonly: true
@@ -15,6 +17,9 @@
             = render 'fields2', f: f, readonly: true
           - if @reservation_request.start_date_2.is_a? Time
             = render 'fields3', f: f, readonly: true
-
+          .row  
+            .actions
+              .button.btn
+                = link_to "Download in PDF format", "#{reservation_request_path(@reservation_request)}.pdf", :method => :get, class: "btn btn-large btn-primary", id:"request-update", name: "pdf_print"
 
 -# debug @reservation_request

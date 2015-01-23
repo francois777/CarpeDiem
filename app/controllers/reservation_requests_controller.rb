@@ -41,8 +41,10 @@ class ReservationRequestsController < ApplicationController
 
   def update
     unless @reservation_request.reservation_reference_id.nil?
-      flash[:alert] = t(:unauthorised_action_update_not_allowed)
-      redirect_to root_path
+      puts "Already submitted:"
+      puts @reservation_request.inspect
+      flash[:alert] = t(:unauthorised_action_update_not_allowed, scope: [:failure])
+      redirect_to(root_path) and return
     end  
 
     @unavailable_facilities = []
@@ -54,24 +56,20 @@ class ReservationRequestsController < ApplicationController
           calculate_facility_costs
           if params['update'] == 'Save and Review'
             flash[:success] = t(:reservation_request_updated, scope: [:success])
-            redirect_to edit_reservation_request_path(@reservation_request, amount_params)
-            return
+            redirect_to(edit_reservation_request_path(@reservation_request, amount_params)) and return
           end
           if params['update'] == 'Submit Request'  
             if @reservation_request.reservation_reference_id.nil? 
               reservation = Reservation.new( new_reservation_params )
               unless reservation.valid?
                 flash[:alert] = t(:reservation_request_update_failed, scope: [:failure])
-                redirect_to edit_reservation_request_path(@reservation_request, amount_params)
-                return
+                redirect_to(edit_reservation_request_path(@reservation_request, amount_params)) and return
               end
               reservation.save
               @reservation_request.reservation_reference_id = reservation.reload.reservation_reference.refid
               @reservation_request.status = 'Submitted'
               @reservation_request.save
-              redirect_to reservation_request_path(@reservation_request, amount_params,
-                request_number: reservation.reservation_reference.refid )
-              return
+              redirect_to (reservation_request_path(@reservation_request, amount_params, request_number: reservation.reservation_reference.refid )) and return
             end
           end
         else
@@ -89,13 +87,25 @@ class ReservationRequestsController < ApplicationController
   end
 
   def show
-    if params.has_key?('request_number') && params['request_number'].to_i == @reservation_request.reservation_reference_id && @reservation_request.status == 'Submitted'
-      @unavailable_facilities = list_unavailable_facility_types
-      initialise_counters
-      calculate_facility_costs
-    else
-      redirect_to root_path
-    end  
+    @unavailable_facilities = list_unavailable_facility_types
+    initialise_counters
+    calculate_facility_costs
+
+    # if params.has_key?('request_number') && params['request_number'].to_i == @reservation_request.reservation_reference_id && @reservation_request.status == 'Submitted'
+    #   @unavailable_facilities = list_unavailable_facility_types
+    #   initialise_counters
+    #   calculate_facility_costs
+    # else
+    #   redirect_to root_path
+    # end  
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReservationEnquiryPdf.new(@reservation_request, @facility_costs, view_context)
+        enq_suffix = @reservation_request.created_at.strftime("%d/%m/%Y")
+        send_data pdf.render, filename: "enquiry_#{enq_suffix}.pdf", type: "application/pdf" #, disposition: "inline"
+      end
+    end
   end
 
   def edit
@@ -167,8 +177,11 @@ class ReservationRequestsController < ApplicationController
 
     def calculate_facility_costs
       calculate_cost_for_facility_1
+      @facility2 = {}
+      @facility3 = {}
       calculate_cost_for_facility_2 if @reservation_request.start_date_2.is_a? Time
       calculate_cost_for_facility_3 if @reservation_request.start_date_3.is_a? Time
+      @facility_costs = [ @facility1, @facility2, @facility3 ]
     end
 
     def calculate_cost_for_facility_1
@@ -180,6 +193,8 @@ class ReservationRequestsController < ApplicationController
       @teenagers_amount_1 = @reservation_request.teenagers_count_1 * adult_tariff
       @children_amount_1 = (@reservation_request.children_6_12_count_1 * adult_tariff * (1 - @settings.child_discount_percentage)).round
       @total_amount_1 = @adult_amount_1 + @teenagers_amount_1 + @children_amount_1
+      @facility1 = { adult_amount: @adult_amount_1, teenagers_amount: @teenagers_amount_1,
+                     children_amount: @children_amount_1, total_amount: @total_amount_1 }
     end
 
     def calculate_cost_for_facility_2
@@ -191,6 +206,8 @@ class ReservationRequestsController < ApplicationController
       @teenagers_amount_2 = @reservation_request.teenagers_count_2 * adult_tariff
       @children_amount_2 = (@reservation_request.children_6_12_count_2 * adult_tariff * (1 - @settings.child_discount_percentage)).round
       @total_amount_2 = @adult_amount_2 + @teenagers_amount_2 + @children_amount_2
+      @facility2 = { adult_amount: @adult_amount_2, teenagers_amount: @teenagers_amount_2,
+                     children_amount: @children_amount_2, total_amount: @total_amount_2 }
     end
 
     def calculate_cost_for_facility_3
@@ -202,6 +219,8 @@ class ReservationRequestsController < ApplicationController
       @teenagers_amount_3 = @reservation_request.teenagers_count_3 * adult_tariff
       @children_amount_3 = (@reservation_request.children_6_12_count_3 * adult_tariff * (1 - @settings.child_discount_percentage)).round
       @total_amount_3 = @adult_amount_3 + @teenagers_amount_3 + @children_amount_3
+      @facility3 = { adult_amount: @adult_amount_3, teenagers_amount: @teenagers_amount_3,
+                     children_amount: @children_amount_3, total_amount: @total_amount_3 }
     end
 
     def initialise_counters

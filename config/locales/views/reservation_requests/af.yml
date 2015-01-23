@@ -2,7 +2,7 @@ af:
   admin:
     reservation_requests:
       show:
-        reservation_request_details: Besprekings besonderhede
+        reservation_request_details: Navraag besonderhede
         decline_request: Weier versoek
         accept_request: Aanvaar versoek
   reservation_requests:
@@ -65,6 +65,7 @@ af:
       second_facility_required: Tweede woonplek benodig?
       third_facility_required: Derde woonplek benodig?
     show:
+      reservation_request_details: Navraag besonderhede
       applicant_details: Besonderhede van aansoeker
       applicant_name: Naam en Van
       applicant_telephone: Telefoon nommer

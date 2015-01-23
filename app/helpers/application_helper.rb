@@ -57,7 +57,7 @@ module ApplicationHelper
   end
   
   def to_local_amount(amount)
-    return 0 if amount.nil?
+    return "0.00" if (amount.nil? || amount == 0)
     result = to_whole(amount).to_s
     result << "0" if result[-2] == '.'
     return result

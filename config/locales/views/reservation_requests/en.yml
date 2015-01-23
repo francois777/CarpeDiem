@@ -2,7 +2,7 @@ en:
   admin:
     reservation_requests:
       show:
-        reservation_request_details: Reservation Request Details
+        reservation_request_details: Enquiry Details
         decline_request: Decline request
         accept_request: Accept request
   reservation_requests:
@@ -65,6 +65,7 @@ en:
       second_facility_required: Second facility required?
       third_facility_required: Third facility required?
     show:
+      reservation_request_details: Enquiry Details
       applicant_details: Applicant details
       applicant_name: Name and Surname
       applicant_telephone: Telephone number

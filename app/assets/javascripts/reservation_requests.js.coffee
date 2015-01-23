@@ -1,5 +1,13 @@
-$("section.reservation-request").ready ->
-  # alert "My coffeescript is being executed"
+$(".reservation_requests.show").ready ->
+  initRequestPage()
+
+$(".reservation_requests.new").ready ->
+  initRequestPage()
+
+$(".reservation_requests.edit").ready ->
+  initRequestPage()
+
+initRequestPage = (e) ->
   $('#reservation_request_start_date_1').datepicker
     dateFormat: "dd M yy"
   $('#reservation_request_end_date_1').datepicker
@@ -17,6 +25,7 @@ $("section.reservation-request").ready ->
   $("#third-facility").hide()
   
   toggleFacility2 = (e) ->
+    alert "Entering toggleFacility2"
     checkbox = $("#Second_facility_required_")
     checked = checkbox.is(":checked")
     if checked
@@ -37,18 +46,22 @@ $("section.reservation-request").ready ->
       $("#third-facility").hide()
 
   displayFacility2 = (e) ->
-    dte = $('#reservation_request_start_date_2')[0].value
-    if dte != ""
-      checkbox = $("#Second_facility_required_")
-      checkbox.checked = true
-      $("#second-facility").show()
+    dte = $('#reservation_request_start_date_2')
+    if dte.length != 0
+      start_dte = dte[0].value
+      if start_dte != ""
+        checkbox = $("#Second_facility_required_")
+        checkbox.checked = true
+        $("#second-facility").show()
 
   displayFacility3 = (e) ->
-    dte = $('#reservation_request_start_date_3')[0].value
-    if dte != ""
-      checkbox = $("#Third_facility_required_")
-      checkbox.checked = true
-      $("#third-facility").show()
+    dte = $('#reservation_request_start_date_3')
+    if dte.length != 0
+      start_dte = dte[0].value
+      if start_dte != ""
+        checkbox = $("#Third_facility_required_")
+        checkbox.checked = true
+        $("#third-facility").show()
 
   $('#Second_facility_required_').click(toggleFacility2)
   $('#Third_facility_required_').click(toggleFacility3)

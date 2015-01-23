@@ -17,5 +17,9 @@
       .mainpage.clearfix
         = render partial: "shared/flash_messages", flash: flash
         -# render 'layouts/media_aid'
-        = yield
+        %div{:class => "#{controller_name} #{action_name}"}
+          = yield
     = render 'layouts/footer'
+
+-# = debug "controller_name: #{controller_name}"
+-# = debug "action_name: #{action_name}"

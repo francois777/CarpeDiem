@@ -7,6 +7,8 @@ en:
     owners: Jacques and Henriëtte Kotzé
   global:
     please_sign_in: Please sign in  
+    accommodation: Accommodation
+    total_amount: Total amount
   menu:
     about_us: About us  
     accommodation: Accommodation
