@@ -690,6 +690,7 @@ section.font-test {
         text-align: left;
         margin-top: 0.8em;
         margin-bottom: 1em;
+        font-weight: bold;
       }
       .form-group {
         margin-bottom: 5px;
@@ -739,6 +740,14 @@ section.font-test {
       font-family: SofiaProLight;
       span {
         color: #F50;
+      }
+    }
+    .tourism {
+      h4 {
+        text-align: left;
+        margin-top: 0.8em;
+        margin-bottom: 0.6em;
+        font-weight: bold;
       }
     }
     table {

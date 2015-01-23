@@ -3,85 +3,86 @@
     = t(".reservation_for_facility_1")
   - if readonly
     .form-group
-      = f.label :facility_type_1, t(".facility_type_1"), readonly: "", class: "col-md-4 col-sm-5 col-xs-5 control-label"
+      = f.label :facility_type_1, t(".facility_type_1"), class: "col-xs-5 control-label"
       .col-md-4.col-sm-5.col-xs-6
         = f.text_field :facility_type_1, readonly: "", class: "form-control", value: ReservationRequest::FACILITY_TYPES[@reservation_request.facility_type_1]
   - else  
     .form-group
-      = f.label :facility_type_1, t(".facility_type_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
-      .col-md-3.col-sm-6.col-xs-6
-        = f.select :facility_type_1, options_for_select(@facility_types, selected: @reservation_request.facility_type_1), readonly: readonly
-      .col-sm-10.col-sm-offset-1
-        = show_field_error(@reservation_request, :facility_type_1)
-
+      = f.label :facility_type_1, t(".facility_type_1"), class: "col-xs-5 control-label"
+      .col-md-4.col-sm-5.col-xs-6
+        = f.select :facility_type_1, options_for_select(@facility_types, selected: @reservation_request.facility_type_1)
+      .row  
+        .col-xs-10.col-xs-offset-1
+          = show_field_error(@reservation_request, :facility_type_1)
   .form-group
-    = f.label :start_date_1, t(".start_date_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+    = f.label :start_date_1, t(".start_date_1"), class: "col-xs-5 control-label"
     .col-md-4.col-sm-5.col-xs-6
       = f.text_field :start_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, required: true, value: display_date(@reservation_request.start_date_1), readonly: readonly
     - if @unavailable_facilities.any? && @unavailable_facilities.include?(@reservation_request.facility_type_1)
       %span
         = "* #{t('.fully_booked')}"
-    .col-sm-10.col-sm-offset-1
+    .row    
+      .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :start_date_1)
   .form-group
-    = f.label :end_date_1, t(".end_date_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+    = f.label :end_date_1, t(".end_date_1"), class: "col-xs-5 control-label"
     .col-md-4.col-sm-5.col-xs-6
       =f.text_field :end_date_1, class: "form-control datepicker", data: {provide: "datepicker", dateFormat: "dd M yy"}, required: true, value: display_date(@reservation_request.end_date_1), readonly: readonly
-    .col-sm-10.col-sm-offset-1
+    .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :end_date_1)
   .form-group
-    = f.label :adults_18_plus_count_1, t(".adults_18_plus_count_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
-    .col-md-6.col-sm-6.col-xs-7
-      .col-md-4.col-sm-4.col-xs-5
+    = f.label :adults_18_plus_count_1, t(".adults_18_plus_count_1"), class: "col-xs-5 control-label"
+    .col-sm-6.col-xs-7
+      .col-xs-5
         = f.number_field :adults_18_plus_count_1, class: "form-control", readonly: readonly
       - if @total_amount_1 > 0  
         .col-md-4.col-sm-5.col-xs-6.col-sm-offset-1
           %span.age-group-amount
             = to_local_amount(@adult_amount_1)
-    .col-sm-10.col-sm-offset-1
+    .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :adults_18_plus_count_1)
   .form-group
-    = f.label :teenagers_count_1, t(".teenagers_count_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+    = f.label :teenagers_count_1, t(".teenagers_count_1"), class: "col-xs-5 control-label"
     .col-md-6.col-sm-6.col-xs-7
-      .col-md-4.col-sm-4.col-xs-5
+      .col-xs-5
         = f.number_field :teenagers_count_1, class: "form-control", readonly: readonly
       - if @total_amount_1 > 0  
         .col-md-4.col-sm-5.col-xs-6.col-sm-offset-1
           %span.age-group-amount
             = to_local_amount(@teenagers_amount_1)
-    .col-sm-10.col-sm-offset-1
+    .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :teenagers_count_1)
   .form-group
-    = f.label :children_6_12_count_1, t(".children_6_12_count_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+    = f.label :children_6_12_count_1, t(".children_6_12_count_1"), class: "col-xs-5 control-label"
     .col-md-6.col-sm-6.col-xs-7
-      .col-md-4.col-sm-4.col-xs-5
+      .col-xs-5
         = f.number_field :children_6_12_count_1, class: "form-control", readonly: readonly
       - if @total_amount_1 > 0  
         .col-md-4.col-sm-5.col-xs-6.col-sm-offset-1
           %span.age-group-amount
             = to_local_amount(@children_amount_1)
-    .col-sm-10.col-sm-offset-1
+    .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :children_6_12_count_1)
   .form-group
-    = f.label :infants_count_1, t(".infants_count_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label"
+    = f.label :infants_count_1, t(".infants_count_1"), class: "col-xs-5 control-label"
     .col-md-6.col-sm-6.col-xs-7
-      .col-md-4.col-sm-4.col-xs-5
+      .col-xs-5
         = f.number_field :infants_count_1, class: "form-control", readonly: readonly
       - if @total_amount_1 > 0  
         .col-md-4.col-sm-5.col-xs-6.col-sm-offset-1
           %span.age-group-amount
             = to_local_amount(0)
-    .col-sm-10.col-sm-offset-1
+    .col-xs-10.col-xs-offset-1
       = show_field_error(@reservation_request, :infants_count_1)
   - if @total_amount_1 > 0  
     .form-group
-      = label :total_amount_1, "Total amount", class: "col-md-4 col-sm-5 col-xs-5 control-label"
+      = label :total_amount_1, "Total amount", class: "col-xs-5 control-label"
       .col-md-6.col-sm-6.col-xs-7
         .col-md-5.col-sm-5.col-xs-7.col-md-offset-4.col-sm-offset-5.col-xs-offset-4
           %span.total-amount
             = to_local_currency(@total_amount_1)
   .form-group
-    = f.label :power_point_required_1, t(".power_point_required_1"), class: "col-md-4 col-sm-5 col-xs-5 control-label checkbox"
-    .col-md-2.col-sm-2.col-xs-2
+    = f.label :power_point_required_1, t(".power_point_required_1"), class: "col-xs-5 control-label checkbox"
+    .col-xs-2
       = f.check_box :power_point_required_1, {disabled: readonly}, checked_value = "1", unchecked_value = "0"
 
