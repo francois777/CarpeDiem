@@ -9,6 +9,7 @@ en:
       index:
         all_administrators: All administrators  
         new_user: New user
+        all_users: All users
       new:
         add_user: Add user  
         save_changes: Save Changes

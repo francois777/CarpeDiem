@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end    
     resources :events, only: [:new, :create, :edit, :update, :destroy]
     resources :chalets
+    resources :facilities, only: [:index]
     resources :camping_sites
     resources :tents, controller: 'camping_sites', type: 'Tent'
     resources :caravans, controller: 'camping_sites', type: 'Caravan'
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   get '/accommodation', to: 'static_pages#accommodation'
   get '/activities', to: 'static_pages#activities'
   get '/memories', to: 'static_pages#memories'
+  get '/terms', to: 'static_pages#terms'
   get '/views', to: 'static_pages#views'
   get '/test', to: 'static_pages#test'
   get '/afrikaans', to: 'users#to_afrikaans'

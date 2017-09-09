@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-01-23T22:42:20+10:00">2015-01-23T22:42:20+10:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-09T11:45:06+10:00">2017-09-09T11:45:06+10:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">87.94%</span></span>
+    (<span class="covered_percent"><span class="yellow">87.68%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.59
+         3.58
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>2612</b> relevant lines. 
-    <span class="green"><b>2297</b> lines covered</span> and
-    <span class="red"><b>315</b> lines missed </span>
+    <b>2622</b> relevant lines. 
+    <span class="green"><b>2299</b> lines covered</span> and
+    <span class="red"><b>323</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -162,12 +162,12 @@
       
       <tr>
         <td class="strong"><a href="#a76f77d21eecf4f7c15d2a4dac437320f748fedf" class="src_link" title="app/controllers/static_pages_controller.rb">app/controllers/static_pages_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>23</td>
+        <td class="red strong">52.94 %</td>
+        <td>35</td>
+        <td>17</td>
+        <td>9</td>
         <td>8</td>
-        <td>8</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -513,9 +513,9 @@
       <tr>
         <td class="strong"><a href="#d4c242028648ed5889f4eab649b13c4ae7a590a6" class="src_link" title="spec/models/reservation_request_spec.rb">spec/models/reservation_request_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>263</td>
-        <td>160</td>
-        <td>160</td>
+        <td>264</td>
+        <td>161</td>
+        <td>161</td>
         <td>0</td>
         <td>2.1</td>
       </tr>
@@ -6341,11 +6341,11 @@
         <div class="source_table" id="a76f77d21eecf4f7c15d2a4dac437320f748fedf">
   <div class="header">
     <h3>app/controllers/static_pages_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">52.94 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>17</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -6457,34 +6457,106 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  def views</code>
+          <code class="ruby">  def terms</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">    @terms = I18n.t(:terms, scope: [:terms_and_conditions]).each_with_index.map { |rule, inx| [rule[1].to_s, inx + 1] }</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
+          
+          <code class="ruby">    @cancellation_rules = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
+          
+          <code class="ruby">    I18n.t(:policy_rules, scope: [:terms_and_conditions]).each_with_index do |rule, inx| </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">      break if inx &gt; 3</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">      @cancellation_rules &lt;&lt; [rule[1].to_s, inx + 1]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    end   </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">    @cancellation_rules &lt;&lt; [ I18n.t(:rule, scope: [:terms_and_conditions, :policy_rules, :rule05]), 5]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">    @rule5_subrules = I18n.t(:sub_points, scope: [:terms_and_conditions, :policy_rules, :rule05]).each.map { |rule| rule[1]}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">    @trespassing_rules = I18n.t(:trespassing_rules, scope: [:terms_and_conditions, :policy_rules]).each_with_index.map { |rule, inx| [rule[1].to_s, inx + 1] }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  def test</code>
+          <code class="ruby">  def views</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def test</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
@@ -13633,7 +13705,7 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_link(&#39;Things to see&#39;)</code>
+          <code class="ruby">      expect(page).to have_link(&#39;Photos&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
@@ -13765,7 +13837,7 @@
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">end </code>
+          <code class="ruby">end</code>
         </li>
       
     </ol>
@@ -16861,7 +16933,7 @@
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">          effective_date: Date.new(2015, 2, 1),</code>
+          <code class="ruby">          effective_date: Date.new(2018, 2, 1),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -16915,7 +16987,7 @@
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">          effective_date: Date.new(2015, 2, 1),</code>
+          <code class="ruby">          effective_date: Date.new(2018, 2, 1),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -16957,7 +17029,7 @@
         <li class="covered" data-hits="3" data-linenumber="34">
           <span class="hits">3</span>
           
-          <code class="ruby">      @reservation_request = create(:reservation_request, start_date_1: Date.new(2015, 8, 2), end_date_1: Date.new(2015, 8, 5))</code>
+          <code class="ruby">      @reservation_request = create(:reservation_request, start_date_1: Date.new(2018, 8, 2), end_date_1: Date.new(2018, 8, 5))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -17617,13 +17689,13 @@
         <li class="covered" data-hits="1" data-linenumber="144">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="145">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 Aug 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 Aug 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="146">
@@ -17803,7 +17875,7 @@
         <li class="covered" data-hits="1" data-linenumber="175">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 Jan 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 Jan 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="176">
@@ -17839,13 +17911,13 @@
         <li class="covered" data-hits="1" data-linenumber="181">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 May 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;03 May 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="183">
@@ -17875,7 +17947,7 @@
         <li class="covered" data-hits="1" data-linenumber="187">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;31 Jul 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;31 Jul 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="188">
@@ -17905,7 +17977,7 @@
         <li class="covered" data-hits="1" data-linenumber="192">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;11 Jul 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;11 Jul 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="193">
@@ -17935,13 +18007,13 @@
         <li class="covered" data-hits="1" data-linenumber="197">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Jul 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="198">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;11 Aug 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;11 Aug 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="199">
@@ -18145,13 +18217,13 @@
         <li class="covered" data-hits="2" data-linenumber="232">
           <span class="hits">2</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Mar 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_1&quot;).set(&#39;31 Mar 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="233">
           <span class="hits">2</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;10 Apr 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_1&quot;).set(&#39;10 Apr 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="234">
@@ -18205,13 +18277,13 @@
         <li class="covered" data-hits="1" data-linenumber="242">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_2&quot;).set(&#39;10 Apr 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_start_date_2&quot;).set(&#39;10 Apr 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="243">
           <span class="hits">1</span>
           
-          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_2&quot;).set(&#39;12 Apr 2015&#39;)</code>
+          <code class="ruby">      find(:css, &quot;#reservation_request_end_date_2&quot;).set(&#39;12 Apr 2018&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="244">
@@ -18247,7 +18319,7 @@
         <li class="never" data-hits="" data-linenumber="249">
           
           
-          <code class="ruby">    end  </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="250">
@@ -18271,13 +18343,13 @@
         <li class="covered" data-hits="2" data-linenumber="253">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect( [&#39;31 Mar 2015&#39;, &#39;31 March 2015&#39;]).to include(find(:css, &quot;input#reservation_request_start_date_1&quot;).value)</code>
+          <code class="ruby">      expect( [&#39;31 Mar 2018&#39;, &#39;31 March 2018&#39;]).to include(find(:css, &quot;input#reservation_request_start_date_1&quot;).value)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="254">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect( [&#39;10 Apr 2015&#39;, &#39;10 April 2015&#39;]).to include(find(:css, &quot;input#reservation_request_end_date_1&quot;).value)</code>
+          <code class="ruby">      expect( [&#39;10 Apr 2018&#39;, &#39;10 April 2018&#39;]).to include(find(:css, &quot;input#reservation_request_end_date_1&quot;).value)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="255">
@@ -18343,13 +18415,13 @@
         <li class="covered" data-hits="1" data-linenumber="265">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect( [&#39;10 Apr 2015&#39;, &#39;10 April 2015&#39;]).to include(find(:css, &quot;input#reservation_request_start_date_2&quot;).value)</code>
+          <code class="ruby">      expect( [&#39;10 Apr 2018&#39;, &#39;10 April 2018&#39;]).to include(find(:css, &quot;input#reservation_request_start_date_2&quot;).value)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="266">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect( [&#39;12 Apr 2015&#39;, &#39;12 April 2015&#39;]).to include(find(:css, &quot;input#reservation_request_end_date_2&quot;).value)</code>
+          <code class="ruby">      expect( [&#39;12 Apr 2018&#39;, &#39;12 April 2018&#39;]).to include(find(:css, &quot;input#reservation_request_end_date_2&quot;).value)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="267">
@@ -23299,8 +23371,8 @@
     <h3>spec/models/reservation_request_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>160</b> relevant lines. 
-      <span class="green"><b>160</b> lines covered</span> and
+      <b>161</b> relevant lines. 
+      <span class="green"><b>161</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -23314,1573 +23386,1579 @@
           <code class="ruby">require &#39;spec_helper&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;byebug&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">describe ReservationRequest do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  include FactoryGirl::Syntax::Methods</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">  before do</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="8">
+        <li class="covered" data-hits="52" data-linenumber="9">
           <span class="hits">52</span>
           
           <code class="ruby">    @reservation_request = ReservationRequest.new(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">      applicant_name: &#39;Willie Wolvaart&#39;,</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">      applicant_telephone: &#39;123456789&#39;,</code>
+          <code class="ruby">      applicant_name: &#39;Willie Wolvaart&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">      applicant_mobile: &#39;987654321&#39;,</code>
+          <code class="ruby">      applicant_telephone: &#39;123456789&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">      applicant_email: &#39;williewolvaart@myhome.co.za&#39;,</code>
+          <code class="ruby">      applicant_mobile: &#39;987654321&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">      applicant_town: &#39;Wolmaransstad&#39;,</code>
+          <code class="ruby">      applicant_email: &#39;williewolvaart@myhome.co.za&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">      facility_type_1: 3,</code>
+          <code class="ruby">      applicant_town: &#39;Wolmaransstad&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">      start_date_1: Date.new(2015, 7, 25),</code>
+          <code class="ruby">      facility_type_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">      end_date_1: Date.new(2015, 8, 2),</code>
+          <code class="ruby">      start_date_1: Date.new(2018, 7, 25),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">      adults_18_plus_count_1: 2,</code>
+          <code class="ruby">      end_date_1: Date.new(2018, 8, 2),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">      teenagers_count_1: 2,</code>
+          <code class="ruby">      adults_18_plus_count_1: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">      children_6_12_count_1: 1,</code>
+          <code class="ruby">      teenagers_count_1: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      infants_count_1: 3,</code>
+          <code class="ruby">      children_6_12_count_1: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">      vehicle_registration_numbers: &#39;DC 12 TM GP&#39;,</code>
+          <code class="ruby">      infants_count_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">      special_requests: &#39;We want heaters and a TV in our chalet&#39;</code>
+          <code class="ruby">      vehicle_registration_numbers: &#39;DC 12 TM GP&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">      special_requests: &#39;We want heaters and a TV in our chalet&#39;</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="24">
-          <span class="hits">52</span>
+        <li class="never" data-hits="" data-linenumber="24">
           
-          <code class="ruby">    @reservation_request2 = ReservationRequest.new(</code>
+          
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">      applicant_name: &#39;Willie Wolvaart&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="52" data-linenumber="26">
+          <span class="hits">52</span>
           
-          
-          <code class="ruby">      applicant_telephone: &#39;123456789&#39;,</code>
+          <code class="ruby">    @reservation_request2 = ReservationRequest.new(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">      applicant_mobile: &#39;987654321&#39;,</code>
+          <code class="ruby">      applicant_name: &#39;Willie Wolvaart&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">      applicant_email: &#39;williewolvaart@myhome.co.za&#39;,</code>
+          <code class="ruby">      applicant_telephone: &#39;123456789&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">      applicant_town: &#39;Wolmaransstad&#39;,</code>
+          <code class="ruby">      applicant_mobile: &#39;987654321&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">      facility_type_1: 3,</code>
+          <code class="ruby">      applicant_email: &#39;williewolvaart@myhome.co.za&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">      start_date_1: Date.new(2015, 7, 25),</code>
+          <code class="ruby">      applicant_town: &#39;Wolmaransstad&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">      end_date_1: Date.new(2015, 8, 2),</code>
+          <code class="ruby">      facility_type_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">      adults_18_plus_count_1: 2,</code>
+          <code class="ruby">      start_date_1: Date.new(2018, 7, 25),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">      teenagers_count_1: 2,</code>
+          <code class="ruby">      end_date_1: Date.new(2018, 8, 2),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">      children_6_12_count_1: 1,</code>
+          <code class="ruby">      adults_18_plus_count_1: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">      infants_count_1: 3,</code>
+          <code class="ruby">      teenagers_count_1: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">      facility_type_2: 3,</code>
+          <code class="ruby">      children_6_12_count_1: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">      start_date_2: Date.new(2015, 7, 25),</code>
+          <code class="ruby">      infants_count_1: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">      end_date_2: Date.new(2015, 8, 2),</code>
+          <code class="ruby">      facility_type_2: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">      adults_18_plus_count_2: 2,</code>
+          <code class="ruby">      start_date_2: Date.new(2018, 7, 25),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">      teenagers_count_2: 2,</code>
+          <code class="ruby">      end_date_2: Date.new(2018, 8, 2),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">      children_6_12_count_2: 1,</code>
+          <code class="ruby">      adults_18_plus_count_2: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">      infants_count_2: 3,</code>
+          <code class="ruby">      teenagers_count_2: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">      facility_type_3: 3,</code>
+          <code class="ruby">      children_6_12_count_2: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">      start_date_3: Date.new(2015, 7, 25),</code>
+          <code class="ruby">      infants_count_2: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">      end_date_3: Date.new(2015, 8, 2),</code>
+          <code class="ruby">      facility_type_3: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">      adults_18_plus_count_3: 2,</code>
+          <code class="ruby">      start_date_3: Date.new(2018, 7, 25),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">      teenagers_count_3: 2,</code>
+          <code class="ruby">      end_date_3: Date.new(2018, 8, 2),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">      children_6_12_count_3: 1,</code>
+          <code class="ruby">      adults_18_plus_count_3: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">      infants_count_3: 3,</code>
+          <code class="ruby">      teenagers_count_3: 2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">      vehicle_registration_numbers: &#39;DC 12 TM GY&#39;,</code>
+          <code class="ruby">      children_6_12_count_3: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">      special_requests: &#39;We want heaters and a TV in our chalet&#39;,</code>
+          <code class="ruby">      infants_count_3: 3,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      vehicle_registration_numbers: &#39;DC 12 TM GY&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">      special_requests: &#39;We want heaters and a TV in our chalet&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="57">
+        <li class="covered" data-hits="30" data-linenumber="58">
           <span class="hits">30</span>
           
           <code class="ruby">  subject { @reservation_request }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="59">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  it { should respond_to(:applicant_name) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="60">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:applicant_telephone) }</code>
+          <code class="ruby">  it { should respond_to(:applicant_name) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="61">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:applicant_mobile) }</code>
+          <code class="ruby">  it { should respond_to(:applicant_telephone) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="62">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:applicant_email) }</code>
+          <code class="ruby">  it { should respond_to(:applicant_mobile) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="63">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:facility_type_1) }</code>
+          <code class="ruby">  it { should respond_to(:applicant_email) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="64">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:start_date_1) }</code>
+          <code class="ruby">  it { should respond_to(:facility_type_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="65">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:end_date_1) }</code>
+          <code class="ruby">  it { should respond_to(:start_date_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="66">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:adults_18_plus_count_1) }</code>
+          <code class="ruby">  it { should respond_to(:end_date_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="67">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:children_6_12_count_1) }</code>
+          <code class="ruby">  it { should respond_to(:adults_18_plus_count_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:infants_count_1) }</code>
+          <code class="ruby">  it { should respond_to(:children_6_12_count_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="69">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:facility_type_2) }</code>
+          <code class="ruby">  it { should respond_to(:infants_count_1) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="70">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:start_date_2) }</code>
+          <code class="ruby">  it { should respond_to(:facility_type_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="71">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:end_date_2) }</code>
+          <code class="ruby">  it { should respond_to(:start_date_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="72">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:adults_18_plus_count_2) }</code>
+          <code class="ruby">  it { should respond_to(:end_date_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="73">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:children_6_12_count_2) }</code>
+          <code class="ruby">  it { should respond_to(:adults_18_plus_count_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="74">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:infants_count_2) }</code>
+          <code class="ruby">  it { should respond_to(:children_6_12_count_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="75">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:facility_type_3) }</code>
+          <code class="ruby">  it { should respond_to(:infants_count_2) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="76">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:start_date_3) }</code>
+          <code class="ruby">  it { should respond_to(:facility_type_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="77">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:end_date_3) }</code>
+          <code class="ruby">  it { should respond_to(:start_date_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="78">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:adults_18_plus_count_3) }</code>
+          <code class="ruby">  it { should respond_to(:end_date_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="79">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:children_6_12_count_3) }</code>
+          <code class="ruby">  it { should respond_to(:adults_18_plus_count_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="80">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:infants_count_3) }</code>
+          <code class="ruby">  it { should respond_to(:children_6_12_count_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="81">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:meals_required_count) }</code>
+          <code class="ruby">  it { should respond_to(:infants_count_3) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="82">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:vehicle_registration_numbers) }</code>
+          <code class="ruby">  it { should respond_to(:meals_required_count) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="83">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:payable_amount) }</code>
+          <code class="ruby">  it { should respond_to(:vehicle_registration_numbers) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="84">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:key_deposit_amount) }</code>
+          <code class="ruby">  it { should respond_to(:payable_amount) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="85">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:estimated_arrival_time) }</code>
+          <code class="ruby">  it { should respond_to(:key_deposit_amount) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="86">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should respond_to(:reservation_reference_id) }</code>
+          <code class="ruby">  it { should respond_to(:estimated_arrival_time) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="87">
           <span class="hits">2</span>
           
+          <code class="ruby">  it { should respond_to(:reservation_reference_id) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="88">
+          <span class="hits">2</span>
+          
           <code class="ruby">  it { should respond_to(:special_requests) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="89">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;must be a valid object is one facility is being booked&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).to be_valid</code>
+          <code class="ruby">  it &quot;must be a valid object is one facility is being booked&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="93">
           
-          <code class="ruby">  it &quot;must be a valid object is three facilities are being booked&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
+          <code class="ruby">  it &quot;must be a valid object is three facilities are being booked&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="97">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="97">
           
-          <code class="ruby">  it &quot;must ensure the applicant name has a valid format&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
-          <code class="ruby">    names = [&quot;&quot;, &quot;A234&quot;, &#39;N&#39; * 41]</code>
+          <code class="ruby">  it &quot;must ensure the applicant name has a valid format&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
-          <code class="ruby">    names.each do |name|</code>
+          <code class="ruby">    names = [&quot;&quot;, &quot;A234&quot;, &#39;N&#39; * 41]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="100">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @reservation_request.applicant_name = name</code>
+          <code class="ruby">    names.each do |name|</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="101">
           <span class="hits">3</span>
           
-          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">      @reservation_request.applicant_name = name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="covered" data-hits="3" data-linenumber="102">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    end  </code>
+          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="105">
           
-          <code class="ruby">  it &quot;must ensure the applicant telephone has a valid format&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
-          <code class="ruby">    telnrs = [&#39;9&#39; * 8, &#39;9&#39; * 21]</code>
+          <code class="ruby">  it &quot;must ensure the applicant telephone has a valid format&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="107">
           <span class="hits">1</span>
           
-          <code class="ruby">    telnrs.each do |tel|</code>
+          <code class="ruby">    telnrs = [&#39;9&#39; * 8, &#39;9&#39; * 21]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="108">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @reservation_request.applicant_telephone = tel</code>
+          <code class="ruby">    telnrs.each do |tel|</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="109">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">      @reservation_request.applicant_telephone = tel</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="covered" data-hits="2" data-linenumber="110">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="113">
           
-          <code class="ruby">  it &quot;must ensure the applicant mobile has a valid format&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
-          <code class="ruby">    telnrs = [&#39;9&#39; * 8, &#39;9&#39; * 21]</code>
+          <code class="ruby">  it &quot;must ensure the applicant mobile has a valid format&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
-          <code class="ruby">    telnrs.each do |tel|</code>
+          <code class="ruby">    telnrs = [&#39;9&#39; * 8, &#39;9&#39; * 21]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="116">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="116">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @reservation_request.applicant_mobile = tel</code>
+          <code class="ruby">    telnrs.each do |tel|</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="117">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">      @reservation_request.applicant_mobile = tel</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="covered" data-hits="2" data-linenumber="118">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="119">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="120">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="121">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="121">
           
-          <code class="ruby">  it &quot;must ensure at least one contact number is required&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="122">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_telephone = &quot;&quot;</code>
+          <code class="ruby">  it &quot;must ensure at least one contact number is required&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="123">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_mobile = &quot;&quot;</code>
+          <code class="ruby">    @reservation_request.applicant_telephone = &quot;&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="124">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_mobile = &quot;&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="125">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_mobile = &quot;555333444&quot;  </code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="126">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_mobile = &quot;555333444&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="127">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_mobile = &quot;&quot;</code>
+          <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="128">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_telephone = &quot;555333444&quot;</code>
+          <code class="ruby">    @reservation_request.applicant_mobile = &quot;&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_telephone = &quot;555333444&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="131">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="132">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="132">
           
-          <code class="ruby">  it &quot;must ensure the email address has a valid format&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_email = &#39;sue.com.au&#39;</code>
+          <code class="ruby">  it &quot;must ensure the email address has a valid format&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="134">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_email = &#39;sue.com.au&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="135">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_email = &#39;sue.scott@new.123&#39;    </code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="136">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_email = &#39;sue.scott@new.123&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="137">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_email = &#39;jacktheripperswife@thebigbrownfox.thefoxcompany.com&#39;</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="138">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_email = &#39;jacktheripperswife@thebigbrownfox.thefoxcompany.com&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="covered" data-hits="1" data-linenumber="139">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="140">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="141">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="141">
           
-          <code class="ruby">  it &quot;must ensure the applicant town has a valid format&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="142">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.applicant_town = &quot;&quot;</code>
+          <code class="ruby">  it &quot;must ensure the applicant town has a valid format&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="143">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).to be_valid</code>
+          <code class="ruby">    @reservation_request.applicant_town = &quot;&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="144">
           <span class="hits">1</span>
           
-          <code class="ruby">    towns = [&#39;T&#39;, &#39;T&#39; * 41]</code>
+          <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="145">
           <span class="hits">1</span>
           
-          <code class="ruby">    towns.each do |town|</code>
+          <code class="ruby">    towns = [&#39;T&#39;, &#39;T&#39; * 41]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="146">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="146">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @reservation_request.applicant_town = town</code>
+          <code class="ruby">    towns.each do |town|</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="147">
           <span class="hits">2</span>
           
-          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">      @reservation_request.applicant_town = town</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="covered" data-hits="2" data-linenumber="148">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="149">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="150">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="151">
           
-          <code class="ruby">  it &quot;must ensure start date (1) is valid&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.start_date_1 = nil</code>
+          <code class="ruby">  it &quot;must ensure start date (1) is valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="153">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.start_date_1 = nil</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="154">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.start_date_1 = Date.today - 1</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="155">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.start_date_1 = Date.today - 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="covered" data-hits="1" data-linenumber="156">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="157">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="158">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="158">
           
-          <code class="ruby">  it &quot;must ensure end date (1) is valid&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="159">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.end_date_1 = nil</code>
+          <code class="ruby">  it &quot;must ensure end date (1) is valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="160">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.end_date_1 = nil</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="161">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.end_date_1 = @reservation_request.start_date_1</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="162">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.end_date_1 = @reservation_request.start_date_1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="163">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.end_date_1 = @reservation_request.start_date_1.to_datetime - 1</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.end_date_1 = @reservation_request.start_date_1.to_datetime - 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="covered" data-hits="1" data-linenumber="165">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="166">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="167">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="167">
           
-          <code class="ruby">  it &quot;must ensure that facility 1 has at least one person is specified&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="168">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
+          <code class="ruby">  it &quot;must ensure that facility 1 has at least one person is specified&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="169">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.teenagers_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="170">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.children_6_12_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.teenagers_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="171">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.infants_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.children_6_12_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="172">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.infants_count_1 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
+        <li class="covered" data-hits="1" data-linenumber="173">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="174">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="175">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="175">
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (1) has an adult when there are infants&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="176">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
+          <code class="ruby">  it &quot;must ensure that caravan facility (1) has an adult when there are infants&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="177">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="178">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.infants_count_1 = 1    </code>
+          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="179">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
+          <code class="ruby">    @reservation_request.infants_count_1 = 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="180">
+        <li class="covered" data-hits="1" data-linenumber="180">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="181">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="182">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="182">
           
-          <code class="ruby">  it &quot;must allow a caravan facility (1) to have no adults when no infants are present&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="183">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
+          <code class="ruby">  it &quot;must allow a caravan facility (1) to have no adults when no infants are present&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="184">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
+          <code class="ruby">    @reservation_request.facility_type_1 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="185">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request.infants_count_1 = 0 </code>
+          <code class="ruby">    @reservation_request.adults_18_plus_count_1 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="186">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request).to be_valid</code>
+          <code class="ruby">    @reservation_request.infants_count_1 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="187">
+        <li class="covered" data-hits="1" data-linenumber="187">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="188">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="189">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="189">
           
-          <code class="ruby">  it &quot;must ensure start date (2) requires an end date&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="190">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.start_date_2 = Date.today</code>
+          <code class="ruby">  it &quot;must ensure start date (2) requires an end date&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="191">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_2 = Date.today</code>
+          <code class="ruby">    @reservation_request2.start_date_2 = Date.today</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="192">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_2 = Date.today</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="193">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_2 = Date.today + 1</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="194">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_2 = Date.today + 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="195">
+        <li class="covered" data-hits="1" data-linenumber="195">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="196">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="197">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="197">
           
-          <code class="ruby">  it &quot;must ensure end date (2) is valid&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="198">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2</code>
+          <code class="ruby">  it &quot;must ensure end date (2) is valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="199">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="200">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2.to_datetime - 1</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="201">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_2 = @reservation_request2.start_date_2.to_datetime - 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="covered" data-hits="1" data-linenumber="202">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="203">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="204">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="204">
           
-          <code class="ruby">  it &quot;must ensure that facility (2) has at least one person is specified&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="205">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
+          <code class="ruby">  it &quot;must ensure that facility (2) has at least one person is specified&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="206">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.teenagers_count_2 = 0</code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="207">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.children_6_12_count_2 = 0</code>
+          <code class="ruby">    @reservation_request2.teenagers_count_2 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="208">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_2 = 0</code>
+          <code class="ruby">    @reservation_request2.children_6_12_count_2 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="209">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_2 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="210">
+        <li class="covered" data-hits="1" data-linenumber="210">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="211">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="212">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="212">
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (2) has an adult when there are infants&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="213">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
+          <code class="ruby">  it &quot;must ensure that caravan facility (2) has an adult when there are infants&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="214">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
+          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="215">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_2 = 1    </code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="216">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_2 = 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="217">
+        <li class="covered" data-hits="1" data-linenumber="217">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="218">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="219">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="219">
           
-          <code class="ruby">  it &quot;must allow a caravan facility (2) to have no adults when no infants are present&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="220">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
+          <code class="ruby">  it &quot;must allow a caravan facility (2) to have no adults when no infants are present&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="221">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
+          <code class="ruby">    @reservation_request2.facility_type_2 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="222">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_2 = 0 </code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_2 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="223">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_2 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="224">
+        <li class="covered" data-hits="1" data-linenumber="224">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="225">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="226">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="226">
           
-          <code class="ruby">  it &quot;must ensure start date (3) requires an end date&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="227">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.start_date_3 = Date.today</code>
+          <code class="ruby">  it &quot;must ensure start date (3) requires an end date&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="228">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_3 = Date.today</code>
+          <code class="ruby">    @reservation_request2.start_date_3 = Date.today</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="229">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_3 = Date.today</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="230">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_3 = Date.today + 1</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="231">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_3 = Date.today + 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="232">
+        <li class="covered" data-hits="1" data-linenumber="232">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="233">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="234">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="234">
           
-          <code class="ruby">  it &quot;must ensure end date (3) is valid&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="235">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3</code>
+          <code class="ruby">  it &quot;must ensure end date (3) is valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="236">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="237">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3.to_datetime - 1</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="238">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.end_date_3 = @reservation_request2.start_date_3.to_datetime - 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="239">
+        <li class="covered" data-hits="1" data-linenumber="239">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="240">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="241">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="241">
           
-          <code class="ruby">  it &quot;must ensure that facility (3) has at least one person is specified&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="242">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
+          <code class="ruby">  it &quot;must ensure that facility (3) has at least one person is specified&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="243">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.teenagers_count_3 = 0</code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="244">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.children_6_12_count_3 = 0</code>
+          <code class="ruby">    @reservation_request2.teenagers_count_3 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="245">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_3 = 0</code>
+          <code class="ruby">    @reservation_request2.children_6_12_count_3 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="246">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_3 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="247">
+        <li class="covered" data-hits="1" data-linenumber="247">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="248">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="249">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="249">
           
-          <code class="ruby">  it &quot;must ensure that caravan facility (3) has an adult when there are infants&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="250">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
+          <code class="ruby">  it &quot;must ensure that caravan facility (3) has an adult when there are infants&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="251">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
+          <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="252">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_3 = 1    </code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="253">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_3 = 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="254">
+        <li class="covered" data-hits="1" data-linenumber="254">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="255">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="256">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="256">
           
-          <code class="ruby">  it &quot;must allow a caravan facility (3) to have no adults when no infants are present&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="257">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
+          <code class="ruby">  it &quot;must allow a caravan facility (3) to have no adults when no infants are present&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="258">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
+          <code class="ruby">    @reservation_request2.facility_type_3 = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="259">
           <span class="hits">1</span>
           
-          <code class="ruby">    @reservation_request2.infants_count_3 = 0 </code>
+          <code class="ruby">    @reservation_request2.adults_18_plus_count_3 = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="260">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
+          <code class="ruby">    @reservation_request2.infants_count_3 = 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="261">
+        <li class="covered" data-hits="1" data-linenumber="261">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(@reservation_request2).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="262">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="263">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="264">
           
           
           <code class="ruby">end</code>

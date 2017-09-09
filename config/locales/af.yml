@@ -16,10 +16,10 @@ af:
     bookings: Besprekings
     contact_us: Kontak ons
     facilities: Fasiliteite
-    home: Carpe Diem Tuisblad
+    home: Carpe Diem
     make_reservation: Plaas bespreking
     menu: Spyskaart
-    things_to_see: Dinge te sien
+    things_to_see: Fotos
     guest_memories: Herinneringe van ons gaste
     memories: Herinneringe
     views: Besigtiging
@@ -39,6 +39,7 @@ af:
     reservation_request: Bespreking Navraag
     reservation_requests: Bespreking Navrae    
     reservation_request_details: Bespreking Navrae Besonderhede 
+    terms_and_conditions: Terme en Voorwaardes
   references:
     ps_118v24: Ps 118:24
   articles:
@@ -163,6 +164,104 @@ af:
     christmas: Kersfees
     new_year:  Nuwejaar
     easter: Paasnaweek
+  terms_and_conditions:  
+    released_on: Uitgereik op
+    cancellation_policy: Kansellasie Beleid
+    trespassing_of_rules: Oortreding van reëls
+    terms:
+      term01: |- 
+        Die besprekingsversoek is slegs ’n aansoek om huisvesting en is nie ’n
+        amptelike bespreking nie. Die bespreking word eers bevestig wanneer Karpe 
+        Diem die versoek aanvaar. 'n Amptelike dokument sal hiervoor aan die 
+        aansoeker uitgereik word.
+      term02: |-
+        Vyftig persent van die koste van die totale verblyfrekening (BTW 
+        ingesluit) is betaalbaar as deposito en moet voor of op die keerdatum 
+        betaal word om die bespreking te bevestig. Die keerdatum verskyn op die
+        aansoekvorm.
+      term03: |-
+        Deposito’s sal nie terugbetaal word indien die bespreking daarna 
+        gekanselleer word nie. Geen geld word ook terugbetaal nie wanneer
+        gaste die terrein vroeër verlaat as wat bespreek is.
+      term04: |-
+        Betaling van deposito’s moet geskied voor of op die voorgeskrewe keerdatum.
+      term05: |-
+        Versuim om die deposito voor of op die keerdatum te betaal, sal daartoe 
+        lei dat die bespreking sonder vooraf kennisgewing gekanselleer word.
+      term06: |-
+        Alle uitstaande koste moet voor aankoms vereffen wees.
+      term07: |-
+        Alle veranderings aan die bespreking moet skriftelik geskied.
+      term08: |-
+        Debietkaarte sowel as Visa- en Master-kredietkaarte en elektroniese 
+        oorbetalings word aanvaar.
+      term09: |-
+        Geen tjeks word aanvaar nie
+      term10: |-
+        Besprekings (BTW ingesluit @ 14%) is van toepassing.
+      term11: |-
+        Aankoms- en vertrektye: In: 8h00, Uit: 17h30.
+      term12: |-
+        Met aankoms vind registrasie plaas en die besoeker teken ’n 
+        vrywaringsvorm wat die oord vrywaar teen enige aanspreeklikheid indien 
+        ’n besoeker beserings opdoen of verliese ly. Die besoeker teken ook ’n 
+        vorm waarmee hy onderneem om die oord se reëls na te kom.
+      term13: |-
+        Geen troeteldiere word toegelaat nie – behalwe gidshonde vir blindes en 
+        swaksiendes.
+      term14: |-
+        Tariewe is onderhewig aan veranderings sonder vooraf kennisgewing.
+      term15: |-
+        Minimum aantal van 5 dae geld vir besprekings ten opsigte van 
+        skoolvakansies
+      term16: |-
+        Die bestuur sal die aantal dagbesoekers beperk ter wille van die
+        gerief en plesier van kampeerders wat akkommodasie huur.
+      term17: |-
+        Kampeerders sal stilte handhaaf na 22h00.
+      term18: |-
+        Geen drank mag na die terrein gebring word nie.
+      term19: |-
+        Elke kampeerder sal respek betoon en beleeft wees teenoor alle personeel
+        en mede-kampeerders.
+      term20: |-
+        Geen busse mag besoekers besoekers in die terrein bring tensy daar
+        vooraf reelings getref is vir hierdie besokers nie.   
+    policy_rules:
+      rule01: |-
+        Alle kansellasies moet die oord op skrif bereik.
+      rule02: |-
+        Vir kansellasies langer as 30 dae voor die aankomsdatum word 25% van 
+        die aangevraagde deposito verbeur.
+      rule03: |-
+        Vir kansellasies tussen 16 tot 29 dae voor die aankomsdatum word 50% 
+        van die aangevraagde deposito verbeur.
+      rule04: |-
+        Vir kansellasies tussen 0 en 15 dae voor die aankomsdatum word 100% 
+        van die aangevraagde deposito verbeur.
+      rule05:
+        rule: |-
+          In die geval van kansellasie weens sterfte (of ander aanvaarbare 
+          redes waaroor die betrokkene geen beheer het nie) word slegs 
+          administrasiegeld van R50 gehef wanneer stawende bewyse verskaf word. 
+        sub_points:
+          point01: |-  
+            Dit is vir Carpe Diem van uiterste belang om die vakansie-ervaring 
+            van die Afrikaans/Engelse kultuurgemeenskap aangenaam te maak. 
+          point02: |-  
+            Die terrein is gerig op die gesin en fokus op aspekte soos 
+            gesinsvermaak, veiligheid, ‘n rustige vakansieomgewing en 
+            vakansiegangers wat mekaar se behoeftes respekteer en aanvul.
+      trespassing_rules:
+        rule01: |-
+          ‘n Persoon wat die reëls oortree sal een of twee keer gewaarsku word, 
+          waarna drasties opgetree word. Hierdie optrede kan afsetting van die 
+          oorde behels. Alle oortreders sal gelyk behandel word.
+        rule02: |-
+          Besprekings geskied konsekwent en enige persoon wat nie die 
+          menswaardigheid van ander besoekers erken nie en beswaar teen hulle 
+          teenwoordigheid het, se geld sal teruggegee word met die versoek dat 
+          hy of sy die oord verlaat.  
   success:
     tariff_created: Tarief is suksesvol bygevoeg
     tariff_updated: Tarief verandering suksesvol

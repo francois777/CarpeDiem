@@ -5,8 +5,7 @@
       %h1
         = t(".camping_site_list")
 
-      = select_tag :camping_sites, options_for_select({'Tents' => @tents, 'Caravans' => @caravans, 'Tents and Caravans' => @camping_sites}), { class: "filter" }
-      -# = f.select :tariff_category, tariff_categories_for_select, {}, class: "form-control"
+      = select_tag :camping_sites, options_for_select({'Tents' => 'Tent', 'Caravans' => 'Caravan', 'Tents and Caravans' => 'All'}, { class: "filter", selected: "All" })
 
       .table-responsive
         %table.table.camping-sites

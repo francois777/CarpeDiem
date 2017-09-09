@@ -9,6 +9,7 @@ af:
       index:
         all_administrators: Alle administreerders  
         new_user: Nuwe verbruiker
+        all_users: Alle verbruikers
       new:
         add_user: Voeg verbruiker by  
         save_changes: Stoor veranderings

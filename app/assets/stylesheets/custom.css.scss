@@ -194,10 +194,21 @@ section.font-test {
     background-color: khaki;
   }
 
-  nav.navbar.navbar-default.navbar-inverse.main-nav {
+  #navbar-brand a {
+    font-size: 1em;
+    display: inline-block;
+    padding-top: 14px;
+    margin-left: 1em;
+  }
+
+  .nav.navbar.navbar-default.navbar-inverse.main-nav {
     margin: 0;
     background-image: image-url('bg-nav.png');
   }
+
+  .nav.navbar-nav.visible {
+    float: right;
+  } 
 
   .navbar-collapse {
     position: relative;
@@ -534,6 +545,14 @@ section.font-test {
     }
   }
 
+  section.tents {
+    .tents-map img {
+      display: block;
+      position: relative;
+      margin: 10px auto;
+    }
+  }
+
   // 320px+
   section.accom-tariffs {
     margin: 0.2em;
@@ -671,6 +690,22 @@ section.font-test {
       p {
         font-family: 'Times New Roman';
       }
+    }
+  }
+
+  section.terms-and-conditions {
+    h1 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 2em;      
+    }    
+    h2 {
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
+      font-size: 1.6em;      
+    }    
+    p.subrule {
+      padding-left: 1em;
     }
   }
 
@@ -966,6 +1001,7 @@ section.font-test {
       .navbar-collapse ul.dropdown-menu {
         background-color: black;
         color: #b9b9b9;
+        float: right;
         li {
           a:hover, a:focus {
             background-color: black;
@@ -1098,6 +1134,13 @@ section.font-test {
 
 /* Extra small devices, Phones */
 @media only screen and (min-width : 480px) {  
+
+  div#navbar-brand > a {
+    font-size: 1em;
+    display: inline-block;
+    padding-top: 14px;
+    margin-left: 1em;
+  }
 
   section.admin-header {
     height: 50px;

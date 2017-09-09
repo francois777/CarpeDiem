@@ -16,10 +16,10 @@ en:
     bookings: Reservations
     contact_us: Contact us
     facilities: Facilities
-    home: Carpe Diem Home
+    home: CarpeDiem
     make_reservation: Make reservation
     menu: Menu
-    things_to_see: Things to see
+    things_to_see: Photos
     guest_memories: Memories of our guests
     memories: Memories
     views: Views
@@ -39,6 +39,7 @@ en:
     reservation_request: Reservation Enquiry
     reservation_requests: Reservation Enquiries   
     reservation_request_details: Reservation Enquiry Details 
+    terms_and_conditions: Terms and Conditions
   references:
     ps_118v24: Ps 118:24
   articles:  
@@ -163,6 +164,100 @@ en:
     christmas: Christmas
     new_year:  New Year
     easter: Easter Weekend
+  terms_and_conditions:  
+    released_on: Uitgereik op
+    cancellation_policy: Kansellasie Beleid
+    trespassing_of_rules: Oortreding van reels
+    terms:
+      term01: |- 
+        The reservation request is only a request for accommodation and is not
+        an official reservation. Die request is confirmed when it is accepted by
+        Carpe Diem. An official document will then be issued to the applicant.
+      term02: |-
+        Fifty percent of the total cost of accommodation (VAT included) is 
+        payable as deposit to confirm the request for reservation. The due date  
+        appears on the request form.
+      term03: |-
+        The deposit will not be refunded if the reservation is cancelled 
+        afterwards. Neither will any money be refunded when the guests leave the
+        camping site before the reservation end date.
+      term04: |-
+        The deposit must be paid before or on the specified due date.
+      term05: |-
+        Failure to pay the deposit before or on the due date will result in the 
+        cancellation of the reservation without prior warning.
+      term06: |-
+        All outstanding costs must be settled before arrival.
+      term07: |-
+        Any changes to the reservation must be done in writing.
+      term08: |-
+        Payments can be made by Debit card, Visa card, Mastercard, or electronic 
+        transfer such as Paypal.
+      term09: |-
+        No cheques will be accepted
+      term10: |-
+        A VAT amount of 14% is included in the reservation tariff.  
+      term11: |-
+        Day visitors must arrive after 08:00am and leave before 17:30pm.
+      term12: |-
+        At arrival the guests will be registered. They will be required to 
+        agree to the camping rules at Carpe Diem and sign an indemnity 
+        agreement(1).
+      term13: |-
+        No pets are allowed. However, an exception is made for guide dogs for
+        people who are blind or vision-impaired.
+      term14: |-
+        Tariffs are subject to change without prior notice.
+      term15: |-
+        During school holidays, the minimum reservation period is 5 days.
+      term16: |-
+        Carpe Diem Management will limit the total amount of day visitors to
+        make it as convenient as possible for residents
+      term17: |-
+        Campers will be required to be quiet after 10:00pm.
+      term18: |-
+        Geen drank mag na die terrein gebring word nie.
+      term19: |-
+        Elke kampeerder sal respek betoon en beleeft wees teenoor alle personeel
+        en mede-kampeerders.
+      term20: |-
+        Geen busse mag besoekers besoekers in die terrein bring tensy daar
+        vooraf reelings getref is vir hierdie besokers nie.   
+    policy_rules:
+      rule01: |-
+        Alle kansellasies moet die oord op skrif bereik.
+      rule02: |-
+        Vir kansellasies langer as 30 dae voor die aankomsdatum word 25% van 
+        die aangevraagde deposito verbeur.
+      rule03: |-
+        Vir kansellasies tussen 16 tot 29 dae voor die aankomsdatum word 50% 
+        van die aangevraagde deposito verbeur.
+      rule04: |-
+        Vir kansellasies tussen 0 en 15 dae voor die aankomsdatum word 100% 
+        van die aangevraagde deposito verbeur.
+      rule05:
+        rule: |-
+          In die geval van kansellasie weens sterfte (of ander aanvaarbare 
+          redes waaroor die betrokkene geen beheer het nie) word slegs 
+          administrasiegeld van R50 gehef wanneer stawende bewyse verskaf word. 
+        sub_points:
+          point01: |-  
+            Dit is vir Carpe Diem van uiterste belang om die vakansie-ervaring 
+            van die Afrikaans/Engelse kultuurgemeenskap aangenaam te maak. 
+          point02: |-  
+            Die terrein is gerig op die gesin en fokus op aspekte soos 
+            gesinsvermaak, veiligheid, ‘n rustige vakansieomgewing en 
+            vakansiegangers wat mekaar se behoeftes respekteer en aanvul.
+      trespassing_rules:
+        rule01: |-
+          ‘n Persoon wat die reëls oortree sal een of twee keer gewaarsku word, 
+          waarna drasties opgetree word. Hierdie optrede kan afsetting van die 
+          oorde behels. Alle oortreders sal gelyk behandel word.
+        rule02: |-
+          Besprekings geskied konsekwent en enige persoon wat nie die 
+          menswaardigheid van ander besoekers erken nie en beswaar teen hulle 
+          teenwoordigheid het, se geld sal teruggegee word met die versoek dat 
+          hy of sy die oord verlaat.  
   success:
     tariff_created: Tariff created successfully
     tariff_updated: Tariff updated successfully

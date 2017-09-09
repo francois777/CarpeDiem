@@ -15,7 +15,7 @@ feature "ReservationRequest pages" do
       tariff1 = create(:tariff,
           tariff_category: 'D3',
           tariff: 8000,
-          effective_date: Date.new(2015, 2, 1),
+          effective_date: Date.new(2018, 2, 1),
           end_date: nil,
           accommodation_type: accom_type,
           with_power_points: true,
@@ -24,14 +24,14 @@ feature "ReservationRequest pages" do
       tariff2 = create(:tariff,
           tariff_category: 'E3',
           tariff: 6000,
-          effective_date: Date.new(2015, 2, 1),
+          effective_date: Date.new(2018, 2, 1),
           end_date: nil,
           accommodation_type: accom_type,
           with_power_points: false,
           facility_category: Tariff.facility_categories["tent"],
           price_class: :normal_price)
 
-      @reservation_request = create(:reservation_request, start_date_1: Date.new(2015, 8, 2), end_date_1: Date.new(2015, 8, 5))
+      @reservation_request = create(:reservation_request, start_date_1: Date.new(2018, 8, 2), end_date_1: Date.new(2018, 8, 5))
     end
 
     scenario "New Accommodation Enquiry must display all necessary fields" do
@@ -141,8 +141,8 @@ feature "ReservationRequest pages" do
       within(:css, "#first-facility") do
         select  "Small Chalet (4 people)", from: "Facility"
       end
-      find(:css, "#reservation_request_start_date_1").set('31 Jul 2015')
-      find(:css, "#reservation_request_end_date_1").set('03 Aug 2015')
+      find(:css, "#reservation_request_start_date_1").set('31 Jul 2018')
+      find(:css, "#reservation_request_end_date_1").set('03 Aug 2018')
       find(:css, "#reservation_request_adults_18_plus_count_1").set(2)
 
       click_button "Save and Review"
@@ -172,30 +172,30 @@ feature "ReservationRequest pages" do
       visit new_reservation_request_path
       fill_in_applicant_details
       find(:css, "#reservation_request_start_date_1").set('31 Dec 2014')
-      find(:css, "#reservation_request_end_date_1").set('03 Jan 2015')
+      find(:css, "#reservation_request_end_date_1").set('03 Jan 2018')
       find(:css, "#reservation_request_adults_18_plus_count_1").set(2)
       click_button "Save and Review"
       expect(page).to have_text("Reservation Enquiry contains errors")
       expect(page).to have_text("start_date_1: Invalid arrival date")
 
-      find(:css, "#reservation_request_start_date_1").set('31 Jul 2015')
-      find(:css, "#reservation_request_end_date_1").set('03 May 2015')
+      find(:css, "#reservation_request_start_date_1").set('31 Jul 2018')
+      find(:css, "#reservation_request_end_date_1").set('03 May 2018')
       click_button "Save and Review"
       expect(page).to have_text("Reservation Enquiry contains errors")
       expect(page).to have_text("end_date_1: Invalid departure date")
 
-      find(:css, "#reservation_request_end_date_1").set('31 Jul 2015')
+      find(:css, "#reservation_request_end_date_1").set('31 Jul 2018')
       click_button "Save and Review"
       expect(page).to have_text("Reservation Enquiry contains errors")
       expect(page).to have_text("end_date_1: Invalid departure date")
 
-      find(:css, "#reservation_request_end_date_1").set('11 Jul 2015')
+      find(:css, "#reservation_request_end_date_1").set('11 Jul 2018')
       click_button "Save and Review"
       expect(page).to have_text("Reservation Enquiry contains errors")
       expect(page).to have_text("end_date_1: Invalid departure date")
 
-      find(:css, "#reservation_request_start_date_1").set('31 Jul 2015')
-      find(:css, "#reservation_request_end_date_1").set('11 Aug 2015')
+      find(:css, "#reservation_request_start_date_1").set('31 Jul 2018')
+      find(:css, "#reservation_request_end_date_1").set('11 Aug 2018')
       find(:css, "#reservation_request_adults_18_plus_count_1").set(0)
       click_button "Save and Review"
       expect(page).to have_text("Reservation Enquiry contains errors")
@@ -229,8 +229,8 @@ feature "ReservationRequest pages" do
     end
 
     def fill_in_facility_1
-      find(:css, "#reservation_request_start_date_1").set('31 Mar 2015')
-      find(:css, "#reservation_request_end_date_1").set('10 Apr 2015')
+      find(:css, "#reservation_request_start_date_1").set('31 Mar 2018')
+      find(:css, "#reservation_request_end_date_1").set('10 Apr 2018')
       find(:css, "#reservation_request_adults_18_plus_count_1").set(2)
       find(:css, "#reservation_request_teenagers_count_1").set(2)
       find(:css, "#reservation_request_children_6_12_count_1").set(1)
@@ -239,19 +239,19 @@ feature "ReservationRequest pages" do
     end
 
     def fill_in_facility_2
-      find(:css, "#reservation_request_start_date_2").set('10 Apr 2015')
-      find(:css, "#reservation_request_end_date_2").set('12 Apr 2015')
+      find(:css, "#reservation_request_start_date_2").set('10 Apr 2018')
+      find(:css, "#reservation_request_end_date_2").set('12 Apr 2018')
       find(:css, "#reservation_request_adults_18_plus_count_2").set(2)
       find(:css, "#reservation_request_teenagers_count_2").set(3)
       find(:css, "#reservation_request_children_6_12_count_2").set(1)
       find(:css, "#reservation_request_infants_count_2").set(2)
       find(:css, "#reservation_request_power_point_required_2").set(false)
-    end  
+    end
 
     def verify_facility_1_details_are_correct
       # puts "Verifying facility 1 is correct"
-      expect( ['31 Mar 2015', '31 March 2015']).to include(find(:css, "input#reservation_request_start_date_1").value)
-      expect( ['10 Apr 2015', '10 April 2015']).to include(find(:css, "input#reservation_request_end_date_1").value)
+      expect( ['31 Mar 2018', '31 March 2018']).to include(find(:css, "input#reservation_request_start_date_1").value)
+      expect( ['10 Apr 2018', '10 April 2018']).to include(find(:css, "input#reservation_request_end_date_1").value)
       expect( find(:css, "input#reservation_request_adults_18_plus_count_1").value).to eq('2')
       expect( find(:css, "input#reservation_request_teenagers_count_1").value).to eq('2')
       expect( find(:css, "input#reservation_request_children_6_12_count_1").value).to eq('1')
@@ -262,8 +262,8 @@ feature "ReservationRequest pages" do
     def verify_facility_2_details_are_correct
       # puts "Verifying facility 2 is correct"
       expect( find(:css, "input#Second_facility_required_").value).to eq('1')
-      expect( ['10 Apr 2015', '10 April 2015']).to include(find(:css, "input#reservation_request_start_date_2").value)
-      expect( ['12 Apr 2015', '12 April 2015']).to include(find(:css, "input#reservation_request_end_date_2").value)
+      expect( ['10 Apr 2018', '10 April 2018']).to include(find(:css, "input#reservation_request_start_date_2").value)
+      expect( ['12 Apr 2018', '12 April 2018']).to include(find(:css, "input#reservation_request_end_date_2").value)
       expect( find(:css, "input#reservation_request_adults_18_plus_count_2").value).to eq('2')
       expect( find(:css, "input#reservation_request_teenagers_count_2").value).to eq('3')
       expect( find(:css, "input#reservation_request_children_6_12_count_2").value).to eq('1')

@@ -1,0 +1,32 @@
+- provide(:title, t(:terms_and_conditions, scope: [:menu]))
+
+.row
+  %section.terms-and-conditions
+    %h1 
+      = t(:terms_and_conditions, scope: [:menu])
+
+    .row
+      .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2
+        - @terms.each do |term|
+          %p 
+            = "#{term[1]}: #{term[0]}"
+    .row
+      %h2
+        = t(:cancellation_policy, scope: [:terms_and_conditions])        
+    .row
+      .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2
+        - @cancellation_rules.each do |rule|
+          %p 
+            = "#{rule[1]}: #{rule[0]}"
+        - @rule5_subrules.each do |subrule|
+          %p.subrule
+            = "* #{subrule}"    
+    .row        
+      %h2
+        = t(:trespassing_of_rules, scope: [:terms_and_conditions])        
+    .row
+      .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2
+        - @trespassing_rules.each do |rule|
+          %p 
+            = "#{rule[1]}: #{rule[0]}"
+            

@@ -47,21 +47,17 @@ initRequestPage = (e) ->
 
   displayFacility2 = (e) ->
     dte = $('#reservation_request_start_date_2')
-    if dte.length != 0
-      start_dte = dte[0].value
-      if start_dte != ""
-        checkbox = $("#Second_facility_required_")
-        checkbox.checked = true
-        $("#second-facility").show()
+    if (dte.length isnt 0) and (dte[0].value?.length > 0)
+      checkbox = $("#Second_facility_required_")
+      checkbox.checked = true
+      $("#second-facility").show()
 
   displayFacility3 = (e) ->
     dte = $('#reservation_request_start_date_3')
-    if dte.length != 0
-      start_dte = dte[0].value
-      if start_dte != ""
-        checkbox = $("#Third_facility_required_")
-        checkbox.checked = true
-        $("#third-facility").show()
+    if (dte.length isnt 0) and (dte[0].value?.length > 0)
+      checkbox = $("#Third_facility_required_")
+      checkbox.checked = true
+      $("#third-facility").show()
 
   $('#Second_facility_required_').click(toggleFacility2)
   $('#Third_facility_required_').click(toggleFacility3)

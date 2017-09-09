@@ -1,9 +1,10 @@
 require 'spec_helper'
+require 'byebug'
 
 describe ReservationRequest do
 
   include FactoryGirl::Syntax::Methods
-  
+
   before do
     @reservation_request = ReservationRequest.new(
       applicant_name: 'Willie Wolvaart',
@@ -12,8 +13,8 @@ describe ReservationRequest do
       applicant_email: 'williewolvaart@myhome.co.za',
       applicant_town: 'Wolmaransstad',
       facility_type_1: 3,
-      start_date_1: Date.new(2015, 7, 25),
-      end_date_1: Date.new(2015, 8, 2),
+      start_date_1: Date.new(2018, 7, 25),
+      end_date_1: Date.new(2018, 8, 2),
       adults_18_plus_count_1: 2,
       teenagers_count_1: 2,
       children_6_12_count_1: 1,
@@ -21,6 +22,7 @@ describe ReservationRequest do
       vehicle_registration_numbers: 'DC 12 TM GP',
       special_requests: 'We want heaters and a TV in our chalet'
       )
+
     @reservation_request2 = ReservationRequest.new(
       applicant_name: 'Willie Wolvaart',
       applicant_telephone: '123456789',
@@ -28,29 +30,28 @@ describe ReservationRequest do
       applicant_email: 'williewolvaart@myhome.co.za',
       applicant_town: 'Wolmaransstad',
       facility_type_1: 3,
-      start_date_1: Date.new(2015, 7, 25),
-      end_date_1: Date.new(2015, 8, 2),
+      start_date_1: Date.new(2018, 7, 25),
+      end_date_1: Date.new(2018, 8, 2),
       adults_18_plus_count_1: 2,
       teenagers_count_1: 2,
       children_6_12_count_1: 1,
       infants_count_1: 3,
       facility_type_2: 3,
-      start_date_2: Date.new(2015, 7, 25),
-      end_date_2: Date.new(2015, 8, 2),
+      start_date_2: Date.new(2018, 7, 25),
+      end_date_2: Date.new(2018, 8, 2),
       adults_18_plus_count_2: 2,
       teenagers_count_2: 2,
       children_6_12_count_2: 1,
       infants_count_2: 3,
       facility_type_3: 3,
-      start_date_3: Date.new(2015, 7, 25),
-      end_date_3: Date.new(2015, 8, 2),
+      start_date_3: Date.new(2018, 7, 25),
+      end_date_3: Date.new(2018, 8, 2),
       adults_18_plus_count_3: 2,
       teenagers_count_3: 2,
       children_6_12_count_3: 1,
       infants_count_3: 3,
       vehicle_registration_numbers: 'DC 12 TM GY',
       special_requests: 'We want heaters and a TV in our chalet',
-
       )
   end
 
@@ -99,7 +100,7 @@ describe ReservationRequest do
     names.each do |name|
       @reservation_request.applicant_name = name
       expect(@reservation_request).not_to be_valid
-    end  
+    end
   end
 
   it "must ensure the applicant telephone has a valid format" do
@@ -122,7 +123,7 @@ describe ReservationRequest do
     @reservation_request.applicant_telephone = ""
     @reservation_request.applicant_mobile = ""
     expect(@reservation_request).not_to be_valid
-    @reservation_request.applicant_mobile = "555333444"  
+    @reservation_request.applicant_mobile = "555333444"
     expect(@reservation_request).to be_valid
     @reservation_request.applicant_mobile = ""
     @reservation_request.applicant_telephone = "555333444"
@@ -132,7 +133,7 @@ describe ReservationRequest do
   it "must ensure the email address has a valid format" do
     @reservation_request.applicant_email = 'sue.com.au'
     expect(@reservation_request).not_to be_valid
-    @reservation_request.applicant_email = 'sue.scott@new.123'    
+    @reservation_request.applicant_email = 'sue.scott@new.123'
     expect(@reservation_request).not_to be_valid
     @reservation_request.applicant_email = 'jacktheripperswife@thebigbrownfox.thefoxcompany.com'
     expect(@reservation_request).not_to be_valid
@@ -175,14 +176,14 @@ describe ReservationRequest do
   it "must ensure that caravan facility (1) has an adult when there are infants" do
     @reservation_request.facility_type_1 = 1
     @reservation_request.adults_18_plus_count_1 = 0
-    @reservation_request.infants_count_1 = 1    
+    @reservation_request.infants_count_1 = 1
     expect(@reservation_request).not_to be_valid
   end
 
   it "must allow a caravan facility (1) to have no adults when no infants are present" do
     @reservation_request.facility_type_1 = 1
     @reservation_request.adults_18_plus_count_1 = 0
-    @reservation_request.infants_count_1 = 0 
+    @reservation_request.infants_count_1 = 0
     expect(@reservation_request).to be_valid
   end
 
@@ -212,14 +213,14 @@ describe ReservationRequest do
   it "must ensure that caravan facility (2) has an adult when there are infants" do
     @reservation_request2.facility_type_2 = 1
     @reservation_request2.adults_18_plus_count_2 = 0
-    @reservation_request2.infants_count_2 = 1    
+    @reservation_request2.infants_count_2 = 1
     expect(@reservation_request2).not_to be_valid
   end
 
   it "must allow a caravan facility (2) to have no adults when no infants are present" do
     @reservation_request2.facility_type_2 = 1
     @reservation_request2.adults_18_plus_count_2 = 0
-    @reservation_request2.infants_count_2 = 0 
+    @reservation_request2.infants_count_2 = 0
     expect(@reservation_request2).to be_valid
   end
 
@@ -249,14 +250,14 @@ describe ReservationRequest do
   it "must ensure that caravan facility (3) has an adult when there are infants" do
     @reservation_request2.facility_type_3 = 1
     @reservation_request2.adults_18_plus_count_3 = 0
-    @reservation_request2.infants_count_3 = 1    
+    @reservation_request2.infants_count_3 = 1
     expect(@reservation_request2).not_to be_valid
   end
 
   it "must allow a caravan facility (3) to have no adults when no infants are present" do
     @reservation_request2.facility_type_3 = 1
     @reservation_request2.adults_18_plus_count_3 = 0
-    @reservation_request2.infants_count_3 = 0 
+    @reservation_request2.infants_count_3 = 0
     expect(@reservation_request2).to be_valid
   end
 

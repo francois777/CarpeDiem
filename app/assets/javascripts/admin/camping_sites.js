@@ -1,3 +1,5 @@
+# $(".camping_sites.index").ready ->
+
 $(".filter").change(function(){
   var value = $(this).val()
   $.ajax({

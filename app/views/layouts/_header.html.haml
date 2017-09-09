@@ -18,11 +18,12 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
+        %div#navbar-brand
+          = link_to root_path, :html => {:class => 'navbar-brand'} do
+            %i.glyphicon.glyphicon-home
+              = t('home', scope: ['menu'])
       .collapse.navbar-collapse.navbar-gnav-collapse
         %ul.nav.navbar-nav.visible
-          %li
-            = link_to root_path do
-              %i.glyphicon.glyphicon-home
           %li.dropdown
             %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}} 
               = t('visit_us', scope: ['menu'])

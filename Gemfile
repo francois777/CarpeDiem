@@ -52,9 +52,11 @@ group :development do
   #  Use this gem to overcome problem: Error encountered 
   #  while saving cache , can't dump anonymous class
   gem 'sass-rails-source-maps'
+  gem 'byebug', '~> 4.0'
 end
 gem 'rake', '~> 10.3.2'
 gem 'paper_trail', '~> 3.0.6'
+gem 'thin'
 
 group :test, :development do
   gem 'rspec-rails'

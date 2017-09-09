@@ -1,0 +1,23 @@
+- provide(:title, t(".facilities_list"))
+.row
+  .col-xs-12.cols-xs-offset-0.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+    %section.facilities.clearfix
+      %h1
+        = t(".facilities_list")
+.row      
+  %section.tents
+    %map{:name => "metroid"}
+      %area{:alt => "Tent A", :coords => "50,100,15", :href => "#A", :shape => "circle", :data => {:tent => 'tentA'}}/
+      %area{:alt => "Tent B", :coords => "70,50,15", :href => "#B", :shape => "circle", :data => {:tent => 'tentB'}}/
+      %area{:alt => "Tent C", :coords => "120,30,15", :href => "#C", :shape => "circle", :data => {:tent => 'tentC'}}/
+      %area{:alt => "Tent G", :coords => "190,35,15", :href => "#G", :shape => "circle", :data => {:tent => 'tentG'}}/
+    .tents-map
+      = image_tag('tentsmap.png', :usemap => "#metroid", :ismap => "ismap", :border => "0", :width => "300px")  
+.row
+  %ul.nav.nav-tabs
+    %li.active{ :role => "presentation" }
+      = link_to 'Accom A', '#'
+    %li{ :role => "presentation" }
+      = link_to 'Accom B', '#'
+    %li{ :role => "presentation" }
+      = link_to 'Accom C', '#'
